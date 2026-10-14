@@ -29,7 +29,7 @@ var TFG_CONFIG = {
   whatsapp:   '2349079849626',
   // how the number is displayed on the site
   phoneDisplay: '0907 984 9626',
-  instagram:  'https://www.instagram.com/thatfurnituregirl_',
+  instagram:  'https://www.instagram.com/thatfurnituregirl__',
   tiktok:     'https://www.tiktok.com/@thatfurnituregirl_',
   currency:   '\u20A6' // ₦
 };
