@@ -22,10 +22,28 @@ assets/
   js/main.js                       Shop rendering, quick-view, drawer, WhatsApp
   img/                             Photography + the real logo
   img/opt/                         Same photos compressed for the web
-  fonts/                           Fraunces + Manrope, self-hosted
+  fonts/                           Plus Jakarta Sans, self-hosted
+design-reference/template-pin.jpg  The template the look is based on
 source-photos/                     The original TikTok stills, uncropped
 build_onepage.py                   Rebuilds the single-file version
 ```
+
+### The design system
+
+The layout follows a modern furniture-store template: deep green + amber on a
+soft grey page, rounded cards and pill buttons. Everything is driven by CSS
+variables at the top of `assets/css/style.css` — change them there and the whole
+site follows.
+
+```
+--green   #004B1F    buttons, headings accent, dark panels, footer
+--amber   #FFB600    icon tiles, badges, count-ups, highlight buttons
+--bg      #F4F4F4    page background
+--surface #FFFFFF    cards
+```
+
+Photography is hers throughout. Prices, colours and production times in the
+copy all come from her own posts — see "Where the real data came from".
 
 **Two versions, same site:**
 

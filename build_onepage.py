@@ -85,18 +85,21 @@ def main() -> None:
     title = ("<title>That Furniture Girl — Handcrafted Furniture in Ibadan, Nigeria"
              "</title>\n"
              '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' '
-             "viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%231B1512'/%3E"
-             "%3Cg fill='none' stroke='%23FCFAF6' stroke-width='1.7' stroke-linecap='round'%3E"
+             "viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23004B1F'/%3E"
+             "%3Cg fill='none' stroke='%23FFB600' stroke-width='1.7' stroke-linecap='round'%3E"
              "%3Cpath d='M8 17v-4.5A2.5 2.5 0 0 1 10.5 10h11A2.5 2.5 0 0 1 24 12.5V17'/%3E"
              "%3Cpath d='M6 18a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3H6z'/%3E"
              "%3Cpath d='M9 21v2M23 21v2'/%3E%3C/g%3E%3C/svg%3E\">")
+    # the theme-colour meta is read from index.html; keep it in step with --bg
 
     # ---- global chrome (announce / header / drawer / footer / fab) ------
     announce = re.search(r'(<div class="announce".*?</div>\s*</div>\s*</div>)', index_html, re.S).group(1)
-    header = re.search(r'(<header class="site-header".*?</header>)', index_html, re.S).group(1)
-    chrome = re.search(r'(<div class="scrim".*?</aside>)', index_html, re.S).group(1)
-    footer = re.search(r'(<footer class="site-footer".*?</footer>)', index_html, re.S).group(1)
-    fab = re.search(r'(<a class="fab".*?</a>)', index_html, re.S).group(1)
+    # the shared chrome also carries page links — rewrite them like any section,
+    # otherwise the one-page file points at index.html / shop.html and 404s
+    header = rewrite_links(re.search(r'(<header class="site-header".*?</header>)', index_html, re.S).group(1))
+    chrome = rewrite_links(re.search(r'(<div class="scrim".*?</aside>)', index_html, re.S).group(1))
+    footer = rewrite_links(re.search(r'(<footer class="site-footer".*?</footer>)', index_html, re.S).group(1))
+    fab = rewrite_links(re.search(r'(<a class="fab".*?</a>)', index_html, re.S).group(1))
     modal = '<div class="modal" id="productModal" aria-live="polite"></div>'
 
     # ---- sections ------------------------------------------------------

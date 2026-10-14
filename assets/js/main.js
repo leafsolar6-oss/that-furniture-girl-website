@@ -59,6 +59,14 @@
     return parts.join(' · ');
   }
 
+  /* Plain label for a category key — used as the small kicker above each name. */
+  function catLabel(key) {
+    for (var i = 0; i < TFG_CATEGORIES.length; i++) {
+      if (TFG_CATEGORIES[i].key === key) return TFG_CATEGORIES[i].label;
+    }
+    return '';
+  }
+
   /* Closing note under the order button — reflects how long THIS piece takes. */
   function footerNote(p) {
     var when = 'Production time 5\u201310 working days on most builds.';
@@ -81,23 +89,25 @@
   function cardHTML(p, delay) {
     var badges = '';
     if (p.badge) badges += '<span class="badge ' + (p.badge === 'Signature' ? 'badge--gold' : 'badge--clay') + '">' + p.badge + '</span>';
-    if (p.lead && /pickup/i.test(p.lead)) badges += '<span class="badge">Available now</span>';
+    if (p.lead && /pickup/i.test(p.lead)) badges += '<span class="badge badge--green">Available now</span>';
 
     return '' +
       '<article class="product reveal" data-delay="' + (delay || 0) + '" data-id="' + p.id + '">' +
         '<div class="product__media">' +
-          '<img src="' + imgSrc(p.img) + '" alt="' + p.name + ' — ' + (p.colours || 'handmade furniture') + '" loading="lazy" width="900" height="600">' +
+          '<img src="' + imgSrc(p.img) + '" alt="' + p.name + ' — ' + (p.colours || 'handmade furniture') + '" loading="lazy" width="900" height="675">' +
           '<div class="badges">' + badges + '</div>' +
+          '<div class="product__tools">' +
+            '<button class="icon-btn js-quick" type="button" aria-label="Quick view: ' + p.name + '">' + ICONS.eye + '</button>' +
+            '<a class="icon-btn icon-btn--green" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener" aria-label="Order ' + p.name + ' on WhatsApp">' + ICONS.wa + '</a>' +
+          '</div>' +
         '</div>' +
         '<div class="product__body">' +
+          '<span class="product__kicker">' + catLabel(p.cat) + '</span>' +
           '<h3 class="product__name">' + p.name + '</h3>' +
           '<p class="product__spec">' + specLine(p) + '</p>' +
           '<div class="product__foot">' +
-            '<div class="price">' + priceHTML(p) + '</div>' +
-            '<div class="product__actions">' +
-              '<button class="icon-btn js-quick" type="button" aria-label="Quick view: ' + p.name + '">' + ICONS.eye + '</button>' +
-              '<a class="btn-wa" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">' + ICONS.wa + '<span>Order</span></a>' +
-            '</div>' +
+            '<div class="price' + (p.price ? '' : ' price--ask') + '">' + priceHTML(p) + '</div>' +
+            '<a class="btn btn--primary btn--sm" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">' + ICONS.wa + '<span>Order</span></a>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -176,16 +186,28 @@
     }
     Array.prototype.forEach.call(targets, function (t) { io.observe(t); });
 
-    /* Safety net: anything already on screen shortly after load is shown even
-       if the observer never fires (odd embeds, print, very tall elements). */
+    /* Safety net. The reveal is decorative, so content must never be able to
+       stay invisible: anything the observer missed gets shown on the next
+       scroll frame, and once more shortly after load. */
+    function sweep() {
+      Array.prototype.forEach.call(document.querySelectorAll('.reveal:not(.is-in)'), function (t) {
+        var box = t.getBoundingClientRect();
+        /* on screen, or already scrolled past (fast flings can skip a frame) */
+        if (box.top < window.innerHeight * 1.05 && box.bottom > -window.innerHeight) {
+          t.classList.add('is-in');
+        }
+      });
+    }
     if (!observeReveals._net) {
       observeReveals._net = true;
-      window.setTimeout(function () {
-        Array.prototype.forEach.call(document.querySelectorAll('.reveal:not(.is-in)'), function (t) {
-          var box = t.getBoundingClientRect();
-          if (box.top < window.innerHeight * 1.05) t.classList.add('is-in');
-        });
-      }, 900);
+      var queued = false;
+      window.addEventListener('scroll', function () {
+        if (queued) return;
+        queued = true;
+        window.requestAnimationFrame(function () { queued = false; sweep(); });
+      }, { passive: true });
+      window.setTimeout(sweep, 900);
+      window.addEventListener('load', sweep);
     }
   }
 
@@ -221,14 +243,14 @@
       }
       if (filterBar) {
         filterBar.innerHTML = TFG_CATEGORIES.map(function (c, i) {
-          return '<button class="chip' + (i === 0 ? ' is-active' : '') + '" type="button" data-cat="' + c.key + '">' + c.label + '</button>';
+          return '<button class="chip" type="button" data-cat="' + c.key + '" aria-pressed="' + (i === 0 ? 'true' : 'false') + '">' + c.label + '</button>';
         }).join('');
         filterBar.addEventListener('click', function (e) {
           var chip = e.target.closest('.chip');
           if (!chip) return;
           current = chip.getAttribute('data-cat');
-          Array.prototype.forEach.call(filterBar.children, function (c) { c.classList.remove('is-active'); });
-          chip.classList.add('is-active');
+          Array.prototype.forEach.call(filterBar.children, function (c) { c.setAttribute('aria-pressed', 'false'); });
+          chip.setAttribute('aria-pressed', 'true');
           apply();
         });
 
