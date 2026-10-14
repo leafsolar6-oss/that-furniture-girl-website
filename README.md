@@ -45,6 +45,28 @@ site follows.
 Photography is hers throughout. Prices, colours and production times in the
 copy all come from her own posts — see "Where the real data came from".
 
+### The customer reviews section
+
+The home page has a "What our customers say" section that is **switched off
+until you give it real reviews**. It reads `TFG_TESTIMONIALS` at the bottom of
+`assets/js/products.js`, which ships empty — while it is empty the whole
+section hides itself, so the site can never show a review nobody wrote.
+
+Paste in what customers actually sent you (WhatsApp, Instagram DM, TikTok
+comment) and it appears on the home page automatically:
+
+```js
+var TFG_TESTIMONIALS = [
+  { name: 'Ada O.',                  // how they want to be shown
+    where: 'Ibadan',                 // optional — city, or how they found you
+    text: 'The exact words they sent you.' }
+];
+```
+
+There is one other thing the site deliberately does not fake: discount badges
+and countdown timers. The "Ready right now" band shows real stock instead —
+the two pieces that are finished and sitting in the showroom.
+
 **Two versions, same site:**
 
 | File | Use it for |

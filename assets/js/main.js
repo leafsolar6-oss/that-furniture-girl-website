@@ -215,6 +215,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     modal = document.getElementById('productModal');
+    var CFG2 = window.TFG_CONFIG;
 
     /* WhatsApp links written in the HTML: <a data-wa="message"> */
     Array.prototype.forEach.call(document.querySelectorAll('[data-wa]'), function (el) {
@@ -224,21 +225,26 @@
       el.setAttribute('rel', 'noopener');
     });
 
-    /* Featured pieces on the home page */
-    var featured = document.getElementById('featuredGrid');
-    if (featured) {
-      var list = TFG_PRODUCTS.filter(function (p) { return p.featured; });
-      var limit = parseInt(featured.getAttribute('data-limit') || '6', 10);
-      renderGrid(featured, list.slice(0, limit));
+    /* Newsletter — there is no mailing service behind this, so the form
+       hands off to WhatsApp with the address in the message. */
+    var newsForm = document.getElementById('newsletterForm');
+    if (newsForm) {
+      newsForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = newsForm.querySelector('input');
+        var who = (input && input.value || '').trim();
+        var msg = 'Hello ' + CFG.brand + '! Please add me to your updates list.';
+        if (who) msg += ' My name or email: ' + who;
+        window.open(waLink(msg), '_blank', 'noopener');
+      });
     }
 
-    /* Full shop grid + filters */
-    var grid = document.getElementById('shopGrid');
-    var filterBar = document.getElementById('shopFilters');
-    if (grid) {
+    /* Category chips wired to a grid. Used on the home page (a subset of
+       pieces) and on the shop page (the whole catalogue). */
+    function wireFilters(grid, filterBar, base) {
       var current = 'all';
       function apply() {
-        var list = current === 'all' ? TFG_PRODUCTS : TFG_PRODUCTS.filter(function (p) { return p.cat === current; });
+        var list = current === 'all' ? base.slice() : base.filter(function (p) { return p.cat === current; });
         renderGrid(grid, list);
       }
       if (filterBar) {
@@ -258,10 +264,103 @@
         var wanted = (window.location.hash || '').replace('#cat-', '');
         if (wanted && wanted !== window.location.hash) {
           var match = filterBar.querySelector('[data-cat="' + wanted + '"]');
-          if (match) { current = wanted; match.click(); }
+          if (match) { current = wanted; match.click(); return; }
         }
       }
       apply();
+    }
+
+    /* Featured pieces on the home page */
+    var featured = document.getElementById('featuredGrid');
+    if (featured) {
+      var limit = parseInt(featured.getAttribute('data-limit') || '6', 10);
+      var pool = TFG_PRODUCTS.filter(function (p) { return p.featured; });
+      if (limit > 0) pool = pool.slice(0, limit);
+      wireFilters(featured, document.getElementById('shopFilters'), pool);
+    }
+
+    /* Full shop grid + filters */
+    var grid = document.getElementById('shopGrid');
+    if (grid) wireFilters(grid, document.getElementById('shopFilters'), TFG_PRODUCTS);
+
+    /* ---------- testimonials -----------------------------------------------
+       TFG_TESTIMONIALS lives in products.js. While it is empty the whole
+       section stays hidden, so the site never shows invented reviews. */
+    var quoteWrap = document.getElementById('quoteGrid');
+    if (quoteWrap) {
+      var quotes = window.TFG_TESTIMONIALS || [];
+      if (!quotes.length) {
+        var quoteSection = quoteWrap.closest('section');
+        if (quoteSection) quoteSection.hidden = true;
+      } else {
+        quoteWrap.innerHTML = quotes.map(function (t, i) {
+          var initial = String(t.name || '?').trim().charAt(0).toUpperCase();
+          var avatar = t.img
+            ? '<img class="quote-card__avatar" src="' + imgSrc(t.img) + '" alt="" loading="lazy">'
+            : '<span class="quote-card__avatar" aria-hidden="true">' + initial + '</span>';
+          return '' +
+            '<figure class="quote-card reveal" data-delay="' + (i % 2) + '">' +
+              '<div class="quote-card__head">' + avatar +
+                '<div class="quote-card__who"><strong>' + t.name + '</strong>' +
+                (t.where ? '<span>' + t.where + '</span>' : '') + '</div>' +
+              '</div>' +
+              '<div class="quote-card__mark" aria-hidden="true">&ldquo;</div>' +
+              '<blockquote class="quote-card__text">' + t.text + '</blockquote>' +
+            '</figure>';
+        }).join('');
+        observeReveals(quoteWrap);
+      }
+    }
+
+    /* ---------- search ------------------------------------------------------ */
+    var searchPanel = document.getElementById('searchPanel');
+    if (searchPanel) {
+      var searchInput = searchPanel.querySelector('input');
+      var searchOut = searchPanel.querySelector('.search-panel__results');
+      var lastFocusEl;
+
+      function renderSearch(q) {
+        var needle = (q || '').trim().toLowerCase();
+        var list = TFG_PRODUCTS.filter(function (p) {
+          if (!needle) return true;
+          return (p.name + ' ' + (p.colours || '') + ' ' + (p.material || '') + ' ' +
+                  catLabel(p.cat) + ' ' + (p.desc || '')).toLowerCase().indexOf(needle) > -1;
+        });
+        if (!list.length) {
+          searchOut.innerHTML = '<div class="search-panel__empty">Nothing matches that yet &mdash; message us and we will build it for you.</div>';
+          return;
+        }
+        searchOut.innerHTML = list.map(function (p) {
+          return '<a class="search-result" href="shop.html" data-id="' + p.id + '">' +
+            '<img src="' + imgSrc(p.img) + '" alt="" loading="lazy">' +
+            '<span><strong>' + p.name + '</strong>' +
+            '<span>' + catLabel(p.cat) + ' &middot; ' +
+              (p.price ? fmt(p.price) : 'Price on request') + '</span></span></a>';
+        }).join('');
+      }
+      function openSearch() {
+        lastFocusEl = document.activeElement;
+        searchPanel.classList.add('is-open');
+        renderSearch('');
+        if (searchInput) { searchInput.value = ''; searchInput.focus(); }
+      }
+      function closeSearch() {
+        searchPanel.classList.remove('is-open');
+        if (lastFocusEl) lastFocusEl.focus();
+      }
+      Array.prototype.forEach.call(document.querySelectorAll('[data-open-search]'), function (b) {
+        b.addEventListener('click', openSearch);
+      });
+      searchPanel.addEventListener('click', function (e) {
+        if (e.target === searchPanel) closeSearch();
+        if (e.target.closest('.search-panel__close')) closeSearch();
+      });
+      if (searchInput) {
+        searchInput.addEventListener('input', function () { renderSearch(searchInput.value); });
+      }
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeSearch();
+      });
     }
 
     /* Quick view (delegated, so it works for every rendered card) */

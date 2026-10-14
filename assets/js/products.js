@@ -144,3 +144,20 @@ var TFG_PRODUCTS = [
     featured: false
   }
 ];
+
+/* ==========================================================================
+   TESTIMONIALS  —  the "What our customers say" section
+   --------------------------------------------------------------------------
+   This list is EMPTY on purpose. The section stays hidden until you add real
+   messages here, so the site never shows a review nobody wrote.
+
+   Paste in what customers actually sent you (WhatsApp, Instagram DM, TikTok
+   comment) and the section appears on the home page automatically:
+
+     { name: 'Ada O.',          // how they want to be shown
+       where: 'Ibadan',         // optional — their city or how they found you
+       img:   'blush-sectional.jpg',   // optional — a photo from assets/img/opt/
+       text:  'The exact words they sent you, unchanged.' }
+   ========================================================================== */
+
+var TFG_TESTIMONIALS = [];

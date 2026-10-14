@@ -202,7 +202,7 @@ def main() -> None:
 
     # photos used by the JS live in assets/img/opt/ and are mapped above;
     # everything else referenced directly in the markup gets embedded here
-    out = re.sub(r"assets/img/(?!opt/)[\w.\-]+\.(?:jpg|jpeg|png)", swap, out)
+    out = re.sub(r"assets/img/(?!opt/)(?:[\w\-]+/)?[\w.\-]+\.(?:jpg|jpeg|png)", swap, out)
     out = re.sub(r"assets/img/opt/[\w.\-]+\.jpg", swap, out)
 
     (ROOT / OUT_NAME).write_text(out, encoding="utf-8")

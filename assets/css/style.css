@@ -981,8 +981,18 @@ p  { margin: 0; text-wrap: pretty; }
 /* ==========================================================================
    MODAL (quick view)
    ========================================================================== */
-.modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; }
-.modal[hidden] { display: none; }
+/* The modal lives in the markup at all times, so while it is closed it must
+   not swallow clicks: opacity alone is not enough, it needs pointer-events. */
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+.modal.is-open { opacity: 1; pointer-events: auto; }
+.modal:empty { display: none; }   /* nothing to show, nothing to block */
 .modal__scrim { position: absolute; inset: 0; background: rgba(16,20,16,.55); backdrop-filter: blur(4px); }
 .modal__panel {
   position: relative;
@@ -1095,8 +1105,301 @@ p  { margin: 0; text-wrap: pretty; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* ==========================================================================
+   SPOTLIGHT BAND  (the template's "Flash Sale" — here: what's ready now)
+   ========================================================================== */
+.spotlight {
+  display: grid; gap: clamp(26px, 3.6vw, 50px);
+  grid-template-columns: 1fr;
+  align-items: center;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: clamp(26px, 3.6vw, 48px);
+}
+@media (min-width: 900px) {
+  .spotlight { grid-template-columns: 1fr 1.08fr; }
+}
+.spotlight__label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber); color: var(--ink);
+  border-radius: var(--pill);
+  padding: 6px 15px;
+  font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.spotlight h2 { margin-bottom: 12px; }
+.spotlight__note { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; }
+
+/* the amber counter strip — real availability, not a fake clock */
+.counter { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+.counter__box {
+  background: var(--amber);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 11px 16px;
+  min-width: 74px;
+  text-align: center;
+}
+.counter__box b { display: block; font-size: 23px; font-weight: 800; letter-spacing: -.04em; line-height: 1.1; }
+.counter__box span { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; opacity: .72; }
+
+.spotlight__media { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-2); }
+.spotlight__media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+
+/* ==========================================================================
+   DEAL CARDS  (template's "Deals of the Day")
+   ========================================================================== */
+.deal-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
+@media (min-width: 820px) { .deal-grid { grid-template-columns: 1fr 1fr; } }
+
+.deal {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(18px, 2.2vw, 26px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2vw, 24px);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+@media (min-width: 520px) { .deal { grid-template-columns: 1fr 1.06fr; align-items: center; } }
+.deal:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.deal__media { border-radius: var(--radius); overflow: hidden; background: var(--surface-2); }
+.deal__media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1/1; }
+.deal__body { display: flex; flex-direction: column; gap: 9px; }
+.deal__name { font-size: clamp(19px, 2.1vw, 24px); font-weight: 800; letter-spacing: -.03em; line-height: 1.2; }
+.deal__desc { font-size: 14px; color: var(--muted); line-height: 1.62; }
+.deal__price { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+.deal__price b { font-size: 21px; font-weight: 800; letter-spacing: -.035em; }
+.deal__price span { font-size: 12.5px; color: var(--muted); font-weight: 700; }
+.deal .btn { align-self: flex-start; margin-top: 5px; }
+
+/* ==========================================================================
+   PROMO PAIR  (template's two collection banners)
+   ========================================================================== */
+.promo-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .promo-grid { grid-template-columns: 1fr 1fr; } }
+
+.promo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 16px;
+  align-items: center;
+  min-height: 260px;
+  background: var(--surface-2);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.promo:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.promo--amber { background: var(--amber); }
+.promo--green { background: var(--green); color: #fff; }
+.promo h3 { font-size: clamp(21px, 2.5vw, 29px); margin-bottom: 10px; }
+.promo p { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.promo--green p { color: rgba(255,255,255,.76); }
+.promo--green h3 { color: #fff; }
+.promo--green .btn--light:hover { background: var(--amber); }
+.promo__media { border-radius: var(--radius); overflow: hidden; align-self: stretch; }
+.promo__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.quote-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
+@media (min-width: 820px) { .quote-grid { grid-template-columns: 1fr 1fr; } }
+
+.quote-card {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 32px);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.quote-card__head { display: flex; align-items: center; gap: 14px; }
+.quote-card__avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  object-fit: cover; flex: none;
+  background: var(--surface-2);
+  display: grid; place-items: center;
+  font-weight: 800; color: var(--green);
+}
+.quote-card__who strong { display: block; font-size: 15.5px; font-weight: 800; letter-spacing: -.02em; }
+.quote-card__who span { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.quote-card__text { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+.quote-card__mark { font-size: 54px; line-height: .6; color: var(--amber); font-weight: 800; }
+
+/* ==========================================================================
+   GUIDES / POSTS
+   ========================================================================== */
+.post-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
+@media (min-width: 700px)  { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.post {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.post:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.post__media { aspect-ratio: 16/10; overflow: hidden; background: var(--surface-2); }
+.post__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.post:hover .post__media img { transform: scale(1.05); }
+.post__body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.post__date { font-size: 12px; font-weight: 700; color: var(--muted-2); letter-spacing: .03em; text-transform: uppercase; }
+.post h3 { font-size: 17.5px; line-height: 1.3; }
+.post p { font-size: 13.5px; color: var(--muted); line-height: 1.62; }
+.post .link-arrow { margin-top: auto; padding-top: 12px; align-self: flex-start; font-size: 13.5px; }
+
+/* ==========================================================================
+   INSTAGRAM GRID
+   ========================================================================== */
+.ig-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 560px)  { .ig-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .ig-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.ig-tile {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--surface-2);
+  display: block;
+}
+.ig-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.ig-tile:hover img { transform: scale(1.07); }
+.ig-tile--link {
+  background: var(--green);
+  display: grid; place-items: center;
+  color: #fff;
+}
+.ig-tile--link:hover { background: var(--green-dark); }
+.ig-tile--link svg { width: 34px; height: 34px; }
+.ig-tile--link span { font-size: 11.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ==========================================================================
+   FAQ LAYOUT  (green contact card + accordion)
+   ========================================================================== */
+.faq-layout {
+  display: grid; gap: clamp(20px, 2.6vw, 34px);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 880px) { .faq-layout { grid-template-columns: .82fr 1.18fr; } }
+
+.faq-ask {
+  background: var(--green);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: clamp(26px, 3.2vw, 36px);
+}
+.faq-ask h3 { color: #fff; font-size: 20px; margin-bottom: 12px; }
+.faq-ask p { color: rgba(255,255,255,.76); font-size: 14.5px; line-height: 1.7; margin-bottom: 24px; }
+
+/* ==========================================================================
+   NEWSLETTER
+   ========================================================================== */
+.newsletter {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: clamp(32px, 4.4vw, 58px) clamp(24px, 3.6vw, 52px);
+  text-align: center;
+}
+.newsletter h2 { max-width: 20ch; margin-inline: auto; margin-bottom: 14px; }
+.newsletter > p { max-width: 52ch; margin-inline: auto; color: var(--muted); font-size: 15.5px; }
+.newsletter form, .newsletter .subscribe {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  max-width: 520px; margin: 28px auto 0;
+}
+.newsletter input[type="text"] {
+  flex: 1 1 220px;
+  min-width: 0;
+  border: 1.5px solid var(--line);
+  border-radius: var(--pill);
+  padding: 15px 22px;
+  font: inherit;
+  font-size: 14.5px;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.newsletter input[type="text"]:focus { outline: none; border-color: var(--green); background: #fff; }
+.newsletter input[type="text"]::placeholder { color: var(--muted-2); }
+.newsletter__fine { font-size: 12.5px; color: var(--muted-2); margin-top: 16px; }
+
+/* ==========================================================================
+   FOOTER — payment strip + wider columns
+   ========================================================================== */
+.pay-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pay-chips span {
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-xs);
+  padding: 6px 12px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .02em;
+  color: rgba(255,255,255,.8);
+}
+
+/* ==========================================================================
+   SEARCH OVERLAY
+   ========================================================================== */
+.search-panel {
+  position: fixed; inset: 0; z-index: 95;
+  background: rgba(16,20,16,.52);
+  backdrop-filter: blur(4px);
+  display: none;
+  padding: clamp(14px, 5vh, 70px) var(--gutter) 0;
+}
+.search-panel.is-open { display: block; }
+.search-panel__inner {
+  width: min(760px, 100%);
+  margin-inline: auto;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-height: 76vh;
+  display: flex; flex-direction: column;
+}
+.search-panel__bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.search-panel__bar svg { width: 20px; height: 20px; color: var(--muted); flex: none; }
+.search-panel input {
+  flex: 1; border: 0; font: inherit; font-size: 16.5px; font-weight: 600;
+  background: transparent; color: var(--ink); min-width: 0;
+}
+.search-panel input:focus { outline: none; }
+.search-panel__close {
+  border: 0; background: var(--surface-2);
+  width: 34px; height: 34px; border-radius: var(--pill);
+  cursor: pointer; font-size: 20px; line-height: 1;
+  display: grid; place-items: center; flex: none;
+}
+.search-panel__close:hover { background: var(--green); color: #fff; }
+.search-panel__results { overflow-y: auto; padding: 8px; }
+.search-result {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  transition: background .18s var(--ease);
+}
+.search-result:hover { background: var(--surface-2); }
+.search-result img { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; flex: none; }
+.search-result strong { display: block; font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
+.search-result span { font-size: 12.5px; color: var(--muted); }
+.search-panel__empty { padding: 30px 20px; text-align: center; color: var(--muted); font-size: 14.5px; }
+
 /* --- print ---------------------------------------------------------------- */
 @media print {
-  .announce, .site-header, .fab, .drawer, .scrim, .product__tools { display: none !important; }
+  .announce, .site-header, .fab, .drawer, .scrim, .product__tools, .search-panel { display: none !important; }
   body { background: #fff; }
 }

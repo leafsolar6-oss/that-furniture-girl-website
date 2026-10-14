@@ -43,6 +43,9 @@
       <a href="contact.html">Visit &amp; Contact</a>
     </nav>
     <div class="header-actions">
+      <button class="icon-btn" type="button" data-open-search aria-label="Search pieces">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      </button>
       <a class="btn btn--primary btn--sm" href="https://wa.me/2349079849626" data-wa="Hello! I would like to order furniture.">Order on WhatsApp</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
@@ -260,6 +263,7 @@
         <p class="lead" style="margin-top:14px">Every piece is made in our Ibadan workshop and can be finished in the colour and size that suits your space.</p>
       </div>
 
+      <div class="filters reveal" id="shopFilters" data-limit="6"></div>
       <div class="grid-products" id="featuredGrid" data-limit="6"></div>
 
       <div class="btn-row reveal" style="justify-content:center; margin-top:clamp(28px,3.6vw,42px)">
@@ -272,6 +276,96 @@
       <div class="ribbon reveal" style="margin-top:clamp(30px,4vw,46px)">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Beds, dining sets, office pieces &amp; full house packages</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Send us a photo — we'll build it</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- spotlight: what is ready right now (real stock, not a fake countdown) -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="spotlight reveal">
+        <div>
+          <span class="spotlight__label">Ready right now</span>
+          <h2>Take it home today.</h2>
+          <p class="spotlight__note">These pieces are finished and sitting in the showroom at Iyaganku. Message us before noon and we'll deliver across Ibadan the same day.</p>
+          <div class="counter">
+            <div class="counter__box"><b>2</b><span>Finished<br>pieces</span></div>
+            <div class="counter__box"><b>Same</b><span>Day<br>delivery</span></div>
+            <div class="counter__box"><b>5–10</b><span>Days to<br>build</span></div>
+            <div class="counter__box"><b>Any</b><span>Colour<br>&amp; size</span></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="https://wa.me/2349079849626" data-wa="Hello! Which pieces do you have ready for pickup right now?">Ask what's ready</a>
+            <a class="btn btn--outline" href="shop.html">See all pieces</a>
+          </div>
+        </div>
+        <div class="spotlight__media">
+          <img src="assets/img/opt/blush-sectional.jpg" alt="Blush Sectional in light grey boucle, ready in the Iyaganku showroom" width="900" height="675" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- deals of the day -> this week's most requested -->
+  <section class="section section--flush-top">
+    <div class="container">
+      <div class="section-head section-head--row reveal">
+        <div class="section-head__text">
+          <span class="eyebrow">Most requested</span>
+          <h2>This week's two favourites</h2>
+          <p class="lead" style="margin-top:14px">The pieces people ask about most — both can be built in your colour, size and fabric.</p>
+        </div>
+        <a class="link-arrow" href="shop.html">View all
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="deal-grid">
+        <article class="deal reveal">
+          <div class="deal__media"><img src="assets/img/opt/blush-sectional.jpg" alt="Blush Sectional in light grey and white boucle" width="900" height="675" loading="lazy"></div>
+          <div class="deal__body">
+            <span class="badge badge--green" style="align-self:flex-start">Available now</span>
+            <h3 class="deal__name">Blush Sectional</h3>
+            <div class="deal__price"><b>&#8358;500,000</b><span>Custom colours available</span></div>
+            <p class="deal__desc">Light grey and white boucle with deep channel tufting. Treated wood frame, high-density foam — ours to deliver today.</p>
+            <a class="btn btn--sm" href="https://wa.me/2349079849626" data-wa="Hello! I would like to order the Blush Sectional (&#8358;500,000). Is it available?">Shop now</a>
+          </div>
+        </article>
+
+        <article class="deal reveal" data-delay="1">
+          <div class="deal__media"><img src="assets/img/opt/jewel-sectional.jpg" alt="Jewel L-Shaped Sectional in chocolate brown corduroy" width="900" height="675" loading="lazy"></div>
+          <div class="deal__body">
+            <span class="badge badge--green" style="align-self:flex-start">Available now</span>
+            <h3 class="deal__name">Jewel L-Shaped Sectional</h3>
+            <div class="deal__price"><b>&#8358;350,000</b><span>Custom colours available</span></div>
+            <p class="deal__desc">Chocolate brown corduroy in an L-shape that fits a corner properly. Ready for immediate pickup from the showroom.</p>
+            <a class="btn btn--sm" href="https://wa.me/2349079849626" data-wa="Hello! I would like to order the Jewel L-Shaped Sectional (&#8358;350,000). Is it available?">Shop now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- promo pair -->
+  <section class="section section--flush-top">
+    <div class="container">
+      <div class="promo-grid">
+        <article class="promo reveal">
+          <div>
+            <h3>Sofas &amp; Sectionals</h3>
+            <p>Three designs, every one made to your measurements.</p>
+            <a class="btn btn--sm" href="shop.html#cat-sofas">Shop now</a>
+          </div>
+          <div class="promo__media"><img src="assets/img/opt/hero-sectionals.jpg" alt="Grey boucle sectional sofa" width="900" height="675" loading="lazy"></div>
+        </article>
+        <article class="promo promo--amber reveal" data-delay="1">
+          <div>
+            <h3>Wardrobes &amp; Storage</h3>
+            <p>Built to fit the wall you actually have. From &#8358;140,000.</p>
+            <a class="btn btn--sm" href="shop.html#cat-storage">Shop now</a>
+          </div>
+          <div class="promo__media"><img src="assets/img/opt/wardrobe.jpg" alt="Wardrobe in matte MDF with black detailing" width="900" height="675" loading="lazy"></div>
+        </article>
       </div>
     </div>
   </section>
@@ -376,16 +470,100 @@
     </div>
   </section>
 
+  <!-- testimonials — stays hidden until real customer messages are added
+       to TFG_TESTIMONIALS in assets/js/products.js -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What our customers say</h2>
+      </div>
+      <div class="quote-grid" id="quoteGrid"></div>
+    </div>
+  </section>
+
+  <!-- guides -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--row reveal">
+        <div class="section-head__text">
+          <span class="eyebrow">Guides &amp; stories</span>
+          <h2>Straight answers before you buy</h2>
+          <p class="lead" style="margin-top:14px">What we get asked most, written out properly — so you can choose with confidence.</p>
+        </div>
+        <a class="btn btn--outline btn--sm" href="shop.html">See the collection</a>
+      </div>
+      <div class="post-grid">
+        <article class="post reveal">
+          <div class="post__media"><img src="assets/img/opt/blush-linea-set.jpg" alt="Cream boucle sectional" width="900" height="675" loading="lazy"></div>
+          <div class="post__body">
+            <span class="post__date">Buying guide</span>
+            <h3>Boucle, corduroy or floral? Picking your fabric</h3>
+            <p>Every fabric we build in, how each one wears in an Ibadan home, and which suits a busy family living room.</p>
+            <a class="link-arrow" href="shop.html#cat-sofas">See the sofas
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="post reveal" data-delay="1">
+          <div class="post__media"><img src="assets/img/opt/royal-kinging-set.jpg" alt="The Royal Kinging Set" width="900" height="675" loading="lazy"></div>
+          <div class="post__body">
+            <span class="post__date">From the workshop</span>
+            <h3>Inside the Royal Kinging Set: three months of handwork</h3>
+            <p>Treated frames, high-density foam, leather and floral fabric, gold applied by hand — how our biggest commission comes together.</p>
+            <a class="link-arrow" href="https://wa.me/2349079849626" data-wa="Hello! I would like to ask about commissioning a Royal Kinging Set.">Ask about a commission
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="post reveal" data-delay="2">
+          <div class="post__media"><img src="assets/img/opt/hero-sectionals.jpg" alt="Sectional sofa in a living room" width="900" height="675" loading="lazy"></div>
+          <div class="post__body">
+            <span class="post__date">How to</span>
+            <h3>Measuring your room for a sectional</h3>
+            <p>The four measurements to send us before you order, and the mistakes that make a good sofa feel too big.</p>
+            <a class="link-arrow" href="shop.html#cat-sets">See the full sets
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- instagram -->
+  <section class="section section--flush-top">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Follow us</span>
+        <h2>Fresh from the workshop on Instagram</h2>
+        <p class="lead" style="margin-top:14px">New pieces are posted most weeks — that is usually how customers meet their next sofa.</p>
+      </div>
+      <div class="ig-grid reveal">
+        <a class="ig-tile" href="https://www.instagram.com/thatfurnituregirl__" target="_blank" rel="noopener"><img src="assets/img/ig/ig-1.jpg" alt="Cream boucle sectional set from our Instagram" width="640" height="640" loading="lazy"></a>
+        <a class="ig-tile" href="https://www.instagram.com/thatfurnituregirl__" target="_blank" rel="noopener"><img src="assets/img/ig/ig-2.jpg" alt="Boucle sectional detail" width="640" height="640" loading="lazy"></a>
+        <a class="ig-tile ig-tile--link" href="https://www.instagram.com/thatfurnituregirl__" target="_blank" rel="noopener" aria-label="Follow @thatfurnituregirl__ on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+          <span>@thatfurnituregirl__</span>
+        </a>
+        <a class="ig-tile" href="https://www.instagram.com/thatfurnituregirl__" target="_blank" rel="noopener"><img src="assets/img/ig/ig-3.jpg" alt="Finished sofa in the workshop" width="640" height="640" loading="lazy"></a>
+        <a class="ig-tile" href="https://www.instagram.com/thatfurnituregirl__" target="_blank" rel="noopener"><img src="assets/img/ig/ig-4.jpg" alt="Sectional with cushions" width="640" height="640" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
   <!-- faq ---------------------------------------------------------------- -->
   <section class="section">
-    <div class="container split split--wide-left split--top">
-      <div class="reveal">
-        <span class="eyebrow">Good to know</span>
-        <h2>Questions we get every day</h2>
-        <p class="lead" style="margin-top:16px">Still not sure about something? Send a WhatsApp message and we'll answer straight away.</p>
-        <div class="btn-row" style="margin-top:26px">
-          <a class="btn btn--primary" href="https://wa.me/2349079849626" data-wa="Hello! I have a question about your furniture.">Ask a question</a>
-        </div>
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">FAQs</span>
+        <h2>Questions? Look here.</h2>
+      </div>
+      <div class="faq-layout">
+      <div class="faq-ask reveal">
+        <h3>Can't find your answer?</h3>
+        <p>We are almost always active on WhatsApp. Send a message with what you are looking for and we will come back to you straight away — photos, prices and timelines included.</p>
+        <a class="btn btn--amber" href="https://wa.me/2349079849626" data-wa="Hello! I have a question about your furniture.">Ask a question</a>
       </div>
       <div class="faq reveal" data-delay="1">
         <details open>
@@ -412,6 +590,23 @@
           <summary>Do you make pieces that aren't on the website?</summary>
           <p>We build beds, dining sets, office furniture, TV stands and complete house packages. If you can picture it, send us a photo or a sketch and we'll tell you what it costs to build.</p>
         </details>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- newsletter -->
+  <section class="section section--flush-top">
+    <div class="container">
+      <div class="newsletter reveal">
+        <span class="eyebrow" style="justify-content:center">Our updates</span>
+        <h2>Get first look at what comes off the bench</h2>
+        <p>New pieces, new fabrics and what is ready for pickup — sent to you on WhatsApp. No spam, and you can ask us to stop any time.</p>
+        <form id="newsletterForm" novalidate>
+          <input type="text" name="who" placeholder="Your name or number" aria-label="Your name or number">
+          <button class="btn btn--amber" type="submit">Get updates</button>
+        </form>
+        <p class="newsletter__fine">Opens WhatsApp with your details ready to send.</p>
       </div>
     </div>
   </section>
@@ -486,6 +681,12 @@
         </div>
       </div>
     </div>
+    <div class="pay-chips">
+      <span>Bank transfer</span>
+      <span>Cash on delivery</span>
+      <span>Order on WhatsApp</span>
+      <span>Nationwide delivery</span>
+    </div>
     <div class="footer-bottom">
       <span>&copy; <span data-year>2026</span> That Furniture Girl. All rights reserved.</span>
       <span>Prices are for the pieces as photographed · Creative direction @justBlairsin</span>
@@ -499,6 +700,17 @@
   <span>Order on WhatsApp</span>
 </a>
 
+<!-- search overlay ------------------------------------------------------- -->
+<div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Search pieces">
+  <div class="search-panel__inner">
+    <div class="search-panel__bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      <input type="text" placeholder="Search sofas, wardrobes, tables…" aria-label="Search pieces">
+      <button class="search-panel__close" type="button" aria-label="Close search">&times;</button>
+    </div>
+    <div class="search-panel__results"></div>
+  </div>
+</div>
 <div class="modal" id="productModal" aria-live="polite"></div>
 <noscript><div class="container" style="padding:24px 0"><p>This site works best with JavaScript on. You can still reach us on WhatsApp at <a href="https://wa.me/2349079849626">0907 984 9626</a>.</p></div></noscript>
 <script src="assets/js/products.js"></script>
