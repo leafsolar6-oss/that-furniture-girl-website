@@ -234,6 +234,22 @@ Button) can be bolted on later without redesigning anything.
 
 ---
 
+## Designing it in Figma
+
+The `figma/` folder is a handoff kit generated from this code, so a designer (or an
+AI design agent) can work in Figma without guessing:
+
+- `figma/design-system.svg` — every colour, text style, radius, shadow, button,
+  badge and the product-card anatomy, as editable vector layers.
+- `figma/page-blueprints.svg` — all four pages at 1:4 with the real section
+  heights, background, grid columns and card counts, plus a section index and a
+  component inventory.
+- `figma/tokens.json` — the same tokens in design-token format (Tokens Studio import).
+- `figma/README.md` — import steps, the agent brief, and the rules the design keeps.
+
+The tokens are parsed from `:root` in `assets/css/style.css`, so change the CSS and
+re-run `python3 figma/make_tokens.py` to keep Figma and the site in step.
+
 ## Nice next steps
 
 1. Shoot a few fresh lifestyle photos with the furniture in customers' homes.
