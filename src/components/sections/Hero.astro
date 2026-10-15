@@ -47,7 +47,8 @@ const firstPrice = priceInfo(first);
                  data-badge={p.badge || categoryLabel(p.cat)}
                  aria-label={`${p.name} — order on WhatsApp`}>
                 <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours} by ${CONFIG.brand}`}
-                     loading={i === 0 ? 'eager' : 'lazy'} width="900" height="1125">
+                     loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
+                     width="900" height="1125">
               </a>
             );
           })}
@@ -67,6 +68,7 @@ const firstPrice = priceInfo(first);
         </button>
 
         <div class="hero__dots" id="heroDots"></div>
+        <span class="hero__progress" aria-hidden="true"><i></i></span>
       </div>
 
     </div>

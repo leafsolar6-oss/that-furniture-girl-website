@@ -275,6 +275,7 @@ function wireHero() {
     if (name) name.textContent = slide.dataset.name;
     if (price) price.textContent = slide.dataset.price;
     if (badge) badge.textContent = slide.dataset.badge;
+    restartBar();
   }
 
   $$('[data-hero]').forEach((b) => {
@@ -293,12 +294,27 @@ function wireHero() {
   const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Autoplay cadence: was 6000ms, now 1.5x faster (6000 / 1.5 = 4000ms). */
   const AUTOPLAY_MS = 4000;
+  /* Progress hairline: restarts its CSS animation in lockstep with every slide
+     change so the fill always matches the 4s rotation. */
+  const bar = panel.querySelector('.hero__progress i');
+  function restartBar() {
+    if (!bar) return;
+    if (reduced || nodes.length < 2) { bar.style.animation = 'none'; return; }
+    bar.style.animation = 'none';
+    void bar.offsetWidth;
+    bar.style.animation = '';
+    bar.style.animationPlayState = 'running';
+  }
   function restart() {
     if (timer) clearInterval(timer);
     if (reduced || nodes.length < 2) return;
     timer = setInterval(() => show(at + 1), AUTOPLAY_MS);
+    restartBar();
   }
-  panel.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+  panel.addEventListener('mouseenter', () => {
+    if (timer) clearInterval(timer);
+    if (bar) bar.style.animationPlayState = 'paused';
+  });
   panel.addEventListener('mouseleave', restart);
   show(0);
   restart();

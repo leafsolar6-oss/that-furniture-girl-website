@@ -678,7 +678,7 @@
   line-height: 1.04; letter-spacing: -.03em;
 }
 .page-head__sub {
-  max-width: 46rem; margin: 12px 0 0;
+  max-width: 38rem; margin: 12px 0 0;
   color: var(--muted); font-size: clamp(15px, 1.5vw, 16.5px); line-height: 1.6;
 }
 .page-head__sub b { color: var(--ink); font-weight: 700; }
@@ -703,7 +703,7 @@
   padding: clamp(22px, 3vw, 40px);
 }
 .page-cta__box h2 { margin: 0 0 8px; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -.02em; }
-.page-cta__box p { margin: 0; max-width: 38rem; color: var(--muted); line-height: 1.6; }
+.page-cta__box p { margin: 0; max-width: 34rem; color: var(--muted); line-height: 1.6; }
 .page-cta__note {
   margin: 18px 0 0; text-align: center;
   color: var(--muted-2); font-size: 13.5px;
@@ -730,7 +730,7 @@
   --ink:       #141312;
   --ink-soft:  #3A3733;
   --muted:     #6E6862;
-  --muted-2:   #98918A;
+  --muted-2:   #706A64;
   --line:      #E7DFD3;
   --line-soft: #F0EAE0;
   --gold-soft: #F7EEDD;
@@ -1055,3 +1055,28 @@ body::after {
 /* stamp + numeral sit on the mat, not the glass */
 .product-card__badge { top: 18px; right: 16px; }
 .product-card__media::after { left: 8px; bottom: 0; }
+
+/* ==========================================================================
+   EXPERT REVIEW PASS 2026-10-15
+   B — WCAG 2.2 SC 2.5.8: pointer targets >= 24x24 CSS px, visuals unchanged.
+   D — NN/g carousel predictability: 4s gold hairline fills per slide, synced
+       by site.js (restarts on every slide change), pauses with hover, and is
+       hidden under prefers-reduced-motion.
+   ========================================================================== */
+.product-card__chat,
+.product-card__details { padding-block: 6px; margin-block: -6px; }
+.hero__dots button { position: relative; }
+.hero__dots button::after { content: ""; position: absolute; inset: -9px; }
+
+.hero__progress {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  z-index: 4; pointer-events: none; overflow: hidden;
+}
+.hero__progress i {
+  display: block; height: 100%; width: 100%;
+  transform: scaleX(0); transform-origin: 0 50%;
+  background: linear-gradient(90deg, rgba(206,154,67,.45), var(--gold));
+  animation: heroProgress 4000ms linear infinite; /* keep in sync with AUTOPLAY_MS */
+}
+@keyframes heroProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .hero__progress { display: none; } }
