@@ -993,3 +993,16 @@ body::after {
   text-decoration: underline; text-underline-offset: 3px;
 }
 .product-card__details:hover { color: var(--gold-dark); }
+
+/* ==========================================================================
+   SQUARE FRAMES — every picture frame is a right-angled square/rectangle.
+   (Overrides the Atelier arches on cards, hero plate, workshop & showroom.)
+   ========================================================================== */
+.hero__panel,
+.product-card__media,
+.product-card::before,
+.split__media img,
+.split__media-second,
+.split__media--single img {
+  border-radius: 0;
+}
