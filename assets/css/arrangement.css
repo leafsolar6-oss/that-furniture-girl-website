@@ -1211,10 +1211,10 @@ body::after {
    and returned to every picture as a translucent white seal.
    ========================================================================== */
 .wm {
-  width: clamp(92px, 10vw, 140px);
-  aspect-ratio: 964 / 870;
-  background: url("../img/wm.png") center / contain no-repeat;
-  opacity: .92;
+  width: clamp(100px, 11vw, 150px);
+  aspect-ratio: 968 / 874;
+  background: url("../img/wm.png?v=2") center / contain no-repeat;
+  opacity: .95;
   filter: drop-shadow(0 1px 5px rgba(20,19,18,.5));
   font-size: 0;
 }
