@@ -1204,3 +1204,17 @@ body::after {
 .wm--hero { right: auto; left: 14px; top: 14px; bottom: auto; }
 .wm--w1 { right: auto; left: 12px; bottom: 12px; }
 .wm--w2 { bottom: -26px; }
+
+/* ==========================================================================
+   LOGO WATERMARK 2026-10-15 — the owner's own lockup (chair mark,
+   blackletter name, script tagline, phone line) extracted from her photo
+   and returned to every picture as a translucent white seal.
+   ========================================================================== */
+.wm {
+  width: clamp(92px, 10vw, 140px);
+  aspect-ratio: 964 / 870;
+  background: url("../img/wm.png") center / contain no-repeat;
+  opacity: .92;
+  filter: drop-shadow(0 1px 5px rgba(20,19,18,.5));
+  font-size: 0;
+}
