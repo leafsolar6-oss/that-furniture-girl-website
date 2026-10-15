@@ -369,7 +369,7 @@ function wireSearch() {
 /* ---------- stats count-up ------------------------------------------------ */
 
 function wireStats() {
-  const nums = $$('[data-count]');
+  const nums = $$('.stats-band [data-count]'); /* scoped: the grid container also carries data-count */
   if (!nums.length) return;
   const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced || !('IntersectionObserver' in window)) return; /* leave final figures */
