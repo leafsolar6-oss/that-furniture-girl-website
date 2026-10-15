@@ -234,6 +234,23 @@ Button) can be bolted on later without redesigning anything.
 
 ---
 
+## The page arrangement
+
+The layout follows the modern Nigerian furniture-store arrangement the client
+sent as a reference (cream page, gold primary CTA, green WhatsApp buttons,
+pill controls, 4-up product grid, floating price cards):
+
+- `assets/css/arrangement.css` holds everything for that arrangement — pills,
+  hero panel, filter toolbar, product card, 4-up grid and the cream footer.
+  It loads after `style.css`, so editing `style.css` still works underneath.
+- The hero is a real slider: photos and prices come from `products.js`, arrows
+  and dots are keyboard- and mouse-friendly, and it pauses on hover.
+- The filter toolbar (`search` + price range + grid/list toggle + category
+  tabs) is wired once in `main.js` (`wireFilters`) and works on both the home
+  page grid and the shop grid.
+- Honesty rules still apply: no countdowns, no fake discounts, no star
+  ratings, no invented review counts. Every stat is a real TikTok figure.
+
 ## Designing it in Figma
 
 The `figma/` folder is a handoff kit generated from this code, so a designer (or an

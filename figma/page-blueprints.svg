@@ -1,311 +1,319 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3362" viewBox="0 0 1600 3362"><rect width="1600" height="3362" fill="#FFFFFF"/><rect x="0.0" y="0.0" width="1600.0" height="150.0" fill="#004B1F" />
-<rect x="66.8" y="42.0" width="34.0" height="34.0" rx="11" fill="#FFB600" />
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3378" viewBox="0 0 1600 3378"><rect width="1600" height="3378" fill="#FFFFFF"/><rect x="0.0" y="0.0" width="1600.0" height="150.0" fill="#004B1F" />
+<rect x="66.8" y="42.0" width="34.0" height="34.0" rx="11" fill="#CE9A43" />
 <text x="114.8" y="68.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="23" font-weight="800" fill="#FFFFFF" text-anchor="start" letter-spacing="-0.6">That Furniture Girl — page blueprints</text>
 <text x="114.8" y="92.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" fill="#CFE0D6" text-anchor="start">All four pages at 1440 px, drawn at 1:4. Section order, heights, background and card counts measured from the live site, not sketched.</text>
-<text x="114.8" y="112.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#FFB600" text-anchor="start">Not drawn on purpose: #reviews sits in the markup but stays hidden until real customer reviews exist. No fake ratings, discounts or countdowns anywhere.</text>
-<text x="1533.2" y="58.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="800" fill="#FFB600" text-anchor="end" letter-spacing="1.2">FIGMA BLUEPRINT</text>
+<text x="114.8" y="112.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#CE9A43" text-anchor="start">Not drawn on purpose: #reviews sits in the markup but stays hidden until real customer reviews exist. No fake ratings, discounts or countdowns anywhere.</text>
+<text x="1533.2" y="58.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="800" fill="#CE9A43" text-anchor="end" letter-spacing="1.2">FIGMA BLUEPRINT</text>
 <text x="1533.2" y="76.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#CFE0D6" text-anchor="end">Import: drag onto the canvas</text>
 <text x="1533.2" y="90.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#CFE0D6" text-anchor="end">then right-click → Ungroup</text>
 <text x="1533.2" y="104.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#CFE0D6" text-anchor="end">Scale 1 px = 4 px</text>
-<text x="66.8" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="-0.4">Home</text>
-<text x="66.8" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#6E736E" text-anchor="start">index.html  ·  1440 px wide  ·  drawn 1:4</text>
-<rect x="66.8" y="214.0" width="345.6" height="2956.1" rx="6" fill="#FFFFFF" stroke="#EFEFEF" stroke-width="1" />
-<rect x="66.8" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">01</text>
-<text x="90.8" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Sticky header — logo, nav, search, WhatsApp</text>
-<text x="90.8" y="238.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">button</text>
-<rect x="66.8" y="232.0" width="345.6" height="174.0" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">02</text>
-<text x="90.8" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Hero — 2-col: copy + photo collage</text>
-<rect x="75.8" y="352.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="242.1" y="352.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="75.8" y="377.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="406.0" width="345.6" height="58.3" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="419.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">03</text>
-<text x="90.8" y="419.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Same-day delivery strip</text>
-<rect x="90.8" y="448.3" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="454.3" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="464.3" width="345.6" height="200.4" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="477.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">04</text>
-<text x="90.8" y="477.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Categories — 3 tiles (sofas / sets / tables)</text>
-<rect x="75.8" y="610.7" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="242.1" y="610.7" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="75.8" y="635.7" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="664.7" width="345.6" height="427.7" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="677.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">05</text>
-<text x="90.8" y="677.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">#collection — filter chips + 3-col product</text>
-<text x="90.8" y="688.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">grid, 2 rows</text>
-<rect x="75.8" y="1038.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="186.7" y="1038.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="297.5" y="1038.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="75.8" y="1063.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="186.7" y="1063.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="297.5" y="1063.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="1092.4" width="345.6" height="139.7" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1105.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">06</text>
-<text x="90.8" y="1105.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Ready right now — stock in the showroom</text>
-<rect x="90.8" y="1216.1" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="1222.1" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="1232.1" width="345.6" height="169.0" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1245.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">07</text>
-<text x="90.8" y="1245.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">This week&#x27;s two favourites — 2-up deal cards</text>
-<rect x="75.8" y="1372.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="242.1" y="1372.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="1401.0" width="345.6" height="89.3" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1414.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">08</text>
-<text x="90.8" y="1414.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Promo pair — sofas + wardrobes (2 cards)</text>
-<rect x="75.8" y="1461.3" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="242.1" y="1461.3" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="1490.3" width="345.6" height="169.7" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1503.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">09</text>
-<text x="90.8" y="1503.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">The Royal Kinging Set — signature build</text>
-<text x="90.8" y="1514.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">(ink)</text>
-<rect x="90.8" y="1644.0" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="90.8" y="1650.0" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="66.8" y="1660.0" width="345.6" height="206.2" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1673.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">10</text>
-<text x="90.8" y="1673.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#2E352F" text-anchor="start">#custom — tell us the look, we build it</text>
-<text x="90.8" y="1684.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#2E352F" text-anchor="start">(white)</text>
-<rect x="90.8" y="1850.2" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="1856.2" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="1866.2" width="345.6" height="151.4" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="1879.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">11</text>
-<text x="90.8" y="1879.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">How it works — 4 numbered steps</text>
-<rect x="75.8" y="1988.6" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="159.0" y="1988.6" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="242.1" y="1988.6" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="325.3" y="1988.6" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="2017.6" width="345.6" height="151.7" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2030.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">12</text>
-<text x="90.8" y="2030.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Loved on TikTok — 191 videos (ink)</text>
-<rect x="90.8" y="2153.3" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="90.8" y="2159.3" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="66.8" y="2169.3" width="345.6" height="232.1" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2182.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">13</text>
-<text x="90.8" y="2182.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Guides &amp; stories — 3-up article cards</text>
-<rect x="75.8" y="2372.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="186.7" y="2372.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="297.5" y="2372.4" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="2401.4" width="345.6" height="137.8" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2414.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">14</text>
-<text x="90.8" y="2414.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Instagram — 5-up real photo grid</text>
-<rect x="75.8" y="2510.1" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="142.3" y="2510.1" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="208.8" y="2510.1" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="275.4" y="2510.1" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="341.9" y="2510.1" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="66.8" y="2539.1" width="345.6" height="220.8" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2552.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">15</text>
-<text x="90.8" y="2552.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">FAQs — accordion + green ask card</text>
-<rect x="90.8" y="2743.9" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="2749.9" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="2759.9" width="345.6" height="135.4" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2772.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">16</text>
-<text x="90.8" y="2772.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Newsletter — hands off to WhatsApp</text>
-<rect x="90.8" y="2879.3" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="2885.3" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="2895.3" width="345.6" height="130.1" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="2908.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">17</text>
-<text x="90.8" y="2908.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Come and see — showroom / contact card</text>
-<rect x="90.8" y="3009.4" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="90.8" y="3015.4" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="66.8" y="3025.4" width="345.6" height="144.7" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="75.8" y="3038.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">18</text>
-<text x="90.8" y="3038.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Footer — 4 columns, dark green</text>
-<rect x="90.8" y="3154.1" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="90.8" y="3160.1" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<text x="66.8" y="3186.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#6E736E" text-anchor="start">12 317 px tall  ·  18 sections</text>
-<text x="440.4" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="-0.4">Shop</text>
-<text x="440.4" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#6E736E" text-anchor="start">shop.html  ·  1440 px wide  ·  drawn 1:4</text>
-<rect x="440.4" y="214.0" width="345.6" height="1113.8" rx="6" fill="#FFFFFF" stroke="#EFEFEF" stroke-width="1" />
-<rect x="440.4" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">01</text>
+<text x="66.8" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="-0.4">Home</text>
+<text x="66.8" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#515659" text-anchor="start">index.html  ·  1440 px wide  ·  drawn 1:4</text>
+<rect x="66.8" y="214.0" width="345.6" height="2972.2" rx="6" fill="#FFFFFF" stroke="#EFEAE0" stroke-width="1" />
+<rect x="66.8" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">01</text>
+<text x="90.8" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Sticky header — logo, nav, search, gold</text>
+<text x="90.8" y="238.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">WhatsApp pill</text>
+<rect x="66.8" y="232.0" width="345.6" height="188.6" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">02</text>
+<text x="90.8" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Hero — 2-col: copy + 3 real stats | photo</text>
+<text x="90.8" y="256.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">panel with chips</text>
+<rect x="90.8" y="404.6" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="410.6" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="420.6" width="345.6" height="58.3" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="433.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">03</text>
+<text x="90.8" y="433.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Same-day delivery strip — 3 points</text>
+<rect x="90.8" y="463.0" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="469.0" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="479.0" width="345.6" height="200.4" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="492.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">04</text>
+<text x="90.8" y="492.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Category showcase — 3 tiles (sofas / sets /</text>
+<text x="90.8" y="503.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">tables)</text>
+<rect x="75.8" y="625.4" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="625.4" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="75.8" y="650.4" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="679.4" width="345.6" height="403.7" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="692.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">05</text>
+<text x="90.8" y="692.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">#collection — Trending pieces: gold tabs,</text>
+<text x="90.8" y="703.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">search, price, view toggle + 4-up grid</text>
+<rect x="75.8" y="1029.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="159.0" y="1029.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="1029.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="325.3" y="1029.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="75.8" y="1054.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="159.0" y="1054.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="1054.0" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="1083.0" width="345.6" height="139.7" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1096.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">06</text>
+<text x="90.8" y="1096.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Ready right now — what is finished in the</text>
+<text x="90.8" y="1107.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">showroom</text>
+<rect x="90.8" y="1206.7" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="1212.7" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="1222.7" width="345.6" height="169.0" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1235.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">07</text>
+<text x="90.8" y="1235.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">This week&#x27;s two favourites — 2-up deal cards</text>
+<rect x="75.8" y="1362.7" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="1362.7" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="1391.7" width="345.6" height="89.3" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1404.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">08</text>
+<text x="90.8" y="1404.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Promo pair — sofas + wardrobes (2 cards)</text>
+<rect x="75.8" y="1452.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="1452.0" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="1481.0" width="345.6" height="169.7" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1494.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">09</text>
+<text x="90.8" y="1494.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">The Royal Kinging Set — signature build</text>
+<text x="90.8" y="1505.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">(ink)</text>
+<rect x="90.8" y="1634.6" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="90.8" y="1640.6" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="66.8" y="1650.6" width="345.6" height="206.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1663.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">10</text>
+<text x="90.8" y="1663.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">#custom — tell us the look, we build it</text>
+<text x="90.8" y="1674.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">(surface)</text>
+<rect x="90.8" y="1840.8" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="1846.8" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="1856.8" width="345.6" height="151.4" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="1869.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">11</text>
+<text x="90.8" y="1869.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">How it works — 4 numbered steps</text>
+<rect x="75.8" y="1979.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="159.0" y="1979.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="242.1" y="1979.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="325.3" y="1979.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="2008.2" width="345.6" height="195.6" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2021.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">12</text>
+<text x="90.8" y="2021.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Loved on TikTok — 191 videos (ink)</text>
+<rect x="90.8" y="2187.8" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="90.8" y="2193.8" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="66.8" y="2203.8" width="345.6" height="232.1" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2216.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">13</text>
+<text x="90.8" y="2216.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Guides &amp; stories — 3-up article cards</text>
+<rect x="75.8" y="2406.9" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="186.7" y="2406.9" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="297.5" y="2406.9" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="2435.9" width="345.6" height="137.8" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2448.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">14</text>
+<text x="90.8" y="2448.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Instagram — 5-up real photo grid</text>
+<rect x="75.8" y="2544.7" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="142.3" y="2544.7" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="208.8" y="2544.7" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="275.4" y="2544.7" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="341.9" y="2544.7" width="61.5" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="66.8" y="2573.7" width="345.6" height="220.8" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2586.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">15</text>
+<text x="90.8" y="2586.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">FAQs — accordion + green ask card</text>
+<rect x="90.8" y="2778.5" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="2784.5" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="2794.5" width="345.6" height="135.4" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2807.5" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">16</text>
+<text x="90.8" y="2807.5" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Newsletter — hands off to WhatsApp</text>
+<rect x="90.8" y="2913.8" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="2919.8" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="2929.8" width="345.6" height="130.1" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="2942.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">17</text>
+<text x="90.8" y="2942.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Come and see — showroom / contact card</text>
+<rect x="90.8" y="3043.9" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="3049.9" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="66.8" y="3059.9" width="345.6" height="126.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="75.8" y="3072.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">18</text>
+<text x="90.8" y="3072.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Footer — cream, 4 columns, contact rows,</text>
+<text x="90.8" y="3083.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">chips</text>
+<rect x="90.8" y="3170.2" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="90.8" y="3176.2" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<text x="66.8" y="3202.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#515659" text-anchor="start">12 384 px tall  ·  18 sections</text>
+<text x="440.4" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="-0.4">Shop</text>
+<text x="440.4" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#515659" text-anchor="start">shop.html  ·  1440 px wide  ·  drawn 1:4</text>
+<rect x="440.4" y="214.0" width="345.6" height="974.9" rx="6" fill="#FFFFFF" stroke="#EFEAE0" stroke-width="1" />
+<rect x="440.4" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">01</text>
 <text x="464.4" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Sticky header</text>
-<rect x="440.4" y="232.0" width="345.6" height="84.0" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">02</text>
+<rect x="440.4" y="232.0" width="345.6" height="84.0" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">02</text>
 <text x="464.4" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Page hero — The collection</text>
 <rect x="464.4" y="300.0" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="464.4" y="306.0" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="440.4" y="316.0" width="345.6" height="444.7" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="329.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">03</text>
-<text x="464.4" y="329.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Shop grid — 8 cards, 3-col, chips</text>
-<rect x="449.4" y="681.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="560.3" y="681.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="671.1" y="681.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="449.4" y="706.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="560.3" y="706.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="671.1" y="706.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="449.4" y="731.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="560.3" y="731.7" width="105.9" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="440.4" y="760.7" width="345.6" height="189.6" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="773.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">04</text>
-<text x="464.4" y="773.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#2E352F" text-anchor="start">If you can picture it (sand)</text>
-<rect x="464.4" y="934.3" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="464.4" y="940.3" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="440.4" y="950.3" width="345.6" height="154.8" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="963.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">05</text>
-<text x="464.4" y="963.3" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Before you order — FAQ</text>
-<rect x="464.4" y="1089.1" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="464.4" y="1095.1" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="440.4" y="1105.1" width="345.6" height="78.0" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="1118.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">06</text>
-<text x="464.4" y="1118.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">CTA band (ink)</text>
-<rect x="464.4" y="1167.1" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="464.4" y="1173.1" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="440.4" y="1183.1" width="345.6" height="144.7" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="449.4" y="1196.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">07</text>
-<text x="464.4" y="1196.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Footer — 4 columns</text>
-<rect x="464.4" y="1311.8" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="464.4" y="1317.8" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<text x="440.4" y="1343.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#6E736E" text-anchor="start">4 641 px tall  ·  7 sections</text>
-<text x="814.0" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="-0.4">About</text>
-<text x="814.0" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#6E736E" text-anchor="start">about.html  ·  1440 px wide  ·  drawn 1:4</text>
-<rect x="814.0" y="214.0" width="345.6" height="1153.0" rx="6" fill="#FFFFFF" stroke="#EFEFEF" stroke-width="1" />
-<rect x="814.0" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">01</text>
+<rect x="440.4" y="316.0" width="345.6" height="324.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="329.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">03</text>
+<text x="464.4" y="329.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">All pieces — same toolbar + 4-up grid, 8</text>
+<text x="464.4" y="340.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">cards</text>
+<rect x="449.4" y="586.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="532.6" y="586.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="615.7" y="586.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="698.9" y="586.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="449.4" y="611.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="532.6" y="611.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="615.7" y="611.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="698.9" y="611.2" width="78.1" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="440.4" y="640.2" width="345.6" height="189.6" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="653.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">04</text>
+<text x="464.4" y="653.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">If you can picture it (surface)</text>
+<rect x="464.4" y="813.8" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="464.4" y="819.8" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="440.4" y="829.8" width="345.6" height="154.8" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="842.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">05</text>
+<text x="464.4" y="842.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Before you order — FAQ</text>
+<rect x="464.4" y="968.6" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="464.4" y="974.6" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="440.4" y="984.6" width="345.6" height="78.0" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="997.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">06</text>
+<text x="464.4" y="997.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">CTA band (ink)</text>
+<rect x="464.4" y="1046.6" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="464.4" y="1052.6" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="440.4" y="1062.6" width="345.6" height="126.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="449.4" y="1075.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">07</text>
+<text x="464.4" y="1075.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Footer — cream, 4 columns</text>
+<rect x="464.4" y="1172.9" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="464.4" y="1178.9" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<text x="440.4" y="1204.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#515659" text-anchor="start">4 062 px tall  ·  7 sections</text>
+<text x="814.0" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="-0.4">About</text>
+<text x="814.0" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#515659" text-anchor="start">about.html  ·  1440 px wide  ·  drawn 1:4</text>
+<rect x="814.0" y="214.0" width="345.6" height="1188.2" rx="6" fill="#FFFFFF" stroke="#EFEAE0" stroke-width="1" />
+<rect x="814.0" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">01</text>
 <text x="838.0" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Sticky header</text>
-<rect x="814.0" y="232.0" width="345.6" height="117.8" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">02</text>
+<rect x="814.0" y="232.0" width="345.6" height="117.8" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">02</text>
 <text x="838.0" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Page hero — ink + photo</text>
 <rect x="838.0" y="333.8" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
 <rect x="838.0" y="339.8" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="814.0" y="349.8" width="345.6" height="178.1" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="362.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">03</text>
+<rect x="814.0" y="349.8" width="345.6" height="178.1" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="362.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">03</text>
 <text x="838.0" y="362.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">How it started — story</text>
 <rect x="838.0" y="511.9" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="838.0" y="517.9" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="814.0" y="527.9" width="345.6" height="212.2" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="540.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">04</text>
-<text x="838.0" y="540.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#2E352F" text-anchor="start">What we stand for (sand)</text>
+<rect x="814.0" y="527.9" width="345.6" height="212.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="540.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">04</text>
+<text x="838.0" y="540.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">What we stand for (surface)</text>
 <rect x="838.0" y="724.1" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="838.0" y="730.1" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="814.0" y="740.1" width="345.6" height="206.2" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="753.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">05</text>
+<rect x="814.0" y="740.1" width="345.6" height="206.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="753.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">05</text>
 <text x="838.0" y="753.1" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">The craft — what goes into a piece</text>
 <rect x="838.0" y="930.2" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="838.0" y="936.2" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="814.0" y="946.2" width="345.6" height="185.8" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="959.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">06</text>
+<rect x="814.0" y="946.2" width="345.6" height="239.5" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="959.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">06</text>
 <text x="838.0" y="959.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Why customers stay — quote (ink)</text>
-<rect x="838.0" y="1116.0" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="838.0" y="1122.0" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="814.0" y="1132.0" width="345.6" height="90.2" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="1145.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">07</text>
-<text x="838.0" y="1145.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">CTA band (ink)</text>
-<rect x="838.0" y="1206.2" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="838.0" y="1212.2" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="814.0" y="1222.2" width="345.6" height="144.7" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="823.0" y="1235.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">08</text>
-<text x="838.0" y="1235.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Footer — 4 columns</text>
-<rect x="838.0" y="1351.0" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="838.0" y="1357.0" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<text x="814.0" y="1383.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#6E736E" text-anchor="start">4 804 px tall  ·  8 sections</text>
-<text x="1187.6" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="-0.4">Contact</text>
-<text x="1187.6" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#6E736E" text-anchor="start">contact.html  ·  1440 px wide  ·  drawn 1:4</text>
-<rect x="1187.6" y="214.0" width="345.6" height="1057.9" rx="6" fill="#FFFFFF" stroke="#EFEFEF" stroke-width="1" />
-<rect x="1187.6" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">01</text>
+<rect x="838.0" y="1169.8" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="838.0" y="1175.8" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="814.0" y="1185.8" width="345.6" height="90.2" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="1198.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">07</text>
+<text x="838.0" y="1198.8" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">CTA band (ink)</text>
+<rect x="838.0" y="1260.0" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="838.0" y="1266.0" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
+<rect x="814.0" y="1276.0" width="345.6" height="126.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="823.0" y="1289.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">08</text>
+<text x="838.0" y="1289.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Footer — cream, 4 columns</text>
+<rect x="838.0" y="1386.2" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="838.0" y="1392.2" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<text x="814.0" y="1418.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#515659" text-anchor="start">4 951 px tall  ·  8 sections</text>
+<text x="1187.6" y="180.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="-0.4">Contact</text>
+<text x="1187.6" y="199.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#515659" text-anchor="start">contact.html  ·  1440 px wide  ·  drawn 1:4</text>
+<rect x="1187.6" y="214.0" width="345.6" height="1039.7" rx="6" fill="#FFFFFF" stroke="#EFEAE0" stroke-width="1" />
+<rect x="1187.6" y="214.0" width="345.6" height="18.0" rx="4" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">01</text>
 <text x="1211.6" y="227.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Sticky header</text>
-<rect x="1187.6" y="232.0" width="345.6" height="93.4" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">02</text>
+<rect x="1187.6" y="232.0" width="345.6" height="93.4" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">02</text>
 <text x="1211.6" y="245.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Page hero — Visit &amp; contact</text>
 <rect x="1211.6" y="309.4" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="1211.6" y="315.4" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="1187.6" y="325.4" width="345.6" height="290.9" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="338.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">03</text>
+<rect x="1187.6" y="325.4" width="345.6" height="290.9" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="338.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">03</text>
 <text x="1211.6" y="338.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Contact card + map + hours (3-col)</text>
 <rect x="1211.6" y="600.2" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="1211.6" y="606.2" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="1187.6" y="616.2" width="345.6" height="284.4" rx="4" fill="#F4F4F4" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="629.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">04</text>
+<rect x="1187.6" y="616.2" width="345.6" height="284.4" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="629.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">04</text>
 <text x="1211.6" y="629.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Ordering — 4 steps</text>
-<rect x="1196.6" y="846.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="1362.9" y="846.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="1196.6" y="871.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="1362.9" y="871.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.7" />
-<rect x="1187.6" y="900.6" width="345.6" height="148.8" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="913.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#6E736E" text-anchor="start">05</text>
-<text x="1211.6" y="913.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#2E352F" text-anchor="start">Quick answers (sand)</text>
+<rect x="1196.6" y="846.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="1362.9" y="846.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="1196.6" y="871.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="1362.9" y="871.6" width="161.3" height="20.0" rx="2.5" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="0.7" />
+<rect x="1187.6" y="900.6" width="345.6" height="148.8" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="913.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">05</text>
+<text x="1211.6" y="913.6" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Quick answers (surface)</text>
 <rect x="1211.6" y="1033.4" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
 <rect x="1211.6" y="1039.4" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
-<rect x="1187.6" y="1049.4" width="345.6" height="78.0" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="1062.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">06</text>
+<rect x="1187.6" y="1049.4" width="345.6" height="78.0" rx="4" fill="#004B1F" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="1062.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#CE9A43" text-anchor="start">06</text>
 <text x="1211.6" y="1062.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">CTA band (ink)</text>
 <rect x="1211.6" y="1111.4" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
 <rect x="1211.6" y="1117.4" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="1187.6" y="1127.4" width="345.6" height="144.5" rx="4" fill="#004B1F" stroke="#E5E5E5" stroke-width="0.8" />
-<text x="1196.6" y="1140.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#FFB600" text-anchor="start">07</text>
-<text x="1211.6" y="1140.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Footer — 4 columns</text>
-<rect x="1211.6" y="1255.9" width="214.3" height="2.4" rx="1.2" fill="#7FAE92" />
-<rect x="1211.6" y="1261.9" width="159.0" height="2.4" rx="1.2" fill="#7FAE92" />
-<text x="1187.6" y="1287.9" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#6E736E" text-anchor="start">4 408 px tall  ·  7 sections</text>
-<rect x="440.4" y="1413.0" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="456.4" y="1437.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Grid scale</text>
-<text x="456.4" y="1455.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">1 column  &lt; 560 px</text>
-<text x="456.4" y="1470.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">2 columns ≥ 560 px</text>
-<text x="456.4" y="1485.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">3 columns ≥ 900 px</text>
-<text x="456.4" y="1500.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">4 columns ≥ 1200 px</text>
-<rect x="718.1" y="1413.0" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="734.1" y="1437.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Container</text>
-<text x="734.1" y="1455.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">max 1280 px, centred</text>
-<text x="734.1" y="1470.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">gutter clamp(18px, 4vw, 56px)</text>
-<text x="734.1" y="1485.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">section-y clamp(56px, 8vw, 112px)</text>
-<text x="734.1" y="1500.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">card radius 20 px, pill 999 px</text>
-<rect x="995.8" y="1413.0" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="1011.8" y="1437.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Section colour</text>
-<text x="1011.8" y="1455.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">page background  #F4F4F4</text>
-<text x="1011.8" y="1470.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">surface / sand   #FFFFFF</text>
-<text x="1011.8" y="1485.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">ink band         #004B1F</text>
-<text x="1011.8" y="1500.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">accent           #FFB600</text>
-<rect x="1273.5" y="1413.0" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="1289.5" y="1437.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Rules we keep</text>
-<text x="1289.5" y="1455.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">ordering is WhatsApp only</text>
-<text x="1289.5" y="1470.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">no cart, no payment step</text>
-<text x="1289.5" y="1485.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">prices are real, no strike-through</text>
-<text x="1289.5" y="1500.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">her own photos, real copy only</text>
-<rect x="440.4" y="1541.0" width="1092.8" height="106.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="456.4" y="1565.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">How to use this file</text>
-<text x="456.4" y="1583.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">1.  Drop page-blueprints.svg onto a Figma page. Each page column is one frame — 345.6 px wide on the canvas, so scale by 4.1667 to work at real 1440 px.</text>
-<text x="456.4" y="1598.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">2.  Ungroup once, then ungroup a section to get its blocks. Use the design-system.svg file for the colours, type styles, buttons, badges and the product card.</text>
-<text x="456.4" y="1613.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">3.  Rebuild a section by drawing over its block, then name the frame with the CSS class in the label (e.g. .collection, .section--ink) so engineers can map design to code.</text>
-<text x="456.4" y="1628.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">4.  Keep the section order. Each page is already ordered the way the live site is, from sticky header to footer.</text>
-<rect x="440.4" y="1669.0" width="537.4" height="316.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="456.4" y="1693.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Home page section index (top to bottom)</text>
-<text x="456.4" y="1711.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">01   Sticky header   ·   logo, nav, search, WhatsApp button   ·   75 px</text>
-<text x="456.4" y="1726.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">02   Hero   ·   2-col: copy + photo collage   ·   725 px</text>
-<text x="456.4" y="1741.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">03   Same-day delivery strip   ·   243 px</text>
-<text x="456.4" y="1756.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">04   Categories   ·   3 tiles (sofas / sets / tables)   ·   835 px</text>
-<text x="456.4" y="1771.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">05   #collection   ·   filter chips + 3-col product grid, 2 rows   ·   1782 px</text>
-<text x="456.4" y="1786.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">06   Ready right now   ·   stock in the showroom   ·   582 px</text>
-<text x="456.4" y="1801.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">07   This week&#x27;s two favourites   ·   2-up deal cards   ·   704 px</text>
-<text x="456.4" y="1816.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">08   Promo pair   ·   sofas + wardrobes (2 cards)   ·   372 px</text>
-<text x="456.4" y="1831.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">09   The Royal Kinging Set   ·   signature build (ink)   ·   707 px</text>
-<text x="456.4" y="1846.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">10   #custom   ·   tell us the look, we build it (white)   ·   859 px</text>
-<text x="456.4" y="1861.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">11   How it works   ·   4 numbered steps   ·   631 px</text>
-<text x="456.4" y="1876.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">12   Loved on TikTok   ·   191 videos (ink)   ·   632 px</text>
-<text x="456.4" y="1891.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">13   Guides &amp; stories   ·   3-up article cards   ·   967 px</text>
-<text x="456.4" y="1906.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">14   Instagram   ·   5-up real photo grid   ·   574 px</text>
-<text x="456.4" y="1921.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">15   FAQs   ·   accordion + green ask card   ·   920 px</text>
-<text x="456.4" y="1936.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">16   Newsletter   ·   hands off to WhatsApp   ·   564 px</text>
-<text x="456.4" y="1951.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">17   Come and see   ·   showroom / contact card   ·   542 px</text>
-<text x="456.4" y="1966.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">18   Footer   ·   4 columns, dark green   ·   603 px</text>
-<rect x="995.8" y="1669.0" width="537.4" height="256.0" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1" />
-<text x="1011.8" y="1693.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#101410" text-anchor="start" letter-spacing="0.2">Component inventory (CSS class names)</text>
-<text x="1011.8" y="1711.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Product card        .product  (media, badges, tools, body, price, Order)</text>
-<text x="1011.8" y="1726.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Filter chip           .chip[aria-pressed]</text>
-<text x="1011.8" y="1741.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Buttons                .btn.btn--primary / --amber / --outline / --ghost / --light</text>
-<text x="1011.8" y="1756.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Badges                 .badge  (NEW, BEST SELLER, SIGNATURE, AVAILABLE NOW, READY NOW)</text>
-<text x="1011.8" y="1771.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Search overlay       .search-panel  ·  opens from [data-open-search]</text>
-<text x="1011.8" y="1786.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Quick view             .modal  ·  .modal.is-open  ·  .modal:empty hidden</text>
-<text x="1011.8" y="1801.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Deal / promo cards .deal  ·  .promo</text>
-<text x="1011.8" y="1816.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Quote card            .quote-card  (hidden while TFG_TESTIMONIALS is empty)</text>
-<text x="1011.8" y="1831.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Guide card            .post</text>
-<text x="1011.8" y="1846.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Instagram tile        .ig-tile  (real photos from her page)</text>
-<text x="1011.8" y="1861.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">FAQ item               .faq-item  ·  ask card  .faq-ask</text>
-<text x="1011.8" y="1876.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Step card              .step  (How it works, Ordering)</text>
-<text x="1011.8" y="1891.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Newsletter              #newsletterForm  ·  hands off to WhatsApp</text>
-<text x="1011.8" y="1906.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#6E736E" text-anchor="start">Sticky header        .site-header  ·  drawer, search, WhatsApp CTA</text>
-<rect x="0.0" y="3230.0" width="1600.0" height="132.0" fill="#101410" />
-<text x="66.8" y="3264.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Blueprint of the live site · That Furniture Girl, Iyaganku New GRA, Ibadan · WhatsApp 0907 984 9626</text>
-<text x="66.8" y="3284.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#9AA09A" text-anchor="start">Generated by figma/make_blueprint.py from measurements of index.html, shop.html, about.html and contact.html.</text>
-<text x="1533.2" y="3264.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFB600" text-anchor="end">github.com/leafsolar6-oss/that-furniture-girl-website</text></svg>
+<rect x="1187.6" y="1127.4" width="345.6" height="126.2" rx="4" fill="#F7F5EF" stroke="#E4DFD4" stroke-width="0.8" />
+<text x="1196.6" y="1140.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#515659" text-anchor="start">07</text>
+<text x="1211.6" y="1140.4" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#414741" text-anchor="start">Footer — cream, 4 columns</text>
+<rect x="1211.6" y="1237.7" width="214.3" height="2.4" rx="1.2" fill="#DDDDDD" />
+<rect x="1211.6" y="1243.7" width="159.0" height="2.4" rx="1.2" fill="#DDDDDD" />
+<text x="1187.6" y="1269.7" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#515659" text-anchor="start">4 332 px tall  ·  7 sections</text>
+<rect x="440.4" y="1448.2" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="456.4" y="1472.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Grid scale</text>
+<text x="456.4" y="1490.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">1 column  &lt; 560 px</text>
+<text x="456.4" y="1505.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">2 columns ≥ 560 px</text>
+<text x="456.4" y="1520.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">3 columns ≥ 900 px</text>
+<text x="456.4" y="1535.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">4 columns ≥ 1200 px</text>
+<rect x="718.1" y="1448.2" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="734.1" y="1472.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Container</text>
+<text x="734.1" y="1490.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">max 1280 px, centred</text>
+<text x="734.1" y="1505.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">gutter clamp(18px, 4vw, 56px)</text>
+<text x="734.1" y="1520.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">section-y clamp(56px, 8vw, 112px)</text>
+<text x="734.1" y="1535.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">card radius 20 px, pill 999 px</text>
+<rect x="995.8" y="1448.2" width="259.7" height="121.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="1011.8" y="1472.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Section colour</text>
+<text x="1011.8" y="1490.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">page background  #F7F5EF</text>
+<text x="1011.8" y="1505.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">surface / sand   #FFFFFF</text>
+<text x="1011.8" y="1520.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">ink band         #004B1F</text>
+<text x="1011.8" y="1535.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">gold accent      #CE9A43</text>
+<text x="1011.8" y="1550.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">WhatsApp green   #1FA34A</text>
+<rect x="1273.5" y="1448.2" width="259.7" height="106.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="1289.5" y="1472.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Rules we keep</text>
+<text x="1289.5" y="1490.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">ordering is WhatsApp only</text>
+<text x="1289.5" y="1505.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">no cart, no payment step</text>
+<text x="1289.5" y="1520.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">prices are real, no strike-through</text>
+<text x="1289.5" y="1535.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">her own photos, real copy only</text>
+<rect x="440.4" y="1591.2" width="1092.8" height="106.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="456.4" y="1615.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">How to use this file</text>
+<text x="456.4" y="1633.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">1.  Drop page-blueprints.svg onto a Figma page. Each page column is one frame — 345.6 px wide on the canvas, so scale by 4.1667 to work at real 1440 px.</text>
+<text x="456.4" y="1648.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">2.  Ungroup once, then ungroup a section to get its blocks. Use the design-system.svg file for the colours, type styles, buttons, badges and the product card.</text>
+<text x="456.4" y="1663.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">3.  Rebuild a section by drawing over its block, then name the frame with the CSS class in the label (e.g. .collection, .section--ink) so engineers can map design to code.</text>
+<text x="456.4" y="1678.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">4.  Keep the section order. Each page is already ordered the way the live site is, from sticky header to footer.</text>
+<rect x="440.4" y="1719.2" width="537.4" height="316.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="456.4" y="1743.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Home page section index (top to bottom)</text>
+<text x="456.4" y="1761.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">01   Sticky header   ·   logo, nav, search, gold WhatsApp pill   ·   75 px</text>
+<text x="456.4" y="1776.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">02   Hero   ·   2-col: copy + 3 real stats | photo panel with chips   ·   786 px</text>
+<text x="456.4" y="1791.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">03   Same-day delivery strip   ·   3 points   ·   243 px</text>
+<text x="456.4" y="1806.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">04   Category showcase   ·   3 tiles (sofas / sets / tables)   ·   835 px</text>
+<text x="456.4" y="1821.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">05   #collection   ·   Trending pieces: gold tabs, search, price, view toggle + 4-up grid   ·   1682 px</text>
+<text x="456.4" y="1836.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">06   Ready right now   ·   what is finished in the showroom   ·   582 px</text>
+<text x="456.4" y="1851.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">07   This week&#x27;s two favourites   ·   2-up deal cards   ·   704 px</text>
+<text x="456.4" y="1866.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">08   Promo pair   ·   sofas + wardrobes (2 cards)   ·   372 px</text>
+<text x="456.4" y="1881.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">09   The Royal Kinging Set   ·   signature build (ink)   ·   707 px</text>
+<text x="456.4" y="1896.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">10   #custom   ·   tell us the look, we build it (surface)   ·   859 px</text>
+<text x="456.4" y="1911.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">11   How it works   ·   4 numbered steps   ·   631 px</text>
+<text x="456.4" y="1926.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">12   Loved on TikTok   ·   191 videos (ink)   ·   815 px</text>
+<text x="456.4" y="1941.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">13   Guides &amp; stories   ·   3-up article cards   ·   967 px</text>
+<text x="456.4" y="1956.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">14   Instagram   ·   5-up real photo grid   ·   574 px</text>
+<text x="456.4" y="1971.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">15   FAQs   ·   accordion + green ask card   ·   920 px</text>
+<text x="456.4" y="1986.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">16   Newsletter   ·   hands off to WhatsApp   ·   564 px</text>
+<text x="456.4" y="2001.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">17   Come and see   ·   showroom / contact card   ·   542 px</text>
+<text x="456.4" y="2016.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">18   Footer   ·   cream, 4 columns, contact rows, chips   ·   526 px</text>
+<rect x="995.8" y="1719.2" width="537.4" height="286.0" rx="10" fill="#FFFFFF" stroke="#E4DFD4" stroke-width="1" />
+<text x="1011.8" y="1743.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0B0C0E" text-anchor="start" letter-spacing="0.2">Component inventory (CSS class names)</text>
+<text x="1011.8" y="1761.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Product card        .product  (media, badges, tools, body, price, Order)</text>
+<text x="1011.8" y="1776.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Filter chip           .chip[aria-pressed]</text>
+<text x="1011.8" y="1791.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Buttons                .btn.btn--primary / --amber / --outline / --ghost / --light</text>
+<text x="1011.8" y="1806.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Badges                 .badge  (NEW, BEST SELLER, SIGNATURE, AVAILABLE NOW, READY NOW)</text>
+<text x="1011.8" y="1821.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Search overlay       .search-panel  ·  opens from [data-open-search]</text>
+<text x="1011.8" y="1836.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Quick view             .modal  ·  .modal.is-open  ·  .modal:empty hidden</text>
+<text x="1011.8" y="1851.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Hero panel             .hero__panel  ·  slides, chips, arrows, dots</text>
+<text x="1011.8" y="1866.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Filter toolbar         .collection-top  ·  tabs + search + price + view toggle</text>
+<text x="1011.8" y="1881.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Deal / promo cards .deal  ·  .promo</text>
+<text x="1011.8" y="1896.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Quote card            .quote-card  (hidden while TFG_TESTIMONIALS is empty)</text>
+<text x="1011.8" y="1911.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Guide card            .post</text>
+<text x="1011.8" y="1926.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Instagram tile        .ig-tile  (real photos from her page)</text>
+<text x="1011.8" y="1941.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">FAQ item               .faq-item  ·  ask card  .faq-ask</text>
+<text x="1011.8" y="1956.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Step card              .step  (How it works, Ordering)</text>
+<text x="1011.8" y="1971.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Newsletter              #newsletterForm  ·  hands off to WhatsApp</text>
+<text x="1011.8" y="1986.2" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#515659" text-anchor="start">Sticky header        .site-header  ·  drawer, search, WhatsApp CTA</text>
+<rect x="0.0" y="3246.0" width="1600.0" height="132.0" fill="#0B0C0E" />
+<text x="66.8" y="3280.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF" text-anchor="start">Blueprint of the live site · That Furniture Girl, Iyaganku New GRA, Ibadan · WhatsApp 0907 984 9626</text>
+<text x="66.8" y="3300.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#9AA09A" text-anchor="start">Generated by figma/make_blueprint.py from measurements of index.html, shop.html, about.html and contact.html.</text>
+<text x="1533.2" y="3280.0" font-family="Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#CE9A43" text-anchor="end">github.com/leafsolar6-oss/that-furniture-girl-website</text></svg>

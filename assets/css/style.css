@@ -24,17 +24,25 @@
   --amber-dark:  #E0A000;
   --amber-soft:  #FFF3D4;
 
-  --ink:         #101410;
-  --ink-soft:    #2E352F;
-  --muted:       #6E736E;
-  --muted-2:     #9AA09A;
+  /* warm accents used on the cream pages (reference arrangement) */
+  --gold:        #CE9A43;
+  --gold-dark:   #B3832F;
+  --gold-soft:   #F7EEDD;
+  --wa:          #1FA34A;
+  --wa-dark:     #17863C;
+  --sand:        #F1ECE2;
 
-  --bg:          #F4F4F4;
-  --surface:     #FFFFFF;
-  --surface-2:   #F4F4F4;
-  --surface-3:   #EDEDED;
-  --line:        #E5E5E5;
-  --line-soft:   #EFEFEF;
+  --ink:         #0B0C0E;
+  --ink-soft:    #33383C;
+  --muted:       #515659;
+  --muted-2:     #8A8F93;
+
+  --bg:          #F7F5EF;
+  --surface:     #FDFBF9;
+  --surface-2:   #F1ECE2;
+  --surface-3:   #EDE7DB;
+  --line:        #E4DFD4;
+  --line-soft:   #EFEAE0;
 
   --cream:       #FFFFFF;
   --line-dark:   rgba(255,255,255,.18);

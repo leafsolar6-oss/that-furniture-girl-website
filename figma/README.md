@@ -6,9 +6,9 @@ mockup, so nothing here can drift from what customers actually see.
 
 | File | What it is | How to use it |
 |---|---|---|
-| `design-system.svg` | The full style sheet: 19 colours, type specimens, radius scale, shadows, buttons, badges, the product-card anatomy, layout and spacing rules. Every element is a real vector layer. | Drag onto a Figma page → right-click → **Ungroup**. Colour swatches, text and shapes become editable. |
+| `design-system.svg` | The full style sheet: colours, type specimens, radius scale, shadows, buttons, badges, the product-card anatomy, layout and spacing rules — plus a bottom band for the cream/gold arrangement (`--gold`, `--wa`, `--sand`, hero panel, filter toolbar). Every element is a real vector layer. | Drag onto a Figma page → right-click → **Ungroup**. Colour swatches, text and shapes become editable. |
 | `page-blueprints.svg` | All four pages side by side at 1:4, section by section, with real measurements (heights, background, grid columns, card counts), a section index, the component inventory and the rules we keep. | Drag in, ungroup, then rebuild any section on top of its block. Scale ×4.1667 to work at true 1440 px. |
-| `tokens.json` | The same tokens in W3C Design Tokens (DTCG) format, parsed straight out of `assets/css/style.css`. | In Figma: **Tokens Studio → Import → JSON**. Also readable by the Figma MCP server. |
+| `tokens.json` | The same tokens — 25 colours including `--gold`, `--wa`, `--sand` — in W3C Design Tokens (DTCG) format, parsed straight out of `assets/css/style.css`. | In Figma: **Tokens Studio → Import → JSON**. Also readable by the Figma MCP server. |
 | `make_tokens.py` | Regenerates `tokens.json` from `:root` in `assets/css/style.css`. | `python3 make_tokens.py` after any palette or spacing change. |
 | `make_blueprint.py` | Regenerates `page-blueprints.svg`. | `python3 make_blueprint.py` after any section is added or reordered. |
 

@@ -23,62 +23,62 @@ TOP = 214
 HEADER_H = 150
 FOOT_H = 132
 
-GREEN, GREEN_DARK, AMBER, AMBER_SOFT = "#004B1F", "#003716", "#FFB600", "#FFF3D4"
-BG, INK, MUTED, LINE, LINE_SOFT = "#F4F4F4", "#101410", "#6E736E", "#E5E5E5", "#EFEFEF"
+GREEN, GREEN_DARK, AMBER, AMBER_SOFT = "#004B1F", "#003716", "#CE9A43", "#F7EEDD"
+BG, INK, MUTED, LINE, LINE_SOFT = "#F7F5EF", "#0B0C0E", "#515659", "#E4DFD4", "#EFEAE0"
 
 FONT = "Plus Jakarta Sans, Inter, Helvetica Neue, Arial, sans-serif"
 
-# (number, label, pixel height, computed background, grid columns, card count)
+# (number, label, pixel height, computed background, grid columns, card count, chrome)
 HOME = [
-    ("Sticky header — logo, nav, search, WhatsApp button", 75, "rgba(244,244,244,0.88)", 0, 0, True),
-    ("Hero — 2-col: copy + photo collage", 725, BG, 2, 3, False),
-    ("Same-day delivery strip", 243, BG, 0, 0, False),
-    ("Categories — 3 tiles (sofas / sets / tables)", 835, BG, 2, 3, False),
-    ("#collection — filter chips + 3-col product grid, 2 rows", 1782, BG, 3, 6, False),
-    ("Ready right now — stock in the showroom", 582, BG, 2, 0, False),
+    ("Sticky header — logo, nav, search, gold WhatsApp pill", 75, "rgba(247,245,239,0.86)", 0, 0, True),
+    ("Hero — 2-col: copy + 3 real stats | photo panel with chips", 786, BG, 2, 0, False),
+    ("Same-day delivery strip — 3 points", 243, BG, 0, 0, False),
+    ("Category showcase — 3 tiles (sofas / sets / tables)", 835, BG, 2, 3, False),
+    ("#collection — Trending pieces: gold tabs, search, price, view toggle + 4-up grid", 1682, BG, 4, 7, False),
+    ("Ready right now — what is finished in the showroom", 582, BG, 2, 0, False),
     ("This week's two favourites — 2-up deal cards", 704, BG, 2, 2, False),
     ("Promo pair — sofas + wardrobes (2 cards)", 372, BG, 2, 2, False),
     ("The Royal Kinging Set — signature build (ink)", 707, GREEN, 2, 0, False),
-    ("#custom — tell us the look, we build it (white)", 859, "#FFFFFF", 2, 0, False),
+    ("#custom — tell us the look, we build it (surface)", 859, "#FDFBF9", 2, 0, False),
     ("How it works — 4 numbered steps", 631, BG, 4, 4, False),
-    ("Loved on TikTok — 191 videos (ink)", 632, GREEN, 0, 0, False),
+    ("Loved on TikTok — 191 videos (ink)", 815, GREEN, 3, 0, False),
     ("Guides & stories — 3-up article cards", 967, BG, 3, 3, False),
     ("Instagram — 5-up real photo grid", 574, BG, 5, 5, False),
     ("FAQs — accordion + green ask card", 920, BG, 2, 0, False),
     ("Newsletter — hands off to WhatsApp", 564, BG, 0, 0, False),
     ("Come and see — showroom / contact card", 542, BG, 0, 0, False),
-    ("Footer — 4 columns, dark green", 603, GREEN, 4, 0, False),
+    ("Footer — cream, 4 columns, contact rows, chips", 526, "#FDFBF9", 4, 0, False),
 ]
 
 SHOP = [
-    ("Sticky header", 75, "rgba(244,244,244,0.88)", 0, 0, True),
+    ("Sticky header", 75, "rgba(247,245,239,0.86)", 0, 0, True),
     ("Page hero — The collection", 350, BG, 0, 0, False),
-    ("Shop grid — 8 cards, 3-col, chips", 1853, BG, 3, 8, False),
-    ("If you can picture it (sand)", 790, "#FFFFFF", 2, 0, False),
+    ("All pieces — same toolbar + 4-up grid, 8 cards", 1351, BG, 4, 8, False),
+    ("If you can picture it (surface)", 790, "#FDFBF9", 2, 0, False),
     ("Before you order — FAQ", 645, BG, 2, 0, False),
     ("CTA band (ink)", 325, GREEN, 0, 0, False),
-    ("Footer — 4 columns", 603, GREEN, 4, 0, False),
+    ("Footer — cream, 4 columns", 526, "#FDFBF9", 4, 0, False),
 ]
 
 ABOUT = [
-    ("Sticky header", 75, "rgba(244,244,244,0.88)", 0, 0, True),
+    ("Sticky header", 75, "rgba(247,245,239,0.86)", 0, 0, True),
     ("Page hero — ink + photo", 491, GREEN, 0, 0, False),
     ("How it started — story", 742, BG, 2, 0, False),
-    ("What we stand for (sand)", 884, "#FFFFFF", 2, 0, False),
+    ("What we stand for (surface)", 884, "#FDFBF9", 2, 0, False),
     ("The craft — what goes into a piece", 859, BG, 2, 0, False),
-    ("Why customers stay — quote (ink)", 774, GREEN, 2, 0, False),
+    ("Why customers stay — quote (ink)", 998, GREEN, 2, 0, False),
     ("CTA band (ink)", 376, GREEN, 0, 0, False),
-    ("Footer — 4 columns", 603, GREEN, 4, 0, False),
+    ("Footer — cream, 4 columns", 526, "#FDFBF9", 4, 0, False),
 ]
 
 CONTACT = [
-    ("Sticky header", 75, "rgba(244,244,244,0.88)", 0, 0, True),
+    ("Sticky header", 75, "rgba(247,245,239,0.86)", 0, 0, True),
     ("Page hero — Visit & contact", 389, BG, 0, 0, False),
     ("Contact card + map + hours (3-col)", 1212, BG, 3, 0, False),
     ("Ordering — 4 steps", 1185, BG, 2, 4, False),
-    ("Quick answers (sand)", 620, "#FFFFFF", 2, 0, False),
+    ("Quick answers (surface)", 620, "#FDFBF9", 2, 0, False),
     ("CTA band (ink)", 325, GREEN, 0, 0, False),
-    ("Footer — 4 columns", 602, GREEN, 4, 0, False),
+    ("Footer — cream, 4 columns", 526, "#FDFBF9", 4, 0, False),
 ]
 
 PAGES = [("Home", "index.html", HOME), ("Shop", "shop.html", SHOP),
@@ -228,10 +228,11 @@ def build():
             "card radius 20 px, pill 999 px",
         ])
         p3, h3 = panel(px + 2 * (cw + 18), py, cw, "Section colour", [
-            "page background  #F4F4F4",
+            "page background  #F7F5EF",
             "surface / sand   #FFFFFF",
             "ink band         #004B1F",
-            "accent           #FFB600",
+            "gold accent      #CE9A43",
+            "WhatsApp green   #1FA34A",
         ])
         p4, h4 = panel(px + 3 * (cw + 18), py, cw, "Rules we keep", [
             "ordering is WhatsApp only",
@@ -263,6 +264,8 @@ def build():
             "Badges                 .badge  (NEW, BEST SELLER, SIGNATURE, AVAILABLE NOW, READY NOW)",
             "Search overlay       .search-panel  ·  opens from [data-open-search]",
             "Quick view             .modal  ·  .modal.is-open  ·  .modal:empty hidden",
+            "Hero panel             .hero__panel  ·  slides, chips, arrows, dots",
+            "Filter toolbar         .collection-top  ·  tabs + search + price + view toggle",
             "Deal / promo cards .deal  ·  .promo",
             "Quote card            .quote-card  (hidden while TFG_TESTIMONIALS is empty)",
             "Guide card            .post",

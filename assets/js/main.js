@@ -94,6 +94,7 @@
     return '' +
       '<article class="product reveal" data-delay="' + (delay || 0) + '" data-id="' + p.id + '">' +
         '<div class="product__media">' +
+          '<span class="product__label">' + catLabel(p.cat) + '</span>' +
           '<img src="' + imgSrc(p.img) + '" alt="' + p.name + ' — ' + (p.colours || 'handmade furniture') + '" loading="lazy" width="900" height="675">' +
           '<div class="badges">' + badges + '</div>' +
           '<div class="product__tools">' +
@@ -102,12 +103,11 @@
           '</div>' +
         '</div>' +
         '<div class="product__body">' +
-          '<span class="product__kicker">' + catLabel(p.cat) + '</span>' +
           '<h3 class="product__name">' + p.name + '</h3>' +
           '<p class="product__spec">' + specLine(p) + '</p>' +
           '<div class="product__foot">' +
             '<div class="price' + (p.price ? '' : ' price--ask') + '">' + priceHTML(p) + '</div>' +
-            '<a class="btn btn--primary btn--sm" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">' + ICONS.wa + '<span>Order</span></a>' +
+            '<a class="btn btn--wa btn--sm" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">' + ICONS.wa + '<span>Order</span></a>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -242,11 +242,37 @@
     /* Category chips wired to a grid. Used on the home page (a subset of
        pieces) and on the shop page (the whole catalogue). */
     function wireFilters(grid, filterBar, base) {
+      var section = (filterBar || grid).closest('.collection-top') || (filterBar || grid).closest('section') || document;
+      var search   = section.querySelector('[data-tool="search"]');
+      var range    = section.querySelector('[data-tool="range"]');
+      var rangeOut = section.querySelector('[data-tool="rangeout"]');
+      var viewBtns = section.querySelectorAll('[data-tool="grid"], [data-tool="list"]');
       var current = 'all';
+      var query = '';
+      var maxPrice = range ? Number(range.value) : Infinity;
+
+      function priceOf(p) { return p.priceTo ? p.priceTo : (p.price || 0); }
+
       function apply() {
         var list = current === 'all' ? base.slice() : base.filter(function (p) { return p.cat === current; });
+        if (query) {
+          list = list.filter(function (p) {
+            var hay = [p.name, p.colours, p.material, p.desc, catLabel(p.cat), p.sizes].join(' ').toLowerCase();
+            return hay.indexOf(query) !== -1;
+          });
+        }
+        if (isFinite(maxPrice)) {
+          list = list.filter(function (p) {
+            /* a price-on-request piece only shows at the full range */
+            return p.price ? priceOf(p) <= maxPrice : maxPrice >= Number(range.max);
+          });
+        }
         renderGrid(grid, list);
+        if (!list.length) {
+          grid.innerHTML = '<div class="empty-state">Nothing matches those filters. Try a wider price or a different word &mdash; or message us, we build to order.</div>';
+        }
       }
+
       if (filterBar) {
         filterBar.innerHTML = TFG_CATEGORIES.map(function (c, i) {
           return '<button class="chip" type="button" data-cat="' + c.key + '" aria-pressed="' + (i === 0 ? 'true' : 'false') + '">' + c.label + '</button>';
@@ -267,6 +293,32 @@
           if (match) { current = wanted; match.click(); return; }
         }
       }
+
+      if (search) {
+        search.addEventListener('input', function () { query = search.value.trim().toLowerCase(); apply(); });
+      }
+
+      if (range) {
+        var syncRange = function () {
+          maxPrice = Number(range.value);
+          if (rangeOut) rangeOut.textContent = fmt(maxPrice) + (maxPrice >= Number(range.max) ? '+' : '');
+        };
+        range.addEventListener('input', function () { syncRange(); apply(); });
+        syncRange();
+      }
+
+      Array.prototype.forEach.call(viewBtns, function (btn) {
+        btn.addEventListener('click', function () {
+          var list = btn.getAttribute('data-tool') === 'list';
+          grid.classList.toggle('is-list', list);
+          Array.prototype.forEach.call(viewBtns, function (b) {
+            var on = b === btn;
+            b.classList.toggle('is-on', on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+        });
+      });
+
       apply();
     }
 
@@ -408,6 +460,72 @@
       };
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+
+    /* ---------- hero slider (home page) ---------------------------------- */
+    var heroPanel = document.getElementById('heroPanel');
+    var heroSlides = document.getElementById('heroSlides');
+    if (heroPanel && heroSlides) {
+      var picks = TFG_PRODUCTS.filter(function (p) { return p.featured && p.img; }).slice(0, 5);
+      if (picks.length < 2) picks = TFG_PRODUCTS.filter(function (p) { return p.img; }).slice(0, 5);
+
+      heroSlides.innerHTML = picks.map(function (p, i) {
+        return '<a class="hero__slide' + (i === 0 ? ' is-on' : '') + '" href="' + waLink(orderMessage(p)) +
+               '" target="_blank" rel="noopener" aria-label="' + p.name + ' \u2014 order on WhatsApp">' +
+               '<img src="' + imgSrc(p.img) + '" alt="' + p.name + ' \u2014 ' + (p.colours || 'handmade furniture') +
+               ' by That Furniture Girl"' + (i ? ' loading="lazy"' : '') + ' width="900" height="1125"></a>';
+      }).join('');
+
+      var heroBadge = document.getElementById('heroBadge');
+      var heroName  = document.getElementById('heroName');
+      var heroPrice = document.getElementById('heroPrice');
+      var heroDots  = document.getElementById('heroDots');
+      var at = 0;
+
+      if (heroDots) {
+        heroDots.innerHTML = picks.map(function (p, i) {
+          return '<button type="button" class="' + (i === 0 ? 'is-on' : '') + '" data-slide="' + i +
+                 '" aria-label="Show ' + p.name + '"></button>';
+        }).join('');
+      }
+
+      function show(i) {
+        at = (i + picks.length) % picks.length;
+        var nodes = heroSlides.children;
+        for (var n = 0; n < nodes.length; n++) nodes[n].classList.toggle('is-on', n === at);
+        if (heroDots) {
+          for (var d = 0; d < heroDots.children.length; d++) heroDots.children[d].classList.toggle('is-on', d === at);
+        }
+        var p = picks[at];
+        if (heroName)  heroName.textContent = p.name;
+        if (heroPrice) heroPrice.textContent = p.priceTo ? fmt(p.price) + ' \u2013 ' + fmt(p.priceTo) : (p.price ? fmt(p.price) : 'Price on request');
+        if (heroBadge) heroBadge.textContent = p.badge || catLabel(p.cat);
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('[data-hero]'), function (b) {
+        b.addEventListener('click', function () { show(at + Number(b.getAttribute('data-hero'))); restart(); });
+      });
+      if (heroDots) {
+        heroDots.addEventListener('click', function (e) {
+          var b = e.target.closest('[data-slide]');
+          if (!b) return;
+          show(Number(b.getAttribute('data-slide')));
+          restart();
+        });
+      }
+
+      var timer = null;
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function restart() {
+        if (timer) clearInterval(timer);
+        if (reduced || picks.length < 2) return;
+        timer = setInterval(function () { show(at + 1); }, 6000);
+      }
+      heroPanel.addEventListener('mouseenter', function () { if (timer) clearInterval(timer); });
+      heroPanel.addEventListener('mouseleave', restart);
+      show(0);
+      restart();
     }
 
     /* Year + current nav highlight */
