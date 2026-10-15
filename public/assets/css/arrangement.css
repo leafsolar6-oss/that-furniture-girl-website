@@ -639,3 +639,65 @@
 }
 .hero__slide.is-on { opacity: 1; transform: none; pointer-events: auto; }
 .hero__slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   PRODUCTS PAGE — head band, category pills and the closing CTA
+   ========================================================================== */
+.page-head {
+  padding: clamp(28px, 4vw, 52px) 0 clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line-soft);
+}
+.crumbs {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: 13px; color: var(--muted-2); margin-bottom: 18px;
+}
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--gold-dark); text-decoration: underline; }
+.crumbs span { opacity: .55; }
+.crumbs b { color: var(--ink); font-weight: 650; }
+
+.page-head__row {
+  display: flex; flex-wrap: wrap; align-items: flex-end;
+  justify-content: space-between; gap: clamp(16px, 2.4vw, 32px);
+}
+.page-head h1 {
+  margin: 0; font-size: clamp(32px, 4.6vw, 52px);
+  line-height: 1.04; letter-spacing: -.03em;
+}
+.page-head__sub {
+  max-width: 46rem; margin: 12px 0 0;
+  color: var(--muted); font-size: clamp(15px, 1.5vw, 16.5px); line-height: 1.6;
+}
+.page-head__sub b { color: var(--ink); font-weight: 700; }
+
+.page-head__cats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.pill-link {
+  display: inline-flex; align-items: center;
+  padding: 7px 15px; border-radius: var(--pill);
+  border: 1px solid var(--line); background: var(--surface);
+  font-size: 13px; font-weight: 650; color: var(--ink-soft);
+  text-decoration: none;
+  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+}
+.pill-link:hover { background: var(--gold-soft); border-color: var(--gold); color: var(--gold-dark); }
+
+/* closing CTA */
+.page-cta__box {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: clamp(16px, 2.4vw, 32px);
+  background: linear-gradient(135deg, var(--sand), var(--gold-soft));
+  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: clamp(22px, 3vw, 40px);
+}
+.page-cta__box h2 { margin: 0 0 8px; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -.02em; }
+.page-cta__box p { margin: 0; max-width: 38rem; color: var(--muted); line-height: 1.6; }
+.page-cta__note {
+  margin: 18px 0 0; text-align: center;
+  color: var(--muted-2); font-size: 13.5px;
+}
+.page-cta__note a { color: var(--gold-dark); }
+
+@media (max-width: 640px) {
+  .page-head__row { align-items: stretch; }
+  .page-head__row > .btn { width: 100%; justify-content: center; }
+}

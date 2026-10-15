@@ -30,6 +30,13 @@ BUILD = pathlib.Path("dist")
 LINK_MAP = {
     "index.html":    "#home",
     "shop.html":     "#shop",
+    # the single file has no separate products page — its grid is already on
+    # the page, so "View products" just scrolls to it
+    "products.html": "#collection",
+    "products.html#cat-sofas":   "#collection",
+    "products.html#cat-sets":    "#collection",
+    "products.html#cat-tables":  "#collection",
+    "products.html#cat-storage": "#collection",
     "about.html":    "#story",
     "contact.html":  "#visit",
     "index.html#custom": "#custom",

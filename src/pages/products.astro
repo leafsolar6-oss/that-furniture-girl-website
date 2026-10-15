@@ -1,0 +1,94 @@
+---
+/* ==========================================================================
+   Products — the full catalogue on its own page.
+   Reached from the hero's "View products" button, the menu drawer and the
+   footer. Same filter toolbar and cards as the home page, so nothing has to
+   be learned twice; category deep links work as products.html#cat-sofas.
+   ========================================================================== */
+import Base from '../layouts/Base.astro';
+import Toolbar from '../components/Toolbar.astro';
+import ProductGrid from '../components/ProductGrid.astro';
+import FreeDelivery from '../components/sections/FreeDelivery.astro';
+import { PRODUCTS, CATEGORIES, CONFIG } from '../data/products.js';
+import { waLink } from '../lib/site.js';
+
+const count = PRODUCTS.length;
+const cats = CATEGORIES.filter((c) => c.key !== 'all');
+---
+
+<Base
+  page="products"
+  title="All products — That Furniture Girl | Handcrafted Furniture in Ibadan"
+  description={`Browse all ${count} handcrafted pieces — sectionals, sofas, wardrobes and centre tables made in Ibadan. Filter by category or price, then order on WhatsApp.`}
+  ogTitle="All products — That Furniture Girl"
+  ogDescription="Sectionals, sofas, wardrobes and centre tables. Built to last, made your way."
+>
+
+  <!-- page head --------------------------------------------------------- -->
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <b aria-current="page">Products</b>
+      </nav>
+
+      <div class="page-head__row">
+        <div>
+          <h1>All products</h1>
+          <p class="page-head__sub">
+            {count} pieces from the workshop — sectionals, sofas, sets, tables and storage.
+            Every one is built to order, so colours, sizes and fabric can be changed.
+            Tap <b>Chat</b> on any piece to send it straight to our WhatsApp.
+          </p>
+        </div>
+        <a class="btn btn--gold btn--lg" href={waLink('Hello! I saw the products page and would like to order.')}>
+          Chat with us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="page-head__cats" role="list">
+        {cats.map((c) => (
+          <a class="pill-link" role="listitem" href={`products.html#cat-${c.key}`}>{c.label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FreeDelivery />
+
+  <!-- catalogue --------------------------------------------------------- -->
+  <section class="section" id="collection">
+    <div class="container">
+      <Toolbar title="Browse the catalogue" gridId="allGrid" />
+      <ProductGrid products={PRODUCTS} id="allGrid" />
+    </div>
+  </section>
+
+  <!-- can't find it? ---------------------------------------------------- -->
+  <section class="section page-cta">
+    <div class="container">
+      <div class="page-cta__box">
+        <div>
+          <h2>Not seeing what you want?</h2>
+          <p>
+            Most of what we build starts as a photo a customer sent us. Send your own
+            reference, your measurements and your colour — we'll quote it and build it.
+          </p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--gold btn--lg" href={waLink('Hello! I have a custom design I would like you to build.')}>
+            Send us your design
+          </a>
+          <a class="btn btn--outline btn--lg" href="index.html">Back to home</a>
+        </div>
+      </div>
+      <p class="page-cta__note">
+        Or call {CONFIG.phoneDisplay} &middot; Iyaganku, New GRA, Ibadan &middot;
+        <a href={CONFIG.instagram} target="_blank" rel="noopener">@thatfurnituregirl__</a>
+      </p>
+    </div>
+  </section>
+
+</Base>

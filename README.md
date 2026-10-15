@@ -24,7 +24,7 @@ src/
   layouts/Base.astro    <head>, announcement bar, chrome, footer
   lib/site.js           price + WhatsApp-message helpers (used at build time)
   scripts/site.js       the browser behaviour (filters, slider, quick view)
-  pages/                index.astro · shop.astro · about.astro · contact.astro
+  pages/                index.astro (home) · products.astro (full catalogue)
 public/
   assets/               photos, logos, the two stylesheets, fonts
 figma/                  Figma handoff kit (see figma/README.md)
@@ -114,9 +114,11 @@ controls, 4-up product grid, floating price cards).
 
 ## Rebuilding the single-file version
 
-`npm run onepage` regenerates `that-furniture-girl-one-page.html` — the whole
-site (all four pages, all photos, fonts and scripts) in one file that opens
-from anywhere, offline. It is a build artifact, so it is not committed.
+`npm run onepage` regenerates `that-furniture-girl-one-page.html` — the home
+page with the full catalogue, all photos, fonts and scripts, in one file that
+opens from anywhere, offline. Links to `products.html` are rewritten to
+`#collection` so nothing in that file can 404. It is a build artifact, so it is
+not committed.
 
 ## Designing it in Figma
 

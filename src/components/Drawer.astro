@@ -1,5 +1,11 @@
 ---
-import { CONFIG } from '../data/products.js';
+/* Menu drawer. Two real destinations only — home and the product page —
+   plus the WhatsApp button, so the menu never turns into a link farm. */
+import { CONFIG, CATEGORIES } from '../data/products.js';
+
+const { page = '' } = Astro.props;
+const cats = CATEGORIES.filter((c) => c.key !== 'all');
+const here = (key) => (page === key ? 'page' : undefined);
 ---
 
 <aside class="drawer" id="drawer" aria-label="Menu">
@@ -7,6 +13,13 @@ import { CONFIG } from '../data/products.js';
     <span class="brand__name">{CONFIG.brand}</span>
     <button class="drawer__close" type="button" data-close-drawer aria-label="Close menu">&times;</button>
   </div>
+
+  <nav aria-label="Main">
+    <a href="index.html" aria-current={here('home')}>Home</a>
+    <a href="products.html" aria-current={here('products')}>All products</a>
+    {cats.map((c) => <a href={`products.html#cat-${c.key}`}>{c.label}</a>)}
+  </nav>
+
   <div class="drawer__foot">
     <a class="btn btn--primary btn--block" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I would like to order furniture.">Order on WhatsApp</a>
     <div class="drawer__meta">

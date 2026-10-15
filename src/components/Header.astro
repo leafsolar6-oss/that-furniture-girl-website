@@ -1,9 +1,10 @@
 ---
-/* Site header. Same markup as before — the only change is that the current
-   page is marked from a prop instead of being hard-coded per file. */
+/* Site header. Two destinations only — home and the product page — plus
+   search and WhatsApp. The current page is marked from a prop. */
 import { CONFIG } from '../data/products.js';
 
 const { page = '' } = Astro.props;
+const here = (key) => (page === key ? 'page' : undefined);
 ---
 
 <header class="site-header" id="siteHeader">
@@ -15,6 +16,12 @@ const { page = '' } = Astro.props;
         <span class="brand__sub">Your best comfort zone</span>
       </span>
     </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current={here('home')}>Home</a>
+      <a href="products.html" aria-current={here('products')}>Products</a>
+    </nav>
+
     <div class="header-actions">
       <button class="icon-btn" type="button" data-open-search aria-label="Search pieces">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
