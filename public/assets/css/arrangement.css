@@ -1091,3 +1091,13 @@ body::after {
   bottom: auto;
   aspect-ratio: 1 / 1;
 }
+
+/* ==========================================================================
+   CHAT BUTTON 2026-10-15 — show the WhatsApp icon below each product.
+   Retires the bare gold dash, re-enables the svg (Atelier hid it) and keeps
+   the "Chat" label on phones too (beats the old <=640px span hide rule by
+   cascade order). Icon inherits gold-dark, darkens to ink on hover.
+   ========================================================================== */
+.product-card__chat::before { display: none; }
+.product-card__chat svg { display: block; width: 15px; height: 15px; fill: currentColor; }
+.product-card__chat span { display: inline; }
