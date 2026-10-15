@@ -51,10 +51,10 @@ export const PRODUCTS = [
     cat: 'sofas',
     price: 500000,
     badge: 'Best seller',
-    colours: 'Light grey + white',
+    colours: 'Light grey + white · also cream + chocolate, navy + white, chocolate + white',
     material: 'Boucle fabric',
     lead: 'Available for immediate pickup',
-    desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room.',
+    desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room. The gallery also shows her posted colourways — cream + chocolate brown, navy blue + white, chocolate brown + white and a custom light ash + orange combo — same ₦500,000, single chair ₦170,000.',
     img: 'blush-sectional.jpg',
     gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg', 'blush-sectional-4.jpg', 'blush-sectional-5.jpg'],
     featured: true
@@ -106,9 +106,9 @@ export const PRODUCTS = [
     price: 250000,
     colours: 'Chocolate brown + cream',
     material: 'Boucle fabric',
-    desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up.',
+    desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up. Also posted in cream + brown — see gallery.',
     img: 'plush-three-seaters.jpg',
-    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg'],
+    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg', 'plush-three-seaters-4.jpg', 'plush-three-seaters-5.jpg'],
     featured: true
   },
   {
