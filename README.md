@@ -141,3 +141,20 @@ touching the code — add the `CNAME`, then point DNS at GitHub and tick
 Built as a static site — no frameworks, no dependencies in the browser, no
 monthly software costs. Fonts and photos are self-hosted, so it loads fast on
 Nigerian mobile data.
+
+---
+
+## Interim: the built copy at the repo root
+
+GitHub Pages is still set to *deploy from a branch* (`main`, `/`), not from the
+Actions workflow. Until that is switched over in **Settings → Pages → Source →
+GitHub Actions**, the site is served from the files in this folder root — which
+is why a freshly built copy of `dist/` (`index.html`, `shop.html`,
+`about.html`, `contact.html`, `assets/`, `_astro/`, `.nojekyll`) also sits
+here. Both paths serve exactly the same site, so the switch cannot break
+anything.
+
+The root copy is generated output, not source: never edit it. To refresh it,
+run `npm run build` and copy `dist/` over the root. Once Pages is switched to
+GitHub Actions, delete it (`git rm -r --cached _astro assets *.html .nojekyll`)
+— from then on `dist/` is the only thing published.
