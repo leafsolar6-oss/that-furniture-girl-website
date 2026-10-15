@@ -1109,3 +1109,14 @@ body::after {
    ========================================================================== */
 @media (min-width: 680px) { .hero__panel { max-width: 540px; } }
 @media (min-width: 1100px) { .hero__grid { grid-template-columns: 1.06fr .94fr; } }
+
+/* ==========================================================================
+   CAROUSEL MAT REMOVED 2026-10-15 — the grey greige mat and gradient
+   backing are gone from the hero plate; the colourful studio photos now
+   run edge-to-edge inside the frame. Radius, glass keyline and the outer
+   white+gold hug ring stay.
+   ========================================================================== */
+.hero__panel {
+  border: 0;
+  background: transparent;
+}
