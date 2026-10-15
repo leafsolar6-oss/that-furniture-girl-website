@@ -29,6 +29,7 @@ KNOWN = {
     "announce":        ("Announcement bar — rotating messages", "#0B0C0E", 40, "marquee, 12.5px"),
     "site-header":     ("Header — brand, Home/Products nav, search, WhatsApp", "#FFFFFF", 76, "sticky, blurs on scroll"),
     "hero":            ("Hero — headline left, carousel right", "#FFFFFF", 648, "grid 1.12fr/.88fr >=1100px"),
+    "stats-band":      ("Numbers band \u2014 followers, likes, videos", "#F6F1E9", 300, "3 cols, count-up serif figures"),
     "freedelivery":    ("Free delivery band — over ₦2,000,000", "#FFFFFF", 78, "hairline top+bottom"),
     "collection":      ("Collection — toolbar + product grid", "#FFFFFF", 1120, "chips, search, range, toggle; 4 cols"),
     "page-head":       ("Page head — breadcrumb, H1, category pills", "#FFFFFF", 268, "breadcrumb 13px, H1 52px"),
@@ -49,7 +50,7 @@ def sections_of(page):
         cls, rest = m.group(1), m.group(2)
         sid = re.search(r'id="([^"]+)"', rest)
         key = None
-        for k in ("hero", "freedelivery", "page-head", "page-cta", "collection",
+        for k in ("hero", "stats-band", "freedelivery", "page-head", "page-cta", "collection",
                   "workshop", "process", "materials", "showroom", "faqband"):
             if k in cls or (sid and sid.group(1) == k):
                 key = k

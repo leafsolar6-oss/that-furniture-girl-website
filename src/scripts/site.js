@@ -366,6 +366,34 @@ function wireSearch() {
 
 /* ---------- boot -------------------------------------------------------- */
 
+/* ---------- stats count-up ------------------------------------------------ */
+
+function wireStats() {
+  const nums = $$('[data-count]');
+  if (!nums.length) return;
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return; /* leave final figures */
+  const fmt = (n) => n.toLocaleString('en-US');
+  nums.forEach((el) => { el.textContent = '0'; });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      const target = Number(entry.target.getAttribute('data-count'));
+      const t0 = performance.now();
+      const dur = 1400;
+      const tick = (t) => {
+        const k = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - k, 3);
+        entry.target.textContent = fmt(Math.round(target * eased));
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+  nums.forEach((el) => io.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   modal = document.getElementById('productModal');
 
@@ -393,6 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $$('[data-tools-for]').forEach(wireFilters);
   wireHero();
+  wireStats();
   wireSearch();
 
   /* Quick view (delegated, so it works for every rendered card) */
