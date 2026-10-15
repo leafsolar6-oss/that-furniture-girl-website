@@ -1,0 +1,78 @@
+---
+/* One page per piece: the full picture, the full story, and a single
+   WhatsApp thread when the visitor is ready. Reached by clicking any card. */
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { PRODUCTS, CONFIG } from '../data/products.js';
+import { waLink, orderMessage, priceInfo, categoryLabel, specParts, footerNote, imgAlt } from '../lib/site.js';
+
+export function getStaticPaths() {
+  return PRODUCTS.filter((p) => p.img).map((p) => ({ params: { pid: p.id } }));
+}
+
+const p = PRODUCTS.find((x) => x.id === Astro.params.pid);
+const price = priceInfo(p);
+const specs = specParts(p);
+if (p.lead) specs.push({ k: 'Lead time', v: p.lead });
+const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
+---
+
+<Base
+  title={`${p.name} — ${CONFIG.brand}`}
+  description={p.desc}
+  ogTitle={`${p.name} · ${CONFIG.brand}`}
+  ogDescription={p.desc}
+  ogImagePath={`assets/img/opt/${p.img}`}
+  page="piece"
+>
+  <main id="main">
+    <section class="piece">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>/</span>
+          <a href="products.html">Products</a> <span>/</span>
+          <b>{p.name}</b>
+        </nav>
+
+        <div class="piece__grid">
+          <div class="piece__media">
+            <img src={`assets/img/opt/${p.img}`} alt={imgAlt(p)} width="900" height="900" fetchpriority="high">
+            {p.badge && <span class="product-card__badge">{p.badge}</span>}
+          </div>
+
+          <div class="piece__info">
+            <span class="kicker">{categoryLabel(p.cat)}</span>
+            <h1>{p.name}</h1>
+            <p class="piece__price">{price.value}<span class="piece__pricenote">{price.note}</span></p>
+            <p class="piece__desc">{p.desc}</p>
+
+            <dl class="piece__specs">
+              {specs.map((s) => (
+                <div>
+                  <dt>{s.k}</dt>
+                  <dd>{s.v}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div class="piece__cta">
+              <a class="btn btn--gold btn--lg" href={waLink(orderMessage(p))} target="_blank" rel="noopener">
+                Order on WhatsApp
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn--outline btn--lg" href="products.html">Back to products</a>
+            </div>
+            <p class="piece__note">{footerNote(p)}</p>
+          </div>
+        </div>
+
+        <div class="piece__more">
+          <h2>More from the workshop</h2>
+          <div class="grid-products grid-products--three">
+            {others.map((o, i) => <ProductCard product={o} delay={i} />)}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

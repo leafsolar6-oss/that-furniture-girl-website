@@ -337,7 +337,7 @@ function wireSearch() {
       return;
     }
     out.innerHTML = list.map((p) =>
-      '<a class="search-result" href="index.html" data-id="' + p.id + '">' +
+      '<a class="search-result" href="' + p.id + '.html">' +
         '<img src="assets/img/opt/' + p.img + '" alt="" loading="lazy">' +
         '<span><strong>' + p.name + '</strong>' +
         '<span>' + categoryLabel(p.cat) + ' &middot; ' +
@@ -395,16 +395,17 @@ document.addEventListener('DOMContentLoaded', () => {
   wireHero();
   wireSearch();
 
-  /* Quick view (delegated, so it works for every rendered card) */
+  /* Modal close still delegated (the shell stays mounted for future use) */
   document.addEventListener('click', (e) => {
-    const quick = e.target.closest('.js-quick');
-    if (quick) {
-      const card = quick.closest('[data-id]');
-      const p = card && PRODUCTS.find((x) => x.id === card.getAttribute('data-id'));
-      if (p) openModal(p);
-      return;
-    }
     if (e.target.closest('.js-close-modal')) closeModal();
+  });
+
+  /* Chat buttons open WhatsApp in a new tab without navigating the card */
+  document.addEventListener('click', (e) => {
+    const waBtn = e.target.closest('[data-wa]');
+    if (!waBtn) return;
+    e.preventDefault();
+    window.open(waBtn.getAttribute('data-wa'), '_blank', 'noopener');
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { closeModal(); closeDrawer(); }
@@ -438,30 +439,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Year */
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
-
-  /* Search results are real links to the shop; opening one on the shop page
-     should land on that piece rather than the top of the grid. */
-  const searchOut = document.querySelector('.search-panel__results');
-  if (searchOut) {
-    searchOut.addEventListener('click', (e) => {
-      const hit = e.target.closest('.search-result');
-      if (!hit) return;
-      const id = hit.getAttribute('data-id');
-      const p = PRODUCTS.find((x) => x.id === id);
-      if (!p) return;
-      e.preventDefault();
-      openModal(p);
-    });
-  }
-
-  /* "Details" on a card opens the quick-view modal (specs, lead time, order). */
-  document.addEventListener('click', (e) => {
-    const q = e.target.closest('[data-quick]');
-    if (!q) return;
-    e.preventDefault();
-    const p = PRODUCTS.find((x) => x.id === q.getAttribute('data-quick'));
-    if (p) openModal(p);
-  });
 
   observeReveals(document);
 });

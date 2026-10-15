@@ -40,12 +40,11 @@ const firstPrice = priceInfo(first);
             const shown = price.ask ? 'Price on request' : price.value;
             return (
               <a class={`hero__slide${i === 0 ? ' is-on' : ''}`}
-                 href={waLink(orderMessage(p))}
-                 target="_blank" rel="noopener"
+                 href={`${p.id}.html`}
                  data-name={p.name}
                  data-price={shown}
                  data-badge={p.badge || categoryLabel(p.cat)}
-                 aria-label={`${p.name} — order on WhatsApp`}>
+                 aria-label={`${p.name} — view piece`}>
                 <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours} by ${CONFIG.brand}`}
                      loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
                      width="900" height="1125">
