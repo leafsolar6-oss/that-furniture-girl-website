@@ -166,7 +166,7 @@ function wireFilters(toolbar) {
   if (!grid) return;
 
   const emptyMsg = document.querySelector(`[data-empty-for="${gridId}"]`);
-  const cards = $$('.product', grid);
+    const cards = $$('.product-card', grid);
   const filterBar = toolbar.querySelector('.chip-row');
   const search = toolbar.querySelector('[data-tool="search"]');
   const range = toolbar.querySelector('[data-tool="range"]');

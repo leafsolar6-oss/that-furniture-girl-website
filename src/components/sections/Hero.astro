@@ -1,7 +1,6 @@
 ---
-/* Hero — copy + real stats on the left, the photo panel on the right.
-   The slides, the price card and the dots are built from src/data/products.js
-   at build time; src/scripts/site.js only switches between them. */
+/* Hero — copy + stats on the left, the product panel on the right.
+   Matches the reference store's hero layout. */
 import { CONFIG } from '../../data/products.js';
 import { heroProducts } from '../../data/products.js';
 import { waLink, orderMessage, priceInfo, categoryLabel } from '../../lib/site.js';
@@ -10,15 +9,13 @@ const first = heroProducts[0];
 const firstPrice = priceInfo(first);
 ---
 
-<section class="hero">
-  <div class="container">
+<section class="hero relative overflow-hidden">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container relative">
     <div class="hero__grid">
 
-      <div class="reveal">
-        <span class="hero__pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          New collection 2026
-        </span>
+      <div class="hero__copy reveal flex flex-col items-center text-center lg:items-start lg:text-left">
+        <span class="hero__eyebrow">→ New collection 2026</span>
         <h1 class="hero__title">Transform Your <em>Living Space</em></h1>
         <p class="hero__sub">Discover handcrafted furniture pieces that blend exceptional craftsmanship with modern design. Create the home you've always dreamed of.</p>
         <div class="btn-row">
@@ -26,7 +23,7 @@ const firstPrice = priceInfo(first);
             Shop collection
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--outline btn--lg" href="#featured">View products</a>
+          <a class="btn btn--outline btn--lg" href="#collection">View products</a>
         </div>
 
         <div class="stats">
@@ -56,28 +53,18 @@ const firstPrice = priceInfo(first);
           })}
         </div>
 
-        <div class="hero__chip">
-          <span class="hero__chip-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 9 17l10.5-10.5"/></svg>
-          </span>
-          <div>
-            <b>Same-day delivery</b>
-            <small>Across Ibadan &middot; nationwide arranged</small>
-          </div>
+        <div class="hero__card">
+          <span class="hero__badge" id="heroBadge">{first.badge || categoryLabel(first.cat)}</span>
+          <strong id="heroName">{first.name}</strong>
+          <span class="hero__price" id="heroPrice">{firstPrice.ask ? 'Price on request' : firstPrice.value}</span>
         </div>
 
         <button class="hero__arrow" type="button" data-hero="-1" aria-label="Previous piece">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
         </button>
         <button class="hero__arrow" type="button" data-hero="1" aria-label="Next piece">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
         </button>
-
-        <div class="hero__card">
-          <span class="hero__badge" id="heroBadge">{first.badge || categoryLabel(first.cat)}</span>
-          <strong id="heroName">{first.name}</strong>
-          <span class="hero__price" id="heroPrice">{firstPrice.ask ? 'Price on request' : firstPrice.value}</span>
-        </div>
 
         <div class="hero__dots" id="heroDots"></div>
       </div>

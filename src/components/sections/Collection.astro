@@ -10,11 +10,8 @@ const products = PRODUCTS;
 
 <section class="section" id="collection">
   <div class="container">
-    <div class="section-head reveal">
-      <h2>Trending collections</h2>
-    </div>
+    <Toolbar title="Trending collections" gridId="featuredGrid" />
 
-    <Toolbar title="" gridId="featuredGrid" />
     <ProductGrid products={products} id="featuredGrid" />
   </div>
 </section>
