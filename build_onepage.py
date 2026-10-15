@@ -277,6 +277,9 @@ window.TFG = {
     out = re.sub(r"assets/img/opt/\$\{([A-Za-z_$][\w$]*\.img)\}",
                  r"${window.TFG_IMG_MAP[\1]||''}", out)
 
+    # the self-contained file embeds JPEGs as data URIs; WebP <source> tags
+    # would win selection and 404 offline, so drop them here.
+    out = re.sub(r'<source[^>]*type="image/webp"[^>]*>', '', out)
     (ROOT / OUT_NAME).write_text(out, encoding="utf-8")
     size_mb = (ROOT / OUT_NAME).stat().st_size / 1024 / 1024
     real = re.findall(r'(?:src|href)="(assets/[^"]+)"', out)

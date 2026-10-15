@@ -1236,3 +1236,10 @@ body::after {
 .split__media picture { display: block; }
 .hero__slide picture { display: block; height: 100%; }
 .split__media-second img { border: 0; box-shadow: none; }
+
+/* ==========================================================================
+   FULL-BLEED RESTORED 2026-10-15 — the carousel photos fill their frame
+   edge-to-edge again at full size (cover), per owner feedback that the
+   contained look read as reduced pictures.
+   ========================================================================== */
+.hero__panel img { object-fit: cover; }
