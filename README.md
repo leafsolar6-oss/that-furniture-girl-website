@@ -11,7 +11,7 @@ checkout and no payment step anywhere on the site.
 
 ## How it is built
 
-The site is an **Astro** project. Astro generates plain HTML, CSS and a small
+The site is an **Astro 7.3** project. Astro generates plain HTML, CSS and a small
 script at build time — there is no framework shipped to the browser, so the
 pages stay as light and as fast on Nigerian mobile data as the hand-written
 version they replaced.
@@ -33,6 +33,10 @@ build_onepage.py        bundles everything into one self-contained HTML file
 ```
 
 ## Everyday commands
+
+**Requires Node 22.12 or newer** — that is what Astro 7 needs. `.nvmrc` holds
+the version, `nvm use` picks it up, and the GitHub Actions build reads the same
+file, so the two can never disagree.
 
 ```bash
 npm install        # once
