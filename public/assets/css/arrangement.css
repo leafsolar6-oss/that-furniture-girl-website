@@ -1006,3 +1006,52 @@ body::after {
 .split__media--single img {
   border-radius: 0;
 }
+
+/* ==========================================================================
+   SQUARE FRAMES — FINESSE PASS
+   The squares, refined: a whisper of corner radius, a greige museum mat
+   inside every frame, a hairline keyline on the glass, and a double gold
+   ring outside (float ring + hug ring) that tightens on hover.
+   ========================================================================== */
+.hero__panel,
+.product-card__media,
+.product-card::before,
+.split__media img,
+.split__media-second,
+.split__media--single img {
+  border-radius: 6px;
+}
+
+/* museum mat + keyline inside the frame */
+.product-card__media {
+  border: 10px solid var(--premium);
+  box-shadow: inset 0 0 0 1px rgba(20,19,18,.07),
+              0 18px 40px -26px rgba(20,19,18,.30);
+}
+.hero__panel {
+  border: 12px solid var(--premium);
+  box-shadow: inset 0 0 0 1px rgba(20,19,18,.07),
+              0 0 0 6px var(--bg),
+              0 0 0 7px rgba(206,154,67,.22),
+              var(--shadow-md);
+}
+.split__media img,
+.split__media-second,
+.split__media--single img {
+  border: 10px solid var(--premium);
+  box-shadow: inset 0 0 0 1px rgba(20,19,18,.07),
+              0 18px 40px -26px rgba(20,19,18,.30);
+}
+
+/* double ring outside the card frame; tightens on hover */
+.product-card::before {
+  top: 12px; left: 12px; right: -12px; bottom: -12px;
+  box-shadow: 0 0 0 5px var(--bg), 0 0 0 6px rgba(206,154,67,.22);
+  transition: top .45s var(--ease), left .45s var(--ease),
+              right .45s var(--ease), bottom .45s var(--ease);
+}
+.product-card:hover::before { top: 7px; left: 7px; right: -7px; bottom: -7px; }
+
+/* stamp + numeral sit on the mat, not the glass */
+.product-card__badge { top: 18px; right: 16px; }
+.product-card__media::after { left: 8px; bottom: 0; }
