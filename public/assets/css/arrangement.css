@@ -1080,3 +1080,14 @@ body::after {
 }
 @keyframes heroProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { .hero__progress { display: none; } }
+
+/* ==========================================================================
+   MOBILE FIX 2026-10-15 — the offset ring's left edge ran the full card
+   height and sliced through product names. Clamp it to the square plate:
+   same 12px (7px on hover) offset echo, but it now stops below the photo,
+   clear of the body text.
+   ========================================================================== */
+.product-card::before {
+  bottom: auto;
+  aspect-ratio: 1 / 1;
+}
