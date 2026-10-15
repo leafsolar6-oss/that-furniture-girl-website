@@ -887,3 +887,91 @@ body::after {
 .socials a { background: rgba(20,19,18,.06); color: var(--ink); }
 .socials a:hover { background: var(--gold); color: #141312; }
 .footer-bottom { border-top-color: var(--line); }
+
+/* ==========================================================================
+   ATELIER BLANC — trust bands (workshop, process, materials, showroom, faq)
+   ========================================================================== */
+.kicker {
+  display: inline-block; font-size: 11px; font-weight: 800;
+  letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dark);
+  margin-bottom: 14px;
+}
+.section h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; }
+
+/* workshop --------------------------------------------------------------- */
+.workshop { background: var(--surface-2); border-block: 1px dashed var(--line); }
+.split {
+  display: grid; gap: clamp(30px, 4.4vw, 70px);
+  grid-template-columns: 1fr; align-items: center;
+}
+@media (min-width: 900px) {
+  .split { grid-template-columns: 1.04fr .96fr; }
+  .split--rev > .split__copy { order: 2; }
+  .split--rev > .split__media { order: 1; }
+}
+.split__media { display: grid; grid-template-columns: 1fr .6fr; gap: 18px; align-items: end; }
+.split__media img { width: 100%; display: block; border-radius: 220px 220px 0 0; }
+.split__media-second {
+  border-radius: 150px 150px 0 0;
+  margin-bottom: -38px;
+  outline: 1px solid rgba(206,154,67,.6); outline-offset: 10px;
+}
+.split__media--single { grid-template-columns: 1fr; }
+.split__media--single img { border-radius: 240px 240px 0 0; }
+.proof { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.proof__chip {
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  padding: 14px 20px; text-decoration: none;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.proof__chip:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.proof__chip b {
+  display: block; font-family: var(--font-display); font-weight: 400;
+  font-size: 27px; line-height: 1.1; color: var(--ink);
+}
+.proof__chip span { font-size: 12px; color: var(--muted); }
+
+/* process ---------------------------------------------------------------- */
+.steps4 { display: grid; gap: 30px; grid-template-columns: 1fr; margin-top: 34px; }
+@media (min-width: 820px) { .steps4 { grid-template-columns: repeat(4, 1fr); } }
+.step__num {
+  display: block; font-family: var(--font-display); font-weight: 400;
+  font-size: 56px; line-height: 1; color: rgba(206,154,67,.4);
+}
+.step h3 { margin: 14px 0 8px; font-size: 21px; }
+.step h3::before { content: ""; display: block; width: 34px; height: 2px; background: var(--gold); margin-bottom: 12px; }
+.step p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+/* materials --------------------------------------------------------------- */
+.materials { background: var(--surface-2); border-block: 1px dashed var(--line); }
+.swatch-group { margin-top: 26px; }
+.swatch-group h3 { font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; font-family: var(--font-sans); }
+.swatch { display: flex; flex-wrap: wrap; gap: 10px; }
+.swatch span {
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  padding: 9px 18px; font-size: 13px; color: var(--ink-soft);
+}
+.materials__note { margin: 26px 0 0; color: var(--muted); font-size: 14px; max-width: 52ch; }
+
+/* showroom ---------------------------------------------------------------- */
+.showroom__addr {
+  font-style: normal; margin: 22px 0 26px;
+  display: flex; flex-direction: column; gap: 6px; color: var(--ink-soft); font-size: 15px;
+}
+.showroom__addr a { color: var(--gold-dark); text-decoration: none; font-weight: 700; }
+.showroom__addr a:hover { text-decoration: underline; }
+
+/* faq --------------------------------------------------------------------- */
+.container--narrow { max-width: 820px; }
+.faq { margin-top: 26px; }
+.faq details { border-top: 1px solid var(--line); padding: 20px 0; }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary {
+  cursor: pointer; list-style: none; display: flex; align-items: baseline;
+  justify-content: space-between; gap: 20px;
+  font-family: var(--font-display); font-size: 21px; color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary span { color: var(--gold); font-size: 26px; line-height: 1; transition: transform .3s var(--ease); }
+.faq details[open] summary span { transform: rotate(45deg); }
+.faq details p { margin: 12px 0 0; color: var(--muted); max-width: 62ch; line-height: 1.7; }

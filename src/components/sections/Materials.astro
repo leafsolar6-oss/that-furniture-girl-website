@@ -1,0 +1,27 @@
+---
+/* Fabrics & colours — aggregated straight from the catalogue, so this strip
+   can only ever show what the workshop has actually built. */
+import { PRODUCTS } from '../../data/products.js';
+
+const materials = [...new Set(PRODUCTS.map((p) => p.material).filter(Boolean))];
+const colours = [...new Set(PRODUCTS.map((p) => p.colours).filter(Boolean))];
+---
+
+<section class="section materials" id="materials">
+  <div class="container">
+    <span class="kicker">Materials & colours</span>
+    <h2>What we build with</h2>
+    <div class="swatch-group">
+      <h3>Fabrics & boards</h3>
+      <div class="swatch">{materials.map((m) => <span>{m}</span>)}</div>
+    </div>
+    <div class="swatch-group">
+      <h3>Colours we have built</h3>
+      <div class="swatch">{colours.map((c) => <span>{c}</span>)}</div>
+    </div>
+    <p class="materials__note">
+      Your piece does not have to match any of these — colour, size and fabric are
+      yours to choose. These are simply the builds already on the floor.
+    </p>
+  </div>
+</section>

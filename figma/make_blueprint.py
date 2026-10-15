@@ -33,6 +33,11 @@ KNOWN = {
     "collection":      ("Collection — toolbar + product grid", "#FFFFFF", 1120, "chips, search, range, toggle; 4 cols"),
     "page-head":       ("Page head — breadcrumb, H1, category pills", "#FFFFFF", 268, "breadcrumb 13px, H1 52px"),
     "page-cta":        ("Closing CTA — send us your design", "#F1ECE2", 300, "gradient sheet, 2 buttons"),
+    "workshop":        ("Workshop band — real photos + verified counts", "#F6F1E9", 560, "2 arched photos, 3 proof chips"),
+    "process":         ("Process — message to delivery in 4 steps", "#FFFFFF", 420, "4 columns at >=820px"),
+    "materials":       ("Materials & colours — aggregated from catalogue", "#F6F1E9", 470, "chip rows from products.js"),
+    "showroom":        ("Showroom — address, phone, plan my visit", "#FFFFFF", 560, "split, arched photo"),
+    "faqband":         ("FAQ — five factual answers", "#FFFFFF", 520, "details/summary, no JS"),
     "site-footer":     ("Footer — brand, Browse, Follow, Contact", "#004B1F", 430, "4 columns at >=980px"),
 }
 
@@ -44,7 +49,8 @@ def sections_of(page):
         cls, rest = m.group(1), m.group(2)
         sid = re.search(r'id="([^"]+)"', rest)
         key = None
-        for k in ("hero", "freedelivery", "page-head", "page-cta", "collection"):
+        for k in ("hero", "freedelivery", "page-head", "page-cta", "collection",
+                  "workshop", "process", "materials", "showroom", "faqband"):
             if k in cls or (sid and sid.group(1) == k):
                 key = k
                 break

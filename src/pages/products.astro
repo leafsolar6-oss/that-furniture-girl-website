@@ -9,6 +9,8 @@ import Base from '../layouts/Base.astro';
 import Toolbar from '../components/Toolbar.astro';
 import ProductGrid from '../components/ProductGrid.astro';
 import FreeDelivery from '../components/sections/FreeDelivery.astro';
+import Showroom from '../components/sections/Showroom.astro';
+import FaqBand from '../components/sections/FaqBand.astro';
 import { PRODUCTS, CATEGORIES, CONFIG } from '../data/products.js';
 import { waLink } from '../lib/site.js';
 
@@ -90,5 +92,8 @@ const cats = CATEGORIES.filter((c) => c.key !== 'all');
       </p>
     </div>
   </section>
+
+  <Showroom />
+  <FaqBand />
 
 </Base>

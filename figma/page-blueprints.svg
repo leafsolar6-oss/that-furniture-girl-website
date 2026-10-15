@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1284" height="918" viewBox="0 0 1284 918">
-<rect width="1284" height="918" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1284" height="1550" viewBox="0 0 1284 1550">
+<rect width="1284" height="1550" fill="#FFFFFF"/>
 <text x="64" y="64" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#0B0C0E">Page blueprints — live site, 2 pages</text>
 <text x="64" y="90" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#8A8F93">Parsed from dist/ at build time · scale 1:4 (multiply by 4.1667 for true 1440) · heights "~" are CSS estimates at 1440 px</text>
 <text x="64" y="130" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#0B0C0E">Home</text>
-<text x="424" y="130" text-anchor="end" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#8A8F93">index.html · ~2392px</text>
+<text x="424" y="130" text-anchor="end" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#8A8F93">index.html · ~4922px</text>
 <rect x="64" y="144" width="360" height="10" fill="#0B0C0E" stroke="#E4DFD4"/>
 <rect x="64" y="154" width="360" height="19" fill="#FAF8F4" stroke="#E4DFD4"/>
 <text x="72" y="169" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Header</text>
@@ -15,11 +15,26 @@
 <rect x="64" y="354" width="360" height="280" fill="#FAF8F4" stroke="#E4DFD4"/>
 <text x="72" y="369" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Collection</text>
 <text x="72" y="381" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~1120px · chips, search, range, toggle; 4 cols</text>
-<rect x="64" y="634" width="360" height="107" fill="#004B1F" stroke="#E4DFD4"/>
-<text x="72" y="649" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Footer</text>
-<text x="72" y="661" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="rgba(255,255,255,.75)">~430px · 4 columns at >=980px</text>
+<rect x="64" y="634" width="360" height="140" fill="#F6F1E9" stroke="#E4DFD4"/>
+<text x="72" y="649" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Workshop band</text>
+<text x="72" y="661" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~560px · 2 arched photos, 3 proof chips</text>
+<rect x="64" y="774" width="360" height="105" fill="#FAF8F4" stroke="#E4DFD4"/>
+<text x="72" y="789" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Process</text>
+<text x="72" y="801" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~420px · 4 columns at >=820px</text>
+<rect x="64" y="879" width="360" height="117" fill="#F6F1E9" stroke="#E4DFD4"/>
+<text x="72" y="894" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Materials & colours</text>
+<text x="72" y="906" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~470px · chip rows from products.js</text>
+<rect x="64" y="996" width="360" height="140" fill="#FAF8F4" stroke="#E4DFD4"/>
+<text x="72" y="1011" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Showroom</text>
+<text x="72" y="1023" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~560px · split, arched photo</text>
+<rect x="64" y="1136" width="360" height="130" fill="#FAF8F4" stroke="#E4DFD4"/>
+<text x="72" y="1151" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">FAQ</text>
+<text x="72" y="1163" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~520px · details/summary, no JS</text>
+<rect x="64" y="1266" width="360" height="107" fill="#004B1F" stroke="#E4DFD4"/>
+<text x="72" y="1281" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Footer</text>
+<text x="72" y="1293" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="rgba(255,255,255,.75)">~430px · 4 columns at >=980px</text>
 <text x="480" y="130" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#0B0C0E">Products</text>
-<text x="840" y="130" text-anchor="end" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#8A8F93">products.html · ~2312px</text>
+<text x="840" y="130" text-anchor="end" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#8A8F93">products.html · ~3392px</text>
 <rect x="480" y="144" width="360" height="10" fill="#0B0C0E" stroke="#E4DFD4"/>
 <rect x="480" y="154" width="360" height="19" fill="#FAF8F4" stroke="#E4DFD4"/>
 <text x="488" y="169" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Header</text>
@@ -34,9 +49,15 @@
 <rect x="480" y="539" width="360" height="75" fill="#F1ECE2" stroke="#E4DFD4"/>
 <text x="488" y="554" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Closing CTA</text>
 <text x="488" y="566" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~300px · gradient sheet, 2 buttons</text>
-<rect x="480" y="614" width="360" height="107" fill="#004B1F" stroke="#E4DFD4"/>
-<text x="488" y="629" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Footer</text>
-<text x="488" y="641" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="rgba(255,255,255,.75)">~430px · 4 columns at >=980px</text>
+<rect x="480" y="614" width="360" height="140" fill="#FAF8F4" stroke="#E4DFD4"/>
+<text x="488" y="629" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">Showroom</text>
+<text x="488" y="641" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~560px · split, arched photo</text>
+<rect x="480" y="754" width="360" height="130" fill="#FAF8F4" stroke="#E4DFD4"/>
+<text x="488" y="769" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#0B0C0E">FAQ</text>
+<text x="488" y="781" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="#8A8F93">~520px · details/summary, no JS</text>
+<rect x="480" y="884" width="360" height="107" fill="#004B1F" stroke="#E4DFD4"/>
+<text x="488" y="899" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Footer</text>
+<text x="488" y="911" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" fill="rgba(255,255,255,.75)">~430px · 4 columns at >=980px</text>
 <text x="896" y="130" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0B0C0E">Section index</text>
 <text x="896" y="156" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#CE9A43">Home</text>
 <text x="906" y="174" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Announcement bar — rotating messages</text>
@@ -44,29 +65,34 @@
 <text x="906" y="204" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Hero — headline left, carousel right</text>
 <text x="906" y="219" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Free delivery band — over ₦2,000,000</text>
 <text x="906" y="234" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Collection — toolbar + product grid</text>
-<text x="906" y="249" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Footer — brand, Browse, Follow, Contact</text>
-<text x="896" y="274" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#CE9A43">Products</text>
-<text x="906" y="292" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Page head — breadcrumb, H1, category pills</text>
-<text x="906" y="307" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Closing CTA — send us your design</text>
-<text x="896" y="348" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0B0C0E">Component inventory</text>
-<text x="896" y="370" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· product card (1:1 media, badge, name, desc, price + Chat)</text>
-<text x="896" y="385" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· filter chip / category pill</text>
-<text x="896" y="400" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· search box</text>
-<text x="896" y="415" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· price range + output</text>
-<text x="896" y="430" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· grid/list toggle</text>
-<text x="896" y="445" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· hero price card</text>
-<text x="896" y="460" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· carousel dots + arrows</text>
-<text x="896" y="475" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· breadcrumb</text>
-<text x="896" y="490" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· WhatsApp pill (gold / green)</text>
-<text x="896" y="505" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· free-delivery band</text>
-<text x="896" y="520" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· closing CTA sheet</text>
-<text x="896" y="535" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· announcement marquee</text>
-<text x="896" y="570" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0B0C0E">Rules the design keeps</text>
-<text x="896" y="592" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Ordering is WhatsApp only — no cart, no checkout.</text>
-<text x="896" y="607" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">No invented urgency: no countdowns, fake strikes,</text>
-<text x="896" y="622" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">   star ratings or made-up customer counts.</text>
-<text x="896" y="637" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Real photos only — her own Instagram / TikTok shots,</text>
-<text x="896" y="652" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">   now on the premium greige studio backdrop.</text>
-<text x="896" y="667" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Reviews section stays hidden until a real review exists.</text>
-<text x="896" y="682" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Every figure on the page is real and verified.</text>
+<text x="906" y="249" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Workshop band — real photos + verified counts</text>
+<text x="906" y="264" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Process — message to delivery in 4 steps</text>
+<text x="906" y="279" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Materials & colours — aggregated from catalogue</text>
+<text x="906" y="294" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Showroom — address, phone, plan my visit</text>
+<text x="906" y="309" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· FAQ — five factual answers</text>
+<text x="906" y="324" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Footer — brand, Browse, Follow, Contact</text>
+<text x="896" y="349" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#CE9A43">Products</text>
+<text x="906" y="367" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Page head — breadcrumb, H1, category pills</text>
+<text x="906" y="382" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· Closing CTA — send us your design</text>
+<text x="896" y="423" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0B0C0E">Component inventory</text>
+<text x="896" y="445" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· product card (1:1 media, badge, name, desc, price + Chat)</text>
+<text x="896" y="460" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· filter chip / category pill</text>
+<text x="896" y="475" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· search box</text>
+<text x="896" y="490" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· price range + output</text>
+<text x="896" y="505" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· grid/list toggle</text>
+<text x="896" y="520" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· hero price card</text>
+<text x="896" y="535" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· carousel dots + arrows</text>
+<text x="896" y="550" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· breadcrumb</text>
+<text x="896" y="565" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· WhatsApp pill (gold / green)</text>
+<text x="896" y="580" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· free-delivery band</text>
+<text x="896" y="595" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· closing CTA sheet</text>
+<text x="896" y="610" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">· announcement marquee</text>
+<text x="896" y="645" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0B0C0E">Rules the design keeps</text>
+<text x="896" y="667" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Ordering is WhatsApp only — no cart, no checkout.</text>
+<text x="896" y="682" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">No invented urgency: no countdowns, fake strikes,</text>
+<text x="896" y="697" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">   star ratings or made-up customer counts.</text>
+<text x="896" y="712" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Real photos only — her own Instagram / TikTok shots,</text>
+<text x="896" y="727" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">   now on the premium greige studio backdrop.</text>
+<text x="896" y="742" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Reviews section stays hidden until a real review exists.</text>
+<text x="896" y="757" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8A8F93">Every figure on the page is real and verified.</text>
 </svg>

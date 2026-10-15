@@ -1,0 +1,32 @@
+---
+/* Showroom band — address, number and handles from CONFIG only. */
+import { CONFIG } from '../../data/products.js';
+import { waLink } from '../../lib/site.js';
+---
+
+<section class="section showroom" id="showroom">
+  <div class="container split split--rev">
+    <div class="split__copy">
+      <span class="kicker">Come and see</span>
+      <h2>Sit on it before you decide</h2>
+      <p class="lead">
+        The showroom holds finished pieces most days, so you can feel the boucle,
+        open the wardrobes and test the seats before you order. Message us on
+        WhatsApp to plan your visit.
+      </p>
+      <address class="showroom__addr">
+        <span>{CONFIG.address}</span>
+        <a href={`tel:+${CONFIG.whatsapp}`}>{CONFIG.phoneDisplay}</a>
+        <a href={CONFIG.instagram} target="_blank" rel="noopener">@thatfurnituregirl__</a>
+      </address>
+      <div class="btn-row">
+        <a class="btn btn--gold btn--lg" href={waLink('Hello! I would like to plan a visit to the showroom.')}>
+          Plan my visit
+        </a>
+      </div>
+    </div>
+    <div class="split__media split__media--single">
+      <img src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom, Iyaganku, New GRA, Ibadan`} loading="lazy" width="1400" height="874">
+    </div>
+  </div>
+</section>

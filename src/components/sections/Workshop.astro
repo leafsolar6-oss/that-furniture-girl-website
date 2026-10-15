@@ -1,0 +1,35 @@
+---
+/* The workshop band — real photos, real counts. Nothing here is invented:
+   the three numbers are the same verified figures the hero shows. */
+import { CONFIG } from '../../data/products.js';
+---
+
+<section class="section workshop" id="workshop">
+  <div class="container split">
+    <div class="split__media">
+      <img src="assets/img/opt/atelier.jpg" alt={`Inside the ${CONFIG.brand} workshop in Ibadan`} loading="lazy" width="1000" height="853">
+      <img class="split__media-second" src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom`} loading="lazy" width="1400" height="874">
+    </div>
+    <div class="split__copy">
+      <span class="kicker">The workshop</span>
+      <h2>A workshop you can watch</h2>
+      <p class="lead">
+        Every piece on this site is built to order in Ibadan — and most of them were
+        filmed while being made. No stock photography, no imported showroom: the sofa
+        you order is the sofa you can watch being stitched, tufted and wrapped on our
+        TikTok and Instagram.
+      </p>
+      <div class="proof">
+        <a class="proof__chip" href={CONFIG.tiktok} target="_blank" rel="noopener">
+          <b>191</b><span>videos of real builds</span>
+        </a>
+        <a class="proof__chip" href={CONFIG.tiktok} target="_blank" rel="noopener">
+          <b>59,230</b><span>likes across our work</span>
+        </a>
+        <a class="proof__chip" href={CONFIG.instagram} target="_blank" rel="noopener">
+          <b>1,101</b><span>followers watching</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

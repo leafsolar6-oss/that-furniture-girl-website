@@ -1,0 +1,26 @@
+---
+/* How a piece happens — four steps, every claim taken from the catalogue
+   data or the announcement bar (lead times, delivery promise). */
+const steps = [
+  ['Send a reference', 'A photo, your measurements, your colour — tap Chat on any piece or message us your own idea.'],
+  ['Get a quote', 'We price it and confirm the production time in the same conversation. Most builds quote 5–14 working days.'],
+  ['We build it', 'Cut, sewn and finished in our Ibadan workshop. You can ask for progress photos at any point.'],
+  ['We deliver', 'Same-day delivery in Ibadan and nationwide shipping — free on orders over ₦2,000,000.'],
+];
+---
+
+<section class="section process" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>From your message to your living room</h2>
+    <div class="steps4">
+      {steps.map(([t, d], i) => (
+        <div class="step">
+          <b class="step__num">{String(i + 1).padStart(2, '0')}</b>
+          <h3>{t}</h3>
+          <p>{d}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
