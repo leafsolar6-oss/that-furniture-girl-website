@@ -60,10 +60,10 @@
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(30px, 4vw, 54px);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
-@media (min-width: 980px) { .hero__grid { grid-template-columns: 1.02fr .98fr; } }
+@media (min-width: 980px) { .hero__grid { grid-template-columns: 1fr 1fr; } }
 
 .hero__title {
   font-size: clamp(38px, 6.4vw, 68px);
@@ -91,19 +91,19 @@
 }
 .stat span { display: block; margin-top: 7px; font-size: 13.5px; color: var(--muted); line-height: 1.4; }
 
-/* the rounded product panel with floating chips */
 .hero__panel {
   position: relative;
-  border-radius: 32px;
+  border-radius: 1.5rem;
   overflow: hidden;
-  background: var(--sand);
+  background: linear-gradient(135deg, rgba(241,236,226,.2), rgba(206,154,67,.2));
   box-shadow: var(--shadow-md);
-  aspect-ratio: 4 / 5;
-  max-height: 620px;
+  aspect-ratio: 4 / 3;
+  max-height: 420px;
   margin-inline: auto;
   width: 100%;
+  max-width: 460px;
 }
-@media (min-width: 980px) { .hero__panel { aspect-ratio: 5 / 6; max-height: 660px; } }
+@media (min-width: 980px) { .hero__panel { aspect-ratio: 4 / 3; max-height: 460px; max-width: 520px; } }
 
 .hero__slides { position: absolute; inset: 0; }
 .hero__slide {
