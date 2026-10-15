@@ -1218,3 +1218,11 @@ body::after {
   filter: drop-shadow(0 1px 5px rgba(20,19,18,.5));
   font-size: 0;
 }
+
+/* ==========================================================================
+   PLATE CLEAN-UP 2026-10-15 — ghost numerals (01, 02, 03…) retired, and
+   the logo seal moves to the left edge of every photograph.
+   ========================================================================== */
+.product-card__media::after { content: none; }
+.wm { right: auto; left: 12px; }
+.wm--w2 { right: auto; left: 12px; }
