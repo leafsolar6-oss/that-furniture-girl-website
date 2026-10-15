@@ -144,17 +144,27 @@ Nigerian mobile data.
 
 ---
 
-## Interim: the built copy at the repo root
+## How the site is published today
 
-GitHub Pages is still set to *deploy from a branch* (`main`, `/`), not from the
-Actions workflow. Until that is switched over in **Settings → Pages → Source →
-GitHub Actions**, the site is served from the files in this folder root — which
-is why a freshly built copy of `dist/` (`index.html`, `shop.html`,
-`about.html`, `contact.html`, `assets/`, `_astro/`, `.nojekyll`) also sits
-here. Both paths serve exactly the same site, so the switch cannot break
-anything.
+Every push to `main` publishes the site twice: the Actions workflow uploads
+`dist/`, and — because GitHub Pages is *still* set to **deploy from a branch**
+(`main`, `/`) rather than from the workflow — the repository root is published
+too. Both copies are the same site, so the two can never disagree while the
+setting is what it is. That is why a freshly built copy of `dist/`
+(`index.html`, `shop.html`, `about.html`, `contact.html`, `assets/`, `_astro/`,
+`.nojekyll`) also sits at the root.
 
-The root copy is generated output, not source: never edit it. To refresh it,
-run `npm run build` and copy `dist/` over the root. Once Pages is switched to
-GitHub Actions, delete it (`git rm -r --cached _astro assets *.html .nojekyll`)
-— from then on `dist/` is the only thing published.
+The root copy is generated output: never edit it. To refresh it, run
+`npm run build` and copy `dist/` over the root.
+
+**Finishing the job** — in the repo: *Settings → Pages → Source → GitHub
+Actions*. Then the root copy can go:
+
+```bash
+git rm -r _astro assets index.html shop.html about.html contact.html .nojekyll
+git commit -m "Remove the interim root copy — Pages now builds from Actions"
+git push
+```
+
+From then on `dist/` is the only thing published, and a content change needs
+nothing more than a push.
