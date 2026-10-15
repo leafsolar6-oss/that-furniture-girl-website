@@ -1226,3 +1226,13 @@ body::after {
 .product-card__media::after { content: none; }
 .wm { right: auto; left: 12px; }
 .wm--w2 { right: auto; left: 12px; }
+
+/* ==========================================================================
+   WEBP PASS 2026-10-15 — <picture> wrappers serve WebP to every modern
+   browser with the JPEG as fallback; wrappers stay invisible in layout.
+   ========================================================================== */
+.product-card__media picture,
+.piece__media picture,
+.split__media picture { display: block; }
+.hero__slide picture { display: block; height: 100%; }
+.split__media-second img { border: 0; box-shadow: none; }

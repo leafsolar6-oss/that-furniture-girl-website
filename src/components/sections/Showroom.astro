@@ -27,7 +27,10 @@ import { waLink } from '../../lib/site.js';
     </div>
     <div class="split__media split__media--single">
       <span class="wm" aria-hidden="true"></span>
-      <img src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom, Iyaganku, New GRA, Ibadan`} loading="lazy" width="1400" height="874">
+      <picture>
+        <source srcset="assets/img/opt/showroom.webp" type="image/webp">
+        <img src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom, Iyaganku, New GRA, Ibadan`} loading="lazy" width="1400" height="874">
+      </picture>
     </div>
   </div>
 </section>

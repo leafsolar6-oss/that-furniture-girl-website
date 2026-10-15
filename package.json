@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "onepage": "astro build && python3 build_onepage.py"
+    "onepage": "astro build && node scripts/minify-css.mjs && python3 build_onepage.py",
+    "postbuild": "node scripts/minify-css.mjs"
   },
   "devDependencies": {
     "astro": "~7.3.8"

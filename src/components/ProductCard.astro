@@ -12,8 +12,11 @@ const shown = price.ask ? 'Price on request' : price.value;
 <article class="product-card group reveal" data-delay={delay} data-id={p.id} data-cat={p.cat} data-price={p.price || ''} data-search={p.haystack}>
   <a href={`${p.id}.html`} class="product-card__link" aria-label={`${p.name} — view piece`}>
     <div class="product-card__media">
-      <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
-           loading="lazy" width="900" height="900">
+      <picture>
+        <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
+        <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
+             loading="lazy" width="900" height="900">
+      </picture>
       <div class="product-card__overlay"></div>
       <span class="wm" aria-hidden="true"></span>
       <span class="product-card__badge">{catLabel(p.cat)}</span>

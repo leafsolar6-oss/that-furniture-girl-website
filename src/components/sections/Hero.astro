@@ -46,9 +46,12 @@ const firstPrice = priceInfo(first);
                  data-price={shown}
                  data-badge={p.badge || categoryLabel(p.cat)}
                  aria-label={`${p.name} — view piece`}>
-                <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours} by ${CONFIG.brand}`}
-                     loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
-                     width="900" height="1125">
+                <picture>
+                  <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
+                  <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours} by ${CONFIG.brand}`}
+                       loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
+                       width="900" height="1125">
+                </picture>
                 <span class="wm wm--hero" aria-hidden="true"></span>
               </a>
             );

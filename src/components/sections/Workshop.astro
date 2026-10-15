@@ -7,10 +7,16 @@ import { CONFIG } from '../../data/products.js';
 <section class="section workshop" id="workshop">
   <div class="container split">
     <div class="split__media">
-      <img src="assets/img/opt/atelier.jpg" alt={`Inside the ${CONFIG.brand} workshop in Ibadan`} loading="lazy" width="1000" height="853">
+      <picture>
+        <source srcset="assets/img/opt/atelier.webp" type="image/webp">
+        <img src="assets/img/opt/atelier.jpg" alt={`Inside the ${CONFIG.brand} workshop in Ibadan`} loading="lazy" width="1000" height="853">
+      </picture>
       <span class="wm wm--w1" aria-hidden="true"></span>
       <span class="wm wm--w2" aria-hidden="true"></span>
-      <img class="split__media-second" src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom`} loading="lazy" width="1400" height="874">
+      <picture class="split__media-second">
+        <source srcset="assets/img/opt/showroom.webp" type="image/webp">
+        <img src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom`} loading="lazy" width="1400" height="874">
+      </picture>
     </div>
     <div class="split__copy">
       <span class="kicker">The workshop</span>
