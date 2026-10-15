@@ -975,3 +975,21 @@ body::after {
 .faq summary span { color: var(--gold); font-size: 26px; line-height: 1; transition: transform .3s var(--ease); }
 .faq details[open] summary span { transform: rotate(45deg); }
 .faq details p { margin: 12px 0 0; color: var(--muted); max-width: 62ch; line-height: 1.7; }
+
+/* ==========================================================================
+   A11y + quick-view affordances
+   ========================================================================== */
+.skip-link {
+  position: fixed; top: -70px; left: 16px; z-index: 300;
+  background: var(--ink); color: #fff; text-decoration: none;
+  padding: 11px 20px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  transition: top .2s var(--ease);
+}
+.skip-link:focus { top: 12px; }
+.product-card__actions { display: flex; align-items: center; gap: 20px; }
+.product-card__details {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: var(--ink-soft); font-size: 12.5px; font-weight: 600;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.product-card__details:hover { color: var(--gold-dark); }

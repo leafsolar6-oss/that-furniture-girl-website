@@ -11,7 +11,7 @@ import SearchPanel from '../components/SearchPanel.astro';
 import ProductModal from '../components/ProductModal.astro';
 import Fab from '../components/Fab.astro';
 import Drawer from '../components/Drawer.astro';
-import { CONFIG } from '../data/products.js';
+import { CONFIG, PRODUCTS } from '../data/products.js';
 
 const {
   title,
@@ -20,6 +20,47 @@ const {
   ogDescription = description,
   page = ''
 } = Astro.props;
+
+/* Share + SEO: canonical url, a real og:image and structured data, so a link
+   pasted into WhatsApp previews like a shop window instead of a bare title. */
+const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site).href;
+const ogImage = new URL(import.meta.env.BASE_URL + 'assets/img/opt/blush-sectional.jpg', Astro.site).href;
+const ld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FurnitureStore',
+      name: CONFIG.brand,
+      image: ogImage,
+      telephone: '+' + CONFIG.whatsapp,
+      priceRange: '\u20a6100,000 - \u20a61,500,000',
+      address: { '@type': 'PostalAddress', streetAddress: CONFIG.address, addressCountry: 'NG' },
+      areaServed: 'Nigeria',
+      sameAs: [CONFIG.instagram, CONFIG.tiktok]
+    },
+    {
+      '@type': 'ItemList',
+      itemListElement: PRODUCTS.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: p.name,
+          image: new URL(import.meta.env.BASE_URL + 'assets/img/opt/' + p.img, Astro.site).href,
+          description: p.desc,
+          offers: p.price ? {
+            '@type': 'Offer',
+            priceCurrency: 'NGN',
+            price: p.price,
+            availability: /pickup/i.test(p.lead || '')
+              ? 'https://schema.org/InStock'
+              : 'https://schema.org/MadeToOrder'
+          } : undefined
+        }
+      }))
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -33,14 +74,23 @@ const {
   <meta property="og:title" content={ogTitle}>
   <meta property="og:description" content={ogDescription}>
   <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="900">
+  <meta property="og:image:height" content="619">
+  <meta property="og:image:alt" content="Blush Sectional on the studio backdrop — That Furniture Girl, Ibadan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={ogTitle}>
+  <meta name="twitter:description" content={ogDescription}>
+  <meta name="twitter:image" content={ogImage}>
+  <link rel="canonical" href={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23004B1F'/%3E%3Cg fill='none' stroke='%23FFB600' stroke-width='1.7' stroke-linecap='round'%3E%3Cpath d='M8 17v-4.5A2.5 2.5 0 0 1 10.5 10h11A2.5 2.5 0 0 1 24 12.5V17'/%3E%3Cpath d='M6 18a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3H6z'/%3E%3Cpath d='M9 21v2M23 21v2'/%3E%3C/g%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/arrangement.css">
 </head>
 <body class={`page-${page || 'home'}`}>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- announcement ------------------------------------------------------- -->
 <div class="announce" aria-hidden="true">

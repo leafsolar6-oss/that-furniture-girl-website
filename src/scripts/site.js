@@ -438,5 +438,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* "Details" on a card opens the quick-view modal (specs, lead time, order). */
+  document.addEventListener('click', (e) => {
+    const q = e.target.closest('[data-quick]');
+    if (!q) return;
+    e.preventDefault();
+    const p = PRODUCTS.find((x) => x.id === q.getAttribute('data-quick'));
+    if (p) openModal(p);
+  });
+
   observeReveals(document);
 });

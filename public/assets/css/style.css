@@ -6,6 +6,20 @@
 
 /* --- fonts ---------------------------------------------------------------- */
 @font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/instrument-serif-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/instrument-serif-italic-latin.woff2') format('woff2');
+}
+@font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 200 800;
@@ -26,7 +40,7 @@
 
   /* warm accents used on the cream pages (reference arrangement) */
   --gold:        #CE9A43;
-  --gold-dark:   #B3832F;
+  --gold-dark:   #86641F;  /* AA contrast for small gold text on white/cream */
   --gold-soft:   #F7EEDD;
   --wa:          #1FA34A;
   --wa-dark:     #17863C;

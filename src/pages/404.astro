@@ -1,0 +1,30 @@
+---
+/* Friendly 404 — legacy Pages serves dist/404.html automatically. */
+import Base from '../layouts/Base.astro';
+import { CONFIG } from '../data/products.js';
+import { waLink } from '../lib/site.js';
+---
+
+<Base
+  page=""
+  title="Page not found — That Furniture Girl"
+  description="That page does not exist. The collection, the showroom and our WhatsApp are one tap away."
+>
+  <section class="section notfound">
+    <div class="container container--narrow" style="text-align:center">
+      <span class="kicker">404</span>
+      <h1 style="font-size:clamp(40px,7vw,84px)">This room is empty</h1>
+      <p class="lead" style="margin-inline:auto">
+        The page you asked for does not exist — but every piece we build is still
+        one tap away.
+      </p>
+      <div class="btn-row" style="justify-content:center; margin-top:28px">
+        <a class="btn btn--gold btn--lg" href="index.html">Back to home</a>
+        <a class="btn btn--outline btn--lg" href="products.html">All products</a>
+        <a class="btn btn--outline btn--lg" href={waLink('Hello! I need help finding something on the site.')}>
+          Ask on WhatsApp · {CONFIG.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
