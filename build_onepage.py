@@ -264,6 +264,14 @@ window.TFG = {
     # '<img src="assets/img/opt/'+e.img+'" alt="...">'
     out = re.sub(r"assets/img/opt/'\s*\+\s*([A-Za-z_$][\w$]*\.img)\s*\+\s*'",
                  r"' + (window.TFG_IMG_MAP[\1] || '') + '", out)
+    # Astro 7 minifies that same concatenation into template-literal form,
+    # with the variable renamed:   "assets/img/opt/" `+e.img+`  ->  looks like
+    #   src="assets/img/opt/`+e.img+`"
+    out = re.sub(r"assets/img/opt/`\+([A-Za-z_$][\w$]*)\.img\+`",
+                 r"`+window.TFG_IMG_MAP[\1.img]+`", out)
+    # and the plain template form, in case a future minifier emits it
+    out = re.sub(r"assets/img/opt/\$\{([A-Za-z_$][\w$]*\.img)\}",
+                 r"${window.TFG_IMG_MAP[\1]||''}", out)
 
     (ROOT / OUT_NAME).write_text(out, encoding="utf-8")
     size_mb = (ROOT / OUT_NAME).stat().st_size / 1024 / 1024

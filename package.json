@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "That Furniture Girl — handcrafted furniture in Ibadan. Astro build.",
+  "description": "That Furniture Girl \u2014 handcrafted furniture in Ibadan. Astro build.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,6 +11,9 @@
     "onepage": "astro build && python3 build_onepage.py"
   },
   "devDependencies": {
-    "astro": "^5.14.1"
+    "astro": "~7.3.8"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

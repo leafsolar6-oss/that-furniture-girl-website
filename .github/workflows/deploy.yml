@@ -25,9 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Astro 7 needs Node 22.12 or newer; .nvmrc is the single place that
+      # version is written down, so CI and local machines can't drift apart.
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: .nvmrc
           cache: npm
       - name: Install dependencies
         run: npm ci

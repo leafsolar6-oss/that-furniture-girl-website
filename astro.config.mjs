@@ -17,5 +17,9 @@ export default defineConfig({
     format: 'file',
     inlineStylesheets: 'auto'
   },
+  // Astro 7 defaults to JSX whitespace rules, which strips the space between
+  // inline elements (e.g. "Ibadan <span>&</span> nationwide" would run
+  // together). `true` keeps HTML-aware whitespace — the same output as before.
+  compressHTML: true,
   devToolbar: { enabled: false }
 });

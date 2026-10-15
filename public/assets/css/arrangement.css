@@ -379,3 +379,13 @@
 .site-footer .socials a:hover { background: var(--gold); color: #0B0C0E; }
 .brand--footer img { width: 190px; height: auto; }
 .footer-bottom { margin-top: 18px; padding-top: 20px; font-size: 13px; }
+
+/* ---------------------------------------------------------------------------
+   `hidden` actually hiding something.
+   Cards are hidden and shown by the category chips / price range / search
+   (site.js sets `card.hidden = true`). The browser's own rule for that is
+   `[hidden] { display: none }`, but an author rule always outranks the
+   browser's — and `.product { display: flex }` above was quietly winning, so
+   a filtered-out card stayed on screen. This restores the intended behaviour.
+   --------------------------------------------------------------------------- */
+[hidden] { display: none !important; }
