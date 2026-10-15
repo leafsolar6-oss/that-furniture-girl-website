@@ -453,3 +453,25 @@
 .freedelivery__inner b { display: block; font-size: 17px; font-weight: 800; }
 .freedelivery__inner span { display: block; font-size: 13px; color: var(--muted, #6b6b6b); }
 .freedelivery__inner small { margin-left: auto; font-size: 11px; color: var(--muted, #6b6b6b); }
+
+/* --- bubblesbasket-style dark hero & footer ----------------------------- */
+.hero {
+  background: linear-gradient(135deg, #050607, #010202);
+  color: #f7f5ef;
+}
+.hero__title { color: #f7f5ef; }
+.hero__title em { font-style: italic; color: #ce9a43; }
+.hero__sub { color: rgba(247,245,239,.78); }
+.hero__pill { color: #f7f5ef; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+.stat b { color: #ce9a43; }
+.stat span { color: rgba(247,245,239,.7); }
+.hero::before { background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); }
+
+.site-footer {
+  background: linear-gradient(#020304, #010101);
+  color: #e0ddd6;
+}
+.site-footer h4, .site-footer .brand__name { color: #f7f5ef; }
+.site-footer p, .site-footer span { color: rgba(224,221,214,.8); }
+.site-footer a { color: rgba(224,221,214,.9); }
+.site-footer .footer-bottom { color: rgba(224,221,214,.6); border-top-color: rgba(255,255,255,.08); }
