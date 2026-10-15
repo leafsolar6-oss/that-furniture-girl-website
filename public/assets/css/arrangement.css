@@ -63,7 +63,7 @@
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
-@media (min-width: 980px) { .hero__grid { grid-template-columns: 1.3fr 0.7fr; gap: 2rem; } }
+@media (min-width: 980px) { .hero__grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
 
 .hero__title {
   font-size: clamp(38px, 6.4vw, 68px);
