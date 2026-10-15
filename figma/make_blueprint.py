@@ -4,10 +4,9 @@ Generates figma/page-blueprints.svg — a Figma-importable blueprint of all four
 pages of the That Furniture Girl site.
 
 The section list, order, pixel heights, background colours, grid columns and
-card counts were measured from the real pages at a 1440 px viewport
+card counts were measured from the built pages (dist/) at a 1440 px viewport
 (Playwright, viewport 1440x1000, .reveal forced visible so lazy sections have
-their true height). Re-run the measurement and update SITE if the markup
-changes; then re-run this file.
+their true height). Run `npm run build` first, then `python3 make_blueprint.py`.
 
 Every block is a real SVG layer, so in Figma you can ungroup, restyle or
 rebuild any section without touching the site.

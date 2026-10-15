@@ -1,0 +1,29 @@
+---
+import { CONFIG } from '../data/products.js';
+const { page = '' } = Astro.props;
+const NAV = [
+  { href: 'index.html',   label: 'Home',            key: 'home' },
+  { href: 'shop.html',    label: 'Shop',            key: 'shop' },
+  { href: 'about.html',   label: 'Our Story',       key: 'about' },
+  { href: 'contact.html', label: 'Visit & Contact', key: 'contact' }
+];
+---
+
+<aside class="drawer" id="drawer" aria-label="Menu">
+  <div class="drawer__top">
+    <span class="brand__name">{CONFIG.brand}</span>
+    <button class="drawer__close" type="button" data-close-drawer aria-label="Close menu">&times;</button>
+  </div>
+  <nav>
+    {NAV.map((item) => (
+      <a href={item.href} aria-current={page === item.key ? 'page' : undefined}>{item.label}</a>
+    ))}
+  </nav>
+  <div class="drawer__foot">
+    <a class="btn btn--primary btn--block" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I would like to order furniture.">Order on WhatsApp</a>
+    <div class="drawer__meta">
+      <span>Iyaganku, New GRA, Ibadan</span>
+      <span>{CONFIG.phoneDisplay} &middot; @thatfurnituregirl__</span>
+    </div>
+  </div>
+</aside>

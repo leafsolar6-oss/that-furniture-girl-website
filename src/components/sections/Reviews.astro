@@ -1,0 +1,39 @@
+---
+/* What our customers say.
+   Rendered ONLY when real reviews exist in src/data/products.js, so the site
+   can never show a review nobody wrote. Right now the list is empty and this
+   section does not appear in the built HTML at all. */
+import { TESTIMONIALS } from '../../data/products.js';
+import { CONFIG } from '../../data/products.js';
+
+const quotes = TESTIMONIALS;
+---
+
+{quotes.length > 0 && (
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What our customers say</h2>
+        <p class="lead" style="margin-top:14px">Real messages from real customers — unchanged.</p>
+      </div>
+      <div class="quote-grid" id="quoteGrid">
+        {quotes.map((t, i) => (
+          <figure class="quote-card reveal" data-delay={i % 2}>
+            <div class="quote-card__head">
+              {t.img
+                ? <img class="quote-card__avatar" src={`assets/img/opt/${t.img}`} alt="" loading="lazy" />
+                : <span class="quote-card__avatar" aria-hidden="true">{String(t.name || '?').trim().charAt(0).toUpperCase()}</span>}
+              <div class="quote-card__who">
+                <strong>{t.name}</strong>
+                {t.where && <span>{t.where}</span>}
+              </div>
+            </div>
+            <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+            <blockquote class="quote-card__text">{t.text}</blockquote>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

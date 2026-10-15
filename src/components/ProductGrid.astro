@@ -1,0 +1,10 @@
+---
+/* A grid of product cards. Rendered at build time. */
+import ProductCard from './ProductCard.astro';
+
+const { products = [], id = 'productGrid' } = Astro.props;
+---
+
+<div class="grid-products" id={id} data-count={products.length}>
+  {products.map((p, i) => <ProductCard product={p} delay={i % 4} />)}
+</div>

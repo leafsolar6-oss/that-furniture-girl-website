@@ -8,9 +8,9 @@ mockup, so nothing here can drift from what customers actually see.
 |---|---|---|
 | `design-system.svg` | The full style sheet: colours, type specimens, radius scale, shadows, buttons, badges, the product-card anatomy, layout and spacing rules — plus a bottom band for the cream/gold arrangement (`--gold`, `--wa`, `--sand`, hero panel, filter toolbar). Every element is a real vector layer. | Drag onto a Figma page → right-click → **Ungroup**. Colour swatches, text and shapes become editable. |
 | `page-blueprints.svg` | All four pages side by side at 1:4, section by section, with real measurements (heights, background, grid columns, card counts), a section index, the component inventory and the rules we keep. | Drag in, ungroup, then rebuild any section on top of its block. Scale ×4.1667 to work at true 1440 px. |
-| `tokens.json` | The same tokens — 25 colours including `--gold`, `--wa`, `--sand` — in W3C Design Tokens (DTCG) format, parsed straight out of `assets/css/style.css`. | In Figma: **Tokens Studio → Import → JSON**. Also readable by the Figma MCP server. |
-| `make_tokens.py` | Regenerates `tokens.json` from `:root` in `assets/css/style.css`. | `python3 make_tokens.py` after any palette or spacing change. |
-| `make_blueprint.py` | Regenerates `page-blueprints.svg`. | `python3 make_blueprint.py` after any section is added or reordered. |
+| `tokens.json` | The same tokens — 25 colours including `--gold`, `--wa`, `--sand` — in W3C Design Tokens (DTCG) format, parsed straight out of `public/assets/css/style.css`. | In Figma: **Tokens Studio → Import → JSON**. Also readable by the Figma MCP server. |
+| `make_tokens.py` | Regenerates `tokens.json` from `:root` in `public/assets/css/style.css`. | `python3 make_tokens.py` after any palette or spacing change. |
+| `make_blueprint.py` | Regenerates `page-blueprints.svg`. | `npm run build && python3 make_blueprint.py` after any section is added or reordered. |
 
 ## Import into Figma, step by step
 
@@ -19,22 +19,22 @@ mockup, so nothing here can drift from what customers actually see.
 3. Then `page-blueprints.svg` on a second page and name that page *Blueprints*.
 4. Create Figma **colour styles** from the swatch names — they match the CSS variable
    names exactly (`--green`, `--amber`, `--muted-2`, …), so a developer can find any
-   colour in `assets/css/style.css` by name.
+   colour in `public/assets/css/style.css` by name.
 5. Text styles: Display, Heading 2, Heading 3, Body, Small, Eyebrow — sizes and
    weights are labelled on the sheet.
 6. Typeface: **Plus Jakarta Sans** (200–800), free on Google Fonts. The site self-hosts
-   `assets/fonts/jakarta-latin.woff2`, so text set in Plus Jakarta Sans matches 1:1.
+   `public/assets/fonts/jakarta-latin.woff2`, so text set in Plus Jakarta Sans matches 1:1.
 
 ## If you are designing with an AI agent (Figma MCP)
 
 Paste this into the agent:
 
 > Read the public repo `github.com/leafsolar6-oss/that-furniture-girl-website`.
-> The design system is `assets/css/style.css` — treat the `:root` block as the single
-> source of truth for colour, radius, shadow and spacing, and `assets/js/main.js`
+> The design system is `public/assets/css/style.css` — treat the `:root` block as the single
+> source of truth for colour, radius, shadow and spacing, and `src/scripts/site.js` + `src/components/ProductCard.astro`
 > (`cardHTML()`, `wireFilters()`) as the source of truth for the product card, filter
-> chips and the quick-view modal. Section order per page: read `index.html`,
-> `shop.html`, `about.html`, `contact.html`.
+> chips and the quick-view modal. Section order per page: read `src/pages/index.astro`,
+> `shop.astro`, `about.astro`, `contact.astro`.
 >
 > Build the new design **from** that, then open a pull request on `main`. Keep these
 > constraints or the design cannot ship:
@@ -52,7 +52,7 @@ Paste this into the agent:
 > - Showroom: Iyaganku, New GRA, Ibadan, 200273 · WhatsApp 0907 984 9626 ·
 >   @thatfurnituregirl\_ (TikTok) · @thatfurnituregirl\_\_ (Instagram).
 >
-> Anything you change in the design must be reproducible in one file: `assets/css/style.css`.
+> Anything you change in the design must be reproducible in one file: `public/assets/css/style.css`.
 
 ## The rules the design has to keep
 

@@ -9,9 +9,12 @@ Re-run after editing style.css so the design file never drifts from the code.
 import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CSS = os.path.join(HERE, "..", "assets", "css", "style.css")
+CSS = os.path.join(HERE, "..", "public", "assets", "css", "style.css")
+ARRANGEMENT = os.path.join(HERE, "..", "public", "assets", "css", "arrangement.css")
 
 raw = open(CSS, encoding="utf-8").read()
+# the reference-arrangement skin adds the warm palette on top
+raw_extra = open(ARRANGEMENT, encoding="utf-8").read()
 root = re.search(r":root\s*\{(.*?)\}", raw, re.S).group(1)
 vars_ = dict(re.findall(r"--([\w-]+)\s*:\s*([^;]+);", root))
 
@@ -40,6 +43,15 @@ def dim(v):
 
 
 colour, radius, shadow, spacing, sizing, motion = {}, {}, {}, {}, {}, {}
+WARM = {
+    "gold": ("#CE9A43", "Primary CTA, active filter tab"),
+    "gold-dark": ("#B3832F", "Gold hover"),
+    "gold-soft": ("#F7EEDD", "Focus ring, soft chips"),
+    "wa": ("#1FA34A", "WhatsApp order buttons"),
+    "wa-dark": ("#17863C", "WhatsApp hover"),
+    "sand": ("#F1ECE2", "Photo panels behind products"),
+}
+
 for name, value in vars_.items():
     v = " ".join(value.split())
     if (v.startswith("#") and len(v) in (4, 7)) or (v.startswith("rgba(") and name.startswith("line")):
@@ -107,7 +119,7 @@ grid = {
 }
 
 tokens = {
-    "$description": "That Furniture Girl design tokens - generated from assets/css/style.css :root by figma/make_tokens.py. Import into Figma with Tokens Studio, or read via the Figma MCP server.",
+    "$description": "That Furniture Girl design tokens - generated from public/assets/css/style.css :root by figma/make_tokens.py. Import into Figma with Tokens Studio, or read via the Figma MCP server.",
     "$themes": [],
     "motion": motion,
     "colour": colour,
@@ -118,6 +130,10 @@ tokens = {
     "sizing": sizing,
     "grid": grid,
 }
+
+for name, (hexv, use) in WARM.items():
+    if name not in colour:
+        colour[name] = {"$type": "color", "$value": hexv, "$description": use}
 
 out = os.path.join(HERE, "tokens.json")
 with open(out, "w", encoding="utf-8") as f:

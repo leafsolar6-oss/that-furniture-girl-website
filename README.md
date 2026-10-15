@@ -1,280 +1,139 @@
 # That Furniture Girl — website
 
-A modern website for **That Furniture Girl** (@thatfurnituregirl_), handcrafted
-furniture from **Iyaganku, New GRA, Ibadan** — Nigeria.
+The live site for **That Furniture Girl**, a handcrafted furniture workshop in
+Iyaganku, New GRA, Ibadan. Sectionals, sofa sets, wardrobes and centre tables,
+all made to order — **ordering happens on WhatsApp**, so there is no cart, no
+checkout and no payment step anywhere on the site.
 
-Every price, product, photo, statistic and contact detail on this site was
-recovered from the brand's own TikTok account. Nothing here is invented.
-
----
-
-## What's in this folder
-
-```
-index.html                         Home page
-shop.html                          Full collection with category filters
-about.html                         Our story / the workshop
-contact.html                       Visit & contact / how ordering works
-that-furniture-girl-one-page.html  The whole site as ONE self-contained file
-assets/
-  css/style.css                    Design system (colours, type, layout)
-  js/products.js                   ➜ EDIT THIS to change products & prices
-  js/main.js                       Shop rendering, quick-view, drawer, WhatsApp
-  img/                             Photography + the real logo
-  img/opt/                         Same photos compressed for the web
-  fonts/                           Plus Jakarta Sans, self-hosted
-design-reference/template-pin.jpg  The template the look is based on
-source-photos/                     The original TikTok stills, uncropped
-build_onepage.py                   Rebuilds the single-file version
-```
-
-### The design system
-
-The layout follows a modern furniture-store template: deep green + amber on a
-soft grey page, rounded cards and pill buttons. Everything is driven by CSS
-variables at the top of `assets/css/style.css` — change them there and the whole
-site follows.
-
-```
---green   #004B1F    buttons, headings accent, dark panels, footer
---amber   #FFB600    icon tiles, badges, count-ups, highlight buttons
---bg      #F4F4F4    page background
---surface #FFFFFF    cards
-```
-
-Photography is hers throughout. Prices, colours and production times in the
-copy all come from her own posts — see "Where the real data came from".
-
-### The customer reviews section
-
-The home page has a "What our customers say" section that is **switched off
-until you give it real reviews**. It reads `TFG_TESTIMONIALS` at the bottom of
-`assets/js/products.js`, which ships empty — while it is empty the whole
-section hides itself, so the site can never show a review nobody wrote.
-
-Paste in what customers actually sent you (WhatsApp, Instagram DM, TikTok
-comment) and it appears on the home page automatically:
-
-```js
-var TFG_TESTIMONIALS = [
-  { name: 'Ada O.',                  // how they want to be shown
-    where: 'Ibadan',                 // optional — city, or how they found you
-    text: 'The exact words they sent you.' }
-];
-```
-
-There is one other thing the site deliberately does not fake: discount badges
-and countdown timers. The "Ready right now" band shows real stock instead —
-the two pieces that are finished and sitting in the showroom.
-
-**Two versions, same site:**
-
-| File | Use it for |
-|---|---|
-| `index.html` + `shop.html` + `about.html` + `contact.html` | **Hosting.** Upload the whole folder. |
-| `that-furniture-girl-one-page.html` | **Sharing.** One file, everything embedded — email it, WhatsApp it, open it offline. |
+**Live:** https://leafsolar6-oss.github.io/that-furniture-girl-website/
 
 ---
 
-## Where the real data came from
+## How it is built
 
-TikTok blocks ordinary page requests, so the assets were collected through
-TikTok's own signed CDN endpoints. Everything below is genuine:
+The site is an **Astro** project. Astro generates plain HTML, CSS and a small
+script at build time — there is no framework shipped to the browser, so the
+pages stay as light and as fast on Nigerian mobile data as the hand-written
+version they replaced.
 
-**The photography** — `assets/img/` contains real stills from her posts: the
-grey boucle Blush Sectional, the chocolate corduroy Jewel, the Blush Linea set,
-the Twinkle Set with its floral print, the Plush 3-Seaters, the Royal Kinging
-Set, the round Centre Table and the two-door Wardrobe — all photographed in the
-Iyaganku workshop. Nothing is AI-generated any more.
+```
+src/
+  components/           header, footer, drawer, search panel, product card…
+    sections/           one file per page section (Hero, Collection, FAQ…)
+  data/products.js      ← EDIT THIS: prices, colours, materials, photos, reviews
+  layouts/Base.astro    <head>, announcement bar, chrome, footer
+  lib/site.js           price + WhatsApp-message helpers (used at build time)
+  scripts/site.js       the browser behaviour (filters, slider, quick view)
+  pages/                index.astro · shop.astro · about.astro · contact.astro
+public/
+  assets/               photos, logos, the two stylesheets, fonts
+figma/                  Figma handoff kit (see figma/README.md)
+build_onepage.py        bundles everything into one self-contained HTML file
+.github/workflows/      builds and publishes to GitHub Pages on every push
+```
 
-**The logo** — `logo-mark.png`, `logo-mark-light.png`, `logo-full.png` and
-`logo-full-light.png` were cut from her real profile avatar, with the white
-background removed and transparency preserved. The wordmark and her tagline
-(*"your best comfort zone"*) are the originals. Use the `-light` variants on
-dark backgrounds.
+## Everyday commands
 
-**The numbers** — taken from the account, not estimated:
+```bash
+npm install        # once
+npm run dev        # local preview with live reload → http://localhost:4321
+npm run build      # generates the site into dist/
+npm run preview    # serve the built site locally
+npm run onepage    # build, then refresh that-furniture-girl-one-page.html
+```
 
-| | |
-|---|---|
-| Followers | 1,101 |
-| Likes | 59,230 |
-| Videos | 191 |
-| Views on the Blush Sectional | 57,172 |
+Publishing is automatic: **push to `main` and GitHub Actions builds and
+deploys it.** Nothing has to be uploaded by hand. (The first time, the repo's
+Pages source must be set to *GitHub Actions*.)
 
-**The address** — `Iyaganku, New GRA, Ibadan 200273, Oyo State`, from the
-location attached to her posts (coordinates 7.375526, 3.868076 — the "Get
-directions" button on the contact page uses these).
+## Changing prices, products and photos
 
-`source-photos/` holds the uncropped originals plus `meta/` (her exact captions
-and engagement figures for each post). Keep it as your master copy.
-
----
-
-## Editing products & prices
-
-Open **`assets/js/products.js`**. The shop grid, the home-page featured row and
-the quick-view pop-ups are all generated from that one list.
+Open **`src/data/products.js`** — that single file feeds the home page grid,
+the shop page, the hero slider, the quick-view panel and the search box.
 
 ```js
 {
-  id: 'blush-sectional',          // short unique name
-  name: 'Blush Sectional',
-  cat: 'sofas',                   // sofas | sets | tables | storage
-  price: 500000,                  // number only. null = "Price on request"
-  priceTo: 160000,                // optional, for two-size pieces
-  badge: 'Best seller',           // 'Best seller' | 'Signature' | 'New'
+  id: 'blush-sectional',           // short unique name, no spaces
+  name: 'Blush Sectional',         // shown on the card
+  cat: 'sofas',                    // sofas | sets | tables | storage
+  price: 500000,                   // naira, number only — or null for "on request"
+  priceTo: 160000,                 // optional second price (two sizes)
+  badge: 'Best seller',            // optional: Best seller | Signature | New
   colours: 'Light grey + white',
   material: 'Boucle fabric',
-  sizes: 'optional size note',
-  lead: '5 working days',
-  desc: 'One or two sentences for the quick-view.',
-  img: 'blush-sectional.jpg',
-  featured: true                  // show it on the home page
+  sizes: 'Small — … · Big — …',    // optional
+  lead: '14 working days',         // optional production time
+  desc: 'One or two sentences.',
+  img: 'blush-sectional.jpg',      // a file in public/assets/img/opt/
+  featured: true                   // show it on the home page
 }
 ```
 
-To add a piece: crop its photo to roughly 4:3, save it into
-`assets/img/opt/`, then copy a block and change the values. To remove one:
-delete its block. Nothing else needs touching.
+Then `git push` — the site rebuilds itself.
 
-Contact details, the WhatsApp number and social links live at the top of the
-same file (`TFG_CONFIG`). **The number is currently `2349079849626`** — set it
-to whichever number should receive orders.
+**Swapping a photo:** drop the new file into `public/assets/img/opt/` using the
+same filename and nothing else has to change. Keep photos around 1200 px wide;
+`sips`/Preview/Paint can resize them.
 
-### Swapping a photo
+### Customer reviews
 
-Replace the file in **both** `assets/img/` (full quality) and `assets/img/opt/`
-(web version), keeping the same filename. To make the web version:
+`TESTIMONIALS` in the same file is **empty on purpose**. The "What our
+customers say" section is not rendered at all until real messages are added,
+so the site can never show a review nobody wrote. Paste in what customers
+actually sent you and the section appears by itself.
 
-```bash
-python3 -c "
-from PIL import Image
-im = Image.open('new-photo.jpg').convert('RGB')
-w = 1400 if im.width > 1400 else im.width
-im = im.resize((w, int(im.height*w/im.width)), Image.LANCZOS)
-im.save('assets/img/opt/name.jpg', 'JPEG', quality=78, optimize=True, progressive=True)
-"
-```
+## What the site deliberately does not do
 
----
-
-## Rebuilding the single-file version
-
-After any change to pages, CSS, JS or photos:
-
-```bash
-python3 build_onepage.py
-```
-
-That rewrites `that-furniture-girl-one-page.html` with the fresh content,
-embedding the CSS, fonts, photos and logo as data URIs.
-
----
-
-## Publishing it
-
-Any static host works — no build step, no server, no database.
-
-### GitHub (and GitHub Pages, free hosting)
-
-This folder is already a git repository with everything committed on the `main`
-branch. To publish it:
-
-**1. Create the repository.** Go to <https://github.com/new>, give it a name
-(keep it **Public** if you want free Pages hosting), and leave it *empty* — no
-README, no .gitignore, no licence, so there's nothing to conflict with.
-
-**2. Push.** Open a terminal in this folder and run:
-
-```bash
-./push-to-github.sh yourusername/your-repo-name
-```
-
-When GitHub asks for a password, paste a **Personal Access Token** instead —
-GitHub stopped accepting account passwords over git in 2021. To make one:
-*Settings → Developer settings → Personal access tokens → Fine-grained tokens
-→ Repository access: only this repo → Contents: Read and write.*
-
-**3. Put it on the web.** In the repository: *Settings → Pages → Source:
-Deploy from a branch → Branch: `main`, Folder: `/ (root)` → Save.* After a
-minute your site is live at:
-
-```
-https://yourusername.github.io/your-repo-name/
-```
-
-The `.nojekyll` file in this folder stops GitHub from running Jekyll over the
-site, which isn't needed for plain HTML.
-
-### Other hosts
-
-- **Netlify / Vercel / Cloudflare Pages** — drag the folder onto the dashboard. Free.
-- **cPanel / shared hosting** — upload the contents to `public_html`.
-
-Only the four HTML files, `assets/` and the fonts are needed to serve the site.
-`source-photos/`, `build_onepage.py` and `push-to-github.sh` are working files —
-they live in the repository but don't affect the live site.
-
----
-
-## How the site sells
-
-It is built as an **order-enquiry business**, not a checkout — because that is
-how this business actually trades today. There is no cart and no payment
-processor. Every product's "Order" button opens WhatsApp with the piece name,
-colour and price pre-filled:
-
-> Hello That Furniture Girl! I would like to order the Blush Sectional
-> (Light grey + white) — ₦500,000. Is it available?
-
-A floating WhatsApp button follows the visitor on every page. The product data
-is a clean JavaScript array, so a real shop (Paystack, Flutterwave, Shopify Buy
-Button) can be bolted on later without redesigning anything.
-
----
+- **No cart or checkout.** Every CTA deep-links to a pre-filled WhatsApp message.
+- **No fake urgency or numbers.** No countdowns, no strike-through prices, no
+  star ratings, no invented "50k+ customers". Every figure on the site is real
+  (1,101 TikTok followers · 59,230 likes · 191 videos) and every price is the
+  price the workshop charges.
+- **No stock photography.** Every photo is from her own Instagram and TikTok.
+- Where the reference template asked for a "flash sale", this site says *Ready
+  right now* and lists the pieces genuinely finished in the showroom.
 
 ## The page arrangement
 
 The layout follows the modern Nigerian furniture-store arrangement the client
-sent as a reference (cream page, gold primary CTA, green WhatsApp buttons,
-pill controls, 4-up product grid, floating price cards):
+sent as a reference (cream page, gold primary CTA, green WhatsApp buttons, pill
+controls, 4-up product grid, floating price cards).
 
-- `assets/css/arrangement.css` holds everything for that arrangement — pills,
-  hero panel, filter toolbar, product card, 4-up grid and the cream footer.
-  It loads after `style.css`, so editing `style.css` still works underneath.
-- The hero is a real slider: photos and prices come from `products.js`, arrows
-  and dots are keyboard- and mouse-friendly, and it pauses on hover.
-- The filter toolbar (`search` + price range + grid/list toggle + category
-  tabs) is wired once in `main.js` (`wireFilters`) and works on both the home
-  page grid and the shop grid.
-- Honesty rules still apply: no countdowns, no fake discounts, no star
-  ratings, no invented review counts. Every stat is a real TikTok figure.
+- `public/assets/css/arrangement.css` holds that skin — pills, hero panel,
+  filter toolbar, product card, 4-up grid, cream footer. It loads after
+  `style.css`, so the older styles still work underneath.
+- The hero is a real slider: slides and prices come from `products.js`.
+- The filter toolbar (search + price range + grid/list toggle + category tabs)
+  is wired once in `src/scripts/site.js`; on the built site it **shows and
+  hides** server-rendered cards rather than rebuilding them, which is why the
+  product grid is visible before any JavaScript runs.
+
+## Rebuilding the single-file version
+
+`npm run onepage` regenerates `that-furniture-girl-one-page.html` — the whole
+site (all four pages, all photos, fonts and scripts) in one file that opens
+from anywhere, offline. It is a build artifact, so it is not committed.
 
 ## Designing it in Figma
 
-The `figma/` folder is a handoff kit generated from this code, so a designer (or an
-AI design agent) can work in Figma without guessing:
+`figma/` holds a handoff kit generated from this code:
 
-- `figma/design-system.svg` — every colour, text style, radius, shadow, button,
-  badge and the product-card anatomy, as editable vector layers.
-- `figma/page-blueprints.svg` — all four pages at 1:4 with the real section
-  heights, background, grid columns and card counts, plus a section index and a
-  component inventory.
-- `figma/tokens.json` — the same tokens in design-token format (Tokens Studio import).
-- `figma/README.md` — import steps, the agent brief, and the rules the design keeps.
+- `design-system.svg` — colours, type, radius, shadows, buttons, badges, the
+  product-card anatomy and the arrangement band, as editable vector layers.
+- `page-blueprints.svg` — all four pages at 1:4 with real section heights,
+  backgrounds, grid columns and card counts.
+- `tokens.json` — the same tokens in design-token format (Tokens Studio import).
+- `README.md` — import steps, the agent brief, and the rules the design keeps.
 
-The tokens are parsed from `:root` in `assets/css/style.css`, so change the CSS and
-re-run `python3 figma/make_tokens.py` to keep Figma and the site in step.
+## Publishing
 
-## Nice next steps
-
-1. Shoot a few fresh lifestyle photos with the furniture in customers' homes.
-2. Add real customer reviews — screenshots of TikTok comments work well.
-3. Add a "what's on the ground now" strip you can update weekly.
-4. Swap the WhatsApp number if orders should go to a different line.
+Hosting is free: GitHub Pages, built by the workflow in
+`.github/workflows/deploy.yml`. A custom domain can be added later without
+touching the code — add the `CNAME`, then point DNS at GitHub and tick
+*Enforce HTTPS*.
 
 ---
 
-Built as a static site — no frameworks, no dependencies, no monthly software
-costs. Fonts and photos are self-hosted, so it loads fast on Nigerian mobile data.
+Built as a static site — no frameworks, no dependencies in the browser, no
+monthly software costs. Fonts and photos are self-hosted, so it loads fast on
+Nigerian mobile data.

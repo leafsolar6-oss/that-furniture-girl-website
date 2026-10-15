@@ -1,18 +1,10 @@
-# ---- OS / editor junk -------------------------------------------------
+# build output and dependencies — never committed
+node_modules/
+dist/
+.astro/
+
+# the single-file bundle is generated, not source
+that-furniture-girl-one-page.html
+
+# OS noise
 .DS_Store
-.DS_Store?
-._*
-Thumbs.db
-desktop.ini
-.vscode/
-.idea/
-*.swp
-*~
-
-# ---- Python (build_onepage.py) ---------------------------------------
-__pycache__/
-*.py[cod]
-
-# ---- local scratch ----------------------------------------------------
-.preview/
-*.log

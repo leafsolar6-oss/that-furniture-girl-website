@@ -1,0 +1,44 @@
+---
+/* The filter toolbar: title, category tabs, search, price range and the
+   grid/list toggle. Shared by the home page and the shop page. */
+import { CATEGORIES } from '../data/products.js';
+
+const { title = 'Trending pieces', gridId = 'productGrid' } = Astro.props;
+
+/* The slider runs to whichever real price is highest, so it can never
+   suggest a price band the shop does not have. */
+import { PRODUCTS } from '../data/products.js';
+const topPrice = Math.max(...PRODUCTS.map((p) => p.priceTo || p.price || 0));
+const step = 50000;
+---
+
+<div class="collection-top reveal" data-tools-for={gridId}>
+  <h2>{title}</h2>
+  <div class="chip-row" id="shopFilters" role="group" aria-label="Filter by category">
+    {CATEGORIES.map((c, i) => (
+      <button class="chip" type="button" data-cat={c.key} aria-pressed={i === 0 ? 'true' : 'false'}>{c.label}</button>
+    ))}
+  </div>
+  <div class="filterbar__tools">
+    <label class="searchbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      <input type="search" data-tool="search" placeholder="Search pieces…" aria-label="Search pieces by name, colour or fabric">
+    </label>
+    <label class="rangebox">
+      <span>Up to</span>
+      <input type="range" data-tool="range" min="100000" max={topPrice} step={step} value={topPrice} aria-label="Maximum price">
+      <output data-tool="rangeout">&#8358;{topPrice.toLocaleString('en-NG')}+</output>
+    </label>
+    <div class="viewtoggle" role="group" aria-label="Change layout">
+      <button class="viewtoggle__btn is-on" type="button" data-tool="grid" aria-pressed="true" aria-label="Grid view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>
+      </button>
+      <button class="viewtoggle__btn" type="button" data-tool="list" aria-pressed="false" aria-label="List view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="empty-state" hidden data-empty-for={gridId}>
+  Nothing matches those filters. Try a wider price or a different word — or message us, we build to order.
+</div>

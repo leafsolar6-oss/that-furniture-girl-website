@@ -1,0 +1,79 @@
+---
+/* ==========================================================================
+   Base layout — the shell every page shares: <head>, announcement bar,
+   header, mobile drawer, footer, search overlay, quick-view modal, the
+   floating WhatsApp button and the site script.
+   Per-page things (title, description, nav highlight) come in as props.
+   ========================================================================== */
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SearchPanel from '../components/SearchPanel.astro';
+import ProductModal from '../components/ProductModal.astro';
+import Fab from '../components/Fab.astro';
+import Drawer from '../components/Drawer.astro';
+import { CONFIG } from '../data/products.js';
+
+const {
+  title,
+  description,
+  ogTitle = title,
+  ogDescription = description,
+  page = ''
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#F7F5EF">
+  <meta property="og:title" content={ogTitle}>
+  <meta property="og:description" content={ogDescription}>
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23004B1F'/%3E%3Cg fill='none' stroke='%23FFB600' stroke-width='1.7' stroke-linecap='round'%3E%3Cpath d='M8 17v-4.5A2.5 2.5 0 0 1 10.5 10h11A2.5 2.5 0 0 1 24 12.5V17'/%3E%3Cpath d='M6 18a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3H6z'/%3E%3Cpath d='M9 21v2M23 21v2'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/arrangement.css">
+</head>
+<body>
+
+<!-- announcement ------------------------------------------------------- -->
+<div class="announce" aria-hidden="true">
+  <div class="announce__track">
+    <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
+    <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
+    <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
+    <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
+    <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
+    <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
+  </div>
+</div>
+
+<Header page={page} />
+<Drawer />
+
+<div class="scrim" id="scrim"></div>
+
+<slot />
+
+<Footer />
+<Fab />
+
+<SearchPanel />
+<ProductModal />
+
+<noscript>
+  <div class="container" style="padding:24px 0">
+    <p>This site works best with JavaScript on. You can still reach us on WhatsApp at
+      <a href={`https://wa.me/${CONFIG.whatsapp}`}>{CONFIG.phoneDisplay}</a>.</p>
+  </div>
+</noscript>
+
+<script>
+  import '../scripts/site.js';
+</script>
+
+</body>
+</html>

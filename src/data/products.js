@@ -1,9 +1,9 @@
 /* ==========================================================================
-   That Furniture Girl — product catalogue
+   That Furniture Girl — product catalogue (Astro edition)
    --------------------------------------------------------------------------
-   EDIT THIS FILE to change prices, colours, sizes or add new pieces.
-   Everything on the website (shop grid, featured pieces, quick-view) is
-   generated from the list below.
+   This is the ONLY file you edit to change prices, colours, sizes or add new
+   pieces. The home page, the shop grid, the hero slider, the quick-view panel
+   and the search box all read from here when the site is built.
 
    Fields:
      id       – short unique name, no spaces
@@ -17,24 +17,24 @@
      sizes    – optional size note
      lead     – optional production time
      desc     – one or two sentences describing the piece
-     img      – photo file inside assets/img/
+     img      – photo file inside public/assets/img/opt/
      featured – true to show it on the home page
    ========================================================================== */
 
-var TFG_CONFIG = {
-  brand:      'That Furniture Girl',
-  city:       'Ibadan, Oyo State',
-  address:    'Iyaganku, New GRA, Ibadan 200273, Oyo State',
+export const CONFIG = {
+  brand: 'That Furniture Girl',
+  city: 'Ibadan, Oyo State',
+  address: 'Iyaganku, New GRA, Ibadan 200273, Oyo State',
   // WhatsApp number in international format, digits only
-  whatsapp:   '2349079849626',
+  whatsapp: '2349079849626',
   // how the number is displayed on the site
   phoneDisplay: '0907 984 9626',
-  instagram:  'https://www.instagram.com/thatfurnituregirl__',
-  tiktok:     'https://www.tiktok.com/@thatfurnituregirl_',
-  currency:   '\u20A6' // ₦
+  instagram: 'https://www.instagram.com/thatfurnituregirl__',
+  tiktok: 'https://www.tiktok.com/@thatfurnituregirl_',
+  currency: '\u20A6' // ₦
 };
 
-var TFG_CATEGORIES = [
+export const CATEGORIES = [
   { key: 'all',     label: 'All pieces' },
   { key: 'sofas',   label: 'Sofas & Sectionals' },
   { key: 'sets',    label: 'Full Sets' },
@@ -42,7 +42,7 @@ var TFG_CATEGORIES = [
   { key: 'storage', label: 'Storage' }
 ];
 
-var TFG_PRODUCTS = [
+export const PRODUCTS = [
   {
     id: 'blush-sectional',
     name: 'Blush Sectional',
@@ -148,8 +148,8 @@ var TFG_PRODUCTS = [
 /* ==========================================================================
    TESTIMONIALS  —  the "What our customers say" section
    --------------------------------------------------------------------------
-   This list is EMPTY on purpose. The section stays hidden until you add real
-   messages here, so the site never shows a review nobody wrote.
+   This list is EMPTY on purpose. The section is not rendered at all until you
+   add real messages here, so the site never shows a review nobody wrote.
 
    Paste in what customers actually sent you (WhatsApp, Instagram DM, TikTok
    comment) and the section appears on the home page automatically:
@@ -160,4 +160,32 @@ var TFG_PRODUCTS = [
        text:  'The exact words they sent you, unchanged.' }
    ========================================================================== */
 
-var TFG_TESTIMONIALS = [];
+export const TESTIMONIALS = [];
+
+/* --------------------------------------------------------------------------
+   Small lookups the site uses everywhere.
+   -------------------------------------------------------------------------- */
+
+export const featuredProducts = PRODUCTS.filter((p) => p.featured);
+
+export const heroProducts = PRODUCTS.filter((p) => p.img).slice(0, 5);
+
+/* The six Instagram crops, in order — real posts from her page. */
+export const INSTAGRAM_SHOTS = [1, 2, 3, 4, 5, 6].map((n) => `ig-${n}.jpg`);
+
+export function productById(id) {
+  return PRODUCTS.find((p) => p.id === id);
+}
+
+export function categoryLabel(key) {
+  const hit = CATEGORIES.find((c) => c.key === key);
+  return hit ? hit.label : '';
+}
+
+/* Plain-text search blob, built once per product at build time. */
+PRODUCTS.forEach((p) => {
+  p.haystack = [p.name, p.colours, p.material, p.desc, categoryLabel(p.cat), p.sizes]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+});

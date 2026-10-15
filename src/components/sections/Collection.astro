@@ -1,0 +1,27 @@
+---
+/* The collection band: heading, filter toolbar and the product grid.
+   Everything below is rendered at build time from src/data/products.js. */
+import Toolbar from '../Toolbar.astro';
+import ProductGrid from '../ProductGrid.astro';
+import { PRODUCTS } from '../../data/products.js';
+
+const products = PRODUCTS;
+---
+
+<section class="section" id="collection">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our products</span>
+      <h2>Pieces our customers keep coming back for</h2>
+      <p class="lead" style="margin-top:14px">Every piece is made in our Ibadan workshop and can be finished in the colour and size that suits your space. Filter by what you need, or message us with a photo of what you have in mind.</p>
+    </div>
+
+    <Toolbar title="Trending pieces" gridId="featuredGrid" />
+    <ProductGrid products={products} id="featuredGrid" />
+
+    <div class="ribbon reveal" style="margin-top:clamp(30px,4vw,46px)">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Beds, dining sets, office pieces &amp; full house packages</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Send us a photo — we'll build it</span>
+    </div>
+  </div>
+</section>

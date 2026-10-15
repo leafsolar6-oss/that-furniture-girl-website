@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Shared formatting + linking helpers.
+   Used by the .astro components at build time AND by src/scripts/site.js in
+   the browser, so the WhatsApp messages and prices can never disagree.
+   ========================================================================== */
+import { CONFIG, categoryLabel } from '../data/products.js';
+
+/* ₦1,234,567 */
+export function fmt(n) {
+  return CONFIG.currency + Number(n).toLocaleString('en-NG');
+}
+
+/* A WhatsApp deep link with the message pre-filled. */
+export function waLink(message) {
+  return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message);
+}
+
+/* The message a customer sends when they tap Order on a piece. */
+export function orderMessage(p) {
+  const bits = ['Hello ' + CONFIG.brand + '! I would like to order the ' + p.name];
+  if (p.colours) bits.push(' (' + p.colours + ')');
+  if (p.price) bits.push(' \u2014 ' + fmt(p.price));
+  bits.push('. Is it available?');
+  return bits.join('');
+}
+
+/* Everything the price block needs, as data the template can render. */
+export function priceInfo(p) {
+  if (p.priceTo) {
+    return { value: fmt(p.price) + ' \u2013 ' + fmt(p.priceTo), note: 'Two sizes available', ask: false };
+  }
+  if (p.price) {
+    return { value: fmt(p.price), note: 'Custom colours available', ask: false };
+  }
+  return { value: 'Price on request', note: 'Made to order', ask: true };
+}
+
+/* "Colour: X · Material: Y" for the card, as parts the template joins. */
+export function specParts(p) {
+  const parts = [];
+  if (p.colours) parts.push({ k: 'Colour', v: p.colours });
+  if (p.material) parts.push({ k: 'Material', v: p.material });
+  return parts;
+}
+
+export function badgesFor(p) {
+  const out = [];
+  if (p.badge) out.push({ label: p.badge, tone: p.badge === 'Signature' ? 'gold' : 'clay' });
+  if (p.lead && /pickup/i.test(p.lead)) out.push({ label: 'Available now', tone: 'green' });
+  return out;
+}
+
+/* Closing note under the order button — reflects how long THIS piece takes. */
+export function footerNote(p) {
+  let when = 'Production time 5\u201310 working days on most builds.';
+  if (p.lead && /pickup/i.test(p.lead)) {
+    when = 'Available now for immediate pickup at the showroom.';
+  } else if (p.lead) {
+    when = 'Production time ' + p.lead + '.';
+  }
+  return when + ' Same-day delivery available in Ibadan.';
+}
+
+/* alt text that describes the actual piece */
+export function imgAlt(p) {
+  return p.name + ' \u2014 ' + (p.colours || 'handmade furniture') + ' by ' + CONFIG.brand;
+}
+
+export const catLabel = categoryLabel;
+export { CONFIG, categoryLabel };

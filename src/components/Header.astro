@@ -1,0 +1,38 @@
+---
+/* Site header. Same markup as before — the only change is that the current
+   page is marked from a prop instead of being hard-coded per file. */
+import { CONFIG } from '../data/products.js';
+
+const { page = '' } = Astro.props;
+
+const NAV = [
+  { href: 'index.html',   label: 'Home',             key: 'home' },
+  { href: 'shop.html',    label: 'Shop',             key: 'shop' },
+  { href: 'about.html',   label: 'Our Story',        key: 'about' },
+  { href: 'contact.html', label: 'Visit & Contact',  key: 'contact' }
+];
+---
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><img src="assets/img/logo-mark-light.png" alt={`${CONFIG.brand} logo`} width="36" height="36"></span>
+      <span class="brand__text">
+        <span class="brand__name">{CONFIG.brand}</span>
+        <span class="brand__sub">Your best comfort zone</span>
+      </span>
+    </a>
+    <nav class="nav">
+      {NAV.map((item) => (
+        <a href={item.href} aria-current={page === item.key ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-open-search aria-label="Search pieces">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      </button>
+      <a class="btn btn--gold btn--sm" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I would like to order furniture.">Order on WhatsApp</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
