@@ -109,7 +109,7 @@
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(241,236,226,.2), rgba(206,154,67,.2));
+  background: linear-gradient(160deg, #E6DED3, var(--premium) 60%, #CFC5B8);
   box-shadow: var(--shadow-md);
   aspect-ratio: 1 / 1;
   max-height: 420px;
@@ -319,7 +319,7 @@
   flex-direction: column;
 }
 .product:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.product__media { background: var(--sand); border-radius: 0; aspect-ratio: 1 / 1; }
+.product__media { background: var(--premium); border-radius: 0; aspect-ratio: 1 / 1; }
 .product__media img { object-fit: cover; }
 .product__label {
   position: absolute;
@@ -498,7 +498,7 @@
 .product-card__media {
   position: relative;
   aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, var(--surface-2), var(--gold-soft, #f7eedd));
+  background: linear-gradient(160deg, #E6DED3, var(--premium) 60%, #CFC5B8);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
@@ -567,10 +567,10 @@
 .hero__glow::before { top: 5rem; left: 2.5rem; width: 16rem; height: 16rem; }
 .hero__glow::after { bottom: 2.5rem; right: 5rem; width: 24rem; height: 24rem; opacity: .5; }
 
-/* hero panel gradient bg (radius is set by the base rule + the desktop
-   media query above, so it must not be repeated here or it would win) */
+/* hero panel backdrop = the premium studio colour (radius is set by the base
+   rule + the desktop media query above, so it must not be repeated here) */
 .hero__panel {
-  background: linear-gradient(135deg, rgba(241,236,226,.2), rgba(206,154,67,.2));
+  background: linear-gradient(160deg, #E6DED3, var(--premium) 60%, #CFC5B8);
 }
 .hero__panel img { object-fit: cover; }
 

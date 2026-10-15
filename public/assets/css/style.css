@@ -31,6 +31,7 @@
   --wa:          #1FA34A;
   --wa-dark:     #17863C;
   --sand:        #F1ECE2;
+  --premium:     #DCD3C8;   /* studio backdrop colour behind every product photo */
 
   --ink:         #0B0C0E;
   --ink-soft:    #33383C;
@@ -1015,7 +1016,7 @@ p  { margin: 0; text-wrap: pretty; }
   display: grid; grid-template-columns: 1fr;
 }
 @media (min-width: 800px) { .modal__panel { grid-template-columns: 1.02fr 1fr; } }
-.modal__media { background: var(--surface-2); }
+.modal__media { background: var(--premium); }
 .modal__media img { width: 100%; height: 100%; object-fit: cover; min-height: 260px; }
 .modal__body { padding: clamp(24px, 3vw, 36px); }
 .modal__close {
