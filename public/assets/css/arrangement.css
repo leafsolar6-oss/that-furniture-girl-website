@@ -1120,3 +1120,11 @@ body::after {
   border: 0;
   background: transparent;
 }
+
+/* ==========================================================================
+   PICTURE-IN-FRAME 2026-10-15 — the whole photograph now sits inside the
+   gold demarcation: contained instead of cropped, on a white gallery
+   surround (not grey). The card, dots, arrows and hairline keep their spots.
+   ========================================================================== */
+.hero__panel { background: var(--surface); }
+.hero__panel img { object-fit: contain; }
