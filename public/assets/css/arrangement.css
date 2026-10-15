@@ -1243,3 +1243,10 @@ body::after {
    contained look read as reduced pictures.
    ========================================================================== */
 .hero__panel img { object-fit: cover; }
+
+/* ==========================================================================
+   SQUARE FILL RESTORED 2026-10-15 — the picture wrapper must carry the
+   media's full height so the photo's height:100% resolves and every plate
+   is filled corner-to-corner again.
+   ========================================================================== */
+.product-card__media picture { height: 100%; }
