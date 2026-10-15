@@ -29,7 +29,7 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="theme-color" content="#101114">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:title" content={ogTitle}>
   <meta property="og:description" content={ogDescription}>
   <meta property="og:type" content="website">
@@ -40,7 +40,7 @@ const {
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/arrangement.css">
 </head>
-<body>
+<body class={`page-${page || 'home'}`}>
 
 <!-- announcement ------------------------------------------------------- -->
 <div class="announce" aria-hidden="true">

@@ -7,7 +7,7 @@
 <rect width="1440" height="3209" fill="#FFFFFF"/>
 <rect width="1440" height="150" fill="#FFFFFF"/>
 <text x="64" y="72" font-family="Instrument Serif, Georgia, serif" font-size="52" fill="#0B0C0E">That Furniture Girl — design system</text>
-<text x="64" y="104" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#515659">Gallery Noir — generated from public/assets/css/style.css + arrangement.css (noir :root wins) · canvas #101114 · studio plates --premium #DCD3C8 · display Instrument Serif</text>
+<text x="64" y="104" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#515659">Gallery Noir — generated from public/assets/css/style.css + arrangement.css (noir :root wins) · canvas #FFFFFF · studio plates --premium #DCD3C8 · display Instrument Serif</text>
 <text x="64" y="206" font-family="Instrument Serif, Georgia, serif" font-size="34" fill="#0B0C0E">Colour</text>
 <text x="64" y="230" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#8A8F93">Names match the CSS custom properties exactly — find any of them in style.css by name.</text>
 <rect x="64" y="264" width="148" height="64" rx="12" fill="#DCD3C8" stroke="#E4DFD4"/>
@@ -19,9 +19,9 @@
 <rect x="388" y="264" width="148" height="64" rx="12" fill="#B3832F" stroke="#E4DFD4"/>
 <text x="388" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--gold-dark</text>
 <text x="388" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#B3832F</text>
-<rect x="550" y="264" width="148" height="64" rx="12" fill="rgba(206,154,67,.16)" stroke="#E4DFD4"/>
+<rect x="550" y="264" width="148" height="64" rx="12" fill="#F7EEDD" stroke="#E4DFD4"/>
 <text x="550" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--gold-soft</text>
-<text x="550" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">rgba(206,154,67,.16)</text>
+<text x="550" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#F7EEDD</text>
 <rect x="712" y="264" width="148" height="64" rx="12" fill="#F1ECE2" stroke="#E4DFD4"/>
 <text x="712" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--sand</text>
 <text x="712" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#F1ECE2</text>
@@ -31,36 +31,36 @@
 <rect x="1036" y="264" width="148" height="64" rx="12" fill="#17863C" stroke="#E4DFD4"/>
 <text x="1036" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--wa-dark</text>
 <text x="1036" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#17863C</text>
-<rect x="1198" y="264" width="148" height="64" rx="12" fill="#F4EFE7" stroke="#E4DFD4"/>
+<rect x="1198" y="264" width="148" height="64" rx="12" fill="#141312" stroke="#E4DFD4"/>
 <text x="1198" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--ink</text>
-<text x="1198" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#F4EFE7</text>
-<rect x="64" y="382" width="148" height="64" rx="12" fill="#DCD6CB" stroke="#E4DFD4"/>
+<text x="1198" y="362" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#141312</text>
+<rect x="64" y="382" width="148" height="64" rx="12" fill="#3A3733" stroke="#E4DFD4"/>
 <text x="64" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--ink-soft</text>
-<text x="64" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#DCD6CB</text>
-<rect x="226" y="382" width="148" height="64" rx="12" fill="#9A968E" stroke="#E4DFD4"/>
+<text x="64" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#3A3733</text>
+<rect x="226" y="382" width="148" height="64" rx="12" fill="#6E6862" stroke="#E4DFD4"/>
 <text x="226" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--muted</text>
-<text x="226" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#9A968E</text>
-<rect x="388" y="382" width="148" height="64" rx="12" fill="#767269" stroke="#E4DFD4"/>
+<text x="226" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#6E6862</text>
+<rect x="388" y="382" width="148" height="64" rx="12" fill="#98918A" stroke="#E4DFD4"/>
 <text x="388" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--muted-2</text>
-<text x="388" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#767269</text>
-<rect x="550" y="382" width="148" height="64" rx="12" fill="#101114" stroke="#E4DFD4"/>
+<text x="388" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#98918A</text>
+<rect x="550" y="382" width="148" height="64" rx="12" fill="#FFFFFF" stroke="#E4DFD4"/>
 <text x="550" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--bg</text>
-<text x="550" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#101114</text>
-<rect x="712" y="382" width="148" height="64" rx="12" fill="#17181C" stroke="#E4DFD4"/>
+<text x="550" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#FFFFFF</text>
+<rect x="712" y="382" width="148" height="64" rx="12" fill="#FFFFFF" stroke="#E4DFD4"/>
 <text x="712" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--surface</text>
-<text x="712" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#17181C</text>
-<rect x="874" y="382" width="148" height="64" rx="12" fill="#1C1D22" stroke="#E4DFD4"/>
+<text x="712" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#FFFFFF</text>
+<rect x="874" y="382" width="148" height="64" rx="12" fill="#F6F1E9" stroke="#E4DFD4"/>
 <text x="874" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--surface-2</text>
-<text x="874" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#1C1D22</text>
-<rect x="1036" y="382" width="148" height="64" rx="12" fill="#232429" stroke="#E4DFD4"/>
+<text x="874" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#F6F1E9</text>
+<rect x="1036" y="382" width="148" height="64" rx="12" fill="#EFE7DA" stroke="#E4DFD4"/>
 <text x="1036" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--surface-3</text>
-<text x="1036" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#232429</text>
-<rect x="1198" y="382" width="148" height="64" rx="12" fill="rgba(244,239,231,.16)" stroke="#E4DFD4"/>
+<text x="1036" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#EFE7DA</text>
+<rect x="1198" y="382" width="148" height="64" rx="12" fill="#E7DFD3" stroke="#E4DFD4"/>
 <text x="1198" y="464" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--line</text>
-<text x="1198" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">rgba(244,239,231,.16)</text>
-<rect x="64" y="500" width="148" height="64" rx="12" fill="rgba(244,239,231,.09)" stroke="#E4DFD4"/>
+<text x="1198" y="480" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#E7DFD3</text>
+<rect x="64" y="500" width="148" height="64" rx="12" fill="#F0EAE0" stroke="#E4DFD4"/>
 <text x="64" y="582" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--line-soft</text>
-<text x="64" y="598" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">rgba(244,239,231,.09)</text>
+<text x="64" y="598" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#F0EAE0</text>
 <rect x="226" y="500" width="148" height="64" rx="12" fill="#004B1F" stroke="#E4DFD4"/>
 <text x="226" y="582" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B0C0E">--green</text>
 <text x="226" y="598" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#8A8F93">#004B1F</text>
@@ -114,12 +114,12 @@
 <text x="64" y="1435" font-family="Instrument Serif, Georgia, serif" font-size="34" fill="#0B0C0E">Buttons &amp; chips</text>
 <text x="64" y="1459" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#8A8F93">Every CTA on the site is one of these; ordering is WhatsApp-only.</text>
 <rect x="64" y="1493" width="210" height="54" rx="999" fill="#CE9A43"/><text x="169" y="1527" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0B0C0E">Shop collection</text>
-<rect x="294" y="1493" width="190" height="54" rx="999" fill="none" stroke="rgba(244,239,231,.16)"/><text x="389" y="1527" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B0C0E">View products</text>
+<rect x="294" y="1493" width="190" height="54" rx="999" fill="none" stroke="#E7DFD3"/><text x="389" y="1527" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B0C0E">View products</text>
 <rect x="504" y="1493" width="230" height="54" rx="999" fill="#1FA34A"/><text x="619" y="1527" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Order on WhatsApp</text>
 <rect x="754" y="1503" width="120" height="34" rx="999" fill="#CE9A43"/><text x="814" y="1525" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0B0C0E">Chat</text>
 <rect x="64" y="1567" width="70" height="34" rx="999" fill="#0B0C0E"/><text x="99" y="1589" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">All</text>
-<rect x="144" y="1567" width="86" height="34" rx="999" fill="none" stroke="rgba(244,239,231,.16)"/><text x="187" y="1589" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#33383C">Sofas</text>
-<rect x="240" y="1567" width="150" height="34" rx="999" fill="rgba(206,154,67,.16)" stroke="#CE9A43"/><text x="315" y="1589" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="650" fill="#B3832F">category pill</text>
+<rect x="144" y="1567" width="86" height="34" rx="999" fill="none" stroke="#E7DFD3"/><text x="187" y="1589" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#33383C">Sofas</text>
+<rect x="240" y="1567" width="150" height="34" rx="999" fill="#F7EEDD" stroke="#CE9A43"/><text x="315" y="1589" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="650" fill="#B3832F">category pill</text>
 <line x1="64" y1="1627" x2="1376" y2="1627" stroke="#E4DFD4" stroke-width="1"/>
 <text x="64" y="1691" font-family="Instrument Serif, Georgia, serif" font-size="34" fill="#0B0C0E">Product card anatomy</text>
 <text x="64" y="1715" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#8A8F93">The card customers see: 1:1 media on the premium backdrop, badge, name, description, price + Chat.</text>
