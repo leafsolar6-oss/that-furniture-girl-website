@@ -1,0 +1,33 @@
+---
+/* Featured pieces — horizontal strip, like the reference store's
+   "New Collection" row. Image, badge, price. Each links to WhatsApp. */
+import { featuredProducts } from '../../data/products.js';
+import { waLink, orderMessage, priceInfo, categoryLabel } from '../../lib/site.js';
+
+const items = featuredProducts.slice(0, 6);
+---
+
+<section class="section section--sm" id="featured">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">New collection 2026</span>
+      <h2>Featured pieces</h2>
+    </div>
+
+    <div class="featured-strip reveal">
+      {items.map((p) => {
+        const price = priceInfo(p);
+        const shown = price.ask ? 'Price on request' : price.value;
+        return (
+          <a class="featured-item" href={waLink(orderMessage(p))} target="_blank" rel="noopener" aria-label={`${p.name} — order on WhatsApp`}>
+            <div class="featured-item__media">
+              <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours || 'handmade furniture'}`} loading="lazy" width="400" height="500">
+            </div>
+            <span class="featured-item__badge">{p.badge || categoryLabel(p.cat)}</span>
+            <span class="featured-item__price">{shown}</span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

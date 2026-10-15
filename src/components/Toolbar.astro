@@ -13,7 +13,7 @@ const step = 50000;
 ---
 
 <div class="collection-top reveal" data-tools-for={gridId}>
-  <h2>{title}</h2>
+  {title ? <h2>{title}</h2> : null}
   <div class="chip-row" id="shopFilters" role="group" aria-label="Filter by category">
     {CATEGORIES.map((c, i) => (
       <button class="chip" type="button" data-cat={c.key} aria-pressed={i === 0 ? 'true' : 'false'}>{c.label}</button>

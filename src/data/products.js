@@ -35,10 +35,10 @@ export const CONFIG = {
 };
 
 export const CATEGORIES = [
-  { key: 'all',     label: 'All pieces' },
-  { key: 'sofas',   label: 'Sofas & Sectionals' },
-  { key: 'sets',    label: 'Full Sets' },
-  { key: 'tables',  label: 'Centre Tables' },
+  { key: 'all',     label: 'All' },
+  { key: 'sofas',   label: 'Sofas' },
+  { key: 'sets',    label: 'Sets' },
+  { key: 'tables',  label: 'Tables' },
   { key: 'storage', label: 'Storage' }
 ];
 

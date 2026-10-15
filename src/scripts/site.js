@@ -319,7 +319,7 @@ function wireSearch() {
       return;
     }
     out.innerHTML = list.map((p) =>
-      '<a class="search-result" href="shop.html" data-id="' + p.id + '">' +
+      '<a class="search-result" href="index.html" data-id="' + p.id + '">' +
         '<img src="assets/img/opt/' + p.img + '" alt="" loading="lazy">' +
         '<span><strong>' + p.name + '</strong>' +
         '<span>' + categoryLabel(p.cat) + ' &middot; ' +

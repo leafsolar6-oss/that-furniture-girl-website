@@ -23,9 +23,6 @@ OUT_NAME = "that-furniture-girl-one-page.html"
 # (npm run onepage does both).
 PAGES = [
     ("index.html",   "#home"),
-    ("shop.html",    "#shop"),
-    ("about.html",   "#story"),
-    ("contact.html", "#visit"),
 ]
 
 BUILD = pathlib.Path("dist")
