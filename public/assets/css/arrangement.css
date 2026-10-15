@@ -859,3 +859,6 @@
 .socials a { background: rgba(244,239,231,.07); color: var(--ink); }
 .socials a:hover { background: var(--gold); color: #101114; }
 .footer-bottom { border-top-color: var(--line-soft); }
+/* arrows sit on the greige plate, so they keep dark-on-light whatever the theme */
+.hero__arrow { background: rgba(16,17,20,.86); color: #F4EFE7; }
+.hero__arrow:hover { background: #101114; color: var(--gold); }
