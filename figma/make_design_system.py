@@ -31,6 +31,11 @@ COL = W - PAD * 2
 raw = open(CSS, encoding="utf-8").read()
 root = re.search(r":root\s*\{(.*?)\n\}", raw, re.S).group(1)
 tok = dict(re.findall(r"--([\w-]+)\s*:\s*([^;]+);", root))
+# the Gallery Noir skin re-declares :root at the end of arrangement.css;
+# the LAST declaration wins in CSS, so it must win here too
+arr_raw = open(ARR, encoding="utf-8").read()
+for blk in re.findall(r":root\s*\{(.*?)\n\}", arr_raw, re.S):
+    tok.update(dict(re.findall(r"--([\w-]+)\s*:\s*([^;]+);", blk)))
 
 COLOURS = [
     ("premium", "Studio backdrop behind every product photo"),
@@ -88,7 +93,7 @@ def rule():
 # ---------------------------------------------------------------- header
 P.append(f'<rect width="{W}" height="150" fill="#FFFFFF"/>')
 P.append(f'<text x="{PAD}" y="72" font-family="{DISPLAY}" font-size="52" fill="#0B0C0E">That Furniture Girl — design system</text>')
-P.append(f'<text x="{PAD}" y="104" font-family="{SANS}" font-size="15" fill="#515659">Generated from public/assets/css/style.css + arrangement.css · display face Instrument Serif · body face system sans · studio backdrop --premium {tok["premium"].strip()}</text>')
+P.append(f'<text x="{PAD}" y="104" font-family="{SANS}" font-size="15" fill="#515659">Gallery Noir — generated from public/assets/css/style.css + arrangement.css (noir :root wins) · canvas {tok["bg"].strip()} · studio plates --premium {tok["premium"].strip()} · display Instrument Serif</text>')
 y = 150
 
 # ---------------------------------------------------------------- colours

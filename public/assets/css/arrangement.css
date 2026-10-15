@@ -714,3 +714,148 @@
   .page-head__row { align-items: stretch; }
   .page-head__row > .btn { width: 100%; justify-content: center; }
 }
+
+/* ==========================================================================
+   GALLERY NOIR — approved direction (figma/proposal/*.svg)
+   Ink canvas, greige studio plates as framed prints, serif display, gold
+   hairlines. Implemented as a token flip + component overrides, appended
+   last so it wins the cascade over the light arrangement above.
+   ========================================================================== */
+:root {
+  --bg:        #101114;
+  --surface:   #17181C;
+  --surface-2: #1C1D22;
+  --surface-3: #232429;
+  --cream:     #101114;
+  --ink:       #F4EFE7;
+  --ink-soft:  #DCD6CB;
+  --muted:     #9A968E;
+  --muted-2:   #767269;
+  --line:      rgba(244,239,231,.16);
+  --line-soft: rgba(244,239,231,.09);
+  --gold-soft: rgba(206,154,67,.16);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px -16px rgba(0,0,0,.8);
+  --shadow-md: 0 2px 6px rgba(0,0,0,.5), 0 26px 50px -28px rgba(0,0,0,.85);
+  --shadow-lg: 0 34px 70px -40px rgba(0,0,0,.9);
+}
+::selection { background: var(--gold); color: #101114; }
+
+/* chrome ------------------------------------------------------------------ */
+.announce {
+  background: var(--surface-2); color: var(--muted);
+  border-block: 1px solid var(--line-soft);
+}
+.site-header { background: transparent; }
+.site-header.is-stuck { background: rgba(16,17,20,.92); backdrop-filter: blur(12px); }
+.brand__name { color: var(--ink); }
+.brand__sub { color: var(--muted-2); }
+.nav a { color: var(--muted); }
+.nav a:hover { background: rgba(244,239,231,.06); color: var(--ink); }
+.nav a[aria-current="page"] { background: var(--gold); color: #101114; }
+.icon-btn { background: transparent; border-color: var(--line); color: var(--ink); }
+.icon-btn:hover { background: var(--gold); color: #101114; border-color: var(--gold); }
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { background: var(--ink); }
+.drawer { background: var(--surface); }
+.drawer nav a { color: var(--muted); }
+.drawer nav a:hover, .drawer nav a[aria-current="page"] { background: var(--gold-soft); color: var(--gold); }
+
+/* buttons ----------------------------------------------------------------- */
+.btn--outline { border-color: var(--line); color: var(--ink); }
+.btn--outline:hover { background: rgba(244,239,231,.07); color: var(--ink); border-color: rgba(244,239,231,.32); }
+.hero .btn--outline { border-color: rgba(244,239,231,.28); color: var(--ink); }
+.hero .btn--outline:hover { background: rgba(244,239,231,.08); }
+
+/* hero -------------------------------------------------------------------- */
+.hero { padding-bottom: 30px; }
+.hero__sub { color: var(--muted); }
+.hero__panel { border-radius: 0; outline: 1px solid rgba(206,154,67,.55); outline-offset: 16px; }
+.hero__card { background: rgba(16,17,20,.92); color: var(--ink); border-radius: 10px; }
+.hero__card strong { color: var(--ink); }
+.stats { border-top: 0; margin-top: 2.6rem; padding-top: 0; }
+.stat { border-left: 1px solid var(--line); padding-left: 18px; }
+.stat b { font-family: var(--font-display); font-weight: 400; color: var(--ink); letter-spacing: 0; }
+.stat span { color: var(--muted); }
+
+/* free delivery ----------------------------------------------------------- */
+.freedelivery { background: transparent; border-color: var(--line-soft); }
+.freedelivery__title { color: var(--ink); }
+.freedelivery__sub { color: var(--muted); }
+.freedelivery__tc { color: var(--muted-2); }
+
+/* toolbar ----------------------------------------------------------------- */
+.collection-top h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; color: var(--ink); }
+.chip { background: transparent; border-color: var(--line); color: var(--muted); }
+.chip:hover { border-color: var(--gold); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #101114; }
+.searchbox input { background: var(--surface-2); border-color: var(--line); color: var(--ink); }
+.searchbox svg { stroke: var(--muted-2); }
+.rangebox { background: var(--surface-2); border-color: var(--line); color: var(--muted); }
+.rangebox output { color: var(--ink); }
+.viewtoggle { background: var(--surface-2); border-color: var(--line); }
+.viewtoggle__btn { color: var(--muted-2); }
+.viewtoggle__btn.is-on { background: var(--gold); color: #101114; }
+.empty-state { color: var(--muted); }
+
+/* product card — plate, kicker, serif name, price, hairline chat ---------- */
+.grid-products { gap: 28px; }
+.product-card { background: transparent; box-shadow: none; border-radius: 0; position: relative; }
+.product-card::before {
+  content: ""; position: absolute; top: 14px; left: 14px; right: -14px; bottom: -14px;
+  border: 1px solid rgba(206,154,67,.5); pointer-events: none;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: none; }
+.product-card__media { border-radius: 0; background: var(--premium); }
+.product-card__badge { display: none; }
+.product-card__body { padding: 20px 0 0; background: transparent; }
+.product-card__name::before {
+  display: block; font-family: var(--font-sans); font-size: 10.5px; font-weight: 800;
+  letter-spacing: .18em; color: var(--gold); margin-bottom: 9px;
+}
+.product-card[data-cat="sofas"]   .product-card__name::before { content: "SOFAS"; }
+.product-card[data-cat="sets"]    .product-card__name::before { content: "SETS"; }
+.product-card[data-cat="tables"]  .product-card__name::before { content: "TABLES"; }
+.product-card[data-cat="storage"] .product-card__name::before { content: "STORAGE"; }
+.product-card__name {
+  font-family: var(--font-display); font-weight: 400; font-size: 21px;
+  letter-spacing: 0; color: var(--ink);
+}
+.product-card__desc { display: none; }
+.product-card__foot { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 10px; }
+.product-card__price-value { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 0; }
+.product-card__price-note { color: var(--muted-2); }
+.product-card__chat {
+  background: transparent; border: 0; padding: 0; color: var(--gold);
+  font-size: 12.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
+}
+.product-card__chat svg { display: none; }
+.product-card__chat::before { content: ""; width: 58px; height: 1px; background: var(--gold); }
+.product-card__chat:hover { color: #E4B45E; }
+
+/* products page ----------------------------------------------------------- */
+.page-head { border-bottom-color: var(--line-soft); }
+.crumbs a { color: var(--muted); }
+.crumbs b { color: var(--ink); }
+.page-head__sub { color: var(--muted); }
+.page-head__sub b { color: var(--ink); }
+.pill-link { background: transparent; border-color: var(--line); color: var(--muted); }
+.pill-link:hover { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
+.page-cta__box { background: var(--surface-2); border-color: var(--line-soft); }
+.page-cta__box h2 { color: var(--ink); }
+.page-cta__box p { color: var(--muted); }
+.page-cta__note { color: var(--muted-2); }
+
+/* overlays ---------------------------------------------------------------- */
+.search-panel { background: rgba(16,17,20,.97); }
+.search-result:hover { background: var(--surface-2); }
+.modal__panel { background: var(--surface); color: var(--ink); }
+.modal__media { background: var(--premium); }
+
+/* footer ------------------------------------------------------------------ */
+.site-footer { background: #0B0C0E; color: var(--muted); margin-top: 0; border-top: 1px solid var(--line-soft); }
+.site-footer h4 { color: var(--gold); }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--gold); }
+.site-footer .footer-links span { color: var(--muted-2); }
+.socials a { background: rgba(244,239,231,.07); color: var(--ink); }
+.socials a:hover { background: var(--gold); color: #101114; }
+.footer-bottom { border-top-color: var(--line-soft); }

@@ -17,6 +17,9 @@ raw = open(CSS, encoding="utf-8").read()
 raw_extra = open(ARRANGEMENT, encoding="utf-8").read()
 root = re.search(r":root\s*\{(.*?)\}", raw, re.S).group(1)
 vars_ = dict(re.findall(r"--([\w-]+)\s*:\s*([^;]+);", root))
+# Gallery Noir re-declares :root at the end of arrangement.css — last wins
+for blk in re.findall(r":root\s*\{(.*?)\n\}", open(ARRANGEMENT, encoding="utf-8").read(), re.S):
+    vars_.update(dict(re.findall(r"--([\w-]+)\s*:\s*([^;]+);", blk)))
 
 COLOUR_DESC = {
     "green": "Buttons, footer, dark bands",
