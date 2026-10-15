@@ -1185,3 +1185,22 @@ body::after {
 @media (min-width: 680px) {
   .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 46rem; }
 }
+
+/* ==========================================================================
+   WATERMARK RESTORED 2026-10-15 — the brand handle returns to every
+   photograph on the site: cards, carousel, piece pages, workshop and
+   showroom. Italic serif, soft shadow, never in the way of a click.
+   ========================================================================== */
+.product-card__media,
+.split__media { position: relative; }
+.wm {
+  position: absolute; right: 12px; bottom: 10px; z-index: 3;
+  font-family: var(--font-display); font-style: italic;
+  font-size: 12.5px; letter-spacing: .06em;
+  color: rgba(255,255,255,.82);
+  text-shadow: 0 1px 8px rgba(20,19,18,.45);
+  pointer-events: none; user-select: none;
+}
+.wm--hero { right: auto; left: 14px; top: 14px; bottom: auto; }
+.wm--w1 { right: auto; left: 12px; bottom: 12px; }
+.wm--w2 { bottom: -26px; }
