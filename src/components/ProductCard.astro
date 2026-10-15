@@ -18,7 +18,7 @@ const shown = price.ask ? 'Price on request' : price.value;
              loading="lazy" width="900" height="900">
       </picture>
       <div class="product-card__overlay"></div>
-      <span class="wm" aria-hidden="true"></span>
+      {!p.stamped && <span class="wm" aria-hidden="true"></span>}
       <span class="product-card__badge">{catLabel(p.cat)}</span>
     </div>
     <div class="product-card__body">

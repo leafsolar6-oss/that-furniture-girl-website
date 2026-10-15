@@ -450,6 +450,8 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = th.getAttribute('data-gal');
     if (src) src.srcset = th.getAttribute('data-galwebp');
     const strip = th.closest('.piece__thumbs');
+    const media = document.querySelector('.piece__media');
+    if (media) media.classList.toggle('wm-off', th.getAttribute('data-stamp') === '1');
     if (strip) $$('button', strip).forEach((b) => b.classList.toggle('is-on', b === th));
   });
 

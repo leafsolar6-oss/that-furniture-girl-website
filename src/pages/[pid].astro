@@ -35,7 +35,7 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
         </nav>
 
         <div class="piece__grid">
-          <div class="piece__media">
+          <div class={`piece__media${p.stamped ? ' wm-off' : ''}`}>
             <picture>
               <source id="pieceSource" srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
               <img id="pieceImg" src={`assets/img/opt/${p.img}`} alt={imgAlt(p)} width="900" height="900" fetchpriority="high">
@@ -47,6 +47,7 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
           {(p.gallery || []).length > 0 && (
             <div class="piece__thumbs" role="group" aria-label="More photos of this piece">
               <button type="button" class="is-on"
+                      data-stamp={p.stamped ? '1' : '0'}
                       data-gal={`assets/img/opt/${p.img}`}
                       data-galwebp={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`}
                       aria-label="Photo 1">
@@ -54,6 +55,7 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
               </button>
               {p.gallery.map((g, i) => (
                 <button type="button"
+                        data-stamp="1"
                         data-gal={`assets/img/opt/${g}`}
                         data-galwebp={`assets/img/opt/${g.replace(/\.jpg$/, '.webp')}`}
                         aria-label={`Photo ${i + 2}`}>

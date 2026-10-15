@@ -52,7 +52,7 @@ const firstPrice = priceInfo(first);
                        loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
                        width="900" height="1125">
                 </picture>
-                <span class="wm wm--hero" aria-hidden="true"></span>
+                {!p.stamped && <span class="wm wm--hero" aria-hidden="true"></span>}
               </a>
             );
           })}

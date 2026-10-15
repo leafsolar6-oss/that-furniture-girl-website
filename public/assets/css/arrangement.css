@@ -1263,3 +1263,10 @@ body::after {
 }
 .piece__thumbs button.is-on { border-color: var(--gold); }
 .piece__thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ==========================================================================
+   ONE WATERMARK ONLY 2026-10-15 — catalogue photos already carry the owner's
+   stamped lockup, so the site seal stands down wherever such a photo shows
+   (cards, piece media, and after any gallery swap).
+   ========================================================================== */
+.wm-off .wm { display: none; }
