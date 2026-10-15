@@ -1174,3 +1174,14 @@ body::after {
   font-size: clamp(26px, 3vw, 36px); margin: 0 0 24px;
 }
 .grid-products--three { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+/* ==========================================================================
+   FOUR-STAT BOAST 2026-10-15 — the Instagram figure joins the row:
+   2x2 on phones, four across from tablet up.
+   ========================================================================== */
+@media (max-width: 679px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 680px) {
+  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 46rem; }
+}
