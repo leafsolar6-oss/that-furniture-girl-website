@@ -31,14 +31,15 @@
   --wa:          #1FA34A;
   --wa-dark:     #17863C;
   --sand:        #F1ECE2;
+  --premium:     #DCD3C8;   /* studio backdrop colour behind every product photo */
 
   --ink:         #0B0C0E;
   --ink-soft:    #33383C;
   --muted:       #515659;
   --muted-2:     #8A8F93;
 
-  --bg:          #F7F5EF;
-  --surface:     #FDFBF9;
+  --bg:          #FFFFFF;
+  --surface:     #FFFFFF;
   --surface-2:   #F1ECE2;
   --surface-3:   #EDE7DB;
   --line:        #E4DFD4;
@@ -64,8 +65,9 @@
   --gutter:      clamp(18px, 4vw, 56px);
   --section-y:   clamp(56px, 8vw, 112px);
 
-  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-sans:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Instrument Serif', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif:   'Instrument Serif', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
   --ease: cubic-bezier(.22, .61, .36, 1);
 }
@@ -99,13 +101,14 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -.03em;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.02em;
   color: var(--ink);
   margin: 0;
   text-wrap: balance;
 }
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 400; }
 h1 { font-size: clamp(38px, 5.6vw, 68px); letter-spacing: -.038em; }
 h2 { font-size: clamp(29px, 3.9vw, 46px); letter-spacing: -.034em; }
 h3 { font-size: clamp(19px, 2vw, 25px); letter-spacing: -.024em; }
@@ -1013,7 +1016,7 @@ p  { margin: 0; text-wrap: pretty; }
   display: grid; grid-template-columns: 1fr;
 }
 @media (min-width: 800px) { .modal__panel { grid-template-columns: 1.02fr 1fr; } }
-.modal__media { background: var(--surface-2); }
+.modal__media { background: var(--premium); }
 .modal__media img { width: 100%; height: 100%; object-fit: cover; min-height: 260px; }
 .modal__body { padding: clamp(24px, 3vw, 36px); }
 .modal__close {
