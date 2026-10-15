@@ -1250,3 +1250,16 @@ body::after {
    is filled corner-to-corner again.
    ========================================================================== */
 .product-card__media picture { height: 100%; }
+
+/* ==========================================================================
+   PIECE GALLERY 2026-10-15 — thumbnail strip under the main photo; the
+   active thumb wears a gold keyline.
+   ========================================================================== */
+.piece__thumbs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.piece__thumbs button {
+  width: 76px; aspect-ratio: 1; padding: 0; cursor: pointer;
+  border: 2px solid transparent; border-radius: 6px;
+  overflow: hidden; background: none;
+}
+.piece__thumbs button.is-on { border-color: var(--gold); }
+.piece__thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }

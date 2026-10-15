@@ -37,12 +37,31 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
         <div class="piece__grid">
           <div class="piece__media">
             <picture>
-              <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
-              <img src={`assets/img/opt/${p.img}`} alt={imgAlt(p)} width="900" height="900" fetchpriority="high">
+              <source id="pieceSource" srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
+              <img id="pieceImg" src={`assets/img/opt/${p.img}`} alt={imgAlt(p)} width="900" height="900" fetchpriority="high">
             </picture>
             <span class="wm" aria-hidden="true"></span>
             {p.badge && <span class="product-card__badge">{p.badge}</span>}
           </div>
+
+          {(p.gallery || []).length > 0 && (
+            <div class="piece__thumbs" role="group" aria-label="More photos of this piece">
+              <button type="button" class="is-on"
+                      data-gal={`assets/img/opt/${p.img}`}
+                      data-galwebp={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`}
+                      aria-label="Photo 1">
+                <img src={`assets/img/opt/${p.img}`} alt="" loading="lazy">
+              </button>
+              {p.gallery.map((g, i) => (
+                <button type="button"
+                        data-gal={`assets/img/opt/${g}`}
+                        data-galwebp={`assets/img/opt/${g.replace(/\.jpg$/, '.webp')}`}
+                        aria-label={`Photo ${i + 2}`}>
+                  <img src={`assets/img/opt/${g}`} alt="" loading="lazy">
+                </button>
+              ))}
+            </div>
+          )}
 
           <div class="piece__info">
             <span class="kicker">{categoryLabel(p.cat)}</span>

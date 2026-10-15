@@ -39,7 +39,9 @@ export const CATEGORIES = [
   { key: 'sofas',   label: 'Sofas' },
   { key: 'sets',    label: 'Sets' },
   { key: 'tables',  label: 'Tables' },
-  { key: 'storage', label: 'Storage' }
+  { key: 'storage', label: 'Storage' },
+  { key: 'beds',    label: 'Beds' },
+  { key: 'dining',  label: 'Dining' }
 ];
 
 export const PRODUCTS = [
@@ -54,19 +56,21 @@ export const PRODUCTS = [
     lead: 'Available for immediate pickup',
     desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room.',
     img: 'blush-sectional.jpg',
+    gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg'],
     featured: true
   },
   {
     id: 'jewel-sectional',
     name: 'Jewel L-Shaped Sectional',
     cat: 'sofas',
-    price: 350000,
+    price: 370000,
     badge: 'Best seller',
     colours: 'Chocolate brown',
     material: 'Corduroy',
     lead: 'Available for immediate pickup',
     desc: 'A low, architectural L-shape wrapped in ribbed chocolate corduroy. The texture catches the light beautifully and the wide chaise makes it the best seat in the house.',
     img: 'jewel-sectional.jpg',
+    gallery: ['jewel-sectional-2.jpg'],
     featured: true
   },
   {
@@ -80,6 +84,7 @@ export const PRODUCTS = [
     lead: '14 working days',
     desc: 'A complete living room set — deep channel-tufted sectional with a chaise, shown as it leaves our workshop. Treated wood frames, high-density foam and textured boucle, and we can build it in any colour, size or design you like.',
     img: 'blush-linea-set.jpg',
+    gallery: ['blush-linea-set-2.jpg', 'blush-linea-set-3.jpg', 'blush-linea-set-4.jpg'],
     featured: true
   },
   {
@@ -91,17 +96,19 @@ export const PRODUCTS = [
     material: 'Boucle + floral print fabric',
     desc: 'Dark grey boucle given a playful twist with floral print cushions and a matching accent chair. A set with personality — and one of our most requested designs.',
     img: 'twinkle-set.jpg',
+    gallery: ['twinkle-set-2.jpg', 'twinkle-set-3.jpg', 'twinkle-set-4.jpg'],
     featured: true
   },
   {
     id: 'plush-three-seaters',
     name: 'Plush 3-Seater',
     cat: 'sofas',
-    price: null,
+    price: 250000,
     colours: 'Chocolate brown + cream',
     material: 'Boucle fabric',
     desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up.',
     img: 'plush-three-seaters.jpg',
+    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg'],
     featured: true
   },
   {
@@ -115,6 +122,7 @@ export const PRODUCTS = [
     lead: 'About 3 months to produce',
     desc: 'Our most ambitious build. Treated wood frames, high-density foam, leather combined with rich floral fabric and gold detail. Live like a king — made to order in any colour or craft.',
     img: 'royal-kinging-set.jpg',
+    gallery: ['royal-kinging-set-2.jpg', 'royal-kinging-set-3.jpg', 'royal-kinging-set-4.jpg'],
     featured: true
   },
   {
@@ -127,6 +135,7 @@ export const PRODUCTS = [
     lead: '10 working days',
     desc: 'A low, minimal centre table that grounds the room without crowding it. Made in HDF with a two-tone finish that pairs with both boucle and corduroy.',
     img: 'centre-table.jpg',
+    gallery: ['centre-table-2.jpg', 'centre-table-3.jpg'],
     featured: true
   },
   {
@@ -141,9 +150,178 @@ export const PRODUCTS = [
     lead: '5 working days',
     desc: 'A clean-lined wardrobe in matte MDF with slim black detailing. Two sizes, and we can build it in any colour, size or layout you need.',
     img: 'wardrobe.jpg',
+    gallery: ['wardrobe-2.jpg', 'wardrobe-3.jpg', 'wardrobe-4.jpg'],
     featured: false
   }
 ];
+
+/* ---------- imported from the owner's catalogue (Oct 2026 PDF) ---------- */
+const CATALOGUE_IMPORTS = [
+  {
+    id: 'unik-board-bed-frame',
+    name: 'Unik Board Bed Frame',
+    cat: 'beds',
+    price: null,
+    colours: 'Swiss + black',
+    material: 'HDF',
+    lead: 'Custom order — 10 working days',
+    desc: 'A board bed frame in HDF with a clean Swiss-and-black finish. Built as a custom order — colours, sizes and design to your taste.',
+    img: 'unik-board-bed-frame.jpg'
+  },
+  {
+    id: 'chested-board-bed-frame',
+    name: 'Chested Board Bed Frame',
+    cat: 'beds',
+    price: 180000,
+    priceTo: 230000,
+    colours: 'Cider',
+    material: 'MDF / HDF',
+    lead: '10 working days',
+    desc: 'A chested board bed frame in warm cider tones. Priced in MDF or HDF — practical storage lines with a clean, sturdy finish.',
+    img: 'chested-board-bed-frame.jpg',
+    gallery: ['chested-board-bed-frame-2.jpg', 'chested-board-bed-frame-3.jpg']
+  },
+  {
+    id: 'hdf-board-bed',
+    name: 'HDF Board Bed',
+    cat: 'beds',
+    price: 450000,
+    colours: 'Cider + black',
+    material: 'HDF board + leather',
+    sizes: '6ft × 6ft',
+    lead: '14 working days',
+    desc: 'A 6ft by 6ft board bed in cider and black — HDF board and textured leather over treated wood frames and high-density foam.',
+    img: 'hdf-board-bed.jpg',
+    gallery: ['hdf-board-bed-2.jpg', 'hdf-board-bed-3.jpg']
+  },
+  {
+    id: 'bubble-linear-set',
+    name: 'Bubble Linear Set',
+    cat: 'sets',
+    price: 750000,
+    colours: 'Grey & orange',
+    material: 'Boucle fabric',
+    lead: '14 working days',
+    desc: 'A linear bubble set in grey boucle with orange accents — treated wood frames and high-density foams under deeply tufted channels.',
+    img: 'bubble-linear-set.jpg',
+    gallery: ['bubble-linear-set-2.jpg', 'bubble-linear-set-3.jpg']
+  },
+  {
+    id: 'bubble-single-footstool',
+    name: 'Bubble Single + Mini Footstool',
+    cat: 'sofas',
+    price: 200000,
+    colours: 'Chocolate brown',
+    material: 'Boucle fabric',
+    lead: '14 working days',
+    desc: 'The bubble single chair with its mini footstool in chocolate brown boucle. Also in orange, cream, light ash or brown — or your own custom colour. The single on its own is ₦170,000.',
+    img: 'bubble-single-footstool.jpg',
+    gallery: ['bubble-single-footstool-2.jpg', 'bubble-single-footstool-3.jpg']
+  },
+  {
+    id: 'snail-dining-set',
+    name: 'Snail Dining Set (4 Chairs)',
+    cat: 'dining',
+    price: 300000,
+    colours: 'Ash + black',
+    material: 'Wooden body / upholstered curtain fabric',
+    sizes: '4 chairs',
+    lead: '14 working days',
+    desc: 'A four-chair dining set with a wooden body and upholstered curtain-fabric seats in ash and black.',
+    img: 'snail-dining-set.jpg',
+    gallery: ['snail-dining-set-2.jpg', 'snail-dining-set-3.jpg']
+  },
+  {
+    id: 'royal-wardrobe',
+    name: 'Royal Wardrobe',
+    cat: 'storage',
+    price: 200000,
+    colours: 'Cider',
+    material: 'MDF',
+    sizes: '7ft × 4ft',
+    lead: '14 working days',
+    desc: 'A 7ft by 4ft wardrobe in cider MDF — tall, deep and built to carry a whole household’s clothing.',
+    img: 'royal-wardrobe.jpg',
+    gallery: ['royal-wardrobe-2.jpg', 'royal-wardrobe-3.jpg']
+  },
+  {
+    id: 'rovans-dining-set',
+    name: 'Rovans 6-Chairs Dining Set',
+    cat: 'dining',
+    price: 500000,
+    colours: 'Light ash',
+    material: 'Velvet',
+    sizes: '6 chairs',
+    lead: '14 working days',
+    desc: 'A six-chair dining set in light ash with velvet upholstery — room for the whole table.',
+    img: 'rovans-dining-set.jpg',
+    gallery: ['rovans-dining-set-2.jpg', 'rovans-dining-set-3.jpg']
+  },
+  {
+    id: 'rovans-classy-set',
+    name: 'Rovans Classy Set',
+    cat: 'sets',
+    price: 600000,
+    colours: 'Beige + brown',
+    material: 'Matte fabric',
+    lead: '14 working days',
+    desc: 'A classy living set in beige and brown matte fabric — soft lines with a formal posture.',
+    img: 'rovans-classy-set.jpg',
+    gallery: ['rovans-classy-set-2.jpg', 'rovans-classy-set-3.jpg']
+  },
+  {
+    id: 'bubble-bed-bedsides',
+    name: 'Bubble Bed + 2 Bedsides',
+    cat: 'beds',
+    price: 300000,
+    badge: 'Best seller',
+    colours: 'Off white / grey',
+    material: 'Velvet / matte fabric',
+    sizes: '6ft × 6ft',
+    lead: 'Available for immediate pickup',
+    desc: 'A 6ft by 6ft bubble bed with two matching bedsides in off-white and grey — already in the showroom for immediate pickup.',
+    img: 'bubble-bed-bedsides.jpg',
+    gallery: ['bubble-bed-bedsides-2.jpg', 'bubble-bed-bedsides-3.jpg']
+  },
+  {
+    id: 'verona-classy-set',
+    name: 'Verona Classy Set',
+    cat: 'sets',
+    price: 600000,
+    colours: 'Chocolate brown + carton brown',
+    material: 'Velvet',
+    lead: '14 working days',
+    desc: 'A classy set in chocolate brown and carton brown velvet — deep, warm and generously padded.',
+    img: 'verona-classy-set.jpg',
+    gallery: ['verona-classy-set-2.jpg', 'verona-classy-set-3.jpg']
+  },
+  {
+    id: 'ogaranya-classy-set',
+    name: 'Ogaranya Classy Set',
+    cat: 'sets',
+    price: 650000,
+    colours: 'Black + natural wood paint',
+    material: 'Matte fabric',
+    lead: '14 working days',
+    desc: 'A classy set in black matte fabric with natural wood paint detail — bold contrast, clean lines.',
+    img: 'ogaranya-classy-set.jpg',
+    gallery: ['ogaranya-classy-set-2.jpg', 'ogaranya-classy-set-3.jpg']
+  },
+  {
+    id: 'koral-l-sectionals',
+    name: 'Koral L-Sectionals',
+    cat: 'sofas',
+    price: 350000,
+    colours: 'Cream + umber brown',
+    material: 'Velvet fabric',
+    lead: '14 working days',
+    desc: 'An L-shaped sectional in cream and umber brown velvet — a soft corner for the whole family.',
+    img: 'koral-l-sectionals.jpg',
+    gallery: ['koral-l-sectionals-2.jpg', 'koral-l-sectionals-3.jpg']
+  }
+];
+
+PRODUCTS.push(...CATALOGUE_IMPORTS);
 
 /* ==========================================================================
    TESTIMONIALS  —  the "What our customers say" section

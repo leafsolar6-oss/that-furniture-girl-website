@@ -440,5 +440,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Year */
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
+  /* Piece-page gallery: thumbnails swap the main photo (jpeg + webp source) */
+  document.addEventListener('click', (e) => {
+    const th = e.target.closest('[data-gal]');
+    if (!th) return;
+    const img = document.getElementById('pieceImg');
+    const src = document.getElementById('pieceSource');
+    if (!img) return;
+    img.src = th.getAttribute('data-gal');
+    if (src) src.srcset = th.getAttribute('data-galwebp');
+    const strip = th.closest('.piece__thumbs');
+    if (strip) $$('button', strip).forEach((b) => b.classList.toggle('is-on', b === th));
+  });
+
   observeReveals(document);
 });
