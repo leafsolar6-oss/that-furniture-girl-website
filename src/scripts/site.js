@@ -291,10 +291,12 @@ function wireHero() {
 
   let timer = null;
   const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Autoplay cadence: was 6000ms, now 1.5x faster (6000 / 1.5 = 4000ms). */
+  const AUTOPLAY_MS = 4000;
   function restart() {
     if (timer) clearInterval(timer);
     if (reduced || nodes.length < 2) return;
-    timer = setInterval(() => show(at + 1), 6000);
+    timer = setInterval(() => show(at + 1), AUTOPLAY_MS);
   }
   panel.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
   panel.addEventListener('mouseleave', restart);
