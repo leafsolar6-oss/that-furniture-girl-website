@@ -63,7 +63,7 @@
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
-@media (min-width: 980px) { .hero__grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .hero__grid { grid-template-columns: 1.3fr 0.7fr; gap: 2rem; } }
 
 .hero__title {
   font-size: clamp(38px, 6.4vw, 68px);
@@ -98,12 +98,12 @@
   background: linear-gradient(135deg, rgba(241,236,226,.2), rgba(206,154,67,.2));
   box-shadow: var(--shadow-md);
   aspect-ratio: 4 / 3;
-  max-height: 420px;
+  max-height: 380px;
   margin-inline: auto;
   width: 100%;
   max-width: 460px;
 }
-@media (min-width: 980px) { .hero__panel { aspect-ratio: 4 / 3; max-height: 460px; max-width: 520px; } }
+@media (min-width: 980px) { .hero__panel { aspect-ratio: 4 / 3; max-height: 400px; max-width: 440px; } }
 
 .hero__slides { position: absolute; inset: 0; }
 .hero__slide {
