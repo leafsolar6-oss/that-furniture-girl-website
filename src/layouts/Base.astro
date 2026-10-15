@@ -24,7 +24,8 @@ const {
 /* Share + SEO: canonical url, a real og:image and structured data, so a link
    pasted into WhatsApp previews like a shop window instead of a bare title. */
 const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site).href;
-const ogImage = new URL(import.meta.env.BASE_URL + 'assets/img/opt/blush-sectional.jpg', Astro.site).href;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const ogImage = new URL(base + 'assets/img/opt/blush-sectional.jpg', Astro.site).href;
 const ld = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -46,7 +47,7 @@ const ld = {
         item: {
           '@type': 'Product',
           name: p.name,
-          image: new URL(import.meta.env.BASE_URL + 'assets/img/opt/' + p.img, Astro.site).href,
+          image: new URL(base + 'assets/img/opt/' + p.img, Astro.site).href,
           description: p.desc,
           offers: p.price ? {
             '@type': 'Offer',
