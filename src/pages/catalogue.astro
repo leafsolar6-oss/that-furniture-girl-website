@@ -1,0 +1,94 @@
+---
+/* The Lookbook — the catalogue as a booklet: one piece per screen,
+   picture + key info + price. Scroll, swipe or arrow through it. */
+import Base from '../layouts/Base.astro';
+import { PRODUCTS, CONFIG } from '../data/products.js';
+import { waLink, orderMessage, catLabel, specParts } from '../lib/site.js';
+
+const items = PRODUCTS;
+const total = items.length;
+
+/* Catalogue shows no prices: strip price clauses from the rendered
+   description only (piece pages keep the owner's full wording). */
+const cleanDesc = (raw) => {
+  let s = raw;
+  s = s.replace(/\s*—\s*same ₦[\d,]+,\s*single chair ₦[\d,]+\.?$/, '.');           // "— same ₦500,000, single chair ₦170,000"
+  s = s.replace(/\s*Single ₦[\d,]+\s*·\s*table ₦[\d,]+\.?$/, '.');                    // "Single ₦170,000 · table ₦150,000"
+  s = s.replace(/\s*—\s*₦[\d,]+ in [A-Z]+,\s*₦[\d,]+ in [A-Z]+,/, ',');                // "— ₦150,000 in HDF, ₦120,000 in MDF,"
+  s = s.replace(/\s*;\s*[^;]*₦[^;]*\./, '.');                                            // "; sizes quoted at ₦… and ₦…"
+  const kept = s.split(/(?<=\.)\s+/).filter((sen) => !sen.includes('₦'));
+  let out = kept.join(' ').trim();
+  if (!out) out = raw.replace(/[^.]*(₦)[^.]*\./g, '').trim();                              // last resort
+  return out.replace(/\s{2,}/g, ' ').replace(/[,;—]\s*$/g, '.') || raw;
+};
+---
+
+<Base
+  page="lookbook"
+  title={`Catalogue — ${CONFIG.brand}`}
+  description={`Browse the full ${CONFIG.brand} collection — ${total} handmade pieces, piece with its full photo and full story, top to bottom.`}
+>
+  <main class="lb" id="lb">
+    <!-- ============================ COVER ============================ -->
+    <section class="lb-spread lb-cover" data-i="0">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">The Catalogue · New Collection 2026</span>
+        <h1>The Catalogue</h1>
+        <p>{total} handmade pieces — one per screen, with its photo and specification. Scroll, swipe, or use the arrows.</p>
+        <a class="btn btn--gold" href="#lb-1">Start browsing</a>
+      </div>
+    </section>
+
+    <!-- ============================ PIECES ============================ -->
+    {items.map((p, i) => {
+      const n = i + 1;
+      const specs = specParts(p);
+      return (
+        <section class="lb-spread" id={`lb-${n}`} data-i={n} aria-label={`${p.name} — piece ${n} of ${total} in the catalogue`}>
+          <div class="lb-media">
+            <picture>
+              <source
+                srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.webp 480w, assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')} 1000w`}
+                sizes="(min-width:900px) 56vw, 100vw" type="image/webp">
+              <img
+                src={`assets/img/opt/${p.img}`}
+                srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.jpg 480w, assets/img/opt/${p.img} 1000w`}
+                sizes="(min-width:900px) 56vw, 100vw"
+                alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
+                loading={i === 0 ? 'eager' : 'lazy'} decoding="async" width="900" height="900">
+            </picture>
+            {!p.stamped && <span class="wm" aria-hidden="true"></span>}
+          </div>
+          <div class="lb-info">
+            <div class="lb-top">
+              <span class="lb-num">{String(n).padStart(2, '0')}</span>
+              <span class="lb-cat">{catLabel(p.cat)}</span>
+            </div>
+            <h2>{p.name}</h2>
+            {p.desc && <p class="lb-desc">{cleanDesc(p.desc)}</p>}
+            {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
+            {p.lead && <p class="lb-lead">{p.lead}</p>}
+            <div class="lb-cta">
+              <a class="btn btn--gold" href={waLink(orderMessage(p))} target="_blank" rel="noopener">Order on WhatsApp</a>
+              <a class="btn btn--ghost" href={`${p.id}.html`}>View details</a>
+            </div>
+          </div>
+        </section>
+      );
+    })}
+
+    <!-- ============================ END CARD ============================ -->
+    <section class="lb-spread lb-end" data-i={total + 1} aria-label="End of lookbook">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">End of the catalogue</span>
+        <h1>Seen everything?</h1>
+        <p>Anything here can be rebuilt in your colour, size and fabric — and anything you can picture, we can build.</p>
+        <div class="lb-cta lb-cta--center">
+          <a class="btn btn--gold" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I just flipped through the lookbook and I would like to order." target="_blank" rel="noopener">Order on WhatsApp</a>
+          <a class="btn btn--ghost" href="products.html">Browse by category</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</Base>
