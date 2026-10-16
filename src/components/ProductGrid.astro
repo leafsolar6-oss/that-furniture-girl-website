@@ -1,10 +1,22 @@
 ---
-/* A grid of product cards. Rendered at build time. */
+/* A grid of product cards. Rendered at build time. Two service tiles close
+   the grid so the last row never reads as empty space. */
 import ProductCard from './ProductCard.astro';
+import { waLink } from '../lib/site.js';
 
 const { products = [], id = 'productGrid' } = Astro.props;
 ---
 
 <div class="grid-products" id={id} data-count={products.length}>
   {products.map((p, i) => <ProductCard product={p} delay={i % 4} />)}
+  <article class="grid-tile reveal">
+    <h3>Made to order</h3>
+    <p>Any colour, size or design — send a reference photo with your measurements and we will quote it before we build.</p>
+    <a class="btn btn--gold" href={waLink('Hello! I have a custom design I would like you to build.')} target="_blank" rel="noopener">Send your design</a>
+  </article>
+  <article class="grid-tile grid-tile--wide reveal">
+    <h3>Visit the showroom</h3>
+    <p>Iyaganku, New GRA, Ibadan · Mon–Sat, 8am–7pm. Sit on it before you decide — or order on WhatsApp from anywhere in Nigeria.</p>
+    <a class="btn btn--outline" href={waLink('Hello! I would like to plan a visit to the showroom.')} target="_blank" rel="noopener">Plan my visit</a>
+  </article>
 </div>
