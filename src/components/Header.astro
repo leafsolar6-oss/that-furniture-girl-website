@@ -10,16 +10,17 @@ const here = (key) => (page === key ? 'page' : undefined);
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark"><img src="assets/img/logo-mark-light.png" alt={`${CONFIG.brand} logo`} width="36" height="36"></span>
+      <span class="brand__mark"><img src="assets/img/logo-mark-light.webp" alt={`${CONFIG.brand} logo`} width="36" height="36"></span>
       <span class="brand__text">
         <span class="brand__name">{CONFIG.brand}</span>
-        <span class="brand__sub">Your best comfort zone</span>
+        <span class="brand__sub">…crafted for real living</span>
       </span>
     </a>
 
     <nav class="nav" aria-label="Main">
       <a href="index.html" aria-current={here('home')}>Home</a>
       <a href="products.html" aria-current={here('products')}>Products</a>
+      <a href="lookbook.html" aria-current={here('lookbook')}>Catalogue</a>
     </nav>
 
     <div class="header-actions">
