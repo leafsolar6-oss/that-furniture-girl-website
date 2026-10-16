@@ -1,0 +1,117 @@
+---
+/* The Lookbook — the catalogue as a booklet: one piece per screen,
+   picture + key info + price. Scroll, swipe or arrow through it. */
+import Base from '../layouts/Base.astro';
+import { PRODUCTS, CONFIG } from '../data/products.js';
+import { waLink, orderMessage, catLabel, specParts } from '../lib/site.js';
+
+const items = PRODUCTS;
+const total = items.length;
+---
+
+<Base
+  page="lookbook"
+  title={`Lookbook — ${CONFIG.brand}`}
+  description={`Flip through the full ${CONFIG.brand} collection — ${total} handmade pieces, one per screen, each with its photo, specification and price.`}
+>
+  <main class="lb" id="lb">
+    <!-- ============================ COVER ============================ -->
+    <section class="lb-spread lb-cover" data-i="0">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">New Collection 2026</span>
+        <h1>The Lookbook</h1>
+        <p>{total} handmade pieces — one per screen, with its photo and specification. Scroll, swipe, or use the arrows.</p>
+        <a class="btn btn--gold" href="#lb-1">Start flipping</a>
+      </div>
+    </section>
+
+    <!-- ============================ PIECES ============================ -->
+    {items.map((p, i) => {
+      const n = i + 1;
+      const specs = specParts(p);
+      return (
+        <section class="lb-spread" id={`lb-${n}`} data-i={n} aria-label={`${p.name} — piece ${n} of ${total}`}>
+          <div class="lb-media">
+            <picture>
+              <source
+                srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.webp 480w, assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')} 1000w`}
+                sizes="(min-width:900px) 56vw, 100vw" type="image/webp">
+              <img
+                src={`assets/img/opt/${p.img}`}
+                srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.jpg 480w, assets/img/opt/${p.img} 1000w`}
+                sizes="(min-width:900px) 56vw, 100vw"
+                alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
+                loading={i === 0 ? 'eager' : 'lazy'} decoding="async" width="900" height="900">
+            </picture>
+            {!p.stamped && <span class="wm" aria-hidden="true"></span>}
+          </div>
+          <div class="lb-info">
+            <div class="lb-top">
+              <span class="lb-num">{String(n).padStart(2, '0')}</span>
+              <span class="lb-cat">{catLabel(p.cat)}</span>
+            </div>
+            <h2>{p.name}</h2>
+            {p.desc && <p class="lb-desc">{p.desc}</p>}
+            {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
+            {p.lead && <p class="lb-lead">{p.lead}</p>}
+            <div class="lb-cta">
+              <a class="btn btn--gold" href={waLink(orderMessage(p))} target="_blank" rel="noopener">Order on WhatsApp</a>
+              <a class="btn btn--ghost" href={`${p.id}.html`}>View details</a>
+            </div>
+          </div>
+        </section>
+      );
+    })}
+
+    <!-- ============================ END CARD ============================ -->
+    <section class="lb-spread lb-end" data-i={total + 1} aria-label="End of lookbook">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">End of the lookbook</span>
+        <h1>Seen everything?</h1>
+        <p>Anything here can be rebuilt in your colour, size and fabric — and anything you can picture, we can build.</p>
+        <div class="lb-cta lb-cta--center">
+          <a class="btn btn--gold" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I just flipped through the lookbook and I would like to order." target="_blank" rel="noopener">Order on WhatsApp</a>
+          <a class="btn btn--ghost" href="products.html">Browse by category</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- floating booklet furniture: counter, dot rail, arrows -->
+  <div class="lb-hud" aria-hidden="true"><span id="lbNow">01</span><span class="lb-hud__sep">/</span><span>{String(total).padStart(2, '0')}</span></div>
+  <nav class="lb-rail" aria-label="Lookbook pieces">
+    {items.map((p, i) => (
+      <a href={`#lb-${i + 1}`} class="lb-dot" aria-label={`${p.name} — piece ${i + 1}`} title={p.name}></a>
+    ))}
+  </nav>
+  <div class="lb-arrows">
+    <button id="lbPrev" type="button" aria-label="Previous piece"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg></button>
+    <button id="lbNext" type="button" aria-label="Next piece"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+  </div>
+
+  <script>
+    /* booklet behaviour: snap hint, live counter, dot rail, arrow paging */
+    document.body.classList.add('lb-scroll');
+    const spreads = [...document.querySelectorAll('.lb-spread')];
+    const now = document.getElementById('lbNow');
+    const dots = [...document.querySelectorAll('.lb-dot')];
+    const io = new IntersectionObserver((es) => {
+      for (const e of es) {
+        if (!e.isIntersecting) continue;
+        const i = Number(e.target.dataset.i || 0);
+        now.textContent = String(Math.max(1, Math.min(i, dots.length))).padStart(2, '0');
+        dots.forEach((d, k) => d.classList.toggle('is-on', k === i - 1));
+      }
+    }, { threshold: 0.55 });
+    spreads.forEach((s) => io.observe(s));
+    const step = (dir) => {
+      const y = window.scrollY + window.innerHeight / 2;
+      let idx = spreads.findIndex((s) => s.offsetTop + s.offsetHeight / 2 > y);
+      if (idx === -1) idx = spreads.length - 1;
+      const target = spreads[Math.max(0, Math.min(spreads.length - 1, idx + dir - (dir < 0 ? 1 : 0)))];
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    document.getElementById('lbNext')?.addEventListener('click', () => step(1));
+    document.getElementById('lbPrev')?.addEventListener('click', () => step(-1));
+  </script>
+</Base>

@@ -69,6 +69,9 @@ def inline_css() -> str:
     for font in sorted((ROOT / "public" / "assets" / "fonts").glob("*.woff2")):
         rel = f"../fonts/{font.name}"
         css = css.replace(rel, data_uri(font))
+    wm = ROOT / "public" / "assets" / "img" / "wm-144.webp"
+    if wm.exists():
+        css = css.replace("../img/wm-144.webp?v=3", data_uri(wm))
     return css
 
 
@@ -257,7 +260,11 @@ window.TFG = {
 
     # photos used by the JS live in assets/img/opt/ and are mapped above;
     # everything else referenced directly in the markup gets embedded here
-    out = re.sub(r"assets/img/(?!opt/)(?:[\w\-]+/)?[\w.\-]+\.(?:jpg|jpeg|png)", swap, out)
+    # single-file build: drop webp <source> tags and srcset/sizes BEFORE inlining
+    # so 480w/160w/800w variants never get embedded as duplicate data URIs
+    out = re.sub(r'<source[^>]*type="image/webp"[^>]*>', '', out)
+    out = re.sub(r'\s(?:srcset|sizes)="[^"]*"', '', out)
+    out = re.sub(r"assets/img/(?!opt/)(?:[\w\-]+/)?[\w.\-]+\.(?:jpg|jpeg|png|webp)", swap, out)
     out = re.sub(r"assets/img/opt/[\w.\-]+\.jpg", swap, out)
     # the app script builds image paths at runtime ("assets/img/opt/" + p.img).
     # In this single file there are no image files, so route every one of them
