@@ -1555,3 +1555,18 @@ body::after {
 .hero__band .stat:first-child { border-left: 0; padding-left: 0; }
 .hero__title { font-size: clamp(34px, 5.2vw, 84px); }
 .hero__title .tl__in { white-space: nowrap; }
+
+/* ==========================================================================
+   STRIP DE-BOX (SPECIFICITY FIX) 2026-10-16 — the template's boxed-card rule
+   out-specifies the band override; this three-class selector finally lets
+   the proof strip read as ink numerals on sand with hairline dividers.
+   ========================================================================== */
+.hero__band .stats .stat {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 2px 0 2px 20px;
+}
+.hero__band .stats .stat + .stat { border-left: 1px solid rgba(11, 12, 14, .14); }
+.hero__band .stats .stat:first-child { border-left: 0; padding-left: 0; }
