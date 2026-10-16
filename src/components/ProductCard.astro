@@ -13,9 +13,13 @@ const shown = price.ask ? 'Price on request' : price.value;
   <a href={`${p.id}.html`} class="product-card__link" aria-label={`${p.name} — view piece`}>
     <div class="product-card__media">
       <picture>
-        <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
-        <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
-             loading="lazy" width="900" height="900">
+        <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.webp 480w, assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')} 1000w`}
+                sizes="(min-width:1240px) 25vw, (min-width:900px) 33vw, (min-width:560px) 50vw, 92vw" type="image/webp">
+        <img src={`assets/img/opt/${p.img}`}
+             srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.jpg 480w, assets/img/opt/${p.img} 1000w`}
+             sizes="(min-width:1240px) 25vw, (min-width:900px) 33vw, (min-width:560px) 50vw, 92vw"
+             alt={`${p.name} — ${p.colours || 'handmade furniture'}`}
+             loading="lazy" decoding="async" width="900" height="900">
       </picture>
       <div class="product-card__overlay"></div>
       {!p.stamped && <span class="wm" aria-hidden="true"></span>}
