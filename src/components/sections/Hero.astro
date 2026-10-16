@@ -15,8 +15,12 @@ const firstPrice = priceInfo(first);
     <div class="hero__grid">
 
       <div class="hero__copy reveal flex flex-col items-center text-center lg:items-start lg:text-left">
-        <span class="hero__eyebrow">→ New collection 2026</span>
-        <h1 class="hero__title">Furniture that<br><em>Transforms</em><br>Your living space</h1>
+        <span class="hero__eyebrow"><i class="dot" aria-hidden="true"></i>New collection 2026</span>
+        <h1 class="hero__title">
+          <span class="tl"><span class="tl__in">Furniture that</span></span>
+          <span class="tl"><span class="tl__in"><em>Transforms</em></span></span>
+          <span class="tl tl--outline"><span class="tl__in">Your living space</span></span>
+        </h1>
         <p class="hero__sub">Discover handcrafted furniture pieces that blend exceptional craftsmanship with modern design. Create the home you've always dreamed of.</p>
         <div class="btn-row">
           <a class="btn btn--gold btn--lg" href="#collection">
@@ -26,12 +30,9 @@ const firstPrice = priceInfo(first);
           <a class="btn btn--outline btn--lg" href="products.html">View products</a>
         </div>
 
-        <div class="stats">
-          <div class="stat"><b>1,101</b><span>TikTok followers</span></div>
-          <div class="stat"><b>59,230</b><span>Likes across our builds</span></div>
-          <div class="stat"><b>191</b><span>Videos of real work</span></div>
-          <div class="stat"><b>6,000+</b><span>Instagram followers</span></div>
-        </div>
+        <a class="hero__cue" href="#collection">
+          <span>Scroll to explore</span><i aria-hidden="true"></i>
+        </a>
       </div>
 
       <div class="hero__panel reveal" data-delay="1" id="heroPanel" aria-roledescription="carousel" aria-label="Pieces from the workshop">
@@ -75,6 +76,28 @@ const firstPrice = priceInfo(first);
         <span class="hero__progress" aria-hidden="true"><i></i></span>
       </div>
 
+    </div>
+  </div>
+
+  <div class="hero__band">
+    <div class="container">
+      <div class="stats" role="list">
+        <div class="stat" role="listitem"><b data-count="1101">1,101</b><span>TikTok followers</span></div>
+        <div class="stat" role="listitem"><b data-count="59230">59,230</b><span>Likes across our builds</span></div>
+        <div class="stat" role="listitem"><b data-count="191">191</b><span>Videos of real work</span></div>
+        <div class="stat" role="listitem"><b data-count="6000" data-suffix="+">6,000+</b><span>Instagram followers</span></div>
+      </div>
+    </div>
+
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="hero__marquee-track">
+      <span class="hero__marquee-set">
+        <i>Proudly Nigeria made</i><i>Iyaganku · New GRA · Ibadan</i><i>Mon–Sat · 8am–7pm</i><i>Order on WhatsApp</i><i>Nationwide delivery</i><i>Bank transfer accepted</i>
+      </span>
+      <span class="hero__marquee-set">
+        <i>Proudly Nigeria made</i><i>Iyaganku · New GRA · Ibadan</i><i>Mon–Sat · 8am–7pm</i><i>Order on WhatsApp</i><i>Nationwide delivery</i><i>Bank transfer accepted</i>
+      </span>
+      </div>
     </div>
   </div>
 </section>
