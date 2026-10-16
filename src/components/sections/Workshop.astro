@@ -8,13 +8,13 @@ import { CONFIG } from '../../data/products.js';
   <div class="container split">
     <div class="split__media">
       <picture>
-        <source srcset="assets/img/opt/atelier.webp" type="image/webp">
-        <img src="assets/img/opt/atelier.jpg" alt={`Inside the ${CONFIG.brand} workshop in Ibadan`} loading="lazy" width="1000" height="853">
+        <source srcset="assets/img/opt/atelier-800.webp 800w, assets/img/opt/atelier.webp 1400w" sizes="(min-width:860px) 46vw, 92vw" type="image/webp">
+        <img src="assets/img/opt/atelier.jpg" srcset="assets/img/opt/atelier-800.jpg 800w, assets/img/opt/atelier.jpg 1400w" sizes="(min-width:860px) 46vw, 92vw" alt={`Inside the ${CONFIG.brand} workshop in Ibadan`} loading="lazy" width="1000" height="853">
       </picture>
       <span class="wm wm--w2" aria-hidden="true"></span>
       <picture class="split__media-second">
-        <source srcset="assets/img/opt/showroom.webp" type="image/webp">
-        <img src="assets/img/opt/showroom.jpg" alt={`${CONFIG.brand} showroom`} loading="lazy" width="1400" height="874">
+        <source srcset="assets/img/opt/showroom-800.webp 800w, assets/img/opt/showroom.webp 1400w" sizes="(min-width:860px) 46vw, 92vw" type="image/webp">
+        <img src="assets/img/opt/showroom.jpg" srcset="assets/img/opt/showroom-800.jpg 800w, assets/img/opt/showroom.jpg 1400w" sizes="(min-width:860px) 46vw, 92vw" alt={`${CONFIG.brand} showroom`} loading="lazy" width="1400" height="874">
       </picture>
     </div>
     <div class="split__copy">
