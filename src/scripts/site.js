@@ -455,5 +455,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (strip) $$('button', strip).forEach((b) => b.classList.toggle('is-on', b === th));
   });
 
+  /* Hero stats: gentle count-up when the band scrolls into view.
+     Values are the owner's verified figures — nothing is invented. */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target);
+      const el = en.target;
+      const end = parseInt(el.getAttribute('data-count'), 10);
+      const suf = el.getAttribute('data-suffix') || '';
+      const t0 = performance.now();
+      const dur = 1500;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur);
+        const ease = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(end * ease).toLocaleString('en-US') + (k === 1 ? suf : '');
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }), { threshold: 0.4 });
+    $$('[data-count]').forEach((c) => io.observe(c));
+  }
+
   observeReveals(document);
 });

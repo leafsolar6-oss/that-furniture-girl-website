@@ -1,0 +1,122 @@
+---
+/* The Catalogue — a segmented, editorial book of the whole collection.
+   Plates use RAW owner photography (the un-edited workshop/showroom
+   shots carrying the owner's own stamp); AI studio mains stay on the
+   shop pages only. Chapters follow the category order. */
+import Base from '../layouts/Base.astro';
+import { PRODUCTS, CONFIG, CATEGORIES } from '../data/products.js';
+import { waLink, orderMessage, catLabel, specParts } from '../lib/site.js';
+
+const items = PRODUCTS;
+const total = items.length;
+
+/* raw plate: stamped mains are already raw; AI-edited mains fall back
+   to the first raw gallery angle */
+const plate = (p) => (p.stamped || !p.gallery || !p.gallery.length ? p.img : p.gallery[0]);
+
+/* catalogue shows no prices: strip price clauses from rendered text */
+const cleanDesc = (raw) => {
+  let s = raw;
+  s = s.replace(/\s*—\s*same ₦[\d,]+,\s*single chair ₦[\d,]+\.?$/, '.');
+  s = s.replace(/\s*Single ₦[\d,]+\s*·\s*table ₦[\d,]+\.?$/, '.');
+  s = s.replace(/\s*—\s*₦[\d,]+ in [A-Z]+,\s*₦[\d,]+ in [A-Z]+,/, ',');
+  s = s.replace(/\s*;\s*[^;]*₦[^;]*\./, '.');
+  const kept = s.split(/(?<=\.)\s+/).filter((sen) => !sen.includes('₦'));
+  let out = kept.join(' ').trim();
+  if (!out) out = raw.replace(/[^.]*(₦)[^.]*\./g, '').trim();
+  return out.replace(/\s{2,}/g, ' ').replace(/[,;—]\s*$/g, '.') || raw;
+};
+
+const chapters = CATEGORIES
+  .filter((c) => c.key !== 'all')
+  .map((c, i) => ({ ...c, n: i + 1, pieces: items.filter((p) => p.cat === c.key) }))
+  .filter((c) => c.pieces.length > 0);
+---
+
+<Base
+  page="lookbook"
+  title={`Catalogue — ${CONFIG.brand}`}
+  description={`The full ${CONFIG.brand} catalogue in raw photography — ${total} handmade pieces in ${chapters.length} chapters, each with its un-edited photo and story.`}
+>
+  <main class="lb" id="lb">
+    <!-- ============================ COVER ============================ -->
+    <section class="lb-spread lb-cover" data-i="0">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">The Catalogue · New Collection 2026</span>
+        <h1>Raw &amp; Real</h1>
+        <p>{total} handmade pieces photographed as they are — in the workshop and the showroom, never dressed up. {chapters.length} chapters, top to bottom.</p>
+        <div class="lb-index" aria-label="Catalogue chapters">
+          {chapters.map((c) => (
+            <a href={`#seg-${c.key}`}>
+              <span class="lb-index__n">{String(c.n).padStart(2, '0')}</span>
+              <span class="lb-index__t">{c.label}</span>
+              <span class="lb-index__c">{c.pieces.length} {c.pieces.length === 1 ? 'piece' : 'pieces'}</span>
+            </a>
+          ))}
+        </div>
+        <a class="btn btn--gold" href={`#seg-${chapters[0].key}`}>Start browsing</a>
+      </div>
+    </section>
+
+    <!-- ============================ CHAPTERS ============================ -->
+    {chapters.map((c) => (
+      <>
+        <section class="lb-seg" id={`seg-${c.key}`}>
+          <div class="lb-seg__in">
+            <span class="lb-seg__k">Chapter {String(c.n).padStart(2, '0')}</span>
+            <h2 class="lb-seg__t">{c.label}</h2>
+            <p class="lb-seg__c">{c.pieces.length} {c.pieces.length === 1 ? 'piece' : 'pieces'} · raw photography</p>
+          </div>
+        </section>
+        {c.pieces.map((p, i) => {
+          const f = plate(p);
+          const specs = specParts(p);
+          return (
+            <article class="lb-spread lb-plate" aria-label={`${p.name} — ${catLabel(p.cat)}`}>
+              <div class="lb-media">
+                <picture>
+                  <source
+                    srcset={`assets/img/opt/${f.replace(/\.jpg$/, '')}-480.webp 480w, assets/img/opt/${f.replace(/\.jpg$/, '.webp')} 1000w`}
+                    sizes="(min-width:1100px) 1040px, 96vw" type="image/webp">
+                  <img
+                    src={`assets/img/opt/${f}`}
+                    srcset={`assets/img/opt/${f.replace(/\.jpg$/, '')}-480.jpg 480w, assets/img/opt/${f} 1000w`}
+                    sizes="(min-width:1100px) 1040px, 96vw"
+                    alt={`${p.name} — ${p.colours || 'handmade furniture'}, as photographed in the workshop`}
+                    loading="lazy" decoding="async" width="900" height="900">
+                </picture>
+              </div>
+              <div class="lb-info">
+                <div class="lb-top">
+                  <span class="lb-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="lb-cat">{catLabel(p.cat)}</span>
+                </div>
+                <h3 class="lb-name">{p.name}</h3>
+                {p.desc && <p class="lb-desc">{cleanDesc(p.desc)}</p>}
+                {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
+                {p.lead && <p class="lb-lead">{p.lead}</p>}
+                <div class="lb-cta">
+                  <a class="btn btn--gold" href={waLink(orderMessage(p))} target="_blank" rel="noopener">Order on WhatsApp</a>
+                  <a class="btn btn--ghost" href={`${p.id}.html`}>View details</a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </>
+    ))}
+
+    <!-- ============================ END CARD ============================ -->
+    <section class="lb-spread lb-end" aria-label="End of catalogue">
+      <div class="lb-cover__in">
+        <span class="lb-kicker">End of the catalogue</span>
+        <h1>Seen everything?</h1>
+        <p>Anything here can be rebuilt in your colour, size and fabric — and anything you can picture, we can build.</p>
+        <div class="lb-cta lb-cta--center">
+          <a class="btn btn--gold" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I just read the catalogue and I would like to order." target="_blank" rel="noopener">Order on WhatsApp</a>
+          <a class="btn btn--ghost" href="products.html">Browse by category</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
