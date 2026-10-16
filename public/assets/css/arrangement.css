@@ -1609,3 +1609,10 @@ body::after {
   padding: 4px; line-height: 1.2;
   transform: rotate(-10deg);
 }
+
+/* stamp grows into a pill for longer words (Signature / Best seller) */
+.product-card__badge {
+  width: auto; min-width: 50px; height: 50px;
+  padding: 4px 12px; border-radius: 999px;
+  white-space: nowrap;
+}
