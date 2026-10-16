@@ -51,7 +51,7 @@ const total = items.length;
               <span class="lb-cat">{catLabel(p.cat)}</span>
             </div>
             <h2>{p.name}</h2>
-            {specs.length > 0 && <p class="lb-specs">{specs.join(' · ')}</p>}
+            {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
             {p.lead && <p class="lb-lead">{p.lead}</p>}
             <div class="lb-cta">
               <a class="btn btn--gold" href={waLink(orderMessage(p))} target="_blank" rel="noopener">Order on WhatsApp</a>
