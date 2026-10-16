@@ -21,7 +21,7 @@ const items = featuredProducts.slice(0, 6);
         return (
           <a class="featured-item" href={waLink(orderMessage(p))} target="_blank" rel="noopener" aria-label={`${p.name} — order on WhatsApp`}>
             <div class="featured-item__media">
-              <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours || 'handmade furniture'}`} loading="lazy" width="400" height="500">
+              <img src={`assets/img/opt/${p.img}`} srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '')}-480.jpg 480w, assets/img/opt/${p.img} 1000w`} sizes="(min-width:900px) 30vw, 80vw" alt={`${p.name} — ${p.colours || 'handmade furniture'}`} loading="lazy" width="400" height="500">
             </div>
             <span class="featured-item__badge">{p.badge || categoryLabel(p.cat)}</span>
             <span class="featured-item__price">{shown}</span>
