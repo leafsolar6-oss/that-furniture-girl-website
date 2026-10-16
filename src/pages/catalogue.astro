@@ -141,5 +141,15 @@ const chapters = CATEGORIES
       }
     }, { rootMargin: '-30% 0px -60% 0px' });
     document.querySelectorAll('.lb-seg, .lb-plate').forEach((el) => io.observe(el));
+    /* chapter jumps are instant — smooth-scrolling 7000px feels broken */
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#seg-"]');
+      if (!a) return;
+      const el = document.getElementById(a.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', '#' + el.id);
+    });
   </script>
 </Base>
