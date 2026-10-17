@@ -17,6 +17,7 @@ const here = (key) => (page === key ? 'page' : undefined);
   <nav aria-label="Main">
     <a href="index.html" aria-current={here('home')}>Home</a>
     <a href="products.html" aria-current={here('products')}>All products</a>
+    <a href="catalogue.html" aria-current={here('lookbook')}>Catalogue</a>
     {cats.map((c) => <a href={`products.html#cat-${c.key}`}>{c.label}</a>)}
   </nav>
 
