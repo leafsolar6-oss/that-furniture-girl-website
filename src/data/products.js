@@ -51,12 +51,12 @@ export const PRODUCTS = [
     cat: 'sofas',
     price: 500000,
     badge: 'Best seller',
-    colours: 'Light grey + white',
+    colours: 'Light grey + white · also cream + chocolate, navy + white, chocolate + white',
     material: 'Boucle fabric',
     lead: 'Available for immediate pickup',
-    desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room.',
+    desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room. The gallery also shows her posted colourways — cream + chocolate brown, navy blue + white, chocolate brown + white and a custom light ash + orange combo — same ₦500,000, single chair ₦170,000.',
     img: 'blush-sectional.jpg',
-    gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg'],
+    gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg', 'blush-sectional-4.jpg', 'blush-sectional-5.jpg'],
     featured: true
   },
   {
@@ -70,7 +70,7 @@ export const PRODUCTS = [
     lead: 'Available for immediate pickup',
     desc: 'A low, architectural L-shape wrapped in ribbed chocolate corduroy. The texture catches the light beautifully and the wide chaise makes it the best seat in the house.',
     img: 'jewel-sectional.jpg',
-    gallery: ['jewel-sectional-2.jpg'],
+    gallery: ['jewel-sectional-6.jpg','jewel-sectional-7.jpg','jewel-sectional-8.jpg','jewel-sectional-9.jpg','jewel-sectional-10.jpg','jewel-sectional-2.jpg'],
     featured: true
   },
   {
@@ -106,9 +106,9 @@ export const PRODUCTS = [
     price: 250000,
     colours: 'Chocolate brown + cream',
     material: 'Boucle fabric',
-    desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up.',
+    desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up. Also posted in cream + brown — see gallery.',
     img: 'plush-three-seaters.jpg',
-    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg'],
+    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg', 'plush-three-seaters-4.jpg', 'plush-three-seaters-5.jpg'],
     featured: true
   },
   {
@@ -152,7 +152,85 @@ export const PRODUCTS = [
     img: 'wardrobe.jpg',
     gallery: ['wardrobe-2.jpg', 'wardrobe-3.jpg', 'wardrobe-4.jpg'],
     featured: false
-  }
+  },
+  {
+    id: 'sienne-wooden-set',
+    name: 'The Sienne Wooden Set',
+    cat: 'sets',
+    price: 800000,
+    badge: 'Best seller',
+    colours: 'Cream + brown · wood: coffee brown',
+    material: 'Matte fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'The Sienne Wooden Set in cream and brown with coffee-brown wood trim and matte fabric — a best seller, in the showroom now for immediate pickup. Like every piece here, it can also be built in your colour of choice.',
+    img: 'sienne-wooden-set.jpg',
+    gallery: ['sienne-wooden-set-2.jpg','sienne-wooden-set-3.jpg','sienne-wooden-set-4.jpg','sienne-wooden-set-5.jpg','sienne-wooden-set-6.jpg','sienne-wooden-set-7.jpg','sienne-wooden-set-8.jpg','sienne-wooden-set-9.jpg'],
+  },
+  {
+    id: 'upholstery-bed-navy',
+    name: 'Upholstery Bed + 2 Bedsides — Navy Blue',
+    cat: 'beds',
+    price: 450000,
+    colours: 'Navy blue',
+    material: 'Velvet',
+    lead: '14 working days',
+    desc: 'A 6ft by 6ft upholstery bed in navy blue velvet with two matching bedside drawers — treated wood frames, high-density foam and textured velvet fabric, built to order in any colour you prefer.',
+    img: 'upholstery-bed-navy.jpg',
+    gallery: ['upholstery-bed-navy-2.jpg','upholstery-bed-navy-3.jpg','upholstery-bed-navy-4.jpg','upholstery-bed-navy-5.jpg'],
+  },
+  {
+    id: 'jewel-balloon-black',
+    name: 'Jewel Balloon L-Shaped Sectionals — Black',
+    cat: 'sofas',
+    price: 350000,
+    badge: 'Best seller',
+    colours: 'Black',
+    material: 'Velvet',
+    lead: 'Available for immediate pickup',
+    desc: 'The balloon cut of the Jewel sectional in black velvet — deep rounded channels and a wide chaise, a best seller in the showroom now for immediate pickup. Throw pillows add ₦5,000 each, and the piece can be built in your colour of choice.',
+    img: 'jewel-balloon-black.jpg',
+    gallery: ['jewel-balloon-black-2.jpg','jewel-balloon-black-3.jpg','jewel-balloon-black-4.jpg','jewel-balloon-black-5.jpg'],
+  },
+  {
+    id: 'oloye-set',
+    name: 'Oloye Set — Cream with Marble Print',
+    cat: 'sets',
+    price: 650000,
+    badge: 'Best seller',
+    colours: 'Cream with marble print',
+    material: 'Thick leather cloth',
+    lead: 'Available for immediate pickup',
+    desc: 'The Oloye Set in cream thick leather cloth with marble-print accents — a best seller, in the showroom now for immediate pickup, and available in your colour of choice.',
+    img: 'oloye-set.jpg',
+    gallery: ['oloye-set-2.jpg','oloye-set-3.jpg','oloye-set-4.jpg','oloye-set-5.jpg','oloye-set-6.jpg','oloye-set-7.jpg'],
+  },
+  {
+    id: 'centre-table-oval-white',
+    name: 'Centre Table — White Oval (+5mm Glass)',
+    cat: 'tables',
+    price: 150000,
+    priceTo: 200000,
+    badge: 'Best seller',
+    colours: 'White',
+    material: 'MDF or HDF · oval + 5mm glass',
+    lead: 'Available for immediate pickup',
+    desc: 'A white oval centre table topped with 5mm glass, built in MDF or HDF — a best seller, in the showroom now for immediate pickup.',
+    img: 'centre-table-oval-white.jpg',
+    gallery: ['centre-table-oval-white-2.jpg','centre-table-oval-white-3.jpg','centre-table-oval-white-4.jpg'],
+  },
+  {
+    id: 'royalty-set',
+    name: 'Royalty Set — Champagne Gold & Brown',
+    cat: 'sets',
+    price: 2000000,
+    badge: 'Best seller',
+    colours: 'Champagne gold + brown',
+    material: 'Flowering fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'The Royalty Set in champagne gold and brown flowering fabric — our most ornate build, a best seller available for immediate showroom pickup, and reproducible in your colour of choice.',
+    img: 'royalty-set.jpg',
+    gallery: ['royalty-set-2.jpg','royalty-set-3.jpg','royalty-set-4.jpg','royalty-set-5.jpg','royalty-set-6.jpg','royalty-set-7.jpg','royalty-set-8.jpg'],
+  },
 ];
 
 /* ---------- imported from the owner's catalogue (Oct 2026 PDF) ---------- */
@@ -475,6 +553,136 @@ const CATALOGUE_IMPORTS_2 = [
   }
 ];
 PRODUCTS.push(...CATALOGUE_IMPORTS_2);
+
+/* ==========================================================================
+   CATALOGUE PART 3 IMPORTS 2026-10-15 — three further owner-published pieces
+   from the "Deep History" catalogue (April-May 2026 posts). Blush Sectional
+   colourways and the cream+brown 3-seater were merged into existing pieces
+   as gallery photos instead of duplicate listings.
+   ========================================================================== */
+const CATALOGUE_IMPORTS_3 = [
+  {
+    id: 'noble-rest-bed',
+    name: 'Noble Rest Bed + Bedside Drawer',
+    cat: 'beds',
+    price: 250000,
+    colours: 'White + black',
+    material: 'Black leather',
+    sizes: '4.5/6ft',
+    lead: '14 working days',
+    desc: 'The Noble Rest design — a white frame with black leather slatted headboard and one bedside drawer, on treated wood frames with high-density foams.',
+    img: 'noble-rest-bed.jpg',
+    gallery: ['noble-rest-bed-2.jpg', 'noble-rest-bed-3.jpg'],
+    stamped: true
+  },
+  {
+    id: 'plush-arc-sofa',
+    name: 'Plush Arc Sofa',
+    cat: 'sofas',
+    price: 250000,
+    badge: 'Best seller',
+    colours: 'Cream',
+    material: 'Matte',
+    lead: 'Available for immediate pickup',
+    desc: 'A sculptural curved arc sofa in cream matte fabric — a showroom best seller that can also be made in a colour of your choice.',
+    img: 'plush-arc-sofa.jpg',
+    gallery: ['plush-arc-sofa-2.jpg', 'plush-arc-sofa-3.jpg'],
+    stamped: true
+  },
+  {
+    id: 'upholstery-bed-cream-gold',
+    name: 'Upholstery Bed — Cream + Gold',
+    cat: 'beds',
+    price: 320000,
+    colours: 'Cream + gold',
+    material: 'Leather',
+    sizes: '4.5/6ft',
+    lead: '14 working days',
+    desc: 'A cream diamond-tufted leather bed with gold-trimmed headboard, built on treated wood frames with high-density foams.',
+    img: 'upholstery-bed-cream-gold.jpg',
+    stamped: true
+  }
+];
+PRODUCTS.push(...CATALOGUE_IMPORTS_3);
+
+/* ==========================================================================
+   CATALOGUE PART 3 — FULL EXTRACTION 2026-10-15: every indexed row now has
+   its own listing, including the Blush Sectional colourways and the custom
+   Blush + Bubble combo previously merged into galleries.
+   ========================================================================== */
+const CATALOGUE_IMPORTS_3B = [
+  {
+    id: 'blush-cream-chocolate',
+    name: 'Blush Sectional — Cream + Chocolate Brown',
+    cat: 'sofas',
+    price: 500000,
+    badge: 'Best seller',
+    colours: 'Cream + chocolate brown',
+    material: 'Boucle fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'The Blush Sectional in cream + chocolate brown boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
+    img: 'blush-cream-chocolate.jpg',
+    gallery: ['blush-cream-chocolate-2.jpg', 'blush-cream-chocolate-3.jpg'],
+    stamped: true
+  },
+  {
+    id: 'blush-bubble-custom-combo',
+    name: 'Blush Sectional + Bubble Single (Custom)',
+    cat: 'sofas',
+    price: 740000,
+    badge: 'Best seller',
+    colours: 'Light ash + orange',
+    material: 'Boucle fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'A custom order pairing the Blush Sectional with a Bubble Single in light ash + orange — the sofa can be re-arranged. Single ₦170,000 · table ₦150,000.',
+    img: 'blush-bubble-custom-combo.jpg',
+    gallery: ['blush-bubble-custom-combo-2.jpg', 'blush-bubble-custom-combo-3.jpg', 'blush-bubble-custom-combo-4.jpg'],
+    stamped: true
+  },
+  {
+    id: 'blush-navy-white',
+    name: 'Blush Sectional — Navy Blue + White',
+    cat: 'sofas',
+    price: 500000,
+    badge: 'Best seller',
+    colours: 'Navy blue + white',
+    material: 'Boucle fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'The Blush Sectional in navy blue + white boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
+    img: 'blush-navy-white.jpg',
+    gallery: ['blush-navy-white-2.jpg', 'blush-navy-white-3.jpg'],
+    stamped: true
+  },
+  {
+    id: 'blush-chocolate-white',
+    name: 'Blush Sectional — Chocolate Brown + White',
+    cat: 'sofas',
+    price: 500000,
+    badge: 'Best seller',
+    colours: 'Chocolate brown + white',
+    material: 'Boucle fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'The Blush Sectional in chocolate brown + white boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
+    img: 'blush-chocolate-white.jpg',
+    gallery: ['blush-chocolate-white-2.jpg', 'blush-chocolate-white-3.jpg'],
+    stamped: true
+  },
+  {
+    id: 'three-seaters-cream-brown',
+    name: '3 Seaters — Cream + Brown',
+    cat: 'sofas',
+    price: 250000,
+    badge: 'Best seller',
+    colours: 'Cream + brown',
+    material: 'Boucle fabric',
+    lead: 'Available for immediate pickup',
+    desc: 'A channel-tufted three-seater in cream + brown boucle — a showroom best seller that can also be made in a colour of your choice.',
+    img: 'three-seaters-cream-brown.jpg',
+    gallery: ['three-seaters-cream-brown-2.jpg', 'three-seaters-cream-brown-3.jpg'],
+    stamped: true
+  }
+];
+PRODUCTS.push(...CATALOGUE_IMPORTS_3B);
 
 /* ==========================================================================
    TESTIMONIALS  —  the "What our customers say" section
