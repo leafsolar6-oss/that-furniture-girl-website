@@ -5,7 +5,7 @@ import Toolbar from '../Toolbar.astro';
 import ProductGrid from '../ProductGrid.astro';
 import { PRODUCTS } from '../../data/products.js';
 
-const products = PRODUCTS;
+const products = PRODUCTS.filter((p) => !p.catalogOnly);
 ---
 
 <section class="section" id="collection">

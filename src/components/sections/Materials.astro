@@ -3,8 +3,9 @@
    can only ever show what the workshop has actually built. */
 import { PRODUCTS } from '../../data/products.js';
 
-const materials = [...new Set(PRODUCTS.map((p) => p.material).filter(Boolean))];
-const colours = [...new Set(PRODUCTS.map((p) => p.colours).filter(Boolean))];
+const shopItems = PRODUCTS.filter((p) => !p.catalogOnly);
+const materials = [...new Set(shopItems.map((p) => p.material).filter(Boolean))];
+const colours = [...new Set(shopItems.map((p) => p.colours).filter(Boolean))];
 ---
 
 <section class="section materials" id="materials">
