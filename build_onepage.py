@@ -172,6 +172,8 @@ def main() -> None:
 
     # ---- photo map: lets the JS resolve product images without any files --
     products_src = read("src/data/products.js")
+    # catalogue-only pieces stay out of the shareable one-pager shop flyer
+    products_src = re.sub(r"\n  \{[^{}]*?catalogOnly: true[^{}]*?\},", "", products_src)
     photos = sorted(set(re.findall(r"img:\s*'([^']+)'", products_src)))
     img_map_entries = []
     for name in photos:
@@ -287,6 +289,8 @@ window.TFG = {
     # the self-contained file embeds JPEGs as data URIs; WebP <source> tags
     # would win selection and 404 offline, so drop them here.
     out = re.sub(r'<source[^>]*type="image/webp"[^>]*>', '', out)
+    # strip catalogue-only entries from the minified inline PRODUCTS bundle too
+    out = re.sub(r",\{id:`[a-z0-9-]+`[^{}]*?catalogOnly:!0\}", "", out)
     (ROOT / OUT_NAME).write_text(out, encoding="utf-8")
     size_mb = (ROOT / OUT_NAME).stat().st_size / 1024 / 1024
     real = re.findall(r'(?:src|href)="(assets/[^"]+)"', out)
