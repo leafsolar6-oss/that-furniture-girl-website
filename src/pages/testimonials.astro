@@ -32,6 +32,7 @@ const reviewMsg =
             No invented praise, no borrowed words. If it is on this page, somebody
             actually wrote it to us.
           </p>
+          <div class="gold-rule reveal" aria-hidden="true"><span>✦</span></div>
         </div>
       </div>
     </section>
@@ -54,7 +55,8 @@ const reviewMsg =
             'review-13.jpg','review-14.jpg','review-15.jpg','review-16.jpg','review-17.jpg','review-18.jpg'
           ].map((s, i) => (
             <a class="shot-wall__item reveal" data-delay={i % 2} href={`assets/img/opt/${s}`} target="_blank" rel="noopener">
-              <img src={`assets/img/opt/${s.replace('.jpg', '-480.jpg')}`} alt={`Customer chat screenshot ${i + 1}`} loading="lazy" />
+              <img src={`assets/img/opt/${s.replace('.jpg', '-480.jpg')}`} alt={`Customer ${s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'} review screenshot ${i + 1}`} loading="lazy" />
+              <span class="shot-pill">{s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'}</span>
             </a>
           ))}
         </div>
@@ -64,11 +66,17 @@ const reviewMsg =
     <!-- ============================ QUOTE WALL ============================ -->
     <section class="section" style="padding-top:0">
       <div class="container">
+        <div class="section-head section-head--center reveal" style="margin-bottom:30px">
+          <span class="eyebrow">In their words</span>
+          <h2>Words from real customers</h2>
+        </div>
         {quotes.length > 0 ? (
           <div class="quote-grid" id="quoteGrid">
             {quotes.map((t, i) => (
               <figure class="quote-card reveal" data-delay={i % 2}>
-                <div class="quote-card__head">
+                <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+                <blockquote class="quote-card__text">{t.text}</blockquote>
+                <figcaption class="quote-card__head">
                   {t.img
                     ? <img class="quote-card__avatar" src={`assets/img/opt/${t.img}`} alt="" loading="lazy" />
                     : <span class="quote-card__avatar" aria-hidden="true">{String(t.name || '?').trim().charAt(0).toUpperCase()}</span>}
@@ -76,9 +84,7 @@ const reviewMsg =
                     <strong>{t.name}</strong>
                     {t.where && <span>{t.where}</span>}
                   </div>
-                </div>
-                <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
-                <blockquote class="quote-card__text">{t.text}</blockquote>
+                </figcaption>
               </figure>
             ))}
           </div>
@@ -134,21 +140,25 @@ const reviewMsg =
           <h2>Made in Ibadan, delivered with care</h2>
         </div>
         <div class="quote-grid">
-          <div class="quote-card reveal" data-delay="0" style="text-align:center">
-            <strong style="font-size:1.35rem">Same-day delivery</strong>
-            <p class="lead" style="margin-top:10px">Order confirmed today, at your door today — our delivery is fast.</p>
+          <div class="trust-card reveal" data-delay="0">
+            <div class="trust-card__rule"></div>
+            <h3>Same-day delivery</h3>
+            <p>Order confirmed today, at your door today — our delivery is fast.</p>
           </div>
-          <div class="quote-card reveal" data-delay="1" style="text-align:center">
-            <strong style="font-size:1.35rem">Walk-in store, Ibadan</strong>
-            <p class="lead" style="margin-top:10px">Come see and feel every piece before you pay. Crafted for real living.</p>
+          <div class="trust-card reveal" data-delay="1">
+            <div class="trust-card__rule"></div>
+            <h3>Walk-in store, Ibadan</h3>
+            <p>Come see and feel every piece before you pay. Crafted for real living.</p>
           </div>
-          <div class="quote-card reveal" data-delay="0" style="text-align:center">
-            <strong style="font-size:1.35rem">Made to your taste</strong>
-            <p class="lead" style="margin-top:10px">Custom colours, sizes and designs — every piece can be made your way.</p>
+          <div class="trust-card reveal" data-delay="0">
+            <div class="trust-card__rule"></div>
+            <h3>Made to your taste</h3>
+            <p>Custom colours, sizes and designs — every piece can be made your way.</p>
           </div>
-          <div class="quote-card reveal" data-delay="1" style="text-align:center">
-            <strong style="font-size:1.35rem">Legit vendor</strong>
-            <p class="lead" style="margin-top:10px">Real furniture, real photos, real people on WhatsApp: {CONFIG.whatsapp}.</p>
+          <div class="trust-card reveal" data-delay="1">
+            <div class="trust-card__rule"></div>
+            <h3>Legit vendor</h3>
+            <p>Real furniture, real photos, real people on WhatsApp: {CONFIG.whatsapp}.</p>
           </div>
         </div>
       </div>
@@ -157,15 +167,16 @@ const reviewMsg =
     <!-- =============================== CTA =============================== -->
     <section class="section" style="padding-top:0">
       <div class="container">
-        <div class="quote-card reveal" style="max-width:760px;margin:0 auto;text-align:center">
-          <h2 style="margin:0">Bought from us? Your words belong here.</h2>
-          <p class="lead" style="margin-top:12px">
+        <div class="cta-band reveal" style="text-align:center">
+          <span class="eyebrow">Join the family</span>
+          <h2 style="margin:0;color:#fff">Bought from us? Your words belong here.</h2>
+          <p class="lead" style="margin-top:12px;color:rgba(255,255,255,.78)">
             Tell us how your furniture is holding up, how the delivery went, or how the
             piece changed your space. We read every message.
           </p>
-          <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
             <a class="btn btn--gold" href={waLink(reviewMsg)} data-wa={reviewMsg}>Send a WhatsApp review</a>
-            <a class="btn btn--ghost btn--sm" href="products.html">Browse the collection</a>
+            <a class="btn btn--ghost-light" href="products.html">Browse the collection</a>
           </div>
         </div>
       </div>

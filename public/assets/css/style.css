@@ -1248,6 +1248,14 @@ p  { margin: 0; text-wrap: pretty; }
 }
 .shot-wall__item:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(60, 40, 20, .18); }
 .shot-wall__item img { width: 100%; height: auto; display: block; }
+.shot-pill {
+  position: absolute; left: 10px; bottom: 10px;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800;
+  padding: 5px 11px; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: var(--green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+.shot-wall__item { position: relative; }
 
 /* Screenshot lightbox — tap to read a chat large; arrows / swipe to browse. */
 .shotbox {
@@ -1289,21 +1297,73 @@ p  { margin: 0; text-wrap: pretty; }
   background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-lg);
-  padding: clamp(24px, 3vw, 32px);
+  padding: clamp(26px, 3.2vw, 36px);
   display: flex; flex-direction: column; gap: 16px;
+  position: relative; overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.quote-card__head { display: flex; align-items: center; gap: 14px; }
+.quote-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(60, 40, 20, .22); }
+.quote-card__head {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: auto; padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
 .quote-card__avatar {
-  width: 52px; height: 52px; border-radius: 50%;
+  width: 48px; height: 48px; border-radius: 50%;
   object-fit: cover; flex: none;
   background: var(--surface-2);
   display: grid; place-items: center;
   font-weight: 800; color: var(--green);
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px rgba(255, 182, 0, .65);
 }
-.quote-card__who strong { display: block; font-size: 15.5px; font-weight: 800; letter-spacing: -.02em; }
-.quote-card__who span { font-size: 12.5px; color: var(--muted); font-weight: 600; }
-.quote-card__text { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
-.quote-card__mark { font-size: 54px; line-height: .6; color: var(--amber); font-weight: 800; }
+.quote-card__who strong {
+  display: block; font-size: 12.5px; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink);
+}
+.quote-card__who span {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 15px; color: var(--muted); font-weight: 400; letter-spacing: .01em;
+}
+.quote-card__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.55; color: var(--ink); font-weight: 400;
+}
+.quote-card__mark {
+  position: absolute; top: 10px; right: 22px;
+  font-family: var(--font-display);
+  font-size: 110px; line-height: 1; color: var(--amber); opacity: .25;
+  pointer-events: none; user-select: none;
+}
+
+/* Gold ornament divider — a hairline pair around a small diamond. */
+.gold-rule {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  color: var(--amber); margin-top: 28px;
+}
+.gold-rule::before, .gold-rule::after {
+  content: ''; height: 1px; width: min(120px, 22vw);
+  background: currentColor; opacity: .6;
+}
+.gold-rule span { font-size: 12px; letter-spacing: .3em; }
+
+/* Trust cards — light, serif titles, a small gold accent. */
+.trust-card {
+  text-align: center; padding: clamp(24px, 3vw, 32px) 22px;
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.trust-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px -16px rgba(60, 40, 20, .18); }
+.trust-card__rule {
+  width: 38px; height: 2px; margin: 0 auto 16px;
+  background: var(--amber); border-radius: 2px;
+}
+.trust-card h3 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.35rem, 2.2vw, 1.55rem); margin: 0; color: var(--ink);
+}
+.trust-card p { margin-top: 10px; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
 
 /* ==========================================================================
    GUIDES / POSTS
