@@ -400,7 +400,6 @@ export const PRODUCTS = [
     material: 'Wooden frame with padded headboard',
     desc: 'A clean-lined storage bed in black with a cream padded-panel headboard and pull-out drawers in the base — tidy linen storage without extra furniture.',
     img: 'board-bed-black-cream-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -412,8 +411,6 @@ export const PRODUCTS = [
     material: 'Marble-print upholstery with gold metal accents',
     desc: 'A sculpted barrel-arm set in grey marble-print upholstery, finished with polished gold arch accents on every arm and button-tufted backs.',
     img: 'arch-accent-set-grey-2.jpg',
-    gallery: ['arch-accent-set-grey-3.jpg'],
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -425,8 +422,6 @@ export const PRODUCTS = [
     material: 'Ribbed velvet-look upholstery with gold metal accents',
     desc: 'The same sculpted barrel-arm set in deep maroon ribbed velvet-look upholstery, gold arch accents and button-tufted backs.',
     img: 'arch-accent-set-maroon-2.jpg',
-    gallery: ['arch-accent-set-maroon-3.jpg'],
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -438,7 +433,6 @@ export const PRODUCTS = [
     material: 'Quilted upholstery',
     desc: 'A dark grey upholstered bed with bold hexagon-diamond quilting across the headboard and base, flanked by matching bedside cabinets.',
     img: 'hex-quilted-bed-grey-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -450,8 +444,6 @@ export const PRODUCTS = [
     material: 'Soft boucle-look fabric',
     desc: 'A playful modular sectional of plump grey balloon modules, styled here with orange accent cushions, a round orange chair and a white fluted ottoman.',
     img: 'balloon-sectional-grey-orange-2.jpg',
-    gallery: ['balloon-sectional-grey-orange-3.jpg','balloon-sectional-grey-orange-4.jpg'],
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -463,7 +455,6 @@ export const PRODUCTS = [
     material: 'Marble-look panels with quilted headboard',
     desc: 'A statement bed in white marble-look panels with a channel-quilted grey headboard and tall matching bedside cabinets.',
     img: 'marble-panel-bed-white-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -475,7 +466,6 @@ export const PRODUCTS = [
     material: 'Smooth velvet-look fabric',
     desc: 'A rounded balloon sofa in smooth maroon velvet-look fabric, deep enough to curl up in and soft enough for long evenings.',
     img: 'balloon-sofa-maroon-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -487,7 +477,6 @@ export const PRODUCTS = [
     material: 'Textured upholstery',
     desc: 'A pair of clean cream three-seaters with straight track arms and loose brown scatter cushions — calm, formal lines for a bright living room.',
     img: 'straight-arm-sofa-cream-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -499,7 +488,6 @@ export const PRODUCTS = [
     material: 'Smooth upholstery',
     desc: 'A cream sofa with softly rounded arms and a curved back, shown with chocolate scatter cushions and matching cube poufs.',
     img: 'round-arm-sofa-cream-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -511,7 +499,6 @@ export const PRODUCTS = [
     material: 'Wooden frame with padded headboard',
     desc: 'A light walnut board bed with twin brown padded panels in the headboard and an open storage base with inner shelving.',
     img: 'board-bed-walnut-brown-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
