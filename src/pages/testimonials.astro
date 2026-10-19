@@ -1,0 +1,149 @@
+---
+/* Testimonials — "What our customers say".
+   Follows the site's founding rule: the page never shows a review nobody
+   wrote. The quote wall fills from TESTIMONIALS in src/data/products.js —
+   paste real customer messages there and they appear here (and on the home
+   page) automatically, unchanged. Until then this page carries only what is
+   genuinely ours: the owner's real appreciation post and the invitation for
+   customers to send theirs. */
+import Base from '../layouts/Base.astro';
+import { TESTIMONIALS, CONFIG } from '../data/products.js';
+import { waLink } from '../lib/site.js';
+
+const quotes = TESTIMONIALS;
+const reviewMsg =
+  'Hello That Furniture Girl! I bought from you and would love to share my experience for your reviews page.';
+---
+
+<Base
+  page="reviews"
+  title={`Testimonials — ${CONFIG.brand}`}
+  description={`What our customers say about ${CONFIG.brand} — real messages from real customers in Ibadan and beyond, shown exactly as they were sent. Share your own experience on WhatsApp.`}
+>
+  <main>
+    <!-- ============================== HERO ============================== -->
+    <section class="section" id="reviews-top" style="padding-top:clamp(90px,12vh,140px)">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h1>What our customers say</h1>
+          <p class="lead" style="margin-top:14px">
+            Real messages from real customers — shown exactly as they were sent to us.
+            No invented praise, no borrowed words. If it is on this page, somebody
+            actually wrote it to us.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ QUOTE WALL ============================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        {quotes.length > 0 ? (
+          <div class="quote-grid" id="quoteGrid">
+            {quotes.map((t, i) => (
+              <figure class="quote-card reveal" data-delay={i % 2}>
+                <div class="quote-card__head">
+                  {t.img
+                    ? <img class="quote-card__avatar" src={`assets/img/opt/${t.img}`} alt="" loading="lazy" />
+                    : <span class="quote-card__avatar" aria-hidden="true">{String(t.name || '?').trim().charAt(0).toUpperCase()}</span>}
+                  <div class="quote-card__who">
+                    <strong>{t.name}</strong>
+                    {t.where && <span>{t.where}</span>}
+                  </div>
+                </div>
+                <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+                <blockquote class="quote-card__text">{t.text}</blockquote>
+              </figure>
+            ))}
+          </div>
+        ) : (
+          <div class="quote-card reveal" style="max-width:680px;margin:0 auto;text-align:center">
+            <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+            <blockquote class="quote-card__text" style="font-size:clamp(1.05rem,2vw,1.25rem)">
+              The first review on this page could be yours. Bought from us? Send us your
+              honest words on WhatsApp — and with your permission we will put them here,
+              exactly as you wrote them.
+            </blockquote>
+            <div style="margin-top:22px">
+              <a class="btn btn--gold" href={waLink(reviewMsg)} data-wa={reviewMsg}>Share your experience</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- ====================== NOTE OF APPRECIATION ====================== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">From our TikTok · 30 September 2026</span>
+          <h2>A note of appreciation</h2>
+        </div>
+        <figure class="quote-card reveal" style="max-width:760px;margin:0 auto">
+          <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="quote-card__text" style="font-size:clamp(1.05rem,2vw,1.2rem)">
+            APPRECIATION POST 💜💜 Love y'all 🤗❤️ Your Legit furniture vendor is here oooo.
+            If you like go send money give thief 😂🤣💜 Order via DM/WhatsApp — 09079849626.
+            We offer same day delivery and our delivery is very fast 🚀
+          </blockquote>
+          <figcaption class="quote-card__head" style="margin-top:20px">
+            <span class="quote-card__avatar" aria-hidden="true">T</span>
+            <div class="quote-card__who">
+              <strong>That Furniture Girl</strong>
+              <span>Appreciation post on TikTok</span>
+            </div>
+          </figcaption>
+        </figure>
+        <div class="reveal" style="text-align:center;margin-top:26px">
+          <a class="btn btn--ghost btn--sm" href={CONFIG.tiktok} target="_blank" rel="noopener">See the post on TikTok</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TRUST STRIP ============================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Why they keep coming back</span>
+          <h2>Made in Ibadan, delivered with care</h2>
+        </div>
+        <div class="quote-grid">
+          <div class="quote-card reveal" data-delay="0" style="text-align:center">
+            <strong style="font-size:1.35rem">Same-day delivery</strong>
+            <p class="lead" style="margin-top:10px">Order confirmed today, at your door today — our delivery is fast.</p>
+          </div>
+          <div class="quote-card reveal" data-delay="1" style="text-align:center">
+            <strong style="font-size:1.35rem">Walk-in store, Ibadan</strong>
+            <p class="lead" style="margin-top:10px">Come see and feel every piece before you pay. Crafted for real living.</p>
+          </div>
+          <div class="quote-card reveal" data-delay="0" style="text-align:center">
+            <strong style="font-size:1.35rem">Made to your taste</strong>
+            <p class="lead" style="margin-top:10px">Custom colours, sizes and designs — every piece can be made your way.</p>
+          </div>
+          <div class="quote-card reveal" data-delay="1" style="text-align:center">
+            <strong style="font-size:1.35rem">Legit vendor</strong>
+            <p class="lead" style="margin-top:10px">Real furniture, real photos, real people on WhatsApp: {CONFIG.whatsapp}.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== CTA =============================== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="quote-card reveal" style="max-width:760px;margin:0 auto;text-align:center">
+          <h2 style="margin:0">Bought from us? Your words belong here.</h2>
+          <p class="lead" style="margin-top:12px">
+            Tell us how your furniture is holding up, how the delivery went, or how the
+            piece changed your space. We read every message.
+          </p>
+          <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn--gold" href={waLink(reviewMsg)} data-wa={reviewMsg}>Send a WhatsApp review</a>
+            <a class="btn btn--ghost btn--sm" href="products.html">Browse the collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
