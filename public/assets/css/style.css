@@ -1236,6 +1236,17 @@ p  { margin: 0; text-wrap: pretty; }
 .quote-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
 @media (min-width: 820px) { .quote-grid { grid-template-columns: 1fr 1fr; } }
 
+/* Testimonial screenshot wall — real chat screenshots, nothing cropped. */
+.shot-wall { display: grid; gap: clamp(12px, 1.8vw, 20px); grid-template-columns: 1fr 1fr; }
+@media (min-width: 820px) { .shot-wall { grid-template-columns: repeat(3, 1fr); } }
+.shot-wall__item {
+  display: block; border-radius: 16px; overflow: hidden; background: var(--card, #fff);
+  box-shadow: 0 2px 10px rgba(60, 40, 20, .12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.shot-wall__item:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(60, 40, 20, .18); }
+.shot-wall__item img { width: 100%; height: auto; display: block; }
+
 .quote-card {
   background: var(--surface);
   border: 1px solid var(--line-soft);

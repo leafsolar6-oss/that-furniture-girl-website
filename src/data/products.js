@@ -1199,7 +1199,48 @@ PRODUCTS.push(...CATALOGUE_IMPORTS_3B);
        text:  'The exact words they sent you, unchanged.' }
    ========================================================================== */
 
-export const TESTIMONIALS = [];
+export const TESTIMONIALS = [
+  {
+    name: 'Faith A.',
+    where: 'WhatsApp customer',
+    text: 'Ouuuu 🔥 Aww this looks nice. I like them 🥹'
+  },
+  {
+    name: 'A dining customer',
+    where: 'WhatsApp customer',
+    text: 'This is more than beautiful 🥰🥰 they couldn\'t resist the beauty, you can tell from this picture cus all the pictures they sent to me has one or two persons sitting pretty on it 😂😂 thank you sooooooo much ma\'am. Did I tell you it was a surprise gift? And you made everything seamless 🥰🥰 Ese ma'
+  },
+  {
+    name: 'An Instagram customer',
+    where: 'Instagram DM',
+    text: 'Good morning. Thank you for your swift service. 🤝'
+  },
+  {
+    name: 'A WhatsApp customer',
+    where: 'WhatsApp',
+    text: 'Beautiful!!! Thank you so much'
+  },
+  {
+    name: 'A WhatsApp customer',
+    where: 'WhatsApp',
+    text: 'Will always be my Favorite 😂'
+  },
+  {
+    name: 'A WhatsApp customer',
+    where: 'WhatsApp',
+    text: 'Both church and console came out lovely 👏 Thank you so much. Job well done ❤️'
+  },
+  {
+    name: 'A WhatsApp customer',
+    where: 'WhatsApp',
+    text: 'Received ma Its so lovely Thanks'
+  },
+  {
+    name: 'A WhatsApp customer',
+    where: 'WhatsApp',
+    text: 'I looooove it 😁'
+  }
+];
 
 /* --------------------------------------------------------------------------
    Small lookups the site uses everywhere.

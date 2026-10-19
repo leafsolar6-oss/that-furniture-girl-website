@@ -36,6 +36,31 @@ const reviewMsg =
       </div>
     </section>
 
+    <!-- ========================== SCREENSHOT WALL ========================== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">The proof</span>
+          <h2>Straight from the chats</h2>
+          <p class="lead" style="margin-top:14px">
+            Unedited screenshots from real WhatsApp and Instagram conversations.
+            Tap any one to read the full chat.
+          </p>
+        </div>
+        <div class="shot-wall">
+          {[
+            'review-01.jpg','review-02.jpg','review-03.jpg','review-04.jpg','review-05.jpg','review-06.jpg',
+            'review-07.jpg','review-08.jpg','review-09.jpg','review-10.jpg','review-11.jpg','review-12.jpg',
+            'review-13.jpg','review-14.jpg','review-15.jpg','review-16.jpg','review-17.jpg','review-18.jpg'
+          ].map((s, i) => (
+            <a class="shot-wall__item reveal" data-delay={i % 2} href={`assets/img/opt/${s}`} target="_blank" rel="noopener">
+              <img src={`assets/img/opt/${s.replace('.jpg', '-480.jpg')}`} alt={`Customer chat screenshot ${i + 1}`} loading="lazy" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- ============================ QUOTE WALL ============================ -->
     <section class="section" style="padding-top:0">
       <div class="container">
