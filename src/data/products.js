@@ -510,7 +510,6 @@ export const PRODUCTS = [
     material: 'Wooden frame with inlay headboard',
     desc: 'A walnut board bed with cream diamond-inlay panels framed in the headboard and boxed side storage.',
     img: 'board-bed-cream-inlay-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -522,7 +521,6 @@ export const PRODUCTS = [
     material: 'Wooden frame',
     desc: 'A light-wood board bed with an arched slat headboard and twin pedestal side boxes.',
     img: 'arch-slat-bed-light-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -534,7 +532,6 @@ export const PRODUCTS = [
     material: 'Wooden frame with padded headboard',
     desc: 'A cider-toned board bed with grey padded panels set into the headboard and a deep storage base.',
     img: 'board-bed-cider-grey-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -546,7 +543,6 @@ export const PRODUCTS = [
     material: 'Textured upholstery',
     desc: 'A lounge pair in cream and chocolate — the same boxy comfortable chair in two colourways to mix across a living room.',
     img: 'duo-lounge-chairs-cream-choc-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -558,7 +554,6 @@ export const PRODUCTS = [
     material: 'Ribbed upholstery',
     desc: 'A club set in mauve-brown ribbed upholstery with rolled arms and deep seats, shown mixed with dark chocolate pieces.',
     img: 'ribbed-club-set-mauve-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -570,7 +565,6 @@ export const PRODUCTS = [
     material: 'Velvet-look chairs',
     desc: 'A six-seat dining set with curved-back grey velvet-look chairs around a black-topped table.',
     img: 'dining-set-grey-velvet-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -582,7 +576,6 @@ export const PRODUCTS = [
     material: 'Marble-print upholstery',
     desc: 'A boxy modern set in grey marble-print upholstery with square arms and deep seat cushions.',
     img: 'marble-boxy-set-grey-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -594,7 +587,6 @@ export const PRODUCTS = [
     material: 'Wood',
     desc: 'A family of round walnut centre tables and stools in graduating sizes — group them or spread them across the room.',
     img: 'nest-centre-tables-walnut-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
@@ -606,7 +598,6 @@ export const PRODUCTS = [
     material: 'Channel-stitched upholstery',
     desc: 'An L-shaped sectional in blue-grey channel-stitched upholstery with low rounded arms and deep family seating.',
     img: 'channel-sectional-blue-grey-2.jpg',
-    stamped: true,
     catalogOnly: true
   },
   {
