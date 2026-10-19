@@ -480,3 +480,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observeReveals(document);
 });
+
+/* ==========================================================================
+   Testimonial screenshot lightbox.
+   Tap a chat screenshot to read it large; arrows / keyboard / swipe browse
+   the set. The wall's anchors still open the images without JavaScript.
+   ========================================================================== */
+(() => {
+  const wall = document.querySelector('.shot-wall');
+  if (!wall) return;
+  const items = Array.from(wall.querySelectorAll('a.shot-wall__item'));
+  if (!items.length) return;
+
+  const box = document.createElement('div');
+  box.className = 'shotbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Customer chat screenshot');
+  box.innerHTML =
+    '<button class="shotbox__close" type="button" aria-label="Close">✕</button>' +
+    '<button class="shotbox__nav shotbox__nav--prev" type="button" aria-label="Previous screenshot">‹</button>' +
+    '<figure class="shotbox__fig"><img class="shotbox__img" alt="" /><figcaption class="shotbox__cap"></figcaption></figure>' +
+    '<button class="shotbox__nav shotbox__nav--next" type="button" aria-label="Next screenshot">›</button>';
+  document.body.appendChild(box);
+
+  const img = box.querySelector('.shotbox__img');
+  const cap = box.querySelector('.shotbox__cap');
+  const btnClose = box.querySelector('.shotbox__close');
+  const btnPrev = box.querySelector('.shotbox__nav--prev');
+  const btnNext = box.querySelector('.shotbox__nav--next');
+  let idx = 0;
+  let lastFocus = null;
+
+  const srcOf = (i) => items[i].getAttribute('href');
+  const show = (i) => {
+    idx = (i + items.length) % items.length;
+    img.src = srcOf(idx);
+    const thumb = items[idx].querySelector('img');
+    img.alt = thumb ? thumb.alt : '';
+    cap.textContent = idx + 1 + ' / ' + items.length;
+    [idx + 1, idx - 1].forEach((j) => {
+      const k = (j + items.length) % items.length;
+      const pre = new Image();
+      pre.src = srcOf(k);
+    });
+  };
+  const open = (i) => {
+    lastFocus = document.activeElement;
+    show(i);
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  };
+  const close = () => {
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+
+  items.forEach((a, i) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    open(i);
+  }));
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', (e) => { e.stopPropagation(); show(idx - 1); });
+  btnNext.addEventListener('click', (e) => { e.stopPropagation(); show(idx + 1); });
+  box.addEventListener('click', (e) => {
+    if (e.target === box || e.target.classList.contains('shotbox__fig')) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  let touchX = null;
+  box.addEventListener('touchstart', (e) => {
+    touchX = e.touches[0].clientX;
+  }, { passive: true });
+  box.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) show(dx > 0 ? idx - 1 : idx + 1);
+    touchX = null;
+  }, { passive: true });
+})();
