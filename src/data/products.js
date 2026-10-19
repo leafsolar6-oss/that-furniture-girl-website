@@ -56,7 +56,7 @@ export const PRODUCTS = [
     lead: 'Available for immediate pickup',
     desc: 'The piece that put us on the map. A deep, pillowy sectional in soft boucle with channel-tufted cushions and rounded arms — generous enough for the whole family, refined enough for a formal living room. The gallery also shows her posted colourways — cream + chocolate brown, navy blue + white, chocolate brown + white and a custom light ash + orange combo — same ₦500,000, single chair ₦170,000.',
     img: 'blush-sectional.jpg',
-    gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg', 'blush-sectional-4.jpg', 'blush-sectional-5.jpg', 'blush-sectional-6.jpg.jpg'],
+    gallery: ['blush-sectional-2.jpg', 'blush-sectional-3.jpg', 'blush-sectional-4.jpg', 'blush-sectional-5.jpg', 'blush-sectional-6.jpg'],
     featured: true
   },
   {
@@ -70,7 +70,7 @@ export const PRODUCTS = [
     lead: 'Available for immediate pickup',
     desc: 'A low, architectural L-shape wrapped in ribbed chocolate corduroy. The texture catches the light beautifully and the wide chaise makes it the best seat in the house.',
     img: 'jewel-sectional.jpg',
-    gallery: ['jewel-sectional-6.jpg','jewel-sectional-7.jpg','jewel-sectional-8.jpg','jewel-sectional-9.jpg','jewel-sectional-10.jpg','jewel-sectional-2.jpg', 'jewel-sectional-11.jpg.jpg'],
+    gallery: ['jewel-sectional-6.jpg','jewel-sectional-7.jpg','jewel-sectional-8.jpg','jewel-sectional-9.jpg','jewel-sectional-10.jpg','jewel-sectional-2.jpg', 'jewel-sectional-11.jpg'],
     featured: true
   },
   {
@@ -84,7 +84,7 @@ export const PRODUCTS = [
     lead: '14 working days',
     desc: 'A complete living room set — deep channel-tufted sectional with a chaise, shown as it leaves our workshop. Treated wood frames, high-density foam and textured boucle, and we can build it in any colour, size or design you like.',
     img: 'blush-linea-set.jpg',
-    gallery: ['blush-linea-set-2.jpg', 'blush-linea-set-3.jpg', 'blush-linea-set-4.jpg', 'blush-linea-set-801.jpg.jpg'],
+    gallery: ['blush-linea-set-2.jpg', 'blush-linea-set-3.jpg', 'blush-linea-set-4.jpg', 'blush-linea-set-801.jpg'],
     featured: true
   },
   {
@@ -96,7 +96,7 @@ export const PRODUCTS = [
     material: 'Boucle + floral print fabric',
     desc: 'Dark grey boucle given a playful twist with floral print cushions and a matching accent chair. A set with personality — and one of our most requested designs.',
     img: 'twinkle-set.jpg',
-    gallery: ['twinkle-set-2.jpg', 'twinkle-set-3.jpg', 'twinkle-set-4.jpg', 'twinkle-set-5.jpg.jpg'],
+    gallery: ['twinkle-set-2.jpg', 'twinkle-set-3.jpg', 'twinkle-set-4.jpg', 'twinkle-set-5.jpg'],
     featured: true
   },
   {
@@ -108,7 +108,7 @@ export const PRODUCTS = [
     material: 'Boucle fabric',
     desc: 'A plush three-seater with pillowy cushions and a two-tone finish. Compact enough for an apartment, soft enough that nobody wants to get up. Also posted in cream + brown — see gallery.',
     img: 'plush-three-seaters.jpg',
-    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg', 'plush-three-seaters-4.jpg', 'plush-three-seaters-5.jpg', 'plush-three-seaters-6.jpg', 'plush-three-seaters-6.jpg.jpg'],
+    gallery: ['plush-three-seaters-2.jpg', 'plush-three-seaters-3.jpg', 'plush-three-seaters-4.jpg', 'plush-three-seaters-5.jpg', 'plush-three-seaters-6.jpg', 'plush-three-seaters-6.jpg'],
     featured: true
   },
   {
@@ -122,7 +122,7 @@ export const PRODUCTS = [
     lead: 'About 3 months to produce',
     desc: 'Our most ambitious build. Treated wood frames, high-density foam, leather combined with rich floral fabric and gold detail. Live like a king — made to order in any colour or craft.',
     img: 'royal-kinging-set.jpg',
-    gallery: ['royal-kinging-set-2.jpg', 'royal-kinging-set-3.jpg', 'royal-kinging-set-4.jpg', 'royal-kinging-set-801.jpg.jpg'],
+    gallery: ['royal-kinging-set-2.jpg', 'royal-kinging-set-3.jpg', 'royal-kinging-set-4.jpg', 'royal-kinging-set-801.jpg'],
     featured: true
   },
   {
@@ -135,7 +135,7 @@ export const PRODUCTS = [
     lead: '10 working days',
     desc: 'A low, minimal centre table that grounds the room without crowding it. Made in HDF with a two-tone finish that pairs with both boucle and corduroy.',
     img: 'centre-table.jpg',
-    gallery: ['centre-table-2.jpg', 'centre-table-3.jpg', 'centre-table-4.jpg.jpg'],
+    gallery: ['centre-table-2.jpg', 'centre-table-3.jpg', 'centre-table-4.jpg'],
     featured: true
   },
   {
@@ -150,7 +150,7 @@ export const PRODUCTS = [
     lead: '5 working days',
     desc: 'A clean-lined wardrobe in matte MDF with slim black detailing. Two sizes, and we can build it in any colour, size or layout you need.',
     img: 'wardrobe.jpg',
-    gallery: ['wardrobe-2.jpg', 'wardrobe-3.jpg', 'wardrobe-4.jpg', 'wardrobe-801.jpg.jpg'],
+    gallery: ['wardrobe-2.jpg', 'wardrobe-3.jpg', 'wardrobe-4.jpg', 'wardrobe-801.jpg'],
     featured: false
   },
   {
@@ -644,8 +644,7 @@ export const PRODUCTS = [
     sizes: '4.5/6ft',
     desc: 'BUBBLE BED | Size: 4.5/6ft | Color: OFF WHITE | Fabric: VELVET | Availability: | Price : 250,000 | Available now for immediate pickup at the showroom — best seller; can also be made in color of choice. Long lasting Unique Comfortable',
     img: 'bubble-bed.jpg',
-    gallery: ['bubble-bed-2.jpg.jpg', 'bubble-bed-3.jpg.jpg', 'bubble-bed-4.jpg.jpg'],
-    stamped: true
+    gallery: ['bubble-bed-2.jpg', 'bubble-bed-3.jpg', 'bubble-bed-4.jpg', 'bubble-bed-5.jpg'],
   },
   {
     id: 'oloye-set-dark-grey',
@@ -656,8 +655,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'OLOYE SET | Color: DARK GREY WITH MARBLE PRINT | FABRIC — THICK LEATHER CLOTH | Price: 650,000 | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Long lasting Unique Comfortable',
     img: 'oloye-set-dark-grey.jpg',
-    gallery: ['oloye-set-dark-grey-2.jpg.jpg', 'oloye-set-dark-grey-3.jpg.jpg', 'oloye-set-dark-grey-4.jpg.jpg', 'oloye-set-dark-grey-5.jpg.jpg', 'oloye-set-dark-grey-6.jpg.jpg', 'oloye-set-dark-grey-7.jpg.jpg'],
-    stamped: true
+    gallery: ['oloye-set-dark-grey-2.jpg', 'oloye-set-dark-grey-3.jpg', 'oloye-set-dark-grey-4.jpg', 'oloye-set-dark-grey-5.jpg', 'oloye-set-dark-grey-6.jpg', 'oloye-set-dark-grey-7.jpg', 'oloye-set-dark-grey-8.jpg'],
   },
   {
     id: 'jewel-sectional-extension',
@@ -668,8 +666,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'JEWEL L SHAPED SECTIONAL + A single extension | Color: CHOCOLATE BROWN + OFF WHITE | Fabric type: CORDUROY | Price : 450,000 | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Long lasting Unique Comfortable',
     img: 'jewel-sectional-extension.jpg',
-    gallery: ['jewel-sectional-extension-2.jpg.jpg', 'jewel-sectional-extension-3.jpg.jpg', 'jewel-sectional-extension-4.jpg.jpg'],
-    stamped: true
+    gallery: ['jewel-sectional-extension-2.jpg', 'jewel-sectional-extension-3.jpg', 'jewel-sectional-extension-4.jpg', 'jewel-sectional-extension-5.jpg'],
   },
   {
     id: 'blush-sectional-burnt-orange',
@@ -680,8 +677,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'BLUSH SECTIONAL | Color: BURNT ORANGE + WHITE | Fabric type: BOUCLE | Price : 500,000 | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Long lasting Unique Comfortable',
     img: 'blush-sectional-burnt-orange.jpg',
-    gallery: ['blush-sectional-burnt-orange-2.jpg.jpg', 'blush-sectional-burnt-orange-3.jpg.jpg', 'blush-sectional-burnt-orange-4.jpg.jpg', 'blush-sectional-burnt-orange-5.jpg.jpg', 'blush-sectional-burnt-orange-6.jpg.jpg', 'blush-sectional-burnt-orange-7.jpg.jpg', 'blush-sectional-burnt-orange-8.jpg.jpg'],
-    stamped: true
+    gallery: ['blush-sectional-burnt-orange-2.jpg', 'blush-sectional-burnt-orange-3.jpg', 'blush-sectional-burnt-orange-4.jpg', 'blush-sectional-burnt-orange-5.jpg', 'blush-sectional-burnt-orange-6.jpg', 'blush-sectional-burnt-orange-7.jpg', 'blush-sectional-burnt-orange-8.jpg', 'blush-sectional-burnt-orange-9.jpg'],
   },
   {
     id: 'carving-side-grey-black',
@@ -692,8 +688,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'CARVING SIDE | Color: GREY AND BLACK | Fabric: LEATHER CLOTH | Price: 500,000 | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Unique Classy Comfortable',
     img: 'carving-side-grey-black.jpg',
-    gallery: ['carving-side-grey-black-2.jpg.jpg', 'carving-side-grey-black-3.jpg.jpg', 'carving-side-grey-black-4.jpg.jpg', 'carving-side-grey-black-5.jpg.jpg', 'carving-side-grey-black-6.jpg.jpg', 'carving-side-grey-black-7.jpg.jpg'],
-    stamped: true
+    gallery: ['carving-side-grey-black-2.jpg', 'carving-side-grey-black-3.jpg', 'carving-side-grey-black-4.jpg', 'carving-side-grey-black-5.jpg', 'carving-side-grey-black-6.jpg', 'carving-side-grey-black-7.jpg', 'carving-side-grey-black-8.jpg'],
   },
   {
     id: 'oloye-set-chocolate',
@@ -704,8 +699,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'OLOYE SET | Color: CHOCOLATE BROWN WITH MARBLE PRINT | FABRIC — THICK LEATHER CLOTH | Price: 650,000 | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Long lasting Unique Comfortable',
     img: 'oloye-set-chocolate.jpg',
-    gallery: ['oloye-set-chocolate-2.jpg.jpg', 'oloye-set-chocolate-3.jpg.jpg', 'oloye-set-chocolate-4.jpg.jpg', 'oloye-set-chocolate-5.jpg.jpg', 'oloye-set-chocolate-6.jpg.jpg', 'oloye-set-chocolate-7.jpg.jpg', 'oloye-set-chocolate-8.jpg.jpg', 'oloye-set-chocolate-9.jpg.jpg'],
-    stamped: true
+    gallery: ['oloye-set-chocolate-2.jpg', 'oloye-set-chocolate-3.jpg', 'oloye-set-chocolate-4.jpg', 'oloye-set-chocolate-5.jpg', 'oloye-set-chocolate-6.jpg', 'oloye-set-chocolate-7.jpg', 'oloye-set-chocolate-8.jpg', 'oloye-set-chocolate-9.jpg', 'oloye-set-chocolate-10.jpg'],
   },
   {
     id: 'upholstery-bed-grey-2bedside',
@@ -718,8 +712,7 @@ export const PRODUCTS = [
     lead: '14 working days',
     desc: 'UPHOLSTERY BED + 2 BEDSIDE DRAWERS | Size: 4/half by 6ft | Color: GREY + SILVER | Fabric: LEATHER | Availability: | Treated wood frames, high density foams and textured velvet fabric. | Price : 400,000 | Production time: 14 working days. Unique Classy Comfortable',
     img: 'upholstery-bed-grey-2bedside.jpg',
-    gallery: ['upholstery-bed-grey-2bedside-2.jpg.jpg', 'upholstery-bed-grey-2bedside-3.jpg.jpg', 'upholstery-bed-grey-2bedside-4.jpg.jpg', 'upholstery-bed-grey-2bedside-5.jpg.jpg', 'upholstery-bed-grey-2bedside-6.jpg.jpg'],
-    stamped: true
+    gallery: ['upholstery-bed-grey-2bedside-2.jpg', 'upholstery-bed-grey-2bedside-3.jpg', 'upholstery-bed-grey-2bedside-4.jpg', 'upholstery-bed-grey-2bedside-5.jpg', 'upholstery-bed-grey-2bedside-6.jpg', 'upholstery-bed-grey-2bedside-7.jpg'],
   },
   {
     id: 'hdf-bed-bedside-white-black',
@@ -732,8 +725,7 @@ export const PRODUCTS = [
     lead: '14 working days',
     desc: 'HDF BED + 1 BEDSIDE DRAWERS | Size: 4.5/6ft | Color: WHITE + BLACK | Fabric: BLACK LEATHER | Availability: | Treated wood frames, high density foams and textured velvet fabric. | Price : 250,000 | Production time: 14 working days. Unique Classy Sturdy',
     img: 'hdf-bed-bedside-white-black.jpg',
-    gallery: ['hdf-bed-bedside-white-black-2.jpg.jpg', 'hdf-bed-bedside-white-black-3.jpg.jpg'],
-    stamped: true
+    gallery: ['hdf-bed-bedside-white-black-2.jpg', 'hdf-bed-bedside-white-black-3.jpg', 'hdf-bed-bedside-white-black-4.jpg'],
   },
   {
     id: 'upholstery-bed-grey-1bedside',
@@ -746,8 +738,7 @@ export const PRODUCTS = [
     lead: '14 working days',
     desc: 'UPHOLSTERY BED + 1 BEDSIDE DRAWERS | Size: 4.5/6ft | Color: GREY + OFF WHITE | Fabric: FABRIC | Availability: | Treated wood frames, high density foams and textured velvet fabric. | Price : 250,000 | Production time: 14 working days. Unique Classy Comfortable',
     img: 'upholstery-bed-grey-1bedside.jpg',
-    gallery: ['upholstery-bed-grey-1bedside-2.jpg.jpg', 'upholstery-bed-grey-1bedside-3.jpg.jpg', 'upholstery-bed-grey-1bedside-4.jpg.jpg'],
-    stamped: true
+    gallery: ['upholstery-bed-grey-1bedside-2.jpg', 'upholstery-bed-grey-1bedside-3.jpg', 'upholstery-bed-grey-1bedside-4.jpg', 'upholstery-bed-grey-1bedside-5.jpg'],
   },
   {
     id: 'centre-piece-table-stools-brown',
@@ -758,8 +749,7 @@ export const PRODUCTS = [
     material: '',
     desc: 'CENTRE PIECE | Color: BROWN | Price : Centre table — 100k · Stools — 25k each | Availability: | Best seller — available for immediate pickup at the showroom; can also be made in color of choice. Long lasting Unique Sturdy',
     img: 'centre-piece-table-stools-brown.jpg',
-    gallery: ['centre-piece-table-stools-brown-2.jpg.jpg', 'centre-piece-table-stools-brown-3.jpg.jpg', 'centre-piece-table-stools-brown-4.jpg.jpg', 'centre-piece-table-stools-brown-5.jpg.jpg', 'centre-piece-table-stools-brown-6.jpg.jpg', 'centre-piece-table-stools-brown-7.jpg.jpg', 'centre-piece-table-stools-brown-8.jpg.jpg'],
-    stamped: true
+    gallery: ['centre-piece-table-stools-brown-2.jpg', 'centre-piece-table-stools-brown-3.jpg', 'centre-piece-table-stools-brown-4.jpg', 'centre-piece-table-stools-brown-5.jpg', 'centre-piece-table-stools-brown-6.jpg', 'centre-piece-table-stools-brown-7.jpg', 'centre-piece-table-stools-brown-8.jpg', 'centre-piece-table-stools-brown-9.jpg'],
   },
 ];
 
@@ -775,7 +765,7 @@ const CATALOGUE_IMPORTS = [
     lead: 'Custom order — 10 working days',
     desc: 'A board bed frame in HDF with a clean Swiss-and-black finish. Built as a custom order — colours, sizes and design to your taste.',
     img: 'unik-board-bed-frame.jpg',
-    gallery: ['unik-board-bed-frame-2.jpg.jpg'],
+    gallery: ['unik-board-bed-frame-2.jpg'],
     stamped: true,
   },
   {
@@ -790,7 +780,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A chested board bed frame in warm cider tones. Priced in MDF or HDF — practical storage lines with a clean, sturdy finish.',
     img: 'chested-board-bed-frame.jpg',
     stamped: true,
-    gallery: ['chested-board-bed-frame-2.jpg', 'chested-board-bed-frame-3.jpg', 'chested-board-bed-frame-4.jpg.jpg']
+    gallery: ['chested-board-bed-frame-2.jpg', 'chested-board-bed-frame-3.jpg', 'chested-board-bed-frame-4.jpg']
   },
   {
     id: 'hdf-board-bed',
@@ -804,7 +794,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A 6ft by 6ft board bed in cider and black — HDF board and textured leather over treated wood frames and high-density foam.',
     img: 'hdf-board-bed.jpg',
     stamped: true,
-    gallery: ['hdf-board-bed-2.jpg', 'hdf-board-bed-3.jpg', 'hdf-board-bed-4.jpg.jpg']
+    gallery: ['hdf-board-bed-2.jpg', 'hdf-board-bed-3.jpg', 'hdf-board-bed-4.jpg']
   },
   {
     id: 'bubble-linear-set',
@@ -817,7 +807,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A linear bubble set in grey boucle with orange accents — treated wood frames and high-density foams under deeply tufted channels.',
     img: 'bubble-linear-set.jpg',
     stamped: true,
-    gallery: ['bubble-linear-set-2.jpg', 'bubble-linear-set-3.jpg', 'bubble-linear-set-4.jpg.jpg']
+    gallery: ['bubble-linear-set-2.jpg', 'bubble-linear-set-3.jpg', 'bubble-linear-set-4.jpg']
   },
   {
     id: 'bubble-single-footstool',
@@ -830,7 +820,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'The bubble single chair with its mini footstool in chocolate brown boucle. Also in orange, cream, light ash or brown — or your own custom colour. The single on its own is ₦170,000.',
     img: 'bubble-single-footstool.jpg',
     stamped: true,
-    gallery: ['bubble-single-footstool-2.jpg', 'bubble-single-footstool-3.jpg', 'bubble-single-footstool-4.jpg.jpg']
+    gallery: ['bubble-single-footstool-2.jpg', 'bubble-single-footstool-3.jpg', 'bubble-single-footstool-4.jpg']
   },
   {
     id: 'snail-dining-set',
@@ -844,7 +834,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A four-chair dining set with a wooden body and upholstered curtain-fabric seats in ash and black.',
     img: 'snail-dining-set.jpg',
     stamped: true,
-    gallery: ['snail-dining-set-2.jpg', 'snail-dining-set-3.jpg', 'snail-dining-set-4.jpg.jpg']
+    gallery: ['snail-dining-set-2.jpg', 'snail-dining-set-3.jpg', 'snail-dining-set-4.jpg']
   },
   {
     id: 'royal-wardrobe',
@@ -858,7 +848,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A 7ft by 4ft wardrobe in cider MDF — tall, deep and built to carry a whole household’s clothing.',
     img: 'royal-wardrobe.jpg',
     stamped: true,
-    gallery: ['royal-wardrobe-2.jpg', 'royal-wardrobe-3.jpg', 'royal-wardrobe-4.jpg.jpg']
+    gallery: ['royal-wardrobe-2.jpg', 'royal-wardrobe-3.jpg', 'royal-wardrobe-4.jpg']
   },
   {
     id: 'rovans-dining-set',
@@ -872,7 +862,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A six-chair dining set in light ash with velvet upholstery — room for the whole table.',
     img: 'rovans-dining-set.jpg',
     stamped: true,
-    gallery: ['rovans-dining-set-2.jpg', 'rovans-dining-set-3.jpg', 'rovans-dining-set-4.jpg.jpg']
+    gallery: ['rovans-dining-set-2.jpg', 'rovans-dining-set-3.jpg', 'rovans-dining-set-4.jpg']
   },
   {
     id: 'rovans-classy-set',
@@ -885,7 +875,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A classy living set in beige and brown matte fabric — soft lines with a formal posture.',
     img: 'rovans-classy-set.jpg',
     stamped: true,
-    gallery: ['rovans-classy-set-2.jpg', 'rovans-classy-set-3.jpg', 'rovans-classy-set-4.jpg.jpg']
+    gallery: ['rovans-classy-set-2.jpg', 'rovans-classy-set-3.jpg', 'rovans-classy-set-4.jpg']
   },
   {
     id: 'bubble-bed-bedsides',
@@ -900,7 +890,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A 6ft by 6ft bubble bed with two matching bedsides in off-white and grey — already in the showroom for immediate pickup. On its own, without the bedside drawers, the bubble bed is ₦250,000.',
     img: 'bubble-bed-bedsides.jpg',
     stamped: true,
-    gallery: ['bubble-bed-bedsides-2.jpg', 'bubble-bed-bedsides-3.jpg', 'bubble-bed-bedsides-4.jpg', 'bubble-bed-bedsides-5.jpg', 'bubble-bed-bedsides-6.jpg.jpg']
+    gallery: ['bubble-bed-bedsides-2.jpg', 'bubble-bed-bedsides-3.jpg', 'bubble-bed-bedsides-4.jpg', 'bubble-bed-bedsides-5.jpg', 'bubble-bed-bedsides-6.jpg']
   },
   {
     id: 'verona-classy-set',
@@ -913,7 +903,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A classy set in chocolate brown and carton brown velvet — deep, warm and generously padded.',
     img: 'verona-classy-set.jpg',
     stamped: true,
-    gallery: ['verona-classy-set-2.jpg', 'verona-classy-set-3.jpg', 'verona-classy-set-4.jpg.jpg']
+    gallery: ['verona-classy-set-2.jpg', 'verona-classy-set-3.jpg', 'verona-classy-set-4.jpg']
   },
   {
     id: 'ogaranya-classy-set',
@@ -926,7 +916,7 @@ const CATALOGUE_IMPORTS = [
     desc: 'A classy set in black matte fabric with natural wood paint detail — bold contrast, clean lines.',
     img: 'ogaranya-classy-set.jpg',
     stamped: true,
-    gallery: ['ogaranya-classy-set-2.jpg', 'ogaranya-classy-set-3.jpg', 'ogaranya-classy-set-4.jpg.jpg']
+    gallery: ['ogaranya-classy-set-2.jpg', 'ogaranya-classy-set-3.jpg', 'ogaranya-classy-set-4.jpg']
   },
   {
     id: 'koral-l-sectionals',
@@ -961,7 +951,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: '14 working days',
     desc: 'A rectangular royal centre table in black and gold with a 5mm glass top, built on treated wood frames with high-density foams.',
     img: 'royal-centre-table.jpg',
-    gallery: ['royal-centre-table-2.jpg', 'royal-centre-table-3.jpg', 'royal-centre-table-4.jpg.jpg'],
+    gallery: ['royal-centre-table-2.jpg', 'royal-centre-table-3.jpg', 'royal-centre-table-4.jpg'],
     stamped: true
   },
   {
@@ -975,7 +965,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'An L-shaped sectional with rolled headrest arms in brown and black-stained leather cloth — in the showroom for immediate pickup.',
     img: 'headroll-l-sectional.jpg',
-    gallery: ['headroll-l-sectional-2.jpg', 'headroll-l-sectional-3.jpg', 'headroll-l-sectional-4.jpg.jpg'],
+    gallery: ['headroll-l-sectional-2.jpg', 'headroll-l-sectional-3.jpg', 'headroll-l-sectional-4.jpg'],
     stamped: true
   },
   {
@@ -1006,7 +996,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'Six diamond-tufted light-grey chairs in matte fabric around a dark table — the Chesterfield dining set, in the showroom now.',
     img: 'chesterfield-dining-set.jpg',
-    gallery: ['chesterfield-dining-set-2.jpg', 'chesterfield-dining-set-3.jpg', 'chesterfield-dining-set-4.jpg', 'chesterfield-dining-set-5.jpg.jpg'],
+    gallery: ['chesterfield-dining-set-2.jpg', 'chesterfield-dining-set-3.jpg', 'chesterfield-dining-set-4.jpg', 'chesterfield-dining-set-5.jpg'],
     stamped: true
   },
   {
@@ -1021,7 +1011,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'The Trinity sofa in four seaters — deep dark-grey boucle with round bolster cushions, in the showroom for immediate pickup.',
     img: 'trinity-sofa.jpg',
-    gallery: ['trinity-sofa-2.jpg', 'trinity-sofa-3.jpg.jpg'],
+    gallery: ['trinity-sofa-2.jpg', 'trinity-sofa-3.jpg'],
     stamped: true
   },
   {
@@ -1035,7 +1025,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: '14 working days',
     desc: 'A black Titan frame with cream upholstered headboard, foot-end bed storage and one bedside drawer, in HDF on treated wood frames.',
     img: 'titan-bed-storage.jpg',
-    gallery: ['titan-bed-storage-2.jpg', 'titan-bed-storage-3.jpg', 'titan-bed-storage-4.jpg.jpg'],
+    gallery: ['titan-bed-storage-2.jpg', 'titan-bed-storage-3.jpg', 'titan-bed-storage-4.jpg'],
     stamped: true
   },
   {
@@ -1050,7 +1040,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'The Zentro TV shelf in White Mansonia with open shelving — ₦150,000 in HDF, ₦120,000 in MDF, in the showroom now.',
     img: 'zentro-tv-shelf.jpg',
-    gallery: ['zentro-tv-shelf-2.jpg', 'zentro-tv-shelf-3.jpg.jpg'],
+    gallery: ['zentro-tv-shelf-2.jpg', 'zentro-tv-shelf-3.jpg'],
     stamped: true
   },
   {
@@ -1065,7 +1055,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'A cider-finished office or reading table with a drawer bank — ₦120,000 in HDF, ₦90,000 in MDF, in the showroom now.',
     img: 'office-reading-table.jpg',
-    gallery: ['office-reading-table-2.jpg', 'office-reading-table-3.jpg.jpg'],
+    gallery: ['office-reading-table-2.jpg', 'office-reading-table-3.jpg'],
     stamped: true
   },
   {
@@ -1079,7 +1069,7 @@ const CATALOGUE_IMPORTS_2 = [
     lead: 'Available for immediate pickup',
     desc: 'A ribbed channel L-sectional in orange boucle with rolled arms and round cushions — in the showroom for immediate pickup.',
     img: 'casa-linea-l-sectional.jpg',
-    gallery: ['casa-linea-l-sectional-2.jpg', 'casa-linea-l-sectional-3.jpg', 'casa-linea-l-sectional-4.jpg.jpg'],
+    gallery: ['casa-linea-l-sectional-2.jpg', 'casa-linea-l-sectional-3.jpg', 'casa-linea-l-sectional-4.jpg'],
     stamped: true
   }
 ];
@@ -1103,7 +1093,7 @@ const CATALOGUE_IMPORTS_3 = [
     lead: '14 working days',
     desc: 'The Noble Rest design — a white frame with black leather slatted headboard and one bedside drawer, on treated wood frames with high-density foams.',
     img: 'noble-rest-bed.jpg',
-    gallery: ['noble-rest-bed-2.jpg', 'noble-rest-bed-3.jpg', 'noble-rest-bed-4.jpg.jpg'],
+    gallery: ['noble-rest-bed-2.jpg', 'noble-rest-bed-3.jpg', 'noble-rest-bed-4.jpg'],
     stamped: true
   },
   {
@@ -1117,7 +1107,7 @@ const CATALOGUE_IMPORTS_3 = [
     lead: 'Available for immediate pickup',
     desc: 'A sculptural curved arc sofa in cream matte fabric — a showroom best seller that can also be made in a colour of your choice.',
     img: 'plush-arc-sofa.jpg',
-    gallery: ['plush-arc-sofa-2.jpg', 'plush-arc-sofa-3.jpg', 'plush-arc-sofa-4.jpg.jpg'],
+    gallery: ['plush-arc-sofa-2.jpg', 'plush-arc-sofa-3.jpg', 'plush-arc-sofa-4.jpg'],
     stamped: true
   },
   {
@@ -1131,7 +1121,7 @@ const CATALOGUE_IMPORTS_3 = [
     lead: '14 working days',
     desc: 'A cream diamond-tufted leather bed with gold-trimmed headboard, built on treated wood frames with high-density foams.',
     img: 'upholstery-bed-cream-gold.jpg',
-    gallery: ['upholstery-bed-cream-gold-2.jpg.jpg'],
+    gallery: ['upholstery-bed-cream-gold-2.jpg'],
     stamped: true
   }
 ];
@@ -1154,7 +1144,7 @@ const CATALOGUE_IMPORTS_3B = [
     lead: 'Available for immediate pickup',
     desc: 'The Blush Sectional in cream + chocolate brown boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
     img: 'blush-cream-chocolate.jpg',
-    gallery: ['blush-cream-chocolate-2.jpg', 'blush-cream-chocolate-3.jpg', 'blush-cream-chocolate-4.jpg.jpg'],
+    gallery: ['blush-cream-chocolate-2.jpg', 'blush-cream-chocolate-3.jpg', 'blush-cream-chocolate-4.jpg'],
     stamped: true
   },
   {
@@ -1168,7 +1158,7 @@ const CATALOGUE_IMPORTS_3B = [
     lead: 'Available for immediate pickup',
     desc: 'A custom order pairing the Blush Sectional with a Bubble Single in light ash + orange — the sofa can be re-arranged. Single ₦170,000 · table ₦150,000.',
     img: 'blush-bubble-custom-combo.jpg',
-    gallery: ['blush-bubble-custom-combo-2.jpg', 'blush-bubble-custom-combo-3.jpg', 'blush-bubble-custom-combo-4.jpg', 'blush-bubble-custom-combo-5.jpg.jpg'],
+    gallery: ['blush-bubble-custom-combo-2.jpg', 'blush-bubble-custom-combo-3.jpg', 'blush-bubble-custom-combo-4.jpg', 'blush-bubble-custom-combo-5.jpg'],
     stamped: true
   },
   {
@@ -1182,7 +1172,7 @@ const CATALOGUE_IMPORTS_3B = [
     lead: 'Available for immediate pickup',
     desc: 'The Blush Sectional in navy blue + white boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
     img: 'blush-navy-white.jpg',
-    gallery: ['blush-navy-white-2.jpg', 'blush-navy-white-3.jpg', 'blush-navy-white-4.jpg.jpg'],
+    gallery: ['blush-navy-white-2.jpg', 'blush-navy-white-3.jpg', 'blush-navy-white-4.jpg'],
     stamped: true
   },
   {
@@ -1196,7 +1186,7 @@ const CATALOGUE_IMPORTS_3B = [
     lead: 'Available for immediate pickup',
     desc: 'The Blush Sectional in chocolate brown + white boucle — channel-tufted cushions and rounded arms, in the showroom for immediate pickup.',
     img: 'blush-chocolate-white.jpg',
-    gallery: ['blush-chocolate-white-2.jpg', 'blush-chocolate-white-3.jpg', 'blush-chocolate-white-4.jpg.jpg'],
+    gallery: ['blush-chocolate-white-2.jpg', 'blush-chocolate-white-3.jpg', 'blush-chocolate-white-4.jpg'],
     stamped: true
   },
   {
@@ -1210,7 +1200,7 @@ const CATALOGUE_IMPORTS_3B = [
     lead: 'Available for immediate pickup',
     desc: 'A channel-tufted three-seater in cream + brown boucle — a showroom best seller that can also be made in a colour of your choice.',
     img: 'three-seaters-cream-brown.jpg',
-    gallery: ['three-seaters-cream-brown-2.jpg', 'three-seaters-cream-brown-3.jpg', 'three-seaters-cream-brown-4.jpg.jpg'],
+    gallery: ['three-seaters-cream-brown-2.jpg', 'three-seaters-cream-brown-3.jpg', 'three-seaters-cream-brown-4.jpg'],
     stamped: true
   }
 ];
