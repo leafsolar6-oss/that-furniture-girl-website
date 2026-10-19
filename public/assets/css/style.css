@@ -1233,15 +1233,93 @@ p  { margin: 0; text-wrap: pretty; }
 /* ==========================================================================
    TESTIMONIALS
    ========================================================================== */
+/* ==========================================================================
+   REVIEWS STAGE — one shared background for every review, spaced out and
+   dressed with decorative graphics (quote-glyph watermarks, gold ornaments).
+   ========================================================================== */
+.reviews-stage {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(1100px 460px at 88% -8%, rgba(255, 182, 0, .13), transparent 60%),
+    radial-gradient(900px 460px at -4% 104%, rgba(0, 75, 31, .07), transparent 55%),
+    linear-gradient(165deg, #fbf6ea 0%, #f6eeda 55%, #fbf6ea 100%);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-xl);
+  padding: clamp(32px, 4.8vw, 64px) clamp(18px, 3.6vw, 52px);
+}
+.reviews-stage::before, .reviews-stage::after {
+  position: absolute; font-family: var(--font-display);
+  font-size: clamp(280px, 42vw, 480px); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.reviews-stage::before { content: '\201C'; top: -70px; left: -16px; color: rgba(0, 75, 31, .05); }
+.reviews-stage::after  { content: '\201D'; right: -8px; bottom: -180px; color: rgba(255, 182, 0, .12); }
+
+/* Big gold flourish between the chats and the words. */
+.stage-ornament {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin: clamp(36px, 5vw, 64px) auto 0; color: var(--amber);
+}
+.stage-ornament::before, .stage-ornament::after {
+  content: ''; height: 1px; width: min(200px, 32vw);
+}
+.stage-ornament::before { background: linear-gradient(90deg, transparent, var(--amber)); }
+.stage-ornament::after  { background: linear-gradient(90deg, var(--amber), transparent); }
+.stage-ornament span { font-size: 18px; letter-spacing: .3em; }
+
+/* Spaced-out review list — no individual boxes, all on the stage background. */
+.review-list { display: flex; flex-direction: column; }
+.review-item {
+  margin: 0 auto; width: 100%; max-width: 900px;
+  padding: clamp(30px, 4.2vw, 50px) clamp(10px, 3vw, 44px);
+}
+.review-item__mark {
+  font-family: var(--font-display); font-size: 72px; line-height: .55;
+  color: var(--amber); height: 34px;
+}
+.review-item__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 2.5vw, 1.7rem);
+  line-height: 1.55; color: var(--ink); margin: 16px 0 0;
+}
+.review-item__who {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 22px;
+}
+.review-item__avatar {
+  width: 46px; height: 46px; border-radius: 50%; flex: none;
+  background: rgba(255, 255, 255, .8); display: grid; place-items: center;
+  font-weight: 800; color: var(--green);
+  box-shadow: 0 0 0 2px #fbf6ea, 0 0 0 3px rgba(255, 182, 0, .75);
+}
+.review-item__who strong {
+  font-size: 12.5px; font-weight: 800; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink);
+}
+.review-item__spark { color: var(--amber); font-size: 12px; }
+.review-item__where {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 15.5px; color: var(--muted);
+}
+/* Ornamental divider between each pair of reviews. */
+.review-sep {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  color: rgba(0, 75, 31, .22);
+}
+.review-sep::before, .review-sep::after {
+  content: ''; height: 1px; width: min(240px, 34vw);
+  background: linear-gradient(90deg, transparent, rgba(0, 75, 31, .3), transparent);
+}
+.review-sep span { color: var(--amber); font-size: 13px; letter-spacing: .35em; }
+
 .quote-grid { display: grid; gap: clamp(16px, 2.2vw, 24px); grid-template-columns: 1fr; }
 @media (min-width: 820px) { .quote-grid { grid-template-columns: 1fr 1fr; } }
 
 /* Testimonial screenshot wall — real chat screenshots, nothing cropped.
    Masonry columns keep mixed phone/desktop ratios tidy. */
-.shot-wall { column-count: 2; column-gap: clamp(12px, 1.8vw, 20px); }
+.shot-wall { column-count: 2; column-gap: clamp(16px, 2.4vw, 26px); }
 @media (min-width: 1024px) { .shot-wall { column-count: 3; } }
 .shot-wall__item {
-  display: block; break-inside: avoid; margin: 0 0 clamp(12px, 1.8vw, 20px);
+  display: block; break-inside: avoid; margin: 0 0 clamp(16px, 2.4vw, 26px);
   border-radius: 16px; overflow: hidden; background: var(--card, #fff);
   box-shadow: 0 2px 10px rgba(60, 40, 20, .12); cursor: zoom-in;
   transition: transform .25s ease, box-shadow .25s ease;

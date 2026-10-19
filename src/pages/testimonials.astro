@@ -37,75 +37,78 @@ const reviewMsg =
       </div>
     </section>
 
-    <!-- ========================== SCREENSHOT WALL ========================== -->
+    <!-- ================ REVIEWS — ONE STAGE, ALL THE WORDS ================ -->
     <section class="section" style="padding-top:0">
       <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow">The proof</span>
-          <h2>Straight from the chats</h2>
-          <p class="lead" style="margin-top:14px">
-            Unedited screenshots from real WhatsApp and Instagram conversations.
-            Tap any one to read the full chat.
-          </p>
-        </div>
-        <div class="shot-wall">
-          {[
-            'review-01.jpg','review-02.jpg','review-03.jpg','review-04.jpg','review-05.jpg','review-06.jpg',
-            'review-07.jpg','review-08.jpg','review-09.jpg','review-10.jpg','review-11.jpg','review-12.jpg',
-            'review-13.jpg','review-14.jpg','review-15.jpg','review-16.jpg','review-17.jpg','review-18.jpg'
-          ].map((s, i) => (
-            <a class="shot-wall__item reveal" data-delay={i % 2} href={`assets/img/opt/${s}`} target="_blank" rel="noopener">
-              <img src={`assets/img/opt/${s.replace('.jpg', '-480.jpg')}`} alt={`Customer ${s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'} review screenshot ${i + 1}`} loading="lazy" />
-              <span class="shot-pill">{s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'}</span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
+        <div class="reviews-stage">
 
-    <!-- ============================ QUOTE WALL ============================ -->
-    <section class="section" style="padding-top:0">
-      <div class="container">
-        <div class="section-head section-head--center reveal" style="margin-bottom:30px">
-          <span class="eyebrow">In their words</span>
-          <h2>Words from real customers</h2>
-        </div>
-        {quotes.length > 0 ? (
-          <div class="quote-grid" id="quoteGrid">
-            {quotes.map((t, i) => (
-              <figure class="quote-card reveal" data-delay={i % 2}>
-                <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
-                <blockquote class="quote-card__text">{t.text}</blockquote>
-                <figcaption class="quote-card__head">
-                  {t.img
-                    ? <img class="quote-card__avatar" src={`assets/img/opt/${t.img}`} alt="" loading="lazy" />
-                    : <span class="quote-card__avatar" aria-hidden="true">{String(t.name || '?').trim().charAt(0).toUpperCase()}</span>}
-                  <div class="quote-card__who">
-                    <strong>{t.name}</strong>
-                    {t.where && <span>{t.where}</span>}
-                  </div>
-                </figcaption>
-              </figure>
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">The proof</span>
+            <h2>Straight from the chats</h2>
+            <p class="lead" style="margin-top:14px">
+              Unedited screenshots from real WhatsApp and Instagram conversations.
+              Tap any one to read the full chat.
+            </p>
+          </div>
+          <div class="shot-wall">
+            {[
+              'review-01.jpg','review-02.jpg','review-03.jpg','review-04.jpg','review-05.jpg','review-06.jpg',
+              'review-07.jpg','review-08.jpg','review-09.jpg','review-10.jpg','review-11.jpg','review-12.jpg',
+              'review-13.jpg','review-14.jpg','review-15.jpg','review-16.jpg','review-17.jpg','review-18.jpg'
+            ].map((s, i) => (
+              <a class="shot-wall__item reveal" data-delay={i % 2} href={`assets/img/opt/${s}`} target="_blank" rel="noopener">
+                <img src={`assets/img/opt/${s.replace('.jpg', '-480.jpg')}`} alt={`Customer ${s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'} review screenshot ${i + 1}`} loading="lazy" />
+                <span class="shot-pill">{s === 'review-16.jpg' ? 'Instagram' : 'WhatsApp'}</span>
+              </a>
             ))}
           </div>
-        ) : (
-          <div class="quote-card reveal" style="max-width:680px;margin:0 auto;text-align:center">
-            <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="quote-card__text" style="font-size:clamp(1.05rem,2vw,1.25rem)">
-              The first review on this page could be yours. Bought from us? Send us your
-              honest words on WhatsApp — and with your permission we will put them here,
-              exactly as you wrote them.
-            </blockquote>
-            <div style="margin-top:22px">
-              <a class="btn btn--gold" href={waLink(reviewMsg)} data-wa={reviewMsg}>Share your experience</a>
-            </div>
+
+          <div class="stage-ornament reveal" aria-hidden="true"><span>✦</span></div>
+
+          <div class="section-head section-head--center reveal" style="margin-top:clamp(30px,5vw,56px)">
+            <span class="eyebrow">In their words</span>
+            <h2>Words from real customers</h2>
           </div>
-        )}
+
+          {quotes.length > 0 ? (
+            <div class="review-list" id="quoteGrid">
+              {quotes.map((t, i) => (
+                <Fragment>
+                  <figure class="review-item reveal" data-delay={i % 2}>
+                    <div class="review-item__mark" aria-hidden="true">&ldquo;</div>
+                    <blockquote class="review-item__text">{t.text}</blockquote>
+                    <figcaption class="review-item__who">
+                      {t.img
+                        ? <img class="review-item__avatar" src={`assets/img/opt/${t.img}`} alt="" loading="lazy" />
+                        : <span class="review-item__avatar" aria-hidden="true">{String(t.name || '?').trim().charAt(0).toUpperCase()}</span>}
+                      <strong>{t.name}</strong>
+                      {t.where && <span class="review-item__spark" aria-hidden="true">✦</span>}
+                      {t.where && <span class="review-item__where">{t.where}</span>}
+                    </figcaption>
+                  </figure>
+                  {i < quotes.length - 1 && <div class="review-sep" aria-hidden="true"><span>◆</span></div>}
+                </Fragment>
+              ))}
+            </div>
+          ) : (
+            <div class="quote-card reveal" style="max-width:680px;margin:24px auto 0;text-align:center">
+              <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+              <blockquote class="quote-card__text" style="font-size:clamp(1.05rem,2vw,1.25rem)">
+                The first review on this page could be yours. Bought from us? Send us your
+                honest words on WhatsApp — and with your permission we will put them here,
+                exactly as you wrote them.
+              </blockquote>
+              <div style="margin-top:22px">
+                <a class="btn btn--gold" href={waLink(reviewMsg)} data-wa={reviewMsg}>Share your experience</a>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
 
     <!-- ====================== NOTE OF APPRECIATION ====================== -->
-    <section class="section" style="padding-top:0">
+    <section class="section" style="padding-top:clamp(18px,2.6vw,34px)">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">From our TikTok · 30 September 2026</span>
@@ -133,7 +136,7 @@ const reviewMsg =
     </section>
 
     <!-- ============================ TRUST STRIP ============================ -->
-    <section class="section" style="padding-top:0">
+    <section class="section" style="padding-top:clamp(18px,2.6vw,34px)">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">Why they keep coming back</span>
@@ -165,7 +168,7 @@ const reviewMsg =
     </section>
 
     <!-- =============================== CTA =============================== -->
-    <section class="section" style="padding-top:0">
+    <section class="section" style="padding-top:clamp(18px,2.6vw,34px)">
       <div class="container">
         <div class="cta-band reveal" style="text-align:center">
           <span class="eyebrow">Join the family</span>
