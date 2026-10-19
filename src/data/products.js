@@ -399,7 +399,7 @@ export const PRODUCTS = [
     colours: 'Black + cream',
     material: 'Wooden frame with padded headboard',
     desc: 'A clean-lined storage bed in black with a cream padded-panel headboard and pull-out drawers in the base — tidy linen storage without extra furniture.',
-    img: 'board-bed-black-cream-2.jpg',
+    img: 'board-bed-black-cream.jpg',
     catalogOnly: true
   },
   {
@@ -410,7 +410,7 @@ export const PRODUCTS = [
     colours: 'Grey marble print',
     material: 'Marble-print upholstery with gold metal accents',
     desc: 'A sculpted barrel-arm set in grey marble-print upholstery, finished with polished gold arch accents on every arm and button-tufted backs.',
-    img: 'arch-accent-set-grey-2.jpg',
+    img: 'arch-accent-set-grey.jpg',
     catalogOnly: true
   },
   {
@@ -421,7 +421,7 @@ export const PRODUCTS = [
     colours: 'Maroon brown',
     material: 'Ribbed velvet-look upholstery with gold metal accents',
     desc: 'The same sculpted barrel-arm set in deep maroon ribbed velvet-look upholstery, gold arch accents and button-tufted backs.',
-    img: 'arch-accent-set-maroon-2.jpg',
+    img: 'arch-accent-set-maroon.jpg',
     catalogOnly: true
   },
   {
@@ -432,7 +432,7 @@ export const PRODUCTS = [
     colours: 'Dark grey',
     material: 'Quilted upholstery',
     desc: 'A dark grey upholstered bed with bold hexagon-diamond quilting across the headboard and base, flanked by matching bedside cabinets.',
-    img: 'hex-quilted-bed-grey-2.jpg',
+    img: 'hex-quilted-bed-grey.jpg',
     catalogOnly: true
   },
   {
@@ -443,7 +443,7 @@ export const PRODUCTS = [
     colours: 'Grey with orange accents',
     material: 'Soft boucle-look fabric',
     desc: 'A playful modular sectional of plump grey balloon modules, styled here with orange accent cushions, a round orange chair and a white fluted ottoman.',
-    img: 'balloon-sectional-grey-orange-2.jpg',
+    img: 'balloon-sectional-grey-orange.jpg',
     catalogOnly: true
   },
   {
@@ -454,7 +454,7 @@ export const PRODUCTS = [
     colours: 'White marble-look + grey',
     material: 'Marble-look panels with quilted headboard',
     desc: 'A statement bed in white marble-look panels with a channel-quilted grey headboard and tall matching bedside cabinets.',
-    img: 'marble-panel-bed-white-2.jpg',
+    img: 'marble-panel-bed-white.jpg',
     catalogOnly: true
   },
   {
@@ -465,7 +465,7 @@ export const PRODUCTS = [
     colours: 'Maroon brown',
     material: 'Smooth velvet-look fabric',
     desc: 'A rounded balloon sofa in smooth maroon velvet-look fabric, deep enough to curl up in and soft enough for long evenings.',
-    img: 'balloon-sofa-maroon-2.jpg',
+    img: 'balloon-sofa-maroon.jpg',
     catalogOnly: true
   },
   {
@@ -476,7 +476,7 @@ export const PRODUCTS = [
     colours: 'Cream + brown cushions',
     material: 'Textured upholstery',
     desc: 'A pair of clean cream three-seaters with straight track arms and loose brown scatter cushions — calm, formal lines for a bright living room.',
-    img: 'straight-arm-sofa-cream-2.jpg',
+    img: 'straight-arm-sofa-cream.jpg',
     catalogOnly: true
   },
   {
@@ -487,7 +487,7 @@ export const PRODUCTS = [
     colours: 'Cream + chocolate cushions',
     material: 'Smooth upholstery',
     desc: 'A cream sofa with softly rounded arms and a curved back, shown with chocolate scatter cushions and matching cube poufs.',
-    img: 'round-arm-sofa-cream-2.jpg',
+    img: 'round-arm-sofa-cream.jpg',
     catalogOnly: true
   },
   {
@@ -498,7 +498,7 @@ export const PRODUCTS = [
     colours: 'Light walnut + brown panels',
     material: 'Wooden frame with padded headboard',
     desc: 'A light walnut board bed with twin brown padded panels in the headboard and an open storage base with inner shelving.',
-    img: 'board-bed-walnut-brown-2.jpg',
+    img: 'board-bed-walnut-brown.jpg',
     catalogOnly: true
   },
   {
@@ -509,7 +509,7 @@ export const PRODUCTS = [
     colours: 'Walnut + cream inlay',
     material: 'Wooden frame with inlay headboard',
     desc: 'A walnut board bed with cream diamond-inlay panels framed in the headboard and boxed side storage.',
-    img: 'board-bed-cream-inlay-2.jpg',
+    img: 'board-bed-cream-inlay.jpg',
     catalogOnly: true
   },
   {
@@ -520,7 +520,7 @@ export const PRODUCTS = [
     colours: 'Light wood',
     material: 'Wooden frame',
     desc: 'A light-wood board bed with an arched slat headboard and twin pedestal side boxes.',
-    img: 'arch-slat-bed-light-2.jpg',
+    img: 'arch-slat-bed-light.jpg',
     catalogOnly: true
   },
   {
@@ -531,7 +531,7 @@ export const PRODUCTS = [
     colours: 'Cider wood + grey panels',
     material: 'Wooden frame with padded headboard',
     desc: 'A cider-toned board bed with grey padded panels set into the headboard and a deep storage base.',
-    img: 'board-bed-cider-grey-2.jpg',
+    img: 'board-bed-cider-grey.jpg',
     catalogOnly: true
   },
   {
@@ -542,7 +542,7 @@ export const PRODUCTS = [
     colours: 'Cream + chocolate',
     material: 'Textured upholstery',
     desc: 'A lounge pair in cream and chocolate — the same boxy comfortable chair in two colourways to mix across a living room.',
-    img: 'duo-lounge-chairs-cream-choc-2.jpg',
+    img: 'duo-lounge-chairs-cream-choc.jpg',
     catalogOnly: true
   },
   {
@@ -553,7 +553,7 @@ export const PRODUCTS = [
     colours: 'Mauve brown + dark chocolate',
     material: 'Ribbed upholstery',
     desc: 'A club set in mauve-brown ribbed upholstery with rolled arms and deep seats, shown mixed with dark chocolate pieces.',
-    img: 'ribbed-club-set-mauve-2.jpg',
+    img: 'ribbed-club-set-mauve.jpg',
     catalogOnly: true
   },
   {
@@ -564,7 +564,7 @@ export const PRODUCTS = [
     colours: 'Grey chairs + black table',
     material: 'Velvet-look chairs',
     desc: 'A six-seat dining set with curved-back grey velvet-look chairs around a black-topped table.',
-    img: 'dining-set-grey-velvet-2.jpg',
+    img: 'dining-set-grey-velvet.jpg',
     catalogOnly: true
   },
   {
@@ -575,7 +575,7 @@ export const PRODUCTS = [
     colours: 'Grey marble print',
     material: 'Marble-print upholstery',
     desc: 'A boxy modern set in grey marble-print upholstery with square arms and deep seat cushions.',
-    img: 'marble-boxy-set-grey-2.jpg',
+    img: 'marble-boxy-set-grey.jpg',
     catalogOnly: true
   },
   {
@@ -586,7 +586,7 @@ export const PRODUCTS = [
     colours: 'Walnut',
     material: 'Wood',
     desc: 'A family of round walnut centre tables and stools in graduating sizes — group them or spread them across the room.',
-    img: 'nest-centre-tables-walnut-2.jpg',
+    img: 'nest-centre-tables-walnut.jpg',
     catalogOnly: true
   },
   {
@@ -597,7 +597,7 @@ export const PRODUCTS = [
     colours: 'Blue grey',
     material: 'Channel-stitched upholstery',
     desc: 'An L-shaped sectional in blue-grey channel-stitched upholstery with low rounded arms and deep family seating.',
-    img: 'channel-sectional-blue-grey-2.jpg',
+    img: 'channel-sectional-blue-grey.jpg',
     catalogOnly: true
   },
   {
