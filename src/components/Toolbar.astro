@@ -52,3 +52,9 @@ const shopCount = PRODUCTS.filter((p) => !p.catalogOnly).length;
   <p>Nothing matches this combination — but the shop is not empty, the filters simply overlap. Widen the price, clear the search, or start fresh:</p>
   <button class="empty-state__clear" type="button" data-clear-filters>Show everything again</button>
 </div>
+
+<div class="mchipbar" data-mchipbar role="group" aria-label="Filter by category (compact)">
+  {CATEGORIES.map((c, i) => (
+    <button class="mchip" type="button" data-mchip={c.key} aria-pressed={i === 0 ? 'true' : 'false'}>{c.label}</button>
+  ))}
+</div>

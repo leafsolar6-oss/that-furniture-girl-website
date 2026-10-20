@@ -216,6 +216,7 @@ function wireFilters(toolbar) {
   const rangeOut = toolbar.querySelector('[data-tool="rangeout"]');
   const rangeLabel = toolbar.querySelector('[data-tool="rangelabel"]');
   const viewBtns = $$('[data-tool="grid"], [data-tool="list"]', toolbar);
+  const miniBar = document.querySelector('[data-mchipbar]');
 
   const rangeMax = range ? Number(range.max) : Infinity;
   let current = 'all';
@@ -228,6 +229,32 @@ function wireFilters(toolbar) {
     // price band that reads like an active filter on first glance
     const base = atTop ? 'No filter' : 'Up to ' + fmt(maxPrice);
     return base + ' \u00b7 ' + shown + (shown === 1 ? ' piece' : ' pieces');
+  }
+
+  /* mini category bar pinned under the header once the first ten pieces
+     have scrolled past — same slide-in idiom as the lookbook's lb-sticky */
+  let miniQueued = false;
+  function miniMeasure() {
+    if (!miniBar) return;
+    const visible = cards.filter((c) => !c.hidden);
+    const marker = visible[9];
+    const show = !!marker && marker.getBoundingClientRect().top < 80 && grid.getBoundingClientRect().top < 0;
+    miniBar.classList.toggle('is-show', show);
+  }
+  window.addEventListener('scroll', () => {
+    if (miniQueued) return;
+    miniQueued = true;
+    window.requestAnimationFrame(() => { miniQueued = false; miniMeasure(); });
+  }, { passive: true });
+  window.addEventListener('resize', miniMeasure, { passive: true });
+
+  if (miniBar) {
+    miniBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-mchip]');
+      if (!btn) return;
+      const twin = filterBar && filterBar.querySelector(`.chip[data-cat="${btn.dataset.mchip}"]`);
+      if (twin) twin.click();
+    });
   }
 
   function syncRange() {
@@ -259,6 +286,8 @@ function wireFilters(toolbar) {
     });
     if (emptyMsg) emptyMsg.hidden = shown > 0;
     if (range && rangeOut) rangeOut.textContent = rangeText(shown);
+    if (miniBar) $$('[data-mchip]', miniBar).forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.mchip === current)));
+    miniMeasure();
   }
 
   if (clearBtn) {
@@ -725,6 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!en.isIntersecting) return;
       io.unobserve(en.target);
       const el = en.target;
+      if (el.querySelector('.product-card')) return; /* never animate over a live grid (2026-10-20 guard) */
       const end = parseInt(el.getAttribute('data-count'), 10);
       const suf = el.getAttribute('data-suffix') || '';
       const t0 = performance.now();
@@ -737,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       requestAnimationFrame(step);
     }), { threshold: 0.4 });
-    $$('[data-count]').forEach((c) => io.observe(c));
+    $$('.stat [data-count], .stat[data-count]').forEach((c) => io.observe(c));
   }
 
   observeReveals(document);

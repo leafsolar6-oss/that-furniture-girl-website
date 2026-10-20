@@ -7,7 +7,7 @@ import { waLink, mapsLink, MAPS_Q, MAPS_LL } from '../lib/site.js';
 const { products = [], id = 'productGrid' } = Astro.props;
 ---
 
-<div class="grid-products" id={id} data-count={products.length}>
+<div class="grid-products" id={id} data-piece-count={products.length}>
   {products.map((p, i) => <ProductCard product={p} delay={i % 4} />)}
   <article class="grid-tile reveal">
     <h3>Made to order</h3>

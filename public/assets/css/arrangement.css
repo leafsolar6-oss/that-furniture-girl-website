@@ -1903,3 +1903,55 @@ body.page-lookbook .lb-spread { scroll-snap-align: none; scroll-margin-top: 0; }
 @media (max-width: 899px) {
   .lb-sticky { top: 80px; max-width: 94vw; }
 }
+
+/* ==========================================================================
+   MOBILE COMFORT (owner 2026-10-20)
+   1) Half-width cards on phones: image stays big on top, then name, price
+      and a full-width Chat button stacked underneath — no more endless
+      single-card rows through 66 pieces.
+   2) A tiny blurred mini filter bar pins under the header once the first
+      ten pieces scroll past (same slide-in idiom as the lookbook's
+      .lb-sticky). It taps straight into the real toolbar chips.
+   ========================================================================== */
+@media (max-width: 559px) {
+  .grid-products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+  .grid-tile { grid-column: 1 / -1; }
+  .product-card::before { top: 8px; left: 8px; right: -6px; bottom: -6px; border-radius: 140px 140px 0 0; }
+  .product-card__media { border-radius: 140px 140px 0 0; }
+  .product-card__media::after { font-size: 34px; left: 10px; bottom: 2px; }
+  .product-card__badge { width: 54px; height: 54px; top: 8px; right: 6px; font-size: 7.5px; letter-spacing: .08em; padding: 6px; line-height: 1.2; }
+  .product-card__body { padding-top: 12px; gap: .35rem; }
+  .product-card__name { font-size: 15.5px; line-height: 1.25; }
+  .product-card__details { display: none; }
+  .product-card__foot { gap: 8px; margin-top: 4px; }
+  .product-card__chat { font-size: 11px; gap: 8px; }
+  .product-card__chat::before { width: 30px; }
+  .product-card__chat span { display: inline; }
+  .prod-offer { font-size: .68rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+.mchipbar {
+  position: fixed; left: 0; right: 0; top: 76px; z-index: 54;
+  display: none; align-items: center; gap: 8px;
+  padding: 5px 12px;
+  overflow-x: auto; scrollbar-width: none;
+  background: rgba(244,244,244,.88);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--line-soft, rgba(11,12,14,.08));
+  transform: translateY(-130%);
+  transition: transform .28s var(--ease, ease);
+}
+.mchipbar::-webkit-scrollbar { display: none; }
+.mchip {
+  flex: none; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  border-radius: 999px; padding: 6px 13px;
+  font-size: 12px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; cursor: pointer;
+  transition: all .2s var(--ease, ease);
+}
+.mchip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fff; }
+@media (max-width: 899px) {
+  .mchipbar { display: flex; }
+  .mchipbar.is-show { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) { .mchipbar { transition: none; } }
