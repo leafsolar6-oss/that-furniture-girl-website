@@ -1766,3 +1766,15 @@ p  { margin: 0; text-wrap: pretty; }
   .brand__mark { width: 38px; height: 38px; }
   .header-quick a { padding: 7px 9px; font-size: 11px; }
 }
+
+/* ==========================================================================
+   OFFER MICRO-COPY — showroom-pickup best-seller flag on cards, catalogue
+   and piece pages (replaces the raw "Best seller — available…" caption text).
+   ========================================================================== */
+.prod-offer, .piece__offer {
+  margin: 8px 0 0;
+  font-size: 12.5px; font-weight: 800; letter-spacing: .01em;
+  color: var(--gold-dark);
+}
+.piece__offer { font-size: 14px; margin-top: 14px; }
+.lb-offer { color: var(--gold-dark); font-weight: 800; }

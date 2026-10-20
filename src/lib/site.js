@@ -40,6 +40,7 @@ export function specParts(p) {
   const parts = [];
   if (p.colours) parts.push({ k: 'Colour', v: p.colours });
   if (p.material) parts.push({ k: 'Material', v: p.material });
+  if (p.sizes) parts.push({ k: 'Sizes', v: p.sizes });
   return parts;
 }
 

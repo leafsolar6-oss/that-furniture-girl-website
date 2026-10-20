@@ -13,7 +13,7 @@ export function getStaticPaths() {
 const p = PRODUCTS.find((x) => x.id === Astro.params.pid);
 const price = priceInfo(p);
 const specs = specParts(p);
-if (p.lead) specs.push({ k: 'Lead time', v: p.lead });
+if (p.lead && !/pickup/i.test(p.lead)) specs.push({ k: 'Lead time', v: p.lead });
 const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
 ---
 
@@ -79,6 +79,10 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
                 </div>
               ))}
             </dl>
+
+            {p.lead && /pickup/i.test(p.lead) && (
+              <p class="piece__offer">✨ Showroom best-seller — available for immediate pickup at the showroom</p>
+            )}
 
             <div class="piece__cta">
               <a class="btn btn--gold btn--lg" href={waLink(orderMessage(p))} target="_blank" rel="noopener">

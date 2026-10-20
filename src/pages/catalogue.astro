@@ -103,7 +103,9 @@ const chapters = CATEGORIES
                 <h3 class="lb-name">{p.name}</h3>
                 {p.desc && <p class="lb-desc">{cleanDesc(p.desc)}</p>}
                 {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
-                {p.lead && <p class="lb-lead">{p.lead}</p>}
+                {p.lead && (/pickup/i.test(p.lead)
+                  ? <p class="lb-lead lb-offer">✨ Showroom best-seller — available for immediate pickup</p>
+                  : <p class="lb-lead">{p.lead}</p>)}
                 <div class="lb-cta">
                   <a class="btn btn--gold" href={waLink(orderMessage(p))} target="_blank" rel="noopener">Order on WhatsApp</a>
                   <a class="btn btn--ghost" href={`${p.id}.html`}>View details</a>

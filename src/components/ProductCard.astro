@@ -28,6 +28,7 @@ const shown = price.ask ? 'Price on request' : price.value;
     <div class="product-card__body">
       <h3 class="product-card__name">{p.name}</h3>
       <p class="product-card__desc">{p.desc}</p>
+      {p.lead && /pickup/i.test(p.lead) && <p class="prod-offer">✨ Showroom best-seller — ready for pickup</p>}
       <div class="product-card__foot">
         <div class="product-card__price">
           <span class="product-card__price-value">{shown}</span>
