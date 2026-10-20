@@ -70,14 +70,16 @@ const chapters = CATEGORIES
     <!-- ================= pinned category bar ================= -->
     <nav class="lb-sticky" aria-label="Catalogue categories">
       <div class="lb-sticky__in">
-        {chapters.map((c) => (
-          <a href={`#seg-${c.key}`} data-seg={c.key}>{c.label}</a>
-        ))}
         <label class="rangebox lb-range">
           <span data-tool="crangelabel">Premium &middot;</span>
           <input type="range" data-tool="crange" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
           <output data-tool="crangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above · {total} pieces</output>
         </label>
+        <div class="lb-sticky__chips">
+          {chapters.map((c) => (
+            <a href={`#seg-${c.key}`} data-seg={c.key}>{c.label}</a>
+          ))}
+        </div>
       </div>
     </nav>
 

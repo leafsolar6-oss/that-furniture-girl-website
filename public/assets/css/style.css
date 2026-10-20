@@ -1827,6 +1827,17 @@ p  { margin: 0; text-wrap: pretty; }
    rules in arrangement.css (loaded later than this file).
    ========================================================================== */
 .lb-sticky .lb-range { flex: 0 0 auto; height: 40px; margin-left: 10px; padding: 0 14px; }
+.lb-sticky__chips { display: flex; gap: 8px; align-items: center; flex: 0 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.lb-sticky__chips::-webkit-scrollbar { display: none; }
+@media (max-width: 899px) {
+  /* Phone: the price slider gets its own full-width row on top; the chapter
+     chips scroll horizontally underneath — nothing hides off-screen. */
+  .lb-sticky__in { flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; }
+  .lb-sticky .lb-range { order: -1; flex: 1 1 100%; margin-left: 0; padding: 0 16px; height: 38px; gap: 10px; }
+  .lb-sticky .lb-range input[type="range"] { flex: 1 1 auto; width: auto; min-width: 120px; }
+  .lb-sticky .lb-range output { margin-left: auto; }
+  .lb-sticky__chips { flex: 1 1 100%; }
+}
 .lb-sticky .lb-range > span { white-space: nowrap; flex: none; }
 .lb-sticky .lb-range input[type="range"] { width: 160px; min-width: 140px; height: 30px; }
 .lb-sticky .lb-range output { font-size: 12px; white-space: nowrap; flex: none; }
