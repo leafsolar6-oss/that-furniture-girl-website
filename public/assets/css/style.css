@@ -1789,9 +1789,12 @@ p  { margin: 0; text-wrap: pretty; }
 .filterbar__tools .rangebox { height: 46px; gap: 12px; padding: 0 18px; }
 .filterbar__tools .rangebox input[type="range"] {
   width: clamp(170px, 24vw, 300px);
+  min-width: 150px;
+  flex: 2 1 auto;
   height: 34px;
 }
+.filterbar__tools .rangebox output { white-space: nowrap; }
 @media (max-width: 700px) {
   .filterbar__tools .rangebox { width: 100%; }
-  .filterbar__tools .rangebox input[type="range"] { flex: 1; width: auto; min-width: 0; }
+  .filterbar__tools .rangebox input[type="range"] { flex: 1 1 150px; width: auto; min-width: 150px; }
 }
