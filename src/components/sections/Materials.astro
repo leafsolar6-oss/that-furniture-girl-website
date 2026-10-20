@@ -3,8 +3,10 @@
    can only ever show what the workshop has actually built. The raw strings
    are grouped into families (owner 2026-10-20: "the massive colour list
    causes visual fatigue") and every chip carries a real swatch dot + links
-   to the shop pre-filtered to that colour or material. Nothing is invented:
-   grouping happens at build time over the live product data. */
+   to the shop pre-filtered to that colour or material. Colour combos show
+   as two-tone dots. Materials became a visual swatch grid (2026-10-20):
+   close-up texture circles that open a feel & durability popup. Nothing is
+   invented: grouping and counts happen at build time over live product data. */
 import { PRODUCTS } from '../../data/products.js';
 
 const SPLIT = /\s*(?:\+|\/|·|,|&|\band\b|\bor\b|\bwith\b)\s*|\balso\b\s*/;
@@ -74,33 +76,40 @@ const colourFams = FAM_RULES.map(([name]) => ({
   }),
 })).filter((f) => f.items.length);
 
-/* Materials group by the leading phrase — leather first so "leather cloth
-   fabric" reads as leather, not "just another fabric". Each piece lands in
-   exactly one group (first match wins), so nothing doubles up. */
-const MAT_RULES = [
-  ['Leather & Hides', /leather|hide/],
-  ['Boucle, Velvet & Fabric', /boucle|velvet|corduroy|fabric|satin|linen|wool|matte|floral/],
-  ['Boards & Solid Wood', /hdf|mdf|wooden|wood|ply|board|frame/],
-  ['Glass & Gloss', /glass|gloss|mirror|panel/],
+/* ---- Visual fabric & board swatches ----------------------------------- */
+/* Each swatch must map to real builds (searches the same haystack the shop
+   search uses); anything with zero matching pieces is dropped at build time.
+   wear = plain-spoken 1–5 rating for how the material lives day to day. */
+const buildsFor = (q) => shopItems.filter((p) => (p.haystack || '').includes(q)).length;
+const SWATCH_DEFS = [
+  { key: 'boucle', q: 'boucle', name: 'Bouclé', img: 'assets/img/textures/boucle.jpg', wear: 3,
+    feel: 'Cloud-soft loops under the palm — warm to sit on, dry to the touch, and the most forgiving fabric we weave with.',
+    wearTxt: 'Great for family living: the nubby weave hides creases and small marks. Keep claws away — loops can snag if they get pulled.' },
+  { key: 'velvet', q: 'velvet', name: 'Velvet', img: 'assets/img/textures/velvet.jpg', wear: 4,
+    feel: 'A dense pile that shifts from light to deep as it catches the room — smooth, quietly glamorous, noticeably cool at first touch.',
+    wearTxt: 'Handles daily sitting well because the pile is dense; light crushing lifts back with a pass of steam. Rotate cushions to keep the nap even.' },
+  { key: 'corduroy', q: 'corduroy', name: 'Corduroy', img: 'assets/img/textures/corduroy.jpg', wear: 3,
+    feel: 'Raised ridges (wales) with a dry, tactile grip — casual warmth that still reads grown-up on a tailored frame.',
+    wearTxt: 'The ridges soften and gently smooth over the busiest seat through the years, but the colour stays honest and it re-fluffs easily.' },
+  { key: 'leather', q: 'leather', name: 'Leather & leather-cloth', img: 'assets/img/textures/leather.jpg', wear: 5,
+    feel: 'Cool and glass-smooth at first touch, warming fast under you, with a light pad of foam between hand and frame.',
+    wearTxt: 'The toughest face we put on a frame: wipes clean in a pass, drinks no spills, and patinas rather than wears out.' },
+  { key: 'matte', q: 'matte', name: 'Dry matte fabric', img: 'assets/img/textures/matte.jpg', wear: 3,
+    feel: 'A tight plain weave with zero shine — quiet, even colour that never slips under you or reflects the lights away.',
+    wearTxt: 'An honest everyday cloth: the matte face keeps colours flat and true, and the weave takes spot-cleaning without shading.' },
+  { key: 'wood', q: 'wood', name: 'Natural wood', img: 'assets/img/textures/wood.jpg', wear: 5,
+    feel: 'Solid treated timber, sanded and sealed so the grain still runs under your fingers — the part of the piece that carries everything.',
+    wearTxt: 'Frames, bed rails and legs are built to outlive the fabric on them. A coat of polish revives it; just don\u2019t leave standing water on top.' },
+  { key: 'hdf', q: 'hdf', name: 'HDF board', img: 'assets/img/textures/hdf.jpg', wear: 4,
+    feel: 'High-density fibreboard milled glass-smooth and painted in satin — the surface stays flawlessly flat and the edges stay razor-sharp.',
+    wearTxt: 'Our workhorse for wardrobe doors, consoles and shutters: dense enough to shrug off knocks — just wipe spills rather than leaving them.' },
+  { key: 'mdf', q: 'mdf', name: 'MDF board', img: 'assets/img/textures/mdf.jpg', wear: 3,
+    feel: 'Medium-density fibre: perfectly uniform, dead-flat and stable — the right base when the finish is a flawless lacquer or gloss top.',
+    wearTxt: 'Stable and smooth for years in the living room; seal cut edges in wet areas and keep it off permanently damp floors.' },
 ];
-const OTHER_MAT = 'More from the Workshop';
-const materials = [...new Set(shopItems.map((p) => p.material).filter(Boolean))];
-const matAssign = new Map();
-for (const m of materials) {
-  const toks = tokensOf(m);
-  const first = toks[0] || '';
-  const fam = MAT_RULES.find(([, re]) => re.test(first))?.[0]
-    ?? MAT_RULES.find(([, re]) => re.test(m.toLowerCase()))?.[0]
-    ?? OTHER_MAT;
-  matAssign.set(m, fam);
-}
-const matFams = [...MAT_RULES.map(([n]) => n), OTHER_MAT]
-  .map((name) => ({
-    name,
-    items: materials.filter((m) => matAssign.get(m) === name)
-      .map((m) => ({ label: m, q: (tokensOf(m)[0] || m).replace(/\s+(over|with|and|top)$/, '') })),
-  }))
-  .filter((f) => f.items.length);
+const swatches = SWATCH_DEFS
+  .map((s) => ({ ...s, cnt: buildsFor(s.q) }))
+  .filter((s) => s.cnt > 0);
 ---
 
 <section class="section materials" id="materials">
@@ -125,22 +134,40 @@ const matFams = [...MAT_RULES.map(([n]) => n), OTHER_MAT]
     </div>
 
     <div class="mat-groups mat-groups--fabric">
-      {matFams.map((f) => (
-        <div class="mat-group">
-          <h3>{f.name} <span class="mat-count">{f.items.length}</span></h3>
-          <div class="tint-row tint-row--mat">
-            {f.items.map((m) => (
-              <a class="matpill" href={`products.html?q=${encodeURIComponent(m.q)}`} title={m.label}>{m.label}</a>
-            ))}
-          </div>
+      <div class="mat-group">
+        <h3>Touch before you choose — fabrics &amp; boards <span class="mat-count">{swatches.length}</span></h3>
+        <div class="swatchgrid">
+          {swatches.map((s) => (
+            <button type="button" class="sw" data-swatch={s.key} aria-haspopup="dialog" aria-label={`${s.name} — see how it feels and wears`}>
+              <span class="sw__ring"><img src={s.img} alt="" width="520" height="520" loading="lazy" /></span>
+              <span class="sw__name">{s.name}</span>
+              <span class="sw__meta">{s.cnt} {s.cnt === 1 ? 'build' : 'builds'} on the floor</span>
+            </button>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
 
+    <!-- Popup panes — hidden in the page, cloned into #sw-modal by site.js -->
+    {swatches.map((s) => (
+      <div class="sw-pane" id={`sw-${s.key}`} hidden>
+        <span class="sw-pane__ring"><img src={s.img} alt={`Close-up of ${s.name.toLowerCase()} texture`} width="520" height="520" /></span>
+        <h3>{s.name}</h3>
+        <p class="sw-pane__feel">{s.feel}</p>
+        <div class="sw-pane__wear">
+          <span class="sw-pane__dots" role="img" aria-label={`Durability ${s.wear} out of 5`}>{Array.from({ length: 5 }, (_, i) => (<i class={i < s.wear ? 'on' : ''}></i>))}</span>
+          <span class="sw-pane__rate">Wear rating {s.wear}/5</span>
+        </div>
+        <p class="sw-pane__dur">{s.wearTxt}</p>
+        <a class="sw-pane__cta" href={`products.html?q=${encodeURIComponent(s.q)}`}>See the {s.cnt} {s.cnt === 1 ? 'piece' : 'pieces'} built with it &rarr;</a>
+      </div>
+    ))}
+    <div class="sw-modal" id="sw-modal" role="dialog" aria-modal="true" aria-label="Material details" hidden></div>
+
     <p class="materials__note">
-      Tap any colour or fabric to see the pieces already built in it. Your piece
-      does not have to match any of these — colour, size and fabric are yours to
-      choose. These are simply the builds already on the floor.
+      Tap any colour or swatch to go straight to the pieces built with it. Your
+      piece does not have to match any of these — colour, size and fabric are
+      yours to choose. These are simply the builds already on the floor.
     </p>
   </div>
 </section>

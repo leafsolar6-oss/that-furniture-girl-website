@@ -304,6 +304,44 @@ function wireCataloguePrice() {
   slider.addEventListener('input', applyC);
 }
 
+/* ---------- material swatch popup ---------------------------------------- */
+/* Fabric & board swatches in the materials strip open a feel-and-durability
+   card. Same shape as the product modal: content cloned into a dialog, body
+   scroll locked, focus returned on close, Esc / scrim / \u00d7 close it. */
+function wireSwatchModal() {
+  const modal = document.getElementById('sw-modal');
+  if (!modal) return;
+  let lastFocus = null;
+
+  function open(key) {
+    const pane = document.getElementById('sw-' + key);
+    if (!pane) return;
+    modal.innerHTML = '<button class="sw-modal__close" type="button" aria-label="Close">&times;</button>'
+      + '<div class="sw-pane">' + pane.innerHTML + '</div>';
+    modal.hidden = false;
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+    lastFocus = document.activeElement;
+    const btn = modal.querySelector('.sw-modal__close');
+    if (btn) btn.focus();
+  }
+
+  function close() {
+    if (modal.hidden) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    window.setTimeout(() => { modal.hidden = true; modal.innerHTML = ''; }, 180);
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', (e) => {
+    const sw = e.target.closest('[data-swatch]');
+    if (sw) { open(sw.getAttribute('data-swatch')); return; }
+    if (e.target.closest('.sw-modal__close') || e.target === modal) close();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+}
+
 /* ---------- hero slider ------------------------------------------------- */
 
 function wireHero() {
@@ -458,6 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $$('[data-tools-for]').forEach(wireFilters);
   wireCataloguePrice();
+  wireSwatchModal();
   wireHero();
   wireSearch();
 
