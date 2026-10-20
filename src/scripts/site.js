@@ -790,12 +790,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el.querySelector('.product-card')) return; /* never animate over a live grid (2026-10-20 guard) */
       const end = parseInt(el.getAttribute('data-count'), 10);
       const suf = el.getAttribute('data-suffix') || '';
+      /* rounded stats (soc()) must land on their compact final string, e.g.
+         "59K+", not the locale-formatted "59,000K+" — data-final carries it */
+      const fin = el.getAttribute('data-final') || '';
       const t0 = performance.now();
       const dur = 1500;
       const step = (t) => {
         const k = Math.min(1, (t - t0) / dur);
         const ease = 1 - Math.pow(1 - k, 3);
-        el.textContent = Math.round(end * ease).toLocaleString('en-US') + (k === 1 ? suf : '');
+        el.textContent = (k === 1 && fin) ? fin
+          : Math.round(end * ease).toLocaleString('en-US') + (k === 1 ? suf : '');
         if (k < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);

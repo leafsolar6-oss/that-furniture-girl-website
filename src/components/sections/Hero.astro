@@ -22,7 +22,7 @@ const social = [
       <div class="stats" role="list">
         {social.map((s) => (
           <div class="stat" role="listitem" aria-label={`${s.text} ${s.label}`}>
-            <b data-count={s.end} data-suffix={s.suffix}>{s.text}</b><span>{s.label}</span>
+            <b data-count={s.end} data-suffix={s.suffix} data-final={s.text}>{s.text}</b><span>{s.label}</span>
           </div>
         ))}
       </div>
