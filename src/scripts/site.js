@@ -583,6 +583,34 @@ function wireSearch() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 }
 
+/* ---------- announcement marquee --------------------------------------- */
+
+/* The bar's second copy exists only to make the loop seamless. Looping is
+   enabled by measurement (a single copy must actually overflow the bar) and
+   is never enabled for reduced-motion visitors, so the announcement text
+   can no longer sit there printed twice side by side. */
+function wireAnnounce() {
+  const bar = document.querySelector('.announce');
+  if (!bar) return;
+  const track = bar.querySelector('.announce__track');
+  const group = bar.querySelector('.announce__group');
+  if (!track || !group) return;
+  const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  const measure = () => {
+    const fits = group.scrollWidth <= bar.clientWidth + 1;
+    const still = mq && mq.matches;
+    const loop = !fits && !still;
+    bar.classList.toggle('is-loop', loop);
+    bar.classList.toggle('is-center', fits);  // only center when nothing gets clipped
+    track.style.animationDuration = loop ? Math.max(16, Math.round(group.scrollWidth / 42)) + 's' : '';
+  };
+  measure();
+  window.addEventListener('resize', measure, { passive: true });
+  window.addEventListener('load', measure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  if (mq && mq.addEventListener) mq.addEventListener('change', measure);
+}
+
 /* ---------- boot -------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -621,6 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireSwatchModal();
   wireMapsLinks();
   wireColourway();
+  wireAnnounce();
   wireHero();
   wireSearch();
 

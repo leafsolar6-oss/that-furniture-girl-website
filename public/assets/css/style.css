@@ -328,18 +328,25 @@ p  { margin: 0; text-wrap: pretty; }
   padding-block: 9px;
 }
 .announce__track {
-  display: flex; align-items: center; gap: 34px;
+  display: flex; align-items: center; gap: 0;
   white-space: nowrap;
-  animation: marquee 42s linear infinite;
   will-change: transform;
 }
-.announce__track span { display: inline-flex; align-items: center; gap: 34px; }
+/* Two identical groups = one seamless -50% loop. site.js only enables the
+   loop when a single copy actually overflows the bar; otherwise the echo
+   copy stays display:none so the copy can never double-render in place. */
+.announce__group { display: flex; align-items: center; gap: 34px; padding-right: 34px; flex: none; }
+.announce__group > span { display: inline-flex; align-items: center; gap: 34px; }
 .announce__dot {
   width: 4px; height: 4px; border-radius: 50%;
   background: var(--amber); flex: none;
 }
+.announce:not(.is-loop) .announce__group + .announce__group { display: none; }
+.announce.is-center .announce__track { justify-content: center; }
+.announce.is-center .announce__group > .announce__dot:last-child { display: none; }
+.announce.is-loop .announce__track { animation: marquee 42s linear infinite; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .announce__track { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .announce__track { animation: none !important; } }
 
 .site-header {
   position: sticky; top: 0; z-index: 60;

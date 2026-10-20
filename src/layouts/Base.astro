@@ -92,8 +92,8 @@ const ld = {
   <link rel="preload" as="font" type="font/woff2" href={base + 'assets/fonts/instrument-serif-latin.woff2'} crossorigin>
   <link rel="preload" as="font" type="font/woff2" href={base + 'assets/fonts/instrument-serif-italic-latin.woff2'} crossorigin>
   {(page === 'home' || page === 'piece') && <link rel="preload" as="image" type="image/webp" href={new URL(base + (page === 'home' ? 'assets/img/opt/blush-sectional.webp' : (ogImagePath || '').replace(/\.jpg$/, '.webp')), Astro.site).href} fetchpriority="high">}
-  <link rel="stylesheet" href="assets/css/style.css?v=20261020x">
-  <link rel="stylesheet" href="assets/css/arrangement.css?v=20261020x">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261020y">
+  <link rel="stylesheet" href="assets/css/arrangement.css?v=20261020y">
 </head>
 <body class={`page-${page || 'home'}`}>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -101,12 +101,16 @@ const ld = {
 <!-- announcement ------------------------------------------------------- -->
 <div class="announce" aria-hidden="true">
   <div class="announce__track">
-    <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
-    <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
-    <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
-    <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
-    <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
-    <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
+    <div class="announce__group">
+      <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
+      <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
+      <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
+    </div>
+    <div class="announce__group" data-announce-echo>
+      <span>Same-day delivery in Ibadan &amp; nationwide</span><span class="announce__dot"></span>
+      <span>Custom colours, sizes &amp; designs</span><span class="announce__dot"></span>
+      <span>Order on WhatsApp &middot; {CONFIG.phoneDisplay}</span><span class="announce__dot"></span>
+    </div>
   </div>
 </div>
 
