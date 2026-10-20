@@ -39,6 +39,17 @@ export const CONFIG = {
   phoneDisplay: '0907 984 9626',
   instagram: 'https://www.instagram.com/thatfurnituregirl__',
   tiktok: 'https://www.tiktok.com/@thatfurnituregirl_',
+  // Social proof — the master record, verified 13 Oct 2026. To update the
+  // numbers site-wide, edit ONLY these five; every surface rounds them down
+  // through soc() (1,101 -> "1K+", 59,230 -> "59K+"), so the copy stays true
+  // for weeks between checks. No page-level hardcoding.
+  social: {
+    tiktokFollowers: 1101,
+    tiktokLikes: 59230,
+    tiktokVideos: 191,
+    blushViews: 57172,
+    instagramFollowers: 6000,
+  },
   currency: '\u20A6' // ₦
 };
 

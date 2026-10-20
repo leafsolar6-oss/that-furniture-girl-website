@@ -6,6 +6,18 @@
 import { CONFIG, categoryLabel } from '../data/products.js';
 
 /* ₦1,234,567 */
+/* soc(n) — social-proof formatter. Rounds DOWN to a stable unit so hardcoded
+   marketing counts age gracefully: 59,230 -> "59K+", 1,101 -> "1K+",
+   191 -> "190+". Returns { end, suffix, text }: `end` + `suffix` drive the
+   hero count-up (data-count / data-suffix); `text` is the final string for
+   the no-JS / reduced-motion fallback. Never rounds up — we don't claim
+   numbers we haven't hit yet. */
+export function soc(n) {
+  if (n >= 1000) { const end = Math.floor(n / 1000) * 1000; return { end, suffix: 'K+', text: `${end / 1000}K+` }; }
+  if (n >= 100) { const end = Math.floor(n / 10) * 10; return { end, suffix: '+', text: `${end}+` }; }
+  return { end: n, suffix: '', text: String(n) };
+}
+
 export function fmt(n) {
   return CONFIG.currency + Number(n).toLocaleString('en-NG');
 }

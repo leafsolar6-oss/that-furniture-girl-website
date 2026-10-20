@@ -2,6 +2,7 @@
 /* The workshop band — real photos, real counts. Nothing here is invented:
    the three numbers are the same verified figures the hero shows. */
 import { CONFIG } from '../../data/products.js';
+import { soc } from '../../lib/site.js';
 ---
 
 <section class="section workshop" id="workshop">
@@ -28,16 +29,16 @@ import { CONFIG } from '../../data/products.js';
       </p>
       <div class="proof">
         <a class="proof__chip" href={CONFIG.tiktok} target="_blank" rel="noopener">
-          <b>191</b><span>videos of real builds</span>
+          <b>{soc(CONFIG.social.tiktokVideos).text}</b><span>videos of real builds</span>
         </a>
         <a class="proof__chip" href={CONFIG.tiktok} target="_blank" rel="noopener">
-          <b>59,230</b><span>likes across our work</span>
+          <b>{soc(CONFIG.social.tiktokLikes).text}</b><span>likes across our work</span>
         </a>
         <a class="proof__chip" href={CONFIG.tiktok} target="_blank" rel="noopener">
-          <b>1,101</b><span>followers watching</span>
+          <b>{soc(CONFIG.social.tiktokFollowers).text}</b><span>followers watching</span>
         </a>
         <a class="proof__chip" href={CONFIG.instagram} target="_blank" rel="noopener">
-          <b>6,000+</b><span>Instagram followers</span>
+          <b>{soc(CONFIG.social.instagramFollowers).text}</b><span>Instagram followers</span>
         </a>
       </div>
     </div>

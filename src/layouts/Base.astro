@@ -96,8 +96,8 @@ const ld = {
   <link rel="preload" as="font" type="font/woff2" href={base + 'assets/fonts/instrument-serif-latin.woff2'} crossorigin>
   <link rel="preload" as="font" type="font/woff2" href={base + 'assets/fonts/instrument-serif-italic-latin.woff2'} crossorigin>
   {(page === 'home' || page === 'piece') && <link rel="preload" as="image" type="image/webp" href={new URL(base + (page === 'home' ? 'assets/img/opt/blush-sectional.webp' : (ogImagePath || '').replace(/\.jpg$/, '.webp')), Astro.site).href} fetchpriority="high">}
-  <link rel="stylesheet" href="assets/css/style.css?v=20261020G">
-  <link rel="stylesheet" href="assets/css/arrangement.css?v=20261020G">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261020H">
+  <link rel="stylesheet" href="assets/css/arrangement.css?v=20261020H">
 </head>
 <body class={`page-${page || 'home'}`}>
 <a class="skip-link" href="#main">Skip to content</a>
