@@ -1,5 +1,6 @@
 ---
 /* Come and see — showroom band. */
+import { mapsLink, MAPS_Q, MAPS_LL } from '../../lib/site.js';
 ---
 
 <section class="section section--tight">
@@ -11,7 +12,7 @@
           <p>Our showroom is at Iyaganku, New GRA, Ibadan — or send a message and we'll bring the showroom to your phone with photos and videos of what's in stock.</p>
           <div class="btn-row">
             <a class="btn btn--amber btn--lg" href="https://wa.me/2349079849626" data-wa="Hello! I would like to visit the showroom. When is a good time?">Chat on WhatsApp</a>
-            <a class="btn btn--ghost-light btn--lg" href="contact.html">Visit &amp; contact</a>
+            <a class="btn btn--ghost-light btn--lg" href={mapsLink()} target="_blank" rel="noopener" data-map data-map-q={MAPS_Q} data-map-ll={MAPS_LL || undefined}>Get directions</a>
           </div>
         </div>
       </div>

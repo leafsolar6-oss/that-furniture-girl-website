@@ -1988,3 +1988,16 @@ p  { margin: 0; text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   .materials .sw__ring, .sw-modal, .sw-modal .sw-pane, .sw-pane__cta { transition: none; }
 }
+
+/* ==========================================================================
+   MAP DEEP-LINKS — visit links everywhere open Maps with the pin loaded.
+   Keep them looking like the text they replace until hovered.
+   ========================================================================== */
+.site-footer .footer-contact a { color: inherit; text-decoration: none; display: flex; gap: 9px; align-items: flex-start; }
+.site-footer .footer-contact a:hover { text-decoration: underline; }
+.site-footer .footer-contact a svg { margin-top: 2px; }
+.drawer__meta a { color: inherit; text-decoration: none; }
+.drawer__meta a:hover { text-decoration: underline; }
+.showroom__addr a { color: inherit; text-decoration: underline; text-decoration-color: rgba(11,12,14,.3); text-underline-offset: 3px; }
+.grid-tile__alt { display: inline-block; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.grid-tile__alt:hover { color: var(--ink); }

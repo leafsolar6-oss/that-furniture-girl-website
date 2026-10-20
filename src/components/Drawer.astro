@@ -2,6 +2,7 @@
 /* Menu drawer. Two real destinations only — home and the product page —
    plus the WhatsApp button, so the menu never turns into a link farm. */
 import { CONFIG, CATEGORIES } from '../data/products.js';
+import { mapsLink, MAPS_Q, MAPS_LL } from '../lib/site.js';
 
 const { page = '' } = Astro.props;
 const cats = CATEGORIES.filter((c) => c.key !== 'all');
@@ -25,7 +26,7 @@ const here = (key) => (page === key ? 'page' : undefined);
   <div class="drawer__foot">
     <a class="btn btn--primary btn--block" href={`https://wa.me/${CONFIG.whatsapp}`} data-wa="Hello! I would like to order furniture.">Order on WhatsApp</a>
     <div class="drawer__meta">
-      <span>Iyaganku, New GRA, Ibadan</span>
+      <a href={mapsLink()} target="_blank" rel="noopener" data-map data-map-q={MAPS_Q} data-map-ll={MAPS_LL || undefined}>Iyaganku, New GRA, Ibadan — open in Maps</a>
       <span>{CONFIG.phoneDisplay} &middot; @thatfurnituregirl__</span>
     </div>
   </div>

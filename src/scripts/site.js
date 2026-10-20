@@ -304,6 +304,21 @@ function wireCataloguePrice() {
   slider.addEventListener('input', applyC);
 }
 
+/* ---------- maps deep-links ------------------------------------------------ */
+/* Build time gives every visit link a Google Maps URL (opens the Android app
+   directly). On iPhone/iPad we rewrite the href to Apple Maps with the same
+   query \u2014 and the exact pin whenever CONFIG.mapPin is filled in. */
+function wireMapsLinks() {
+  const ios = /iP(hone|ad|od)/.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!ios) return;
+  document.querySelectorAll('a[data-map]').forEach((a) => {
+    const q = a.getAttribute('data-map-q') || 'That Furniture Girl, Ibadan';
+    const ll = a.getAttribute('data-map-ll');
+    a.href = 'https://maps.apple.com/?q=' + encodeURIComponent(q) + (ll ? '&ll=' + ll : '');
+  });
+}
+
 /* ---------- material swatch popup ---------------------------------------- */
 /* Fabric & board swatches in the materials strip open a feel-and-durability
    card. Same shape as the product modal: content cloned into a dialog, body
@@ -497,6 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $$('[data-tools-for]').forEach(wireFilters);
   wireCataloguePrice();
   wireSwatchModal();
+  wireMapsLinks();
   wireHero();
   wireSearch();
 

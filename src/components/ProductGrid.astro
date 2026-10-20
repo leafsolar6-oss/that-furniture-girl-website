@@ -2,7 +2,7 @@
 /* A grid of product cards. Rendered at build time. Two service tiles close
    the grid so the last row never reads as empty space. */
 import ProductCard from './ProductCard.astro';
-import { waLink } from '../lib/site.js';
+import { waLink, mapsLink, MAPS_Q, MAPS_LL } from '../lib/site.js';
 
 const { products = [], id = 'productGrid' } = Astro.props;
 ---
@@ -17,6 +17,9 @@ const { products = [], id = 'productGrid' } = Astro.props;
   <article class="grid-tile grid-tile--wide reveal">
     <h3>Visit the showroom</h3>
     <p>Iyaganku, New GRA, Ibadan · Mon–Sat, 8am–7pm. Sit on it before you decide — or order on WhatsApp from anywhere in Nigeria.</p>
-    <a class="btn btn--outline" href={waLink('Hello! I would like to plan a visit to the showroom.')} target="_blank" rel="noopener">Plan my visit</a>
+    <div class="btn-row">
+      <a class="btn btn--gold" href={mapsLink()} target="_blank" rel="noopener" data-map data-map-q={MAPS_Q} data-map-ll={MAPS_LL || undefined}>Plan my visit — open in Maps</a>
+      <a class="grid-tile__alt" href={waLink('Hello! I would like to plan a visit to the showroom.')} target="_blank" rel="noopener">or arrange it on WhatsApp</a>
+    </div>
   </article>
 </div>

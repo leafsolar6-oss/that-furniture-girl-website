@@ -15,6 +15,19 @@ export function waLink(message) {
   return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message);
 }
 
+/* Search text and optional pin every "visit" link carries, so the runtime
+   Apple Maps rewrite cannot disagree with the build-time Google Maps URL. */
+export const MAPS_Q = CONFIG.brand + ', ' + CONFIG.address;
+export const MAPS_LL = CONFIG.mapPin || '';
+
+/* Map deep-link with the showroom pin pre-loaded. Google's URL opens the
+   Maps app on Android and the web map on desktop; site.js swaps iPhone and
+   iPad over to Apple Maps. */
+export function mapsLink() {
+  const q = MAPS_LL ? MAPS_Q + ', ' + MAPS_LL : MAPS_Q;
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+}
+
 /* The message a customer sends when they tap Order on a piece. */
 export function orderMessage(p) {
   const bits = ['Hello ' + CONFIG.brand + '! I would like to order the ' + p.name];

@@ -1,7 +1,7 @@
 ---
 /* Showroom band — address, number and handles from CONFIG only. */
 import { CONFIG } from '../../data/products.js';
-import { waLink } from '../../lib/site.js';
+import { waLink, mapsLink, MAPS_Q, MAPS_LL } from '../../lib/site.js';
 ---
 
 <section class="section showroom" id="showroom">
@@ -11,17 +11,21 @@ import { waLink } from '../../lib/site.js';
       <h2>Sit on it before you decide</h2>
       <p class="lead">
         The showroom holds finished pieces most days, so you can feel the boucle,
-        open the wardrobes and test the seats before you order. Message us on
-        WhatsApp to plan your visit.
+        open the wardrobes and test the seats before you order. Tap
+        <em>Plan my visit</em> and the pin loads straight in your maps app —
+        or message us first if you want to know what is on the floor today.
       </p>
       <address class="showroom__addr">
-        <span>{CONFIG.address}</span>
+        <a href={mapsLink()} target="_blank" rel="noopener" data-map data-map-q={MAPS_Q} data-map-ll={MAPS_LL || undefined}>{CONFIG.address}</a>
         <a href={`tel:+${CONFIG.whatsapp}`}>{CONFIG.phoneDisplay}</a>
         <a href={CONFIG.instagram} target="_blank" rel="noopener">@thatfurnituregirl__</a>
       </address>
       <div class="btn-row">
-        <a class="btn btn--gold btn--lg" href={waLink('Hello! I would like to plan a visit to the showroom.')}>
-          Plan my visit
+        <a class="btn btn--gold btn--lg" href={mapsLink()} target="_blank" rel="noopener" data-map data-map-q={MAPS_Q} data-map-ll={MAPS_LL || undefined}>
+          Plan my visit — open in Maps
+        </a>
+        <a class="btn btn--outline btn--lg" href={waLink('Hello! I would like to plan a visit to the showroom.')} target="_blank" rel="noopener">
+          Confirm on WhatsApp
         </a>
       </div>
     </div>
