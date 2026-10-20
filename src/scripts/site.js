@@ -369,10 +369,16 @@ function wireSearch() {
 document.addEventListener('DOMContentLoaded', () => {
   modal = document.getElementById('productModal');
 
-  /* WhatsApp links written in the HTML: <a data-wa="message"> */
+  /* WhatsApp links written in the HTML: <a data-wa="message">.
+     Two conventions coexist: data-wa holds plain message text, but the
+     product-card chat buttons store a full wa.me URL there. Accept both. */
+  const waUrl = (v) => {
+    v = (v || '').trim();
+    if (!v) v = 'Hello ' + CONFIG.brand + '! I would like to make an enquiry.';
+    return /^https?:\/\//.test(v) ? v : waLink(v);
+  };
   $$('[data-wa]').forEach((el) => {
-    const msg = el.getAttribute('data-wa') || ('Hello ' + CONFIG.brand + '! I would like to make an enquiry.');
-    el.setAttribute('href', waLink(msg));
+    el.setAttribute('href', waUrl(el.getAttribute('data-wa')));
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
   });
@@ -409,10 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const waBtn = e.target.closest('[data-wa]');
     if (!waBtn) return;
     e.preventDefault();
-    const url = waBtn.getAttribute('href') ||
-      waLink(waBtn.getAttribute('data-wa') ||
-        'Hello ' + CONFIG.brand + '! I would like to make an enquiry.');
-    window.open(url, '_blank', 'noopener');
+    window.open(waUrl(waBtn.getAttribute('href') || waBtn.getAttribute('data-wa')), '_blank', 'noopener');
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { closeModal(); closeDrawer(); }
