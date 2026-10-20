@@ -4,7 +4,8 @@
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { PRODUCTS, CONFIG } from '../data/products.js';
-import { waLink, orderMessage, priceInfo, categoryLabel, specParts, footerNote, imgAlt } from '../lib/site.js';
+import { waLink, orderMessage, priceInfo, categoryLabel, specParts, footerNote, imgAlt, colourVariants } from '../lib/site.js';
+import SwatchMatrix from '../components/SwatchMatrix.astro';
 
 export function getStaticPaths() {
   return PRODUCTS.filter((p) => p.img).map((p) => ({ params: { pid: p.id } }));
@@ -12,7 +13,8 @@ export function getStaticPaths() {
 
 const p = PRODUCTS.find((x) => x.id === Astro.params.pid);
 const price = priceInfo(p);
-const specs = specParts(p);
+const cws = colourVariants(p);
+const specs = cws.length >= 2 ? specParts(p).filter((sp) => sp.k !== 'Colour') : specParts(p);
 if (p.lead && !/pickup/i.test(p.lead)) specs.push({ k: 'Lead time', v: p.lead });
 const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
 ---
@@ -65,7 +67,7 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
             </div>
           )}
 
-          <div class="piece__info">
+          <div class="piece__info" data-cwroot data-pid={p.id}>
             <span class="kicker">{categoryLabel(p.cat)}</span>
             <h1>{p.name}</h1>
             <p class="piece__price">{price.value}<span class="piece__pricenote">{price.note}</span></p>
@@ -80,12 +82,14 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
               ))}
             </dl>
 
+            <SwatchMatrix p={p} />
+
             {p.lead && /pickup/i.test(p.lead) && (
               <p class="piece__offer">✨ Showroom best-seller — available for immediate pickup at the showroom</p>
             )}
 
             <div class="piece__cta">
-              <a class="btn btn--gold btn--lg" href={waLink(orderMessage(p))} target="_blank" rel="noopener">
+              <a class="btn btn--gold btn--lg" data-order href={waLink(orderMessage(p))} target="_blank" rel="noopener">
                 Order on WhatsApp
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>

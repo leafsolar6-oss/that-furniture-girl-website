@@ -8,29 +8,7 @@
    close-up texture circles that open a feel & durability popup. Nothing is
    invented: grouping and counts happen at build time over live product data. */
 import { PRODUCTS } from '../../data/products.js';
-
-const SPLIT = /\s*(?:\+|\/|·|,|&|\band\b|\bor\b|\bwith\b)\s*|\balso\b\s*/;
-const tokensOf = (s) => s.toLowerCase().split(SPLIT).map((t) => t.trim().replace(/\.$/, '')).filter(Boolean);
-
-/* Tint map — longest keys win, so "light grey" beats "grey". */
-const TINT = [
-  ['chocolate', '#4E2E1E'], ['coffee', '#6F4E37'], ['cocoa', '#7B5544'], ['caramel', '#A66A35'],
-  ['cognac', '#9F4A23'], ['terracotta', '#C0693D'], ['umber', '#635147'], ['rust', '#9C4A1A'],
-  ['cider', '#7E3F1D'], ['carton', '#A97F50'], ['mansonia', '#D9C09A'], ['walnut', '#5C4033'],
-  ['mahogany', '#75382E'], ['honey', '#C98F3D'], ['natural wood', '#A98357'], ['wood', '#A98357'],
-  ['off white', '#EFE8DA'], ['off-white', '#EFE8DA'], ['ivory', '#F3EAD3'], ['cream', '#EAD9B8'],
-  ['champagne', '#D6BC8A'], ['sand', '#DCC9A3'], ['taupe', '#A5927E'], ['linen', '#E5DCC8'],
-  ['light grey', '#C4C4C2'], ['light gray', '#C4C4C2'], ['dark grey', '#5E5E5C'], ['dark gray', '#5E5E5C'],
-  ['charcoal', '#3C3B3A'], ['grey', '#9A9A98'], ['gray', '#9A9A98'], ['light ash', '#CFC9BF'],
-  ['ash', '#B9B4AC'], ['swiss', '#EADFC9'], ['white', '#F4F1EA'], ['black', '#17161A'],
-  ['burnt orange', '#B4531E'], ['orange', '#D96A1F'], ['navy', '#1E2A4A'], ['cobalt', '#1F4FA3'],
-  ['royal', '#2A3E8C'], ['blue', '#2E4E7E'], ['gold', '#C9A227'], ['emerald', '#1F6B4A'],
-  ['teal', '#24706E'], ['turquoise', '#2BAFA6'], ['green', '#3E6B4F'], ['burgundy', '#6B2233'],
-  ['red', '#A72626'], ['blush', '#E5B8B4'], ['pink', '#D8A6AE'], ['violet', '#6B4E9C'],
-  ['purple', '#5D3A7E'], ['mustard', '#C99A1E'], ['yellow', '#E0B81E'], ['silver', '#BFC3C6'],
-  ['marble', '#DAD4C8'], ['floral', '#B86B7E'], ['gloss', '#232327'], ['mirror', '#C9D2D6'],
-].sort((a, b) => b[0].length - a[0].length);
-const tintOf = (tok) => TINT.find(([k]) => tok.includes(k))?.[1];
+import { tokensOf, tintStyle } from '../../lib/site.js';
 
 /* Colour families — the first resolvable token names the piece, so
    "Swiss + cider" is filed under Modern Neutrals by its leading colour. */
@@ -62,17 +40,8 @@ const colourFams = FAM_RULES.map(([name]) => ({
   name,
   items: colours.filter((c) => familyOf(c) === name).map((c) => {
     const toks = tokensOf(c);
-    const hexes = [];
-    for (const t of toks) {
-      const h = tintOf(t);
-      if (h && !hexes.includes(h)) hexes.push(h);
-      if (hexes.length === 2) break;
-    }
-    const dot = hexes.length >= 2
-      ? `background: conic-gradient(${hexes[0]} 0 50%, ${hexes[1]} 50% 100%)`
-      : `background: ${hexes[0] || '#CFC8BA'}`;
     const q = (toks[0] || c).replace(/\s+paint$/, '');
-    return { label: c, dot, q };
+    return { label: c, dot: tintStyle(c), q };
   }),
 })).filter((f) => f.items.length);
 

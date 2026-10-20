@@ -1,0 +1,25 @@
+---
+/* Interactive colourway matrix: tappable swatch chips parsed from the
+   product's own colours string. Choosing a chip rewrites the order button
+   beside it (see wireColourway in site.js) so the WhatsApp message asks for
+   exactly that colourway. Renders nothing for single-colour pieces — those
+   keep their plain spec line. */
+import { colourVariants } from '../lib/site.js';
+const { p } = Astro.props;
+const cws = colourVariants(p);
+---
+
+{cws.length >= 2 && (
+  <div class="cwmatrix">
+    <p class="cwmatrix__head">Colourways built <span>{cws.length}</span></p>
+    <div class="cwmatrix__grid" role="group" aria-label={`Colourways ${p.name} has been built in`}>
+      {cws.map((v) => (
+        <button type="button" class="cwchip" data-cw={v.label} aria-pressed="false">
+          <span class="cwchip__dot" style={v.dot}></span>
+          <span class="cwchip__lab">{v.label}</span>
+        </button>
+      ))}
+    </div>
+    <p class="cwmatrix__note" data-cw-note>Tap a colourway \u2014 your order message will ask for exactly that one.</p>
+  </div>
+)}

@@ -16,6 +16,7 @@
    Prices and product details live in src/data/products.js.
    ========================================================================== */
 import { CONFIG, PRODUCTS, categoryLabel } from '../data/products.js';
+import { colourVariants } from '../lib/site.js';
 
 /* ---------- helpers ---------------------------------------------------- */
 
@@ -134,11 +135,26 @@ function observeReveals(scope) {
 
 let modal, lastFocus;
 
+/* Build the swatch matrix for the runtime modal with the same markup the
+   Astro component renders at build time (single source: colourVariants). */
+const escA = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function cwMatrixHTML(cws) {
+  return '<div class="cwmatrix">'
+    + '<p class="cwmatrix__head">Colourways built <span>' + cws.length + '</span></p>'
+    + '<div class="cwmatrix__grid" role="group" aria-label="Colourways this piece has been built in">'
+    + cws.map((v) => '<button type="button" class="cwchip" data-cw="' + escA(v.label) + '" aria-pressed="false">'
+        + '<span class="cwchip__dot" style="' + v.dot + '"></span><span class="cwchip__lab">' + escA(v.label) + '</span></button>').join('')
+    + '</div>'
+    + '<p class="cwmatrix__note" data-cw-note>Tap a colourway \u2014 your order message will ask for exactly that one.</p>'
+    + '</div>';
+}
+
 function openModal(p) {
   if (!modal) return;
   let specs = '';
   const row = (k, v) => { if (v) specs += '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>'; };
-  row('Colour', p.colours);
+  const cws = colourVariants(p);
+  if (cws.length < 2) row('Colour', p.colours);
   row('Material', p.material);
   row('Sizes', p.sizes);
   row('Availability', p.lead);
@@ -150,13 +166,14 @@ function openModal(p) {
     '<div class="modal__panel" role="dialog" aria-modal="true" aria-label="' + p.name + '">' +
       '<button class="modal__close js-close-modal" type="button" aria-label="Close">&times;</button>' +
       '<div class="modal__media"><img src="assets/img/opt/' + p.img + '" alt="' + p.name + '"></div>' +
-      '<div class="modal__body">' +
+      '<div class="modal__body" data-cwroot data-pid="' + p.id + '">' +
         (p.badge ? '<span class="badge badge--clay" style="justify-self:start">' + p.badge + '</span>' : '') +
         '<h3>' + p.name + '</h3>' +
         '<p class="muted">' + p.desc + '</p>' +
         '<dl class="spec-list">' + specs + '</dl>' +
+        (cws.length >= 2 ? cwMatrixHTML(cws) : '') +
         '<div class="price" style="margin-top:4px">' + priceHTML(p) + '</div>' +
-        '<a class="btn btn--primary btn--block" href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">Order on WhatsApp</a>' +
+        '<a class="btn btn--primary btn--block" data-order href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">Order on WhatsApp</a>' +
         '<p class="small muted">' + footerNote(p) + '</p>' +
       '</div>' +
     '</div>';
@@ -343,6 +360,41 @@ function wireMapsLinks() {
     a.href = ll
       ? 'https://maps.apple.com/?ll=' + ll + '&z=18&q=' + encodeURIComponent(q)
       : 'https://maps.apple.com/?q=' + encodeURIComponent(q);
+  });
+}
+
+/* ---------- colourway swatch matrix --------------------------------------- */
+/* One delegated handler for every matrix surface (detail pages, catalogue
+   plates, modal): selecting a chip re-highlights, updates the note and
+   rewrites the order button beside it so the WhatsApp enquiry names that
+   exact colourway. Tapping the active chip clears the choice again. */
+function wireColourway() {
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('.cwchip');
+    if (!chip) return;
+    const root = chip.closest('[data-cwroot]');
+    if (!root) return;
+    const wasOn = chip.classList.contains('is-on');
+    root.querySelectorAll('.cwchip').forEach((c) => {
+      c.classList.remove('is-on');
+      c.setAttribute('aria-pressed', 'false');
+    });
+    let chosen = null;
+    if (!wasOn) {
+      chip.classList.add('is-on');
+      chip.setAttribute('aria-pressed', 'true');
+      chosen = chip.getAttribute('data-cw');
+    }
+    const note = root.querySelector('[data-cw-note]');
+    if (note) note.textContent = chosen
+      ? 'Enquiring about: ' + chosen + '. Tap again to clear.'
+      : 'Tap a colourway \u2014 your order message will ask for exactly that one.';
+    const link = root.querySelector('a[data-order]');
+    const p = PRODUCTS.find((x) => x.id === root.getAttribute('data-pid'));
+    if (link && p) {
+      const msg = orderMessage(chosen ? Object.assign({}, p, { colours: chosen }) : p);
+      link.href = waLink(msg);
+    }
   });
 }
 
@@ -540,6 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireCataloguePrice();
   wireSwatchModal();
   wireMapsLinks();
+  wireColourway();
   wireHero();
   wireSearch();
 

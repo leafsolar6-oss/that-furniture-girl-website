@@ -80,6 +80,76 @@ export function priceInfo(p) {
   return { value: 'Price on request', note: 'Made to order', ask: true };
 }
 
+/* ==========================================================================
+   Colourway engine — shared by the Materials swatch families, the product
+   swatch matrix and the quick-view modal, so tint maths live in exactly
+   one place. Long raw strings like "Light grey + white · also cream +
+   chocolate, navy + white" parse into tappable variant chips.
+   ========================================================================== */
+const COLOUR_SPLIT = /\s*(?:\+|\/|·|,|&|\band\b|\bor\b|\bwith\b)\s*|\balso\b\s*/;
+export const tokensOf = (s) => s.toLowerCase().split(COLOUR_SPLIT).map((t) => t.trim().replace(/\.$/, '')).filter(Boolean);
+
+/* Longest keys win, so "light grey" beats "grey". */
+const TINT = [
+  ['chocolate', '#4E2E1E'], ['coffee', '#6F4E37'], ['cocoa', '#7B5544'], ['caramel', '#A66A35'],
+  ['cognac', '#9F4A23'], ['terracotta', '#C0693D'], ['umber', '#635147'], ['rust', '#9C4A1A'],
+  ['cider', '#7E3F1D'], ['carton', '#A97F50'], ['mansonia', '#D9C09A'], ['walnut', '#5C4033'],
+  ['mahogany', '#75382E'], ['honey', '#C98F3D'], ['natural wood', '#A98357'], ['wood', '#A98357'],
+  ['off white', '#EFE8DA'], ['off-white', '#EFE8DA'], ['ivory', '#F3EAD3'], ['cream', '#EAD9B8'],
+  ['champagne', '#D6BC8A'], ['sand', '#DCC9A3'], ['taupe', '#A5927E'], ['linen', '#E5DCC8'],
+  ['light grey', '#C4C4C2'], ['light gray', '#C4C4C2'], ['dark grey', '#5E5E5C'], ['dark gray', '#5E5E5C'],
+  ['charcoal', '#3C3B3A'], ['grey', '#9A9A98'], ['gray', '#9A9A98'], ['light ash', '#CFC9BF'],
+  ['ash', '#B9B4AC'], ['swiss', '#EADFC9'], ['white', '#F4F1EA'], ['black', '#17161A'],
+  ['burnt orange', '#B4531E'], ['orange', '#D96A1F'], ['navy', '#1E2A4A'], ['cobalt', '#1F4FA3'],
+  ['royal', '#2A3E8C'], ['blue', '#2E4E7E'], ['gold', '#C9A227'], ['emerald', '#1F6B4A'],
+  ['teal', '#24706E'], ['turquoise', '#2BAFA6'], ['green', '#3E6B4F'], ['burgundy', '#6B2233'],
+  ['red', '#A72626'], ['blush', '#E5B8B4'], ['pink', '#D8A6AE'], ['violet', '#6B4E9C'],
+  ['purple', '#5D3A7E'], ['mustard', '#C99A1E'], ['yellow', '#E0B81E'], ['silver', '#BFC3C6'],
+  ['marble', '#DAD4C8'], ['floral', '#B86B7E'], ['gloss', '#232327'], ['mirror', '#C9D2D6'],
+].sort((a, b) => b[0].length - a[0].length);
+export const tintOf = (tok) => TINT.find(([k]) => tok.includes(k))?.[1];
+
+/* CSS for the swatch dot of any colour phrase: flat for one tone, a true
+   half-and-half conic split for two-tone combos. */
+export function tintStyle(phrase) {
+  const hexes = [];
+  for (const t of tokensOf(phrase)) {
+    const x = tintOf(t);
+    if (x && !hexes.includes(x)) hexes.push(x);
+    if (hexes.length === 2) break;
+  }
+  return hexes.length >= 2
+    ? 'background: conic-gradient(' + hexes[0] + ' 0 50%, ' + hexes[1] + ' 50% 100%)'
+    : 'background: ' + (hexes[0] || '#CFC8BA');
+}
+
+const titleish = (s) => s.replace(/(^|[\s+/,&·-])(\p{L})/gu, (_, sep, ch) => sep + ch.toUpperCase());
+
+/* Individual colourway variants of one product, as chip data:
+   the base combo, then anything after "also". Empty list when the piece
+   has no colour story to matrix. */
+export function colourVariants(p) {
+  const raw = ((p && p.colours) || '').trim();
+  if (!raw) return [];
+  const parts = raw.split(/\balso\b/i);
+  const heads = [];
+  const base = parts[0].replace(/\s*·\s*$/, '').trim();
+  if (base) heads.push(base);
+  if (parts[1]) for (const s of parts[1].split(',')) {
+    const t = s.replace(/[.;]+$/, '').trim();
+    if (t) heads.push(t);
+  }
+  const seen = new Set();
+  const out = [];
+  for (const h of heads) {
+    const k = h.toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push({ label: titleish(h), dot: tintStyle(h) });
+  }
+  return out;
+}
+
 /* Card blurb — the title already sits right above the description, so strip
    a leading "The Oloye Set …" restatement at the start of the sentence.
    Product loops become scannable: each line adds news instead of repeating.
