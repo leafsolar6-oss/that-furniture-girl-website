@@ -29,6 +29,10 @@ export const CONFIG = {
      (2026-10-20): "Thatfurnituregirl, J-allen, Iyaganku, New Gra, Ibadan". */
   mapPin: '7.3858471,3.8743966',
   mapPlaceId: 'ChIJ1XfpxCWNORA1v3-WIu1pHA',
+  // Google's own listing title — the Maps URL API needs this exact name
+  // beside the place_id, or it falls back to fuzzy search (verified 2026-10-20:
+  // address-as-query opened a DIFFERENT business).
+  mapPlaceName: 'Thatfurnituregirl',
   // WhatsApp number in international format, digits only
   whatsapp: '2349079849626',
   // how the number is displayed on the site

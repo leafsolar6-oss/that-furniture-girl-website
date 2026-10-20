@@ -28,8 +28,8 @@ export function mapsLink() {
     // Canonical business listing via the Maps URL API — verified to open the
     // shop page itself (name, reviews, one-tap directions). The alternate
     // /maps/place/?q=place_id: form silently drops to an empty map.
-    return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(MAPS_Q)
-      + '&query_place_id=' + CONFIG.mapPlaceId;
+    return 'https://www.google.com/maps/search/?api=1&query='
+      + encodeURIComponent(CONFIG.mapPlaceName || CONFIG.brand) + '&query_place_id=' + CONFIG.mapPlaceId;
   }
   const q = MAPS_LL ? MAPS_Q + ', ' + MAPS_LL : MAPS_Q;
   return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
