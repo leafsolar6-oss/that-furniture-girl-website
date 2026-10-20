@@ -1887,13 +1887,16 @@ body.page-lookbook .lb-spread { scroll-snap-align: none; scroll-margin-top: 0; }
 .lb-sticky {
   top: 86px; left: 50%; right: auto;
   transform: translate(-50%, -160%);
+  /* park fully invisible: the offset alone left a strip over the announcement */
+  visibility: hidden;
+  transition: transform .28s var(--ease, ease), visibility 0s linear .28s;
   width: fit-content; max-width: min(1000px, 94vw);
   border: 1px solid rgba(11,12,14,.12);
   border-radius: 999px;
   background: rgba(253, 251, 249, .98);
   box-shadow: 0 12px 32px rgba(11,12,14,.14), 0 2px 6px rgba(11,12,14,.08);
 }
-.lb-sticky.is-show { transform: translate(-50%, 0); }
+.lb-sticky.is-show { transform: translate(-50%, 0); visibility: visible; transition: transform .28s var(--ease, ease), visibility 0s; }
 .lb-sticky__in {
   background: transparent; border-radius: 999px;
   padding: 7px 8px; gap: 6px;
@@ -1940,7 +1943,10 @@ body.page-lookbook .lb-spread { scroll-snap-align: none; scroll-margin-top: 0; }
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid var(--line-soft, rgba(11,12,14,.08));
   transform: translateY(-130%);
-  transition: transform .28s var(--ease, ease);
+  /* the slide alone can't be trusted to clear the announcement bar at every
+     bar height — visibility guarantees the parked bar never covers anything */
+  visibility: hidden;
+  transition: transform .28s var(--ease, ease), visibility 0s linear .28s;
 }
 .mchipbar::-webkit-scrollbar { display: none; }
 .mchip {
@@ -1952,7 +1958,7 @@ body.page-lookbook .lb-spread { scroll-snap-align: none; scroll-margin-top: 0; }
 .mchip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fff; }
 @media (max-width: 899px) {
   .mchipbar { display: flex; }
-  .mchipbar.is-show { transform: translateY(0); }
+  .mchipbar.is-show { transform: translateY(0); visibility: visible; transition: transform .28s var(--ease, ease), visibility 0s; }
 }
 @media (prefers-reduced-motion: reduce) { .mchipbar { transition: none; } }
 
