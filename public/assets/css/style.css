@@ -1615,3 +1615,68 @@ p  { margin: 0; text-wrap: pretty; }
   .announce, .site-header, .fab, .drawer, .scrim, .product__tools, .search-panel { display: none !important; }
   body { background: #fff; }
 }
+
+/* ==========================================================================
+   HERO HEADLINE ANIMATION — staggered mask reveal for the three title lines,
+   one gold shimmer pass across "Transforms", sequenced support copy.
+   ========================================================================== */
+.hero__title .tl { display: block; overflow: hidden; padding-block: .05em; }
+.hero__title .tl__in {
+  display: inline-block;
+  animation: tlRise .9s cubic-bezier(.22, .61, .21, 1) both;
+}
+.hero__title .tl:nth-child(1) .tl__in { animation-delay: .10s; }
+.hero__title .tl:nth-child(2) .tl__in { animation-delay: .28s; }
+.hero__title .tl:nth-child(3) .tl__in { animation-delay: .46s; }
+
+@keyframes tlRise {
+  from { transform: translateY(108%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* "Transforms" — gold shimmer sweep that settles back to the ink colour. */
+.hero__title em {
+  font-style: italic;
+  background-image: linear-gradient(100deg,
+    currentColor 30%, var(--amber) 42%, #ffe9b0 50%, var(--amber) 58%, currentColor 70%);
+  background-size: 280% 100%;
+  background-position: 130% 0;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  animation: tlShine 1.7s ease-in-out .85s both;
+}
+@keyframes tlShine {
+  from { background-position: 130% 0; }
+  to   { background-position: -130% 0; }
+}
+
+/* "Your living space" — the outline line, where supported. */
+@supports (-webkit-text-stroke: 1px #000) {
+  .hero__title .tl--outline .tl__in {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(43, 33, 24, .8);
+  }
+}
+
+/* Supporting hero copy follows the headline in sequence. */
+@keyframes tlFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero__copy .hero__eyebrow { animation: tlFadeUp .7s ease .05s both; }
+.hero__copy .hero__sub     { animation: tlFadeUp .8s ease .66s both; }
+.hero__copy .btn-row       { animation: tlFadeUp .8s ease .82s both; }
+.hero__copy .hero__cue     { animation: tlFadeUp .8s ease .98s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title .tl__in,
+  .hero__title em,
+  .hero__copy .hero__eyebrow,
+  .hero__copy .hero__sub,
+  .hero__copy .btn-row,
+  .hero__copy .hero__cue {
+    animation: none !important;
+    opacity: 1 !important; transform: none !important;
+  }
+  .hero__title em { background: none; color: inherit; }
+}
