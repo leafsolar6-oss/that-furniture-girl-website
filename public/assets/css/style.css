@@ -1116,6 +1116,14 @@ p  { margin: 0; text-wrap: pretty; }
   font-size: 13px;
 }
 .footer-bottom a:hover { color: var(--amber); }
+.footer-credit {
+  color: rgba(255, 255, 255, .92);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 182, 0, .55);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
 
 /* ==========================================================================
    REVEAL ANIMATION
