@@ -63,6 +63,7 @@ const chapters = CATEGORIES
               <span class="lb-index__c">{c.pieces.length} {c.pieces.length === 1 ? 'piece' : 'pieces'}</span>
             </a>
           ))}
+
         </div>
         <a class="btn btn--gold" href={`#seg-${chapters[0].key}`}>Start browsing</a>
       </div>
@@ -72,9 +73,9 @@ const chapters = CATEGORIES
     <nav class="lb-sticky" aria-label="Catalogue categories">
       <div class="lb-sticky__in">
         <label class="rangebox lb-range">
-          <span data-tool="crangelabel">Premium &middot;</span>
-          <input type="range" data-tool="crange" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
-          <output data-tool="crangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above · {total} pieces</output>
+          <span data-tool="crangelabel"></span>
+          <input type="range" data-tool="crange" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top stop applies no filter and shows the whole lookbook">
+          <output data-tool="crangeout">No filter · all {total} pieces</output>
         </label>
         <div class="lb-sticky__chips">
           {chapters.map((c) => (
@@ -135,6 +136,10 @@ const chapters = CATEGORIES
         })}
       </>
     ))}
+    <div class="lb-empty" hidden>
+      <p>No pieces sit under that price — but nothing is lost. Slide back up for the full lookbook, or message us: every piece here can be built in your budget’s materials.</p>
+      <button type="button" class="btn btn--gold" data-crange-reset>Show all {total} pieces</button>
+    </div>
 
     <!-- ============================ END CARD ============================ -->
     <section class="lb-spread lb-end" aria-label="End of catalogue">

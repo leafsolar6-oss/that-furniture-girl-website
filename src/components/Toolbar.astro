@@ -34,9 +34,9 @@ const shopCount = PRODUCTS.filter((p) => !p.catalogOnly).length;
       <input type="search" data-tool="search" placeholder="Search pieces…" aria-label="Search pieces by name, colour or fabric">
     </label>
     <label class="rangebox">
-      <span data-tool="rangelabel">Premium &middot;</span>
-      <input type="range" data-tool="range" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
-      <output data-tool="rangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above · {shopCount} pieces</output>
+      <span data-tool="rangelabel"></span>
+      <input type="range" data-tool="range" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top stop applies no filter and shows every piece">
+      <output data-tool="rangeout">No filter · {shopCount} pieces</output>
     </label>
     <div class="viewtoggle" role="group" aria-label="Change layout">
       <button class="viewtoggle__btn is-on" type="button" data-tool="grid" aria-pressed="true" aria-label="Grid view">
@@ -49,5 +49,6 @@ const shopCount = PRODUCTS.filter((p) => !p.catalogOnly).length;
   </div>
 </div>
 <div class="empty-state" hidden data-empty-for={gridId}>
-  Nothing matches those filters. Try a wider price or a different word — or message us, we build to order.
+  <p>Nothing matches this combination — but the shop is not empty, the filters simply overlap. Widen the price, clear the search, or start fresh:</p>
+  <button class="empty-state__clear" type="button" data-clear-filters>Show everything again</button>
 </div>

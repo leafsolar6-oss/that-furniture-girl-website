@@ -208,6 +208,7 @@ function wireFilters(toolbar) {
   if (!grid) return;
 
   const emptyMsg = document.querySelector(`[data-empty-for="${gridId}"]`);
+  const clearBtn = document.querySelector(`[data-empty-for="${gridId}"] [data-clear-filters]`);
     const cards = $$('.product-card', grid);
   const filterBar = toolbar.querySelector('.chip-row');
   const search = toolbar.querySelector('[data-tool="search"]');
@@ -223,14 +224,16 @@ function wireFilters(toolbar) {
 
   function rangeText(shown) {
     const atTop = maxPrice >= rangeMax;
-    const base = atTop ? fmt(rangeMax) + ' & above' : fmt(maxPrice);
+    // the top stop IS the default view — say so plainly instead of naming a
+    // price band that reads like an active filter on first glance
+    const base = atTop ? 'No filter' : 'Up to ' + fmt(maxPrice);
     return base + ' \u00b7 ' + shown + (shown === 1 ? ' piece' : ' pieces');
   }
 
   function syncRange() {
     if (!range) return;
     maxPrice = Number(range.value);
-    if (rangeLabel) rangeLabel.textContent = maxPrice >= rangeMax ? 'Premium \u00b7' : 'Up to';
+    if (rangeLabel) rangeLabel.textContent = '';
   }
 
   function apply() {
@@ -256,6 +259,22 @@ function wireFilters(toolbar) {
     });
     if (emptyMsg) emptyMsg.hidden = shown > 0;
     if (range && rangeOut) rangeOut.textContent = rangeText(shown);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      current = 'all';
+      query = '';
+      if (search) search.value = '';
+      if (range) range.value = String(rangeMax);
+      syncRange();
+      if (filterBar) {
+        $$('.chip', filterBar).forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        const all = filterBar.querySelector('[data-cat="all"]');
+        if (all) all.setAttribute('aria-pressed', 'true');
+      }
+      apply();
+    });
   }
 
   if (filterBar) {
@@ -339,11 +358,20 @@ function wireCataloguePrice() {
       const key = sg.id.replace('seg-', '');
       sg.hidden = !plates.some((pl) => pl.dataset.seg === key && !pl.hidden);
     });
-    if (lab) lab.textContent = atTop ? 'Premium \u00b7' : 'Up to';
-    if (out) out.textContent = (atTop ? fmt(maxv) + ' & above' : fmt(v)) + ' \u00b7 ' + shown + ' of ' + plates.length + ' pieces';
+    if (lab) lab.textContent = '';
+    if (out) out.textContent = atTop
+      ? 'No filter \u00b7 all ' + plates.length + ' pieces'
+      : 'Up to ' + fmt(v) + ' \u00b7 ' + shown + ' of ' + plates.length + ' pieces';
+    const lbEmpty = document.querySelector('.lb-empty');
+    if (lbEmpty) lbEmpty.hidden = shown > 0;
   }
 
   slider.addEventListener('input', applyC);
+  const catReset = document.querySelector('[data-crange-reset]');
+  if (catReset) catReset.addEventListener('click', () => {
+    slider.value = String(maxv);
+    applyC();
+  });
 }
 
 /* ---------- maps deep-links ------------------------------------------------ */

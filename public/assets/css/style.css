@@ -2038,3 +2038,25 @@ p  { margin: 0; text-wrap: pretty; }
 .lb-plate .cwchip__dot { width: 18px; height: 18px; }
 .lb-plate .cwchip__lab { font-size: 11.5px; }
 @media (prefers-reduced-motion: reduce) { .cwchip { transition: none; } }
+
+/* ==========================================================================
+   ZERO-FRICTION FILTER STATES (2026-10-20)
+   The top price stop is the default "show everything" view: its prefix span
+   is empty and hidden; zero-state panels carry a one-tap reset.
+   ========================================================================== */
+.rangebox > span:empty { display: none; }
+.empty-state p { margin: 0; }
+.empty-state__clear {
+  margin-top: 14px; background: var(--gold); color: #141312; border: 0; cursor: pointer;
+  font: 800 13.5px var(--font-sans); letter-spacing: .01em;
+  padding: 12px 20px; border-radius: 999px; transition: transform .18s var(--ease);
+}
+.empty-state__clear:hover { transform: translateY(-2px); }
+/* keep the escape hatch tappable where the floating WhatsApp pill or the
+   sticky header could otherwise steal the tap on phones */
+.empty-state__clear, .lb-empty .btn { position: relative; z-index: 80; scroll-margin-block: 130px; }
+.lb-empty {
+  max-width: 560px; margin: clamp(20px, 4vw, 44px) auto clamp(30px, 5vw, 64px);
+  padding: 0 clamp(16px, 4vw, 40px); text-align: center;
+}
+.lb-empty p { margin: 0 0 16px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
