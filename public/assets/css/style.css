@@ -1124,6 +1124,9 @@ p  { margin: 0; text-wrap: pretty; }
   text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
 }
+/* keep the credit line clear of the floating WhatsApp bubble */
+.footer-bottom { padding-block-end: 80px; }
+@media (min-width: 980px) { .footer-bottom { padding-inline-end: 232px; } }
 
 /* ==========================================================================
    REVEAL ANIMATION
