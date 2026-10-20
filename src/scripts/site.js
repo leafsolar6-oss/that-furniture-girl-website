@@ -203,7 +203,14 @@ function wireFilters(toolbar) {
       const textOk = !query || card.dataset.search.includes(query);
       const on = catOk && priceOk && textOk;
       card.hidden = !on;
-      if (on) shown++;
+      if (on) {
+        shown++;
+        /* A card the filter shows must never linger in its pre-reveal
+           (opacity:0) state — the IntersectionObserver/sweep only fires on
+           scroll, so on phones that filtered first, revealed later, matches
+           could stay invisible and the grid would LOOK empty. */
+        if (!card.classList.contains('is-in')) card.classList.add('is-in');
+      }
     });
     if (emptyMsg) emptyMsg.hidden = shown > 0;
     if (range && rangeOut) rangeOut.textContent = rangeText(shown);
