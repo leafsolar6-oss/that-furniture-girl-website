@@ -10,6 +10,10 @@ const { title = 'Trending pieces', gridId = 'productGrid' } = Astro.props;
 import { PRODUCTS } from '../data/products.js';
 const topPrice = Math.max(...PRODUCTS.map((p) => p.priceTo || p.price || 0));
 const step = 50000;
+/* The slider's last stop is a round tier band, treated as open-ended
+   ("· … & above") so pieces priced exactly at the ceiling — or above it —
+   can never be filtered out of the premium range. */
+const tier = Math.max(step, Math.floor(topPrice / step) * step);
 ---
 
 <div class="collection-top reveal" data-tools-for={gridId}>
@@ -25,9 +29,9 @@ const step = 50000;
       <input type="search" data-tool="search" placeholder="Search pieces…" aria-label="Search pieces by name, colour or fabric">
     </label>
     <label class="rangebox">
-      <span>Up to</span>
-      <input type="range" data-tool="range" min="100000" max={topPrice} step={step} value={topPrice} aria-label="Maximum price">
-      <output data-tool="rangeout">&#8358;{topPrice.toLocaleString('en-NG')}+</output>
+      <span data-tool="rangelabel">Premium &middot;</span>
+      <input type="range" data-tool="range" min="100000" max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
+      <output data-tool="rangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above</output>
     </label>
     <div class="viewtoggle" role="group" aria-label="Change layout">
       <button class="viewtoggle__btn is-on" type="button" data-tool="grid" aria-pressed="true" aria-label="Grid view">

@@ -171,6 +171,7 @@ function wireFilters(toolbar) {
   const search = toolbar.querySelector('[data-tool="search"]');
   const range = toolbar.querySelector('[data-tool="range"]');
   const rangeOut = toolbar.querySelector('[data-tool="rangeout"]');
+  const rangeLabel = toolbar.querySelector('[data-tool="rangelabel"]');
   const viewBtns = $$('[data-tool="grid"], [data-tool="list"]', toolbar);
 
   const rangeMax = range ? Number(range.max) : Infinity;
@@ -181,7 +182,9 @@ function wireFilters(toolbar) {
   function syncRange() {
     if (!range) return;
     maxPrice = Number(range.value);
-    if (rangeOut) rangeOut.textContent = fmt(maxPrice) + (maxPrice >= rangeMax ? '+' : '');
+    const atTop = maxPrice >= rangeMax;
+    if (rangeOut) rangeOut.textContent = atTop ? fmt(rangeMax) + ' & above' : fmt(maxPrice);
+    if (rangeLabel) rangeLabel.textContent = atTop ? 'Premium \u00b7' : 'Up to';
   }
 
   function apply() {
@@ -189,8 +192,10 @@ function wireFilters(toolbar) {
     cards.forEach((card) => {
       const catOk = current === 'all' || card.dataset.cat === current;
       const priceValue = card.dataset.price === '' ? null : Number(card.dataset.price);
-      // a price-on-request piece only shows at the full range
-      const priceOk = priceValue ? priceValue <= maxPrice : maxPrice >= rangeMax;
+      // the top band is open-ended ("… & above"): no ceiling at all, so pieces
+      // at or above the tier — and price-on-request made-to-order builds —
+      // stay permanently visible there
+      const priceOk = maxPrice >= rangeMax ? true : (priceValue ? priceValue <= maxPrice : false);
       const textOk = !query || card.dataset.search.includes(query);
       const on = catOk && priceOk && textOk;
       card.hidden = !on;
