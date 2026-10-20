@@ -114,7 +114,7 @@ const matFams = [...MAT_RULES.map(([n]) => n), OTHER_MAT]
           <h3>{f.name} <span class="mat-count">{f.items.length}</span></h3>
           <div class="tint-row">
             {f.items.map((c) => (
-              <a class="tint" href={`/products.html?q=${encodeURIComponent(c.q)}`} title={c.label}>
+              <a class="tint" href={`products.html?q=${encodeURIComponent(c.q)}`} title={c.label}>
                 <span class="tint__dot" style={c.dot} aria-hidden="true"></span>
                 <span class="tint__name">{c.label}</span>
               </a>
@@ -130,7 +130,7 @@ const matFams = [...MAT_RULES.map(([n]) => n), OTHER_MAT]
           <h3>{f.name} <span class="mat-count">{f.items.length}</span></h3>
           <div class="tint-row tint-row--mat">
             {f.items.map((m) => (
-              <a class="matpill" href={`/products.html?q=${encodeURIComponent(m.q)}`} title={m.label}>{m.label}</a>
+              <a class="matpill" href={`products.html?q=${encodeURIComponent(m.q)}`} title={m.label}>{m.label}</a>
             ))}
           </div>
         </div>
