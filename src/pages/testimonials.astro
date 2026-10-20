@@ -7,10 +7,11 @@
    genuinely ours: the owner's real appreciation post and the invitation for
    customers to send theirs. */
 import Base from '../layouts/Base.astro';
-import { TESTIMONIALS, CONFIG } from '../data/products.js';
+import { TESTIMONIALS, SHOWCASE, CONFIG } from '../data/products.js';
 import { waLink } from '../lib/site.js';
 
 const quotes = TESTIMONIALS;
+const showcase = SHOWCASE.filter((s) => s && s.img);
 const reviewMsg =
   'Hello That Furniture Girl! I bought from you and would love to share my experience for your reviews page.';
 ---
@@ -36,6 +37,61 @@ const reviewMsg =
         </div>
       </div>
     </section>
+
+
+    <!-- ============== SHOWCASE — DELIVERED, AT THEIR HOMES ============== -->
+    {showcase.length > 0 && (
+    <section class="section showcase-stage" id="at-home" style="padding-top:clamp(10px,2vw,26px)">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Delivered &mdash; and photographed</span>
+          <h2>Straight from their homes</h2>
+          <p class="lead" style="margin-top:14px">
+            The part nationwide buyers keep asking about: what the pieces look like
+            after they leave our van. These are the real video reviews and setup photos
+            customers send back &mdash; kept exactly inside the chats and stories they
+            arrived in, timestamps and all. Tap any one to open the unedited proof.
+          </p>
+        </div>
+
+        <div class="showcase">
+          {showcase.map((s, i) => {
+            const base = s.img.replace(/\.jpg$/, '');
+            return (
+            <a class="showcase__item reveal" data-delay={i % 3} data-shot href={`assets/img/opt/${s.img}`}
+               target="_blank" rel="noopener" aria-label={`Open the full ${s.src === 'Instagram' ? 'Instagram story' : 'WhatsApp'} screenshot — delivered setup ${i + 1}`}>
+              <span class="showcase__media">
+                {s.video ? (
+                  <video src={s.video} poster={`assets/img/opt/${base}-480.webp`} controls muted playsinline preload="none" />
+                ) : (
+                  <img src={`assets/img/opt/${base}-480.webp`}
+                       srcset={`assets/img/opt/${base}-160.webp 160w, assets/img/opt/${base}-480.webp 480w, assets/img/opt/${s.img} 1000w`}
+                       sizes="(min-width:1024px) 30vw, (min-width:560px) 45vw, 88vw"
+                       alt={s.quote ? `Customer video review from their home — they wrote: “${s.quote}”` : `Customer video review from their home, delivered setup photo ${i + 1}`}
+                       loading="lazy" decoding="async" width="480" height="640" />
+                )}
+                {s.vid && <span class="showcase__vid" aria-label={`Video of ${s.vid} inside the screenshot`}>{"▶"} {s.vid}</span>}
+                <span class={`showcase__src showcase__src--${s.src === 'Instagram' ? 'ig' : 'wa'}`}>{s.src}</span>
+              </span>
+              <span class="showcase__cap">
+                {s.quote && <b class="showcase__quote">&ldquo;{s.quote}&rdquo;</b>}
+                {s.note && <span class="showcase__note">{s.note}</span>}
+              </span>
+            </a>
+            );
+          })}
+        </div>
+
+        <p class="showcase-more reveal">
+          The stories above carry the customers&rsquo; own video clips &mdash; the same reel, uncut,
+          lives on our
+          <a href={CONFIG.instagram} target="_blank" rel="noopener">Instagram</a> and
+          <a href={CONFIG.tiktok} target="_blank" rel="noopener">TikTok</a>.
+          Bought from us? Send your setup photo or video to the shop line and it can headline here next.
+        </p>
+      </div>
+    </section>
+    )}
 
     <!-- ================ REVIEWS — ONE STAGE, ALL THE WORDS ================ -->
     <section class="section" style="padding-top:0">

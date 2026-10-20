@@ -1247,6 +1247,68 @@ export const TESTIMONIALS = [
   }
 ];
 
+/* ==========================================================================
+   SHOWCASE — "Straight from their homes" on the testimonials page: the
+   delivered-setup videos and photos customers send back, kept inside the
+   real chat/story screenshots that prove them. Same rule as TESTIMONIALS:
+   only what actually exists, quoted exactly.
+
+     img:   the screenshot in public/assets/img/opt/ that holds the proof
+     vid:   the video length visible inside that screenshot ('0:07'), or ''
+     src:   'WhatsApp' or 'Instagram' — where the screenshot was taken from
+     quote: the customer's own words from that screenshot (verbatim, or '')
+     note:  one honest line of what the shot shows
+     video: OPTIONAL — if a raw .mp4 is ever exported, drop it in
+            public/assets/vid/ and add the path here; the card then plays it
+            inline, with the screenshot as its poster.
+
+   The section hides itself completely while this list is empty.
+   ========================================================================== */
+export const SHOWCASE = [
+  {
+    img: 'review-08.jpg',
+    vid: '0:07',
+    src: 'WhatsApp',
+    quote: 'Ouuum 🔥 Aww this looks nice',
+    note: 'Faith Awe\u2019s boucle light-ash set \u2014 the 0:07 console-and-sofa tour she sent back after delivery.',
+  },
+  {
+    img: 'review-13.jpg',
+    vid: '0:09',
+    src: 'Instagram',
+    quote: 'Another jealous client is here 😅',
+    note: 'Mr Daniel Adedayo\u2019s living room, filmed the day it landed \u2014 kept on the phone for a year, then sent.',
+  },
+  {
+    img: 'review-18.jpg',
+    vid: '0:05',
+    src: 'Instagram',
+    quote: 'This is so beautiful',
+    note: 'The orange balloon set installed under matching curtains \u2014 0:05 video review from the finished room.',
+  },
+  {
+    img: 'review-03.jpg',
+    vid: '0:23',
+    src: 'Instagram',
+    quote: '',
+    note: 'Her chocolate sectional in the new living room \u2014 0:23 video sent at 18:23, the evening it was delivered.',
+  },
+  {
+    img: 'review-09.jpg',
+    vid: '',
+    src: 'WhatsApp',
+    quote: 'Both church and console came out lovely 🫲  \u00b7 Job well done \u2764\uFE0F',
+    note: 'Two photos of the delivered living room set, sent at 20:23 with the thanks below them.',
+  },
+  {
+    img: 'review-16.jpg',
+    vid: '',
+    src: 'Instagram',
+    quote: 'Good morning. Thank you for your swift service. 🤝',
+    note: 'TV shelf, wall shelves and centre table installed \u2014 posted to story with the reaction bar still on.',
+  },
+];
+
 /* --------------------------------------------------------------------------
    Small lookups the site uses everywhere.
    -------------------------------------------------------------------------- */

@@ -812,9 +812,16 @@ document.addEventListener('DOMContentLoaded', () => {
    the set. The wall's anchors still open the images without JavaScript.
    ========================================================================== */
 (() => {
-  const wall = document.querySelector('.shot-wall');
-  if (!wall) return;
-  const items = Array.from(wall.querySelectorAll('a.shot-wall__item'));
+  const raw = Array.from(document.querySelectorAll('.shot-wall a.shot-wall__item, .showcase a.showcase__item'));
+  /* the showcase re-features some of the wall's screenshots — open once per
+     image so prev/next never lands on the same shot twice */
+  const seenShots = new Set();
+  const items = raw.filter((a) => {
+    const h = a.getAttribute('href');
+    if (seenShots.has(h)) return false;
+    seenShots.add(h);
+    return true;
+  });
   if (!items.length) return;
 
   const box = document.createElement('div');

@@ -2222,3 +2222,58 @@ p  { margin: 0; text-wrap: pretty; }
   .cart-dot.is-pop { animation: none; }
 }
 @media print { .tfg-cart, .tfg-of, .tfg-toast, .addcart, .cart-dot { display: none !important; } }
+
+/* ==========================================================================
+   Showcase — "Straight from their homes": delivered-setup video & photo
+   proof cards on the testimonials page. Cards reuse the shot lightbox via
+   the [data-shot] anchors; media crops to a story-like 4:5 from the top.
+   ========================================================================== */
+.showcase {
+  display: grid; gap: clamp(12px, 1.8vw, 22px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(20px, 3vw, 34px);
+}
+@media (min-width: 1024px) { .showcase { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.showcase__item {
+  position: relative; display: block; color: inherit; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow-sm);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.showcase__item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.showcase__item:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
+.showcase__media { position: relative; display: block; aspect-ratio: 4 / 5; background: var(--premium); }
+.showcase__media img, .showcase__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.showcase__vid {
+  position: absolute; top: 9px; left: 9px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: var(--pill);
+  background: rgba(11, 12, 14, .74); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .05em;
+  backdrop-filter: blur(4px);
+}
+.showcase__src {
+  position: absolute; top: 9px; right: 9px; z-index: 2;
+  padding: 5px 10px; border-radius: var(--pill);
+  font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+.showcase__src--wa { background: rgba(31, 163, 74, .92); color: #fff; }
+.showcase__src--ig { background: rgba(206, 154, 67, .94); color: #231A0C; }
+.showcase__cap { display: block; padding: 12px 15px 14px; border-top: 1px solid var(--line-soft); }
+.showcase__quote {
+  display: block; font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(14.5px, 1.5vw, 16.5px); line-height: 1.45; color: var(--ink);
+}
+.showcase__note { display: block; margin-top: 5px; font-size: 12px; line-height: 1.55; color: var(--muted); }
+.showcase-more {
+  margin: clamp(18px, 2.6vw, 28px) auto 0; max-width: 60ch; text-align: center;
+  font-size: 13px; line-height: 1.7; color: var(--muted);
+}
+.showcase-more a { color: var(--gold-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.showcase-more a:hover { color: var(--gold); }
+@media (max-width: 559px) {
+  .showcase { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .showcase__media { aspect-ratio: 3 / 4; }
+  .showcase__cap { padding: 10px 11px 12px; }
+}
