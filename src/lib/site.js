@@ -80,6 +80,26 @@ export function priceInfo(p) {
   return { value: 'Price on request', note: 'Made to order', ask: true };
 }
 
+/* Card blurb — the title already sits right above the description, so strip
+   a leading "The Oloye Set …" restatement at the start of the sentence.
+   Product loops become scannable: each line adds news instead of repeating.
+   Only the card display is trimmed; the piece's own page keeps the full
+   sentence (that page reads as prose, not as a list). */
+export function cardBlurb(p) {
+  let d = (p.desc || '').trim();
+  if (!d) return '';
+  const head = (p.name || '').split('\u2014')[0].trim();
+  if (head.length > 3) {
+    const esc = head.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp('^(The\\s+)?' + esc + '\\b[,;:]?\\s*[-\u2014]?\\s*', 'i');
+    const stripped = d.replace(re, '');
+    if (stripped && stripped !== d) {
+      d = stripped.charAt(0).toUpperCase() + stripped.slice(1);
+    }
+  }
+  return d;
+}
+
 /* "Colour: X · Material: Y" for the card, as parts the template joins. */
 export function specParts(p) {
   const parts = [];

@@ -1,7 +1,7 @@
 ---
 /* One product card — the whole card leads to the piece's own page;
    the Chat button is the only WhatsApp touch on the card. */
-import { waLink, orderMessage, priceInfo, catLabel } from '../lib/site.js';
+import { waLink, orderMessage, priceInfo, catLabel, cardBlurb } from '../lib/site.js';
 
 const { product: p, delay = 0 } = Astro.props;
 const wa = waLink(orderMessage(p));
@@ -27,7 +27,7 @@ const shown = price.ask ? 'Price on request' : price.value;
     </div>
     <div class="product-card__body">
       <h3 class="product-card__name">{p.name}</h3>
-      <p class="product-card__desc">{p.desc}</p>
+      <p class="product-card__desc">{cardBlurb(p)}</p>
       {p.lead && /pickup/i.test(p.lead) && <p class="prod-offer">✨ Showroom best-seller — ready for pickup</p>}
       <div class="product-card__foot">
         <div class="product-card__price">
