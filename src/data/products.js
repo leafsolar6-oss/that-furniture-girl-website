@@ -601,18 +601,6 @@ export const PRODUCTS = [
     catalogOnly: true
   },
   {
-    id: 'custom-wardrobe',
-    name: 'Custom Wardrobe',
-    cat: 'storage',
-    price: null,
-    colours: '',
-    material: '',
-    lead: '10 working days',
-    desc: 'CUSTOM WARDROBE | You can custom colors, sizes or design of the wardrobe to your taste. Production time: 10 working days.',
-    img: 'custom-wardrobe.jpg',
-    stamped: true
-  },
-  {
     id: 'bubble-bed',
     name: 'Bubble Bed',
     cat: 'beds',
