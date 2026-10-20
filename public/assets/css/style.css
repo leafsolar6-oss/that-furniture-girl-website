@@ -1820,3 +1820,16 @@ p  { margin: 0; text-wrap: pretty; }
   .collection-top .chip-row { width: 100%; }
   .collection-top .filterbar__tools { margin-left: auto; }
 }
+
+/* ==========================================================================
+   CATALOGUE PRICE FILTER — compact slider inline in the pinned chapter bar.
+   Selectors carry the .lb-sticky prefix to out-rank the generic .rangebox
+   rules in arrangement.css (loaded later than this file).
+   ========================================================================== */
+.lb-sticky .lb-range { flex: 0 0 auto; height: 40px; margin-left: 10px; padding: 0 14px; }
+.lb-sticky .lb-range > span { white-space: nowrap; flex: none; }
+.lb-sticky .lb-range input[type="range"] { width: 160px; min-width: 140px; height: 30px; }
+.lb-sticky .lb-range output { font-size: 12px; white-space: nowrap; flex: none; }
+@media (max-width: 560px) {
+  .lb-sticky .lb-range input[type="range"] { width: 150px; min-width: 130px; }
+}

@@ -27,6 +27,15 @@ const cleanDesc = (raw) => {
   return out.replace(/\s{2,}/g, ' ').replace(/[,;—]\s*$/g, '.') || raw;
 };
 
+/* Price band for the catalogue filter — same semantics as the shop toolbar:
+   the slider hugs the cheapest piece at the bottom and ends on an open-
+   ended "… & above" tier so nothing at the top is ever cut off. */
+const step = 50000;
+const topPrice = Math.max(...items.map((p) => p.priceTo || p.price || 0));
+const tier = Math.max(step, Math.floor(topPrice / step) * step);
+const lowPrice = Math.min(...items.filter((p) => p.price).map((p) => p.price));
+const minPrice = Math.max(step, Math.ceil(lowPrice / step) * step);
+
 const chapters = CATEGORIES
   .filter((c) => c.key !== 'all')
   .map((c, i) => ({ ...c, n: i + 1, pieces: items.filter((p) => p.cat === c.key) }))
@@ -64,6 +73,11 @@ const chapters = CATEGORIES
         {chapters.map((c) => (
           <a href={`#seg-${c.key}`} data-seg={c.key}>{c.label}</a>
         ))}
+        <label class="rangebox lb-range">
+          <span data-tool="crangelabel">Premium &middot;</span>
+          <input type="range" data-tool="crange" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
+          <output data-tool="crangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above · {total} pieces</output>
+        </label>
       </div>
     </nav>
 
@@ -81,7 +95,7 @@ const chapters = CATEGORIES
           const f = plate(p);
           const specs = specParts(p);
           return (
-            <article class="lb-spread lb-plate" data-seg={c.key} aria-label={`${p.name} — ${catLabel(p.cat)}`}>
+            <article class="lb-spread lb-plate" data-seg={c.key} data-price={p.price || ''} aria-label={`${p.name} — ${catLabel(p.cat)}`}>
               <div class="lb-media">
                 <picture>
                   <source

@@ -262,6 +262,44 @@ function wireFilters(toolbar) {
   apply();
 }
 
+/* ---------- catalogue price filter --------------------------------------- */
+/* The pinned bar's slider hides plates above the chosen price; a chapter
+   whose pieces are all hidden has its header hidden too. Top band = open
+   ended ("… & above") so premium + made-to-order pieces never disappear. */
+function wireCataloguePrice() {
+  const slider = document.querySelector('[data-tool="crange"]');
+  const bar = slider && slider.closest('.lb-sticky');
+  if (!slider || !bar) return;
+  const out = bar.querySelector('[data-tool="crangeout"]');
+  const lab = bar.querySelector('[data-tool="crangelabel"]');
+  const plates = $$('.lb-plate');
+  const segs = $$('.lb-seg');
+  const maxv = Number(slider.max);
+
+  function applyC() {
+    const v = Number(slider.value);
+    const atTop = v >= maxv;
+    let shown = 0;
+    plates.forEach((pl) => {
+      const pv = pl.dataset.price === '' ? null : Number(pl.dataset.price);
+      const on = atTop || (pv !== null && pv <= v);
+      pl.hidden = !on;
+      if (on) {
+        shown++;
+        if (!pl.classList.contains('is-in')) pl.classList.add('is-in');
+      }
+    });
+    segs.forEach((sg) => {
+      const key = sg.id.replace('seg-', '');
+      sg.hidden = !plates.some((pl) => pl.dataset.seg === key && !pl.hidden);
+    });
+    if (lab) lab.textContent = atTop ? 'Premium \u00b7' : 'Up to';
+    if (out) out.textContent = (atTop ? fmt(maxv) + ' & above' : fmt(v)) + ' \u00b7 ' + shown + ' of ' + plates.length + ' pieces';
+  }
+
+  slider.addEventListener('input', applyC);
+}
+
 /* ---------- hero slider ------------------------------------------------- */
 
 function wireHero() {
@@ -415,6 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   $$('[data-tools-for]').forEach(wireFilters);
+  wireCataloguePrice();
   wireHero();
   wireSearch();
 
