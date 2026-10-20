@@ -779,7 +779,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (strip) $$('button', strip).forEach((b) => b.classList.toggle('is-on', b === th));
   });
 
-  /* Hero stats: gentle count-up when the band scrolls into view.
+    /* Hero workshop film: honour reduced motion (CSS hides the element; this
+     also stops decoding so it costs nothing on battery). */
+  {
+    const v = document.querySelector('.hero__film video');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay'); v.pause();
+    }
+  }
+
+/* Hero stats: gentle count-up when the band scrolls into view.
      Values are the owner's verified figures — nothing is invented. */
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce && 'IntersectionObserver' in window) {
