@@ -400,12 +400,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.closest('.js-close-modal')) closeModal();
   });
 
-  /* Chat buttons open WhatsApp in a new tab without navigating the card */
+  /* Chat buttons open WhatsApp in a new tab without navigating the card.
+     data-wa holds the MESSAGE TEXT, not a URL — route it through waLink().
+     (Using the raw attribute as a URL made the browser navigate to
+     "…/Hello!%20I%20would%20like…" on the site itself, which broke every
+     WhatsApp button.) */
   document.addEventListener('click', (e) => {
     const waBtn = e.target.closest('[data-wa]');
     if (!waBtn) return;
     e.preventDefault();
-    window.open(waBtn.getAttribute('data-wa'), '_blank', 'noopener');
+    const url = waBtn.getAttribute('href') ||
+      waLink(waBtn.getAttribute('data-wa') ||
+        'Hello ' + CONFIG.brand + '! I would like to make an enquiry.');
+    window.open(url, '_blank', 'noopener');
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { closeModal(); closeDrawer(); }
