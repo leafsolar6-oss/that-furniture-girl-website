@@ -24,6 +24,10 @@ export const MAPS_LL = CONFIG.mapPin || '';
    Maps app on Android and the web map on desktop; site.js swaps iPhone and
    iPad over to Apple Maps. */
 export function mapsLink() {
+  if (CONFIG.mapPlaceId) {
+    // canonical business listing: exact pin, reviews and one-tap directions
+    return 'https://www.google.com/maps/place/?q=place_id:' + CONFIG.mapPlaceId;
+  }
   const q = MAPS_LL ? MAPS_Q + ', ' + MAPS_LL : MAPS_Q;
   return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
 }

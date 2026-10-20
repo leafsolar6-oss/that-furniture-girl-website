@@ -25,10 +25,10 @@ export const CONFIG = {
   brand: 'That Furniture Girl',
   city: 'Ibadan, Oyo State',
   address: 'Iyaganku, New GRA, Ibadan 200273, Oyo State',
-  /* Exact pin for map deep-links. Leave '' to let Maps resolve the shop by
-     name+address; paste "lat,lng" (e.g. '7.881234,3.951234' from a Google
-     Maps share link) to pin the front door itself. */
-  mapPin: '',
+  /* Exact pin for map deep-links — from the owner's Google Maps share link
+     (2026-10-20): "Thatfurnituregirl, J-allen, Iyaganku, New Gra, Ibadan". */
+  mapPin: '7.3858471,3.8743966',
+  mapPlaceId: 'ChIJ1XfpxCWNORA1v3-WIu1pHA',
   // WhatsApp number in international format, digits only
   whatsapp: '2349079849626',
   // how the number is displayed on the site

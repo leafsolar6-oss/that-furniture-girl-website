@@ -315,7 +315,9 @@ function wireMapsLinks() {
   document.querySelectorAll('a[data-map]').forEach((a) => {
     const q = a.getAttribute('data-map-q') || 'That Furniture Girl, Ibadan';
     const ll = a.getAttribute('data-map-ll');
-    a.href = 'https://maps.apple.com/?q=' + encodeURIComponent(q) + (ll ? '&ll=' + ll : '');
+    a.href = ll
+      ? 'https://maps.apple.com/?ll=' + ll + '&z=18&q=' + encodeURIComponent(q)
+      : 'https://maps.apple.com/?q=' + encodeURIComponent(q);
   });
 }
 
