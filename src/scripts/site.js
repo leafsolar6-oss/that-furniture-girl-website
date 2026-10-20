@@ -612,6 +612,35 @@ function wireSearch() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 }
 
+/* ---------- chat FAB: wake politely -------------------------------------- */
+
+/* The "Chat with a Designer" pill stays parked until the visitor has actually
+   looked around — 30 seconds of dwell, or 5 furniture pieces scrolled past,
+   whichever comes first — then it slides in and stays. */
+function wakeFab() {
+  const fab = document.querySelector('.fab');
+  if (!fab) return;
+  let awake = false;
+  const passed = () => {
+    const items = document.querySelectorAll('.product-card:not([hidden]), .lb-plate:not([hidden])');
+    let n = 0;
+    for (const el of items) {
+      if (el.getBoundingClientRect().top < 120) { n++; if (n >= 5) return n; } else break;
+    }
+    return n;
+  };
+  function onScroll() { if (passed() >= 5) wake(); }
+  function wake() {
+    if (awake) return;
+    awake = true;
+    fab.classList.add('is-awake');
+    window.removeEventListener('scroll', onScroll);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.setTimeout(wake, 30000);
+  if (passed() >= 5) wake(); /* reloaded mid-page or restored scroll */
+}
+
 /* ---------- announcement marquee --------------------------------------- */
 
 /* The bar's second copy exists only to make the loop seamless. Looping is
@@ -679,6 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireMapsLinks();
   wireColourway();
   wireAnnounce();
+  wakeFab();
   wireHero();
   wireSearch();
 

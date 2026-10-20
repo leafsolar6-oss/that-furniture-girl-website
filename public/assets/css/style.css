@@ -1083,16 +1083,20 @@ p  { margin: 0; text-wrap: pretty; }
   transition: transform .25s var(--ease), box-shadow .25s var(--ease);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  animation: fabIn .55s var(--ease) .5s backwards;
+  /* parked until the visitor has looked around: site.js adds .is-awake after
+     30s of dwell or 5 pieces browsed; visibility:hidden also means the parked
+     pill can never block taps on the cards underneath */
+  visibility: hidden;
 }
+.fab.is-awake { visibility: visible; animation: fabIn .55s var(--ease) backwards; }
 .fab:hover, .fab:focus-visible { transform: translateY(-3px) scale(1.02); box-shadow: 0 22px 44px -14px rgba(37,211,102,.9); }
 .fab:active { transform: translateY(-1px) scale(.99); }
 .fab svg { width: 22px; height: 22px; flex: none; }
 .fab::after {
   content: ""; position: absolute; inset: -4px; border-radius: inherit;
   border: 2px solid rgba(37,211,102,.55); pointer-events: none;
-  animation: fabRing 2.6s ease-out 1.4s 3;
 }
+.fab.is-awake::after { animation: fabRing 2.6s ease-out .3s 3; }
 @keyframes fabIn { from { opacity: 0; transform: translateY(14px) scale(.94); } }
 @keyframes fabRing { 0% { opacity: .9; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.28); } }
 @media (max-width: 560px) {
@@ -1100,8 +1104,8 @@ p  { margin: 0; text-wrap: pretty; }
   .fab svg { width: 20px; height: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .fab { animation: none; }
-  .fab::after { animation: none; opacity: 0; }
+  .fab, .fab.is-awake { animation: none; }
+  .fab::after, .fab.is-awake::after { animation: none; opacity: 0; }
 }
 
 /* ==========================================================================
