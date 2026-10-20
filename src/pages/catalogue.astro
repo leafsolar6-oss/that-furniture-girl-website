@@ -5,7 +5,7 @@
    shop pages only. Chapters follow the category order. */
 import Base from '../layouts/Base.astro';
 import { PRODUCTS, CONFIG, CATEGORIES } from '../data/products.js';
-import { waLink, orderMessage, catLabel, specParts } from '../lib/site.js';
+import { waLink, orderMessage, catLabel, specParts, cardBlurb } from '../lib/site.js';
 
 const items = PRODUCTS;
 const total = items.length;
@@ -117,7 +117,7 @@ const chapters = CATEGORIES
                   <span class="lb-cat">{catLabel(p.cat)}</span>
                 </div>
                 <h3 class="lb-name">{p.name}</h3>
-                {p.desc && <p class="lb-desc">{cleanDesc(p.desc)}</p>}
+                {p.desc && <p class="lb-desc">{cardBlurb({ name: p.name, desc: cleanDesc(p.desc) })}</p>}
                 {specs.length > 0 && <p class="lb-specs">{specs.map((sp) => `${sp.k}: ${sp.v}`).join(' · ')}</p>}
                 {p.lead && (/pickup/i.test(p.lead)
                   ? <p class="lb-lead lb-offer">✨ Showroom best-seller — available for immediate pickup</p>
