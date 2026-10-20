@@ -525,12 +525,12 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-cider-grey',
-    name: 'Wooden Bed — Cider + Grey Panels',
+    name: 'Natural Wood Bed Frame',
     cat: 'beds',
     price: null,
-    colours: 'Cider wood + grey panels',
+    colours: 'Natural wood + grey panels',
     material: 'Wooden frame with padded headboard',
-    desc: 'A cider-toned bed with grey padded panels set into the headboard and a deep storage base.',
+    desc: 'A natural wood bed frame with grey padded panels set into the headboard and a deep storage base.',
     img: 'board-bed-cider-grey.jpg',
     catalogOnly: true
   },
