@@ -1895,7 +1895,7 @@ p  { margin: 0; text-wrap: pretty; }
   display: flex; align-items: center; gap: 8px;
 }
 .materials .mat-count {
-  font-size: 10.5px; font-weight: 800; letter-spacing: .04em; color: #7a5c14;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .04em; color: #6b4d10;
   background: rgba(199,155,45,.15); border: 1px solid rgba(199,155,45,.4);
   padding: 1px 8px; border-radius: 999px;
 }
@@ -2025,7 +2025,7 @@ p  { margin: 0; text-wrap: pretty; }
   color: var(--muted); font-family: var(--font-sans);
 }
 .cwmatrix__head span {
-  font-size: 10.5px; font-weight: 800; letter-spacing: .04em; color: #7a5c14;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .04em; color: #6b4d10;
   background: rgba(199,155,45,.15); border: 1px solid rgba(199,155,45,.4);
   padding: 1px 8px; border-radius: 999px;
 }
@@ -2258,8 +2258,9 @@ p  { margin: 0; text-wrap: pretty; }
   font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
   backdrop-filter: blur(4px);
 }
-.showcase__src--wa { background: rgba(31, 163, 74, .92); color: #fff; }
-.showcase__src--ig { background: rgba(206, 154, 67, .94); color: #231A0C; }
+/* cream plates so the chip stays legible over any photo underneath */
+.showcase__src--wa { background: rgba(255,255,255,.92); color: #14562B; }
+.showcase__src--ig { background: rgba(255,255,255,.92); color: #6F5314; }
 .showcase__cap { display: block; padding: 12px 15px 14px; border-top: 1px solid var(--line-soft); }
 .showcase__quote {
   display: block; font-family: var(--font-display); font-weight: 400;
