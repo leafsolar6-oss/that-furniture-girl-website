@@ -176,7 +176,7 @@ export const PRODUCTS = [
   },
   {
     id: 'upholstery-bed-navy',
-    name: 'Upholstery Bed + 2 Bedsides — Navy Blue',
+    name: 'Upholstery Bed + 2 Bedsides',
     cat: 'beds',
     price: 450000,
     colours: 'Navy blue',
@@ -188,7 +188,7 @@ export const PRODUCTS = [
   },
   {
     id: 'jewel-balloon-black',
-    name: 'Jewel Balloon L-Shaped Sectionals — Black',
+    name: 'Jewel Balloon Sectional',
     cat: 'sofas',
     price: 350000,
     badge: 'Best seller',
@@ -201,7 +201,7 @@ export const PRODUCTS = [
   },
   {
     id: 'oloye-set',
-    name: 'Oloye Set — Cream with Marble Print',
+    name: 'Oloye Set',
     cat: 'sets',
     price: 650000,
     badge: 'Best seller',
@@ -214,12 +214,13 @@ export const PRODUCTS = [
   },
   {
     id: 'centre-table-oval-white',
-    name: 'Centre Table — White Oval (+5mm Glass)',
+    name: 'Centre Table',
     cat: 'tables',
     price: 150000,
     priceTo: 200000,
     badge: 'Best seller',
     colours: 'White',
+    spec: 'Oval · +5mm glass',
     material: 'MDF or HDF · oval + 5mm glass',
     lead: 'Available for immediate pickup',
     desc: 'A white oval centre table topped with 5mm glass, built in MDF or HDF — a best seller, in the showroom now for immediate pickup.',
@@ -228,7 +229,7 @@ export const PRODUCTS = [
   },
   {
     id: 'royalty-set',
-    name: 'Royalty Set — Champagne Gold & Brown',
+    name: 'Royalty Set',
     cat: 'sets',
     price: 2000000,
     badge: 'Best seller',
@@ -242,7 +243,7 @@ export const PRODUCTS = [
 
   {
     id: 'jewel-drafted-set-grey',
-    name: 'Jewel Drafted Set — Dark Grey',
+    name: 'Jewel Drafted Set',
     cat: 'sets',
     price: 430000,
     badge: 'Best seller',
@@ -255,7 +256,7 @@ export const PRODUCTS = [
   },
   {
     id: 'jide-buttoned-brown',
-    name: 'The Jide Buttoned Design — Brown',
+    name: 'The Jide Buttoned Design',
     cat: 'sets',
     price: 450000,
     badge: 'Best seller',
@@ -268,7 +269,7 @@ export const PRODUCTS = [
   },
   {
     id: 'blush-sectional-off-white',
-    name: 'Blush Sectional — Off White',
+    name: 'Blush Sectional',
     cat: 'sofas',
     price: 400000,
     badge: 'Best seller',
@@ -281,7 +282,7 @@ export const PRODUCTS = [
   },
   {
     id: 'jewel-sectional-off-white',
-    name: 'Jewel L-Shaped Sectional — Off White',
+    name: 'Jewel L-Shaped Sectional',
     cat: 'sofas',
     price: 350000,
     badge: 'Best seller',
@@ -294,7 +295,7 @@ export const PRODUCTS = [
   },
   {
     id: 'upholstery-bed-off-white-ottoman',
-    name: 'Upholstery Bed + 2 Bedsides + Ottoman — Off White',
+    name: 'Upholstery Bed + 2 Bedsides + Ottoman',
     cat: 'beds',
     price: 550000,
     colours: 'Off white',
@@ -306,7 +307,7 @@ export const PRODUCTS = [
   },
   {
     id: 'yaks-buttoned-grey',
-    name: 'The Yaks Buttoned Design — Grey',
+    name: 'The Yaks Buttoned Design',
     cat: 'sofas',
     price: 550000,
     badge: 'Best seller',
@@ -319,7 +320,7 @@ export const PRODUCTS = [
   },
   {
     id: 'vine-design-chocolate-carton',
-    name: 'The Vine Design — Chocolate Brown + Carton',
+    name: 'The Vine Design',
     cat: 'sofas',
     price: 400000,
     badge: 'Best seller',
@@ -332,7 +333,7 @@ export const PRODUCTS = [
   },
   {
     id: 'yems-l-sectional',
-    name: 'Yems L-Shaped Sectionals — Brown + Off White',
+    name: 'Yems L-Shaped Sectional',
     cat: 'sofas',
     price: 350000,
     badge: 'Best seller',
@@ -345,7 +346,7 @@ export const PRODUCTS = [
   },
   {
     id: 'headroll-ash',
-    name: 'Headroll Design — Ash',
+    name: 'Headroll Design',
     cat: 'sets',
     price: 400000,
     badge: 'Best seller',
@@ -358,7 +359,7 @@ export const PRODUCTS = [
   },
   {
     id: 'carving-side-ash-black',
-    name: 'Carving Side — Ash + Black',
+    name: 'Carving Side',
     cat: 'sets',
     price: 500000,
     badge: 'Best seller',
@@ -371,7 +372,7 @@ export const PRODUCTS = [
   },
   {
     id: 'tv-shelf-black',
-    name: 'TV Shelf — Black',
+    name: 'TV Shelf',
     cat: 'storage',
     price: 150000,
     priceTo: 200000,
@@ -386,12 +387,13 @@ export const PRODUCTS = [
   },
   {
     id: 'tv-shelf-cider',
-    name: 'TV Shelf — Cider (High Gloss Top)',
+    name: 'TV Shelf',
     cat: 'storage',
     price: 150000,
     priceTo: 200000,
     badge: 'Best seller',
     colours: 'Cider',
+    spec: 'High-gloss top',
     material: 'MDF or HDF · high gloss top',
     sizes: '60 inches height · 20 inches depth',
     lead: 'Available for immediate pickup',
@@ -401,7 +403,7 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-black-cream',
-    name: 'Wooden Bed — Black + Cream',
+    name: 'Wooden Bed',
     cat: 'beds',
     price: null,
     colours: 'Black + cream',
@@ -412,7 +414,7 @@ export const PRODUCTS = [
   },
   {
     id: 'arch-accent-set-grey',
-    name: 'The Arch Accent Set — Grey Marble',
+    name: 'The Arch Accent Set',
     cat: 'sets',
     price: null,
     colours: 'Grey marble print',
@@ -423,7 +425,7 @@ export const PRODUCTS = [
   },
   {
     id: 'arch-accent-set-maroon',
-    name: 'The Arch Accent Set — Maroon',
+    name: 'The Arch Accent Set',
     cat: 'sets',
     price: null,
     colours: 'Maroon brown',
@@ -434,7 +436,7 @@ export const PRODUCTS = [
   },
   {
     id: 'hex-quilted-bed-grey',
-    name: 'Hex Quilted Bed — Grey',
+    name: 'Hex Quilted Bed',
     cat: 'beds',
     price: null,
     colours: 'Dark grey',
@@ -445,7 +447,7 @@ export const PRODUCTS = [
   },
   {
     id: 'balloon-sectional-grey-orange',
-    name: 'Balloon Modular Sectional — Grey',
+    name: 'Balloon Modular Sectional',
     cat: 'sofas',
     price: null,
     colours: 'Grey with orange accents',
@@ -456,7 +458,7 @@ export const PRODUCTS = [
   },
   {
     id: 'marble-panel-bed-white',
-    name: 'Marble Panel Bed — White + Grey',
+    name: 'Marble Panel Bed',
     cat: 'beds',
     price: null,
     colours: 'White marble-look + grey',
@@ -467,7 +469,7 @@ export const PRODUCTS = [
   },
   {
     id: 'balloon-sofa-maroon',
-    name: 'Balloon Sofa — Maroon',
+    name: 'Balloon Sofa',
     cat: 'sofas',
     price: null,
     colours: 'Maroon brown',
@@ -478,7 +480,7 @@ export const PRODUCTS = [
   },
   {
     id: 'straight-arm-sofa-cream',
-    name: 'Straight Arm Sofa — Cream',
+    name: 'Straight Arm Sofa',
     cat: 'sofas',
     price: null,
     colours: 'Cream + brown cushions',
@@ -489,7 +491,7 @@ export const PRODUCTS = [
   },
   {
     id: 'round-arm-sofa-cream',
-    name: 'Round Arm Sofa — Cream',
+    name: 'Round Arm Sofa',
     cat: 'sofas',
     price: null,
     colours: 'Cream + chocolate cushions',
@@ -500,7 +502,7 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-walnut-brown',
-    name: 'Wooden Bed — Walnut + Brown Panels',
+    name: 'Wooden Bed',
     cat: 'beds',
     price: null,
     colours: 'Light walnut + brown panels',
@@ -511,7 +513,7 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-cream-inlay',
-    name: 'Wooden Bed — Cream Inlay',
+    name: 'Wooden Bed',
     cat: 'beds',
     price: null,
     colours: 'Walnut + cream inlay',
@@ -522,7 +524,7 @@ export const PRODUCTS = [
   },
   {
     id: 'arch-slat-bed-light',
-    name: 'Arch Slat Bed — Light Wood',
+    name: 'Arch Slat Bed',
     cat: 'beds',
     price: null,
     colours: 'Light wood',
@@ -544,7 +546,7 @@ export const PRODUCTS = [
   },
   {
     id: 'duo-lounge-chairs-cream-choc',
-    name: 'Duo Lounge Chairs — Cream + Chocolate',
+    name: 'Duo Lounge Chairs',
     cat: 'sets',
     price: null,
     colours: 'Cream + chocolate',
@@ -555,7 +557,7 @@ export const PRODUCTS = [
   },
   {
     id: 'ribbed-club-set-mauve',
-    name: 'Ribbed Club Set — Mauve Brown',
+    name: 'Ribbed Club Set',
     cat: 'sets',
     price: null,
     colours: 'Mauve brown + dark chocolate',
@@ -566,7 +568,7 @@ export const PRODUCTS = [
   },
   {
     id: 'dining-set-grey-velvet',
-    name: 'Dining Set — Grey Velvet',
+    name: 'Dining Set',
     cat: 'dining',
     price: null,
     colours: 'Grey chairs + black table',
@@ -577,7 +579,7 @@ export const PRODUCTS = [
   },
   {
     id: 'marble-boxy-set-grey',
-    name: 'Marble Boxy Set — Grey',
+    name: 'Marble Boxy Set',
     cat: 'sets',
     price: null,
     colours: 'Grey marble print',
@@ -588,7 +590,7 @@ export const PRODUCTS = [
   },
   {
     id: 'nest-centre-tables-walnut',
-    name: 'Nest Centre Tables — Walnut',
+    name: 'Nest Centre Tables',
     cat: 'tables',
     price: null,
     colours: 'Walnut',
@@ -599,7 +601,7 @@ export const PRODUCTS = [
   },
   {
     id: 'channel-sectional-blue-grey',
-    name: 'Channel Sectional — Blue Grey',
+    name: 'Channel Sectional',
     cat: 'sofas',
     price: null,
     colours: 'Blue grey',
@@ -623,7 +625,7 @@ export const PRODUCTS = [
   },
   {
     id: 'oloye-set-dark-grey',
-    name: 'Oloye Set — Dark Grey',
+    name: 'Oloye Set',
     cat: 'sets',
     price: 650000,
     colours: 'Dark Grey with Marble Print',
@@ -647,7 +649,7 @@ export const PRODUCTS = [
   },
   {
     id: 'blush-sectional-burnt-orange',
-    name: 'Blush Sectional — Burnt Orange + White',
+    name: 'Blush Sectional',
     cat: 'sofas',
     price: 500000,
     colours: 'Burnt Orange + White',
@@ -659,7 +661,7 @@ export const PRODUCTS = [
   },
   {
     id: 'carving-side-grey-black',
-    name: 'Carving Side — Grey + Black',
+    name: 'Carving Side',
     cat: 'sets',
     price: 500000,
     colours: 'Grey and Black',
@@ -671,7 +673,7 @@ export const PRODUCTS = [
   },
   {
     id: 'oloye-set-chocolate',
-    name: 'Oloye Set — Chocolate Brown',
+    name: 'Oloye Set',
     cat: 'sets',
     price: 650000,
     colours: 'Chocolate Brown with Marble Print',
@@ -683,7 +685,7 @@ export const PRODUCTS = [
   },
   {
     id: 'upholstery-bed-grey-2bedside',
-    name: 'Upholstery Bed + 2 Bedside Drawers — Grey + Silver',
+    name: 'Upholstery Bed + 2 Bedside Drawers',
     cat: 'beds',
     price: 400000,
     colours: 'Grey + Silver',
@@ -696,7 +698,7 @@ export const PRODUCTS = [
   },
   {
     id: 'hdf-bed-bedside-white-black',
-    name: 'HDF Bed + 1 Bedside Drawers — White + Black',
+    name: 'HDF Bed + 1 Bedside Drawer',
     cat: 'beds',
     price: 250000,
     colours: 'White + Black',
@@ -709,7 +711,7 @@ export const PRODUCTS = [
   },
   {
     id: 'upholstery-bed-grey-1bedside',
-    name: 'Upholstery Bed + 1 Bedside Drawers — Grey + Off White',
+    name: 'Upholstery Bed + 1 Bedside Drawer',
     cat: 'beds',
     price: 250000,
     colours: 'Grey + Off White',
@@ -722,7 +724,7 @@ export const PRODUCTS = [
   },
   {
     id: 'centre-piece-table-stools-brown',
-    name: 'Centre Piece (Table + Stools) — Brown',
+    name: 'Centre Piece (Table + Stools)',
     cat: 'tables',
     price: 100000,
     colours: 'Brown',
@@ -1093,7 +1095,7 @@ const CATALOGUE_IMPORTS_3 = [
   },
   {
     id: 'upholstery-bed-cream-gold',
-    name: 'Upholstery Bed — Cream + Gold',
+    name: 'Upholstery Bed',
     cat: 'beds',
     price: 320000,
     colours: 'Cream + gold',
@@ -1116,7 +1118,7 @@ PRODUCTS.push(...CATALOGUE_IMPORTS_3);
 const CATALOGUE_IMPORTS_3B = [
   {
     id: 'blush-cream-chocolate',
-    name: 'Blush Sectional — Cream + Chocolate Brown',
+    name: 'Blush Sectional',
     cat: 'sofas',
     price: 500000,
     badge: 'Best seller',
@@ -1144,7 +1146,7 @@ const CATALOGUE_IMPORTS_3B = [
   },
   {
     id: 'blush-navy-white',
-    name: 'Blush Sectional — Navy Blue + White',
+    name: 'Blush Sectional',
     cat: 'sofas',
     price: 500000,
     badge: 'Best seller',
@@ -1158,7 +1160,7 @@ const CATALOGUE_IMPORTS_3B = [
   },
   {
     id: 'blush-chocolate-white',
-    name: 'Blush Sectional — Chocolate Brown + White',
+    name: 'Blush Sectional',
     cat: 'sofas',
     price: 500000,
     badge: 'Best seller',
@@ -1172,7 +1174,7 @@ const CATALOGUE_IMPORTS_3B = [
   },
   {
     id: 'three-seaters-cream-brown',
-    name: '3 Seaters — Cream + Brown',
+    name: '3 Seaters',
     cat: 'sofas',
     price: 250000,
     badge: 'Best seller',
@@ -1267,7 +1269,7 @@ export function categoryLabel(key) {
 
 /* Plain-text search blob, built once per product at build time. */
 PRODUCTS.forEach((p) => {
-  p.haystack = [p.name, p.colours, p.material, p.desc, categoryLabel(p.cat), p.sizes]
+  p.haystack = [p.name, p.colours, p.material, p.spec, p.desc, categoryLabel(p.cat), p.sizes]
     .filter(Boolean)
     .join(' ')
     .toLowerCase();

@@ -1955,3 +1955,13 @@ body.page-lookbook .lb-spread { scroll-snap-align: none; scroll-margin-top: 0; }
   .mchipbar.is-show { transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) { .mchipbar { transition: none; } }
+
+/* ==========================================================================
+   CARD SUBTEXT (owner 2026-10-20): colourway/finish moved out of titles
+   into a secondary line under the name.
+   ========================================================================== */
+.product-card__sub {
+  margin: 2px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--muted);
+}
+@media (max-width: 559px) { .product-card__sub { font-size: 10.5px; letter-spacing: .03em; } }

@@ -36,6 +36,25 @@ export function mapsLink() {
 }
 
 /* The message a customer sends when they tap Order on a piece. */
+/* Card / plate subtext: the piece's colourway (plus a short fabric word when
+   the material IS just a fabric, so "Black" + "Velvet" reads "Black Velvet"),
+   then any finish spec that used to clutter the title. */
+export function subline(p) {
+  if (!p) return '';
+  let c = (p.colours || '').trim();
+  /* the "· also …" colourway list belongs to the swatch matrix, not the line */
+  const cut = c.indexOf(' \u00b7 also ');
+  if (cut > -1) c = c.slice(0, cut);
+  const m = (p.material || '').trim();
+  if (c && c.length <= 22 && m && /^[A-Za-z ]+$/.test(m) && m.split(/\s+/).length <= 2 && m.length <= 18) {
+    c = c + ' ' + m.split(/\s+/).map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+  }
+  const bits = [];
+  if (c) bits.push(c);
+  if (p.spec) bits.push(p.spec);
+  return bits.join(' \u00b7 ');
+}
+
 export function orderMessage(p) {
   /* Structured, sales-ready enquiry: the team sees the exact listing,
      the colourway, the live price and the ask (pickup today / deposit to

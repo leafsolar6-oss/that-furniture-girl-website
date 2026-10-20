@@ -335,7 +335,7 @@ p  { margin: 0; text-wrap: pretty; }
 /* Two identical groups = one seamless -50% loop. site.js only enables the
    loop when a single copy actually overflows the bar; otherwise the echo
    copy stays display:none so the copy can never double-render in place. */
-.announce__group { display: flex; align-items: center; gap: 34px; padding-right: 34px; flex: none; }
+.announce__group { display: flex; align-items: center; gap: 34px; padding-right: clamp(90px, 30vw, 280px); flex: none; }
 .announce__group > span { display: inline-flex; align-items: center; gap: 34px; }
 .announce__dot {
   width: 4px; height: 4px; border-radius: 50%;
