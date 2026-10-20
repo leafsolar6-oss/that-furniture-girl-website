@@ -1,0 +1,67 @@
+---
+/* Self-service order form. Turns the list into ONE complete WhatsApp message —
+   who you are, where it goes, notes — so the first chat already has everything
+   the team needs. Still no payment on the site; WhatsApp stays the checkout. */
+---
+
+<div class="tfg-of" id="tfgForm" aria-hidden="true">
+  <div class="tfg-of__scrim" data-of-scrim></div>
+  <div class="tfg-of__panel" role="dialog" aria-modal="true" aria-labelledby="tfgOfTitle">
+    <button type="button" class="tfg-of__close" data-of-cancel aria-label="Close">&times;</button>
+    <div class="tfg-of__form">
+      <p class="tfg-cart__kicker">Almost done</p>
+      <h2 id="tfgOfTitle" class="tfg-of__title">Send your order list</h2>
+      <p class="tfg-of__sub">This opens WhatsApp with the whole order written out &mdash; you just press send.
+        Nothing is charged on the site.</p>
+
+      <pre class="tfg-of__summary" id="tfgFormSummary" aria-label="Order list preview"></pre>
+
+      <form novalidate>
+        <label for="tfgOfName">Your name <span aria-hidden="true">*</span>
+          <input id="tfgOfName" name="name" type="text" autocomplete="name" placeholder="e.g. Simi Blaise">
+        </label>
+        <div class="tfg-of__row">
+          <label for="tfgOfPhone">Phone (optional)
+            <input id="tfgOfPhone" name="phone" type="tel" autocomplete="tel" placeholder="For a call-back, e.g. 0803 000 0000">
+          </label>
+        </div>
+
+        <fieldset class="tfg-of__deliv">
+          <legend>How should it reach you?</legend>
+          <label><input type="radio" name="tfgDeliv" value="pickup"><span>Pick up at the showroom</span></label>
+          <label><input type="radio" name="tfgDeliv" value="ibadan" checked><span>Delivery within Ibadan</span></label>
+          <label><input type="radio" name="tfgDeliv" value="nationwide"><span>Delivery to another state</span></label>
+        </fieldset>
+
+        <div class="tfg-of__addrrow">
+          <label for="tfgOfAddr"><span id="tfgOfAddrLabel">Address in Ibadan</span> <span aria-hidden="true">*</span>
+            <input id="tfgOfAddr" name="addr" type="text" autocomplete="street-address" placeholder="Street, area, city">
+          </label>
+        </div>
+
+        <label for="tfgOfNotes">Notes for the team (optional)
+          <textarea id="tfgOfNotes" name="notes" rows="3" placeholder="Sizes, cushion extras, timing, anything else&hellip;"></textarea>
+        </label>
+
+        <p class="tfg-of__err" role="alert" hidden></p>
+        <button type="submit" class="btn btn--gold tfg-of__go">Send list on WhatsApp</button>
+        <!-- the real deep link: validation writes the href, then clicks this
+             (kept as an anchor so the tab opens as a genuine user click) -->
+        <a href="#" target="_blank" rel="noopener" data-of-send hidden aria-hidden="true"></a>
+        <button type="button" class="tfg-of__back" data-of-cancel>Back to my list</button>
+      </form>
+    </div>
+
+    <div class="tfg-of__done">
+      <span class="tfg-of__tick" aria-hidden="true">&#10003;</span>
+      <h2 class="tfg-of__title">Handed to WhatsApp</h2>
+      <p class="tfg-of__sub">Your order text is sitting in WhatsApp &mdash; press <b>send</b> there and the
+        team replies with the final total, production slot and how to pay.
+        If the chat didn&rsquo;t open, use the list&rsquo;s <b>Copy</b> button and paste it in a message to the shop.</p>
+      <div class="tfg-of__donebtns">
+        <button type="button" class="btn btn--gold" data-of-keep>Keep my list for now</button>
+        <button type="button" class="tfg-of__back" data-of-clear>Order sent &mdash; empty it</button>
+      </div>
+    </div>
+  </div>
+</div>

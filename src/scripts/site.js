@@ -17,6 +17,7 @@
    ========================================================================== */
 import { CONFIG, PRODUCTS, categoryLabel } from '../data/products.js';
 import { colourVariants } from '../lib/site.js';
+import { wireCart } from './cart.js';
 
 /* ---------- helpers ---------------------------------------------------- */
 
@@ -174,6 +175,7 @@ function openModal(p) {
         (cws.length >= 2 ? cwMatrixHTML(cws) : '') +
         '<div class="price" style="margin-top:4px">' + priceHTML(p) + '</div>' +
         '<a class="btn btn--primary btn--block" data-order href="' + waLink(orderMessage(p)) + '" target="_blank" rel="noopener">Order on WhatsApp</a>' +
+        '<button type="button" class="btn btn--outline btn--block" data-add="' + p.id + '" style="margin-top:10px">Add to order list</button>' +
         '<p class="small muted">' + footerNote(p) + '</p>' +
       '</div>' +
     '</div>';
@@ -709,6 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireColourway();
   wireAnnounce();
   wakeFab();
+  wireCart();
   wireHero();
   wireSearch();
 

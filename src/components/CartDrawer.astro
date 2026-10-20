@@ -1,0 +1,38 @@
+---
+/* The order-list drawer. Static shell — cart.js fills #tfgCartLines and the
+   footer totals. Parked with visibility:hidden so it never blocks taps or
+   covers the announcement while closed (the parked-floats rule). */
+---
+
+<div class="tfg-cart" id="tfgCart" aria-hidden="true">
+  <div class="tfg-cart__scrim" data-cart-close></div>
+  <aside class="tfg-cart__panel" role="dialog" aria-modal="true" aria-label="Your order list">
+    <header class="tfg-cart__head">
+      <div>
+        <p class="tfg-cart__kicker">Your order list</p>
+        <h2 class="tfg-cart__title">Pieces you&rsquo;re eyeing</h2>
+      </div>
+      <button type="button" class="tfg-cart__close" data-cart-close aria-label="Close order list">&times;</button>
+    </header>
+
+    <div class="tfg-cart__list" id="tfgCartLines"></div>
+
+    <p class="tfg-cart__empty" id="tfgCartEmpty">
+      Nothing on the list yet. Tap the <b>+</b> on any piece you like &mdash; the list waits
+      here while you keep browsing, even if you come back later.
+    </p>
+
+    <footer class="tfg-cart__foot" id="tfgCartFoot" hidden>
+      <p class="tfg-cart__sum" id="tfgCartSum"></p>
+      <p class="tfg-cart__fine">Nothing is charged on this site. We confirm final price, lead time
+        and payment on WhatsApp &mdash; usually within the hour.</p>
+      <div class="tfg-cart__actions">
+        <button type="button" class="btn btn--gold tfg-cart__send" data-cart-send disabled>Send order list on WhatsApp</button>
+        <span class="tfg-cart__minis">
+          <button type="button" data-cart-copy>Copy the list</button>
+          <button type="button" data-cart-clear>Empty it</button>
+        </span>
+      </div>
+    </footer>
+  </aside>
+</div>

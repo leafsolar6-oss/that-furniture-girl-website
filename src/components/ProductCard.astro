@@ -24,6 +24,9 @@ const shown = price.ask ? 'Price on request' : price.value;
       <div class="product-card__overlay"></div>
       {!p.stamped && <span class="wm" aria-hidden="true"></span>}
       <span class="product-card__badge">{catLabel(p.cat)}</span>
+      <button type="button" class="addcart" data-add={p.id} aria-label={`Add ${p.name} to your order list`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.1 11.2a1.4 1.4 0 0 1-1.4 1.3H8.5a1.4 1.4 0 0 1-1.4-1.3L6 8z"/><path d="M9 8V6.6a3 3 0 0 1 6 0V8"/><path d="M12 11.8v4.6M9.7 14.1h4.6"/></svg>
+      </button>
     </div>
     <div class="product-card__body">
       <h3 class="product-card__name">{p.name}</h3>

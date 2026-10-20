@@ -93,6 +93,7 @@ const others = PRODUCTS.filter((x) => x.img && x.id !== p.id).slice(0, 3);
                 Order on WhatsApp
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
+              <button class="btn btn--outline btn--lg" type="button" data-add={p.id}>Add to order list</button>
               <a class="btn btn--outline btn--lg" href="products.html">Back to products</a>
             </div>
             <p class="piece__note">{footerNote(p)}</p>
