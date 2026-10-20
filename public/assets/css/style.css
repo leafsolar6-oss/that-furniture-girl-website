@@ -1056,20 +1056,46 @@ p  { margin: 0; text-wrap: pretty; }
 .btn-wa { background: #25D366 !important; color: #06331A !important; box-shadow: 0 14px 30px -14px rgba(37,211,102,.7) !important; }
 .btn-wa:hover { background: #1EBE5A !important; }
 
-/* floating whatsapp */
+/* ==========================================================================
+   FLOATING WHATSAPP CTA — "Chat with a Designer" (elevated 2026-10-20).
+   Orders happen on WhatsApp only, so this is the primary action of every
+   visit: persistent on every viewport (label never hides), pinned clear of
+   the iOS home bar, one tap from anywhere. Sits below drawer/modal (z-90).
+   ========================================================================== */
 .fab {
-  position: fixed; right: clamp(14px, 2.6vw, 26px); bottom: clamp(14px, 2.6vw, 26px); z-index: 55;
+  position: fixed;
+  right: calc(clamp(14px, 2.6vw, 26px) + env(safe-area-inset-right, 0px));
+  bottom: calc(clamp(14px, 2.6vw, 26px) + env(safe-area-inset-bottom, 0px));
+  z-index: 70;
   display: inline-flex; align-items: center; gap: 10px;
   background: #25D366; color: #06331A;
   border-radius: var(--pill);
   padding: 13px 22px 13px 17px;
-  font-size: 14px; font-weight: 800;
+  font-size: 14px; font-weight: 800; letter-spacing: -.01em;
   box-shadow: 0 18px 38px -16px rgba(37,211,102,.8);
-  transition: transform .25s var(--ease);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  animation: fabIn .55s var(--ease) .5s backwards;
 }
-.fab:hover { transform: translateY(-3px) scale(1.02); }
+.fab:hover, .fab:focus-visible { transform: translateY(-3px) scale(1.02); box-shadow: 0 22px 44px -14px rgba(37,211,102,.9); }
+.fab:active { transform: translateY(-1px) scale(.99); }
 .fab svg { width: 22px; height: 22px; flex: none; }
-@media (max-width: 560px) { .fab span { display: none; } .fab { padding: 15px; } }
+.fab::after {
+  content: ""; position: absolute; inset: -4px; border-radius: inherit;
+  border: 2px solid rgba(37,211,102,.55); pointer-events: none;
+  animation: fabRing 2.6s ease-out 1.4s 3;
+}
+@keyframes fabIn { from { opacity: 0; transform: translateY(14px) scale(.94); } }
+@keyframes fabRing { 0% { opacity: .9; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.28); } }
+@media (max-width: 560px) {
+  .fab { padding: 13px 18px 13px 14px; font-size: 13.5px; gap: 8px; }
+  .fab svg { width: 20px; height: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fab { animation: none; }
+  .fab::after { animation: none; opacity: 0; }
+}
 
 /* ==========================================================================
    FOOTER
