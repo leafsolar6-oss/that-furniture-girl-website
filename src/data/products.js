@@ -393,7 +393,7 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-black-cream',
-    name: 'Board Bed — Black + Cream',
+    name: 'Wooden Bed — Black + Cream',
     cat: 'beds',
     price: null,
     colours: 'Black + cream',
@@ -492,23 +492,23 @@ export const PRODUCTS = [
   },
   {
     id: 'board-bed-walnut-brown',
-    name: 'Board Bed — Walnut + Brown Panels',
+    name: 'Wooden Bed — Walnut + Brown Panels',
     cat: 'beds',
     price: null,
     colours: 'Light walnut + brown panels',
     material: 'Wooden frame with padded headboard',
-    desc: 'A light walnut board bed with twin brown padded panels in the headboard and an open storage base with inner shelving.',
+    desc: 'A light walnut bed with twin brown padded panels in the headboard and an open storage base with inner shelving.',
     img: 'board-bed-walnut-brown.jpg',
     catalogOnly: true
   },
   {
     id: 'board-bed-cream-inlay',
-    name: 'Board Bed — Cream Inlay',
+    name: 'Wooden Bed — Cream Inlay',
     cat: 'beds',
     price: null,
     colours: 'Walnut + cream inlay',
     material: 'Wooden frame with inlay headboard',
-    desc: 'A walnut board bed with cream diamond-inlay panels framed in the headboard and boxed side storage.',
+    desc: 'A walnut bed with cream diamond-inlay panels framed in the headboard and boxed side storage.',
     img: 'board-bed-cream-inlay.jpg',
     catalogOnly: true
   },
@@ -519,18 +519,18 @@ export const PRODUCTS = [
     price: null,
     colours: 'Light wood',
     material: 'Wooden frame',
-    desc: 'A light-wood board bed with an arched slat headboard and twin pedestal side boxes.',
+    desc: 'A light-wood bed with an arched slat headboard and twin pedestal side boxes.',
     img: 'arch-slat-bed-light.jpg',
     catalogOnly: true
   },
   {
     id: 'board-bed-cider-grey',
-    name: 'Board Bed — Cider + Grey Panels',
+    name: 'Wooden Bed — Cider + Grey Panels',
     cat: 'beds',
     price: null,
     colours: 'Cider wood + grey panels',
     material: 'Wooden frame with padded headboard',
-    desc: 'A cider-toned board bed with grey padded panels set into the headboard and a deep storage base.',
+    desc: 'A cider-toned bed with grey padded panels set into the headboard and a deep storage base.',
     img: 'board-bed-cider-grey.jpg',
     catalogOnly: true
   },
