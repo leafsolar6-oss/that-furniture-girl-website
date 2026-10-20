@@ -1654,7 +1654,7 @@ p  { margin: 0; text-wrap: pretty; }
 .hero__title em {
   font-style: italic;
   background-image: linear-gradient(100deg,
-    currentColor 28%, var(--amber) 40%, #ffe9b0 50%, var(--amber) 60%, #c08a00 78%);
+    #c08a00 28%, var(--amber) 40%, #ffe9b0 50%, var(--amber) 60%, #c08a00 78%);
   background-size: 280% 100%;
   background-position: 130% 0;
   -webkit-background-clip: text; background-clip: text;
@@ -1711,5 +1711,5 @@ p  { margin: 0; text-wrap: pretty; }
     animation: none !important;
     opacity: 1 !important; transform: none !important;
   }
-  .hero__title em { background: none; color: inherit; }
+  .hero__title em { background: none; color: #c08a00; }
 }
