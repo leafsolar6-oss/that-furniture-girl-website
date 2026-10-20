@@ -31,11 +31,36 @@ function waLink(message) {
 }
 
 function orderMessage(p) {
-  const bits = ['Hello ' + CONFIG.brand + '! I would like to order the ' + p.name];
-  if (p.colours) bits.push(' (' + p.colours + ')');
-  if (p.price) bits.push(' \u2014 ' + fmt(p.price));
-  bits.push('. Is it available?');
-  return bits.join('');
+  /* Structured, sales-ready enquiry: the team sees the exact listing,
+     the colourway, the live price and the ask (pickup today / deposit to
+     start / price for catalogue pieces) — no follow-up round needed. */
+  const colour = (p.colours || '').trim();
+  let name = p.name || 'a piece';
+  let colourPart = '';
+  const dash = name.indexOf(' \u2014 ');
+  if (dash > -1 && colour && name.slice(dash + 3).trim().toLowerCase() === colour.toLowerCase()) {
+    colourPart = ' (' + name.slice(dash + 3).trim() + ')';
+    name = name.slice(0, dash);
+  } else if (colour) {
+    colourPart = ' (' + colour.charAt(0).toUpperCase() + colour.slice(1) + ')';
+  }
+  const listed = p.priceTo
+    ? ' listed for \u20A6' + Number(p.price).toLocaleString('en-NG') + ' \u2013 \u20A6' + Number(p.priceTo).toLocaleString('en-NG')
+    : p.price ? ' listed for \u20A6' + Number(p.price).toLocaleString('en-NG') : '';
+  const hi = 'Hello ' + CONFIG.brand + '!';
+  if (p.lead && /pickup/i.test(p.lead)) {
+    return hi + ' \uD83D\uDCCB I am interested in the show-room ready ' + name + colourPart + listed
+      + '. Is it still available for immediate pickup/delivery today?';
+  }
+  if (p.price) {
+    const ask = p.lead
+      ? ' The site says the lead time is ' + p.lead.toLowerCase() + ' \u2014 could you confirm that, plus my colour and size options and how to start with a deposit?'
+      : ' Could you confirm the production timeline, my colour and size options and how to start with a deposit?';
+    return hi + ' \uD83D\uDECB I am interested in the ' + name + colourPart + listed
+      + ' and would like it made to order.' + ask;
+  }
+  return hi + ' \uD83D\uDECB I saw the ' + name + colourPart
+    + ' in your catalogue and would love one. Could you share the price range, colour options and how soon it could be ready?';
 }
 
 function priceHTML(p) {
