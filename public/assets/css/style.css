@@ -1793,8 +1793,29 @@ p  { margin: 0; text-wrap: pretty; }
   flex: 2 1 auto;
   height: 34px;
 }
-.filterbar__tools .rangebox output { white-space: nowrap; }
 @media (max-width: 700px) {
   .filterbar__tools .rangebox { width: 100%; }
   .filterbar__tools .rangebox input[type="range"] { flex: 1 1 150px; width: auto; min-width: 150px; }
+}
+
+/* ==========================================================================
+   TOOLBAR LAYOUT FIX — .collection-top's grid collapsed into an oversized
+   phantom track on phones (h2 grew to ~460px and sat OVER the price slider,
+   swallowing taps and making the filter feel dead). Lay the toolbar out with
+   wrapping flex instead: title on its own line, chips, then the tools row;
+   at >=900px the title and tools share a line like the grid did.
+   ========================================================================== */
+.collection-top {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+.collection-top > * { min-width: 0; }
+.collection-top h2 { width: 100%; margin: 0; }
+.collection-top .chip-row { width: 100%; }
+@media (min-width: 900px) {
+  .collection-top h2 { width: auto; }
+  .collection-top .chip-row { width: 100%; }
+  .collection-top .filterbar__tools { margin-left: auto; }
 }
