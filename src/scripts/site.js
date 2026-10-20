@@ -179,12 +179,16 @@ function wireFilters(toolbar) {
   let query = '';
   let maxPrice = rangeMax;
 
+  function rangeText(shown) {
+    const atTop = maxPrice >= rangeMax;
+    const base = atTop ? fmt(rangeMax) + ' & above' : fmt(maxPrice);
+    return base + ' \u00b7 ' + shown + (shown === 1 ? ' piece' : ' pieces');
+  }
+
   function syncRange() {
     if (!range) return;
     maxPrice = Number(range.value);
-    const atTop = maxPrice >= rangeMax;
-    if (rangeOut) rangeOut.textContent = atTop ? fmt(rangeMax) + ' & above' : fmt(maxPrice);
-    if (rangeLabel) rangeLabel.textContent = atTop ? 'Premium \u00b7' : 'Up to';
+    if (rangeLabel) rangeLabel.textContent = maxPrice >= rangeMax ? 'Premium \u00b7' : 'Up to';
   }
 
   function apply() {
@@ -202,6 +206,7 @@ function wireFilters(toolbar) {
       if (on) shown++;
     });
     if (emptyMsg) emptyMsg.hidden = shown > 0;
+    if (range && rangeOut) rangeOut.textContent = rangeText(shown);
   }
 
   if (filterBar) {

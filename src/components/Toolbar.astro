@@ -14,6 +14,11 @@ const step = 50000;
    ("· … & above") so pieces priced exactly at the ceiling — or above it —
    can never be filtered out of the premium range. */
 const tier = Math.max(step, Math.floor(topPrice / step) * step);
+/* The bottom of the slider hugs the cheapest real price, so the far-left
+   stop still shows the low-ticket pieces instead of an empty grid. */
+const lowPrice = Math.min(...PRODUCTS.filter((p) => p.price).map((p) => p.price));
+const minPrice = Math.max(step, Math.ceil(lowPrice / step) * step);
+const shopCount = PRODUCTS.filter((p) => !p.catalogOnly).length;
 ---
 
 <div class="collection-top reveal" data-tools-for={gridId}>
@@ -30,8 +35,8 @@ const tier = Math.max(step, Math.floor(topPrice / step) * step);
     </label>
     <label class="rangebox">
       <span data-tool="rangelabel">Premium &middot;</span>
-      <input type="range" data-tool="range" min="100000" max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
-      <output data-tool="rangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above</output>
+      <input type="range" data-tool="range" min={minPrice} max={tier} step={step} value={tier} aria-label="Maximum price — the top band shows every piece at and above it">
+      <output data-tool="rangeout">&#8358;{tier.toLocaleString('en-NG')} &amp; above · {shopCount} pieces</output>
     </label>
     <div class="viewtoggle" role="group" aria-label="Change layout">
       <button class="viewtoggle__btn is-on" type="button" data-tool="grid" aria-pressed="true" aria-label="Grid view">
