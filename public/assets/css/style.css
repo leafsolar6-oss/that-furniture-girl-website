@@ -1812,6 +1812,7 @@ p  { margin: 0; text-wrap: pretty; }
   gap: 14px 20px;
 }
 .collection-top > * { min-width: 0; }
+.filterbar__tools .rangebox > span { white-space: nowrap; }
 .collection-top h2 { width: 100%; margin: 0; }
 .collection-top .chip-row { width: 100%; }
 @media (min-width: 900px) {
