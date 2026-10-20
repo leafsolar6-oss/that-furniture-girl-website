@@ -1,28 +1,146 @@
 ---
 /* Fabrics & colours — aggregated straight from the catalogue, so this strip
-   can only ever show what the workshop has actually built. */
+   can only ever show what the workshop has actually built. The raw strings
+   are grouped into families (owner 2026-10-20: "the massive colour list
+   causes visual fatigue") and every chip carries a real swatch dot + links
+   to the shop pre-filtered to that colour or material. Nothing is invented:
+   grouping happens at build time over the live product data. */
 import { PRODUCTS } from '../../data/products.js';
 
+const SPLIT = /\s*(?:\+|\/|·|,|&|\band\b|\bor\b|\bwith\b)\s*|\balso\b\s*/;
+const tokensOf = (s) => s.toLowerCase().split(SPLIT).map((t) => t.trim().replace(/\.$/, '')).filter(Boolean);
+
+/* Tint map — longest keys win, so "light grey" beats "grey". */
+const TINT = [
+  ['chocolate', '#4E2E1E'], ['coffee', '#6F4E37'], ['cocoa', '#7B5544'], ['caramel', '#A66A35'],
+  ['cognac', '#9F4A23'], ['terracotta', '#C0693D'], ['umber', '#635147'], ['rust', '#9C4A1A'],
+  ['cider', '#7E3F1D'], ['carton', '#A97F50'], ['mansonia', '#D9C09A'], ['walnut', '#5C4033'],
+  ['mahogany', '#75382E'], ['honey', '#C98F3D'], ['natural wood', '#A98357'], ['wood', '#A98357'],
+  ['off white', '#EFE8DA'], ['off-white', '#EFE8DA'], ['ivory', '#F3EAD3'], ['cream', '#EAD9B8'],
+  ['champagne', '#D6BC8A'], ['sand', '#DCC9A3'], ['taupe', '#A5927E'], ['linen', '#E5DCC8'],
+  ['light grey', '#C4C4C2'], ['light gray', '#C4C4C2'], ['dark grey', '#5E5E5C'], ['dark gray', '#5E5E5C'],
+  ['charcoal', '#3C3B3A'], ['grey', '#9A9A98'], ['gray', '#9A9A98'], ['light ash', '#CFC9BF'],
+  ['ash', '#B9B4AC'], ['swiss', '#EADFC9'], ['white', '#F4F1EA'], ['black', '#17161A'],
+  ['burnt orange', '#B4531E'], ['orange', '#D96A1F'], ['navy', '#1E2A4A'], ['cobalt', '#1F4FA3'],
+  ['royal', '#2A3E8C'], ['blue', '#2E4E7E'], ['gold', '#C9A227'], ['emerald', '#1F6B4A'],
+  ['teal', '#24706E'], ['turquoise', '#2BAFA6'], ['green', '#3E6B4F'], ['burgundy', '#6B2233'],
+  ['red', '#A72626'], ['blush', '#E5B8B4'], ['pink', '#D8A6AE'], ['violet', '#6B4E9C'],
+  ['purple', '#5D3A7E'], ['mustard', '#C99A1E'], ['yellow', '#E0B81E'], ['silver', '#BFC3C6'],
+  ['marble', '#DAD4C8'], ['floral', '#B86B7E'], ['gloss', '#232327'], ['mirror', '#C9D2D6'],
+].sort((a, b) => b[0].length - a[0].length);
+const tintOf = (tok) => TINT.find(([k]) => tok.includes(k))?.[1];
+
+/* Colour families — the first resolvable token names the piece, so
+   "Swiss + cider" is filed under Modern Neutrals by its leading colour. */
+const FAM_RULES = [
+  ['Earth Tones', /chocolate|coffee|cocoa|brown|caramel|tan|beige|cognac|amber|umber|terracotta|rust|cider|carton|wood|mansonia|walnut|oak|mahogany|honey/],
+  ['Vibrant Accents', /orange|navy|blue|gold|champagne|red|green|emerald|teal|pink|blush|burgundy|mustard|royal|cobalt|purple|violet|yellow|turquoise|silver/],
+  ['Marble & Statement', /marble|floral|print|gloss|mirror/],
+  ['Modern Neutrals', /white|cream|ivory|grey|gray|black|ash|charcoal|swiss|sand|taupe|linen|matte/],
+];
+const familyOf = (col) => {
+  const toks = tokensOf(col);
+  for (const [name, re] of FAM_RULES) if (toks.length && re.test(toks[0])) return name;
+  for (const [name, re] of FAM_RULES) if (re.test(col.toLowerCase())) return name;
+  return 'Modern Neutrals';
+};
+
 const shopItems = PRODUCTS.filter((p) => !p.catalogOnly);
+
+/* Colour strings differ in casing ("Off white" / "Off White") — dedupe
+   case-insensitively, keep the first spelling seen. */
+const seen = new Set();
+const colours = [];
+for (const c of shopItems.map((p) => p.colours).filter(Boolean)) {
+  const k = c.toLowerCase();
+  if (!seen.has(k)) { seen.add(k); colours.push(c); }
+}
+
+const colourFams = FAM_RULES.map(([name]) => ({
+  name,
+  items: colours.filter((c) => familyOf(c) === name).map((c) => {
+    const toks = tokensOf(c);
+    const hexes = [];
+    for (const t of toks) {
+      const h = tintOf(t);
+      if (h && !hexes.includes(h)) hexes.push(h);
+      if (hexes.length === 2) break;
+    }
+    const dot = hexes.length >= 2
+      ? `background: conic-gradient(${hexes[0]} 0 50%, ${hexes[1]} 50% 100%)`
+      : `background: ${hexes[0] || '#CFC8BA'}`;
+    const q = (toks[0] || c).replace(/\s+paint$/, '');
+    return { label: c, dot, q };
+  }),
+})).filter((f) => f.items.length);
+
+/* Materials group by the leading phrase — leather first so "leather cloth
+   fabric" reads as leather, not "just another fabric". Each piece lands in
+   exactly one group (first match wins), so nothing doubles up. */
+const MAT_RULES = [
+  ['Leather & Hides', /leather|hide/],
+  ['Boucle, Velvet & Fabric', /boucle|velvet|corduroy|fabric|satin|linen|wool|matte|floral/],
+  ['Boards & Solid Wood', /hdf|mdf|wooden|wood|ply|board|frame/],
+  ['Glass & Gloss', /glass|gloss|mirror|panel/],
+];
+const OTHER_MAT = 'More from the Workshop';
 const materials = [...new Set(shopItems.map((p) => p.material).filter(Boolean))];
-const colours = [...new Set(shopItems.map((p) => p.colours).filter(Boolean))];
+const matAssign = new Map();
+for (const m of materials) {
+  const toks = tokensOf(m);
+  const first = toks[0] || '';
+  const fam = MAT_RULES.find(([, re]) => re.test(first))?.[0]
+    ?? MAT_RULES.find(([, re]) => re.test(m.toLowerCase()))?.[0]
+    ?? OTHER_MAT;
+  matAssign.set(m, fam);
+}
+const matFams = [...MAT_RULES.map(([n]) => n), OTHER_MAT]
+  .map((name) => ({
+    name,
+    items: materials.filter((m) => matAssign.get(m) === name)
+      .map((m) => ({ label: m, q: (tokensOf(m)[0] || m).replace(/\s+(over|with|and|top)$/, '') })),
+  }))
+  .filter((f) => f.items.length);
 ---
 
 <section class="section materials" id="materials">
   <div class="container">
     <span class="kicker">Materials & colours</span>
     <h2>What we build with</h2>
-    <div class="swatch-group">
-      <h3>Fabrics & boards</h3>
-      <div class="swatch">{materials.map((m) => <span>{m}</span>)}</div>
+
+    <div class="mat-groups">
+      {colourFams.map((f) => (
+        <div class="mat-group">
+          <h3>{f.name} <span class="mat-count">{f.items.length}</span></h3>
+          <div class="tint-row">
+            {f.items.map((c) => (
+              <a class="tint" href={`/products.html?q=${encodeURIComponent(c.q)}`} title={c.label}>
+                <span class="tint__dot" style={c.dot} aria-hidden="true"></span>
+                <span class="tint__name">{c.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
-    <div class="swatch-group">
-      <h3>Colours we have built</h3>
-      <div class="swatch">{colours.map((c) => <span>{c}</span>)}</div>
+
+    <div class="mat-groups mat-groups--fabric">
+      {matFams.map((f) => (
+        <div class="mat-group">
+          <h3>{f.name} <span class="mat-count">{f.items.length}</span></h3>
+          <div class="tint-row tint-row--mat">
+            {f.items.map((m) => (
+              <a class="matpill" href={`/products.html?q=${encodeURIComponent(m.q)}`} title={m.label}>{m.label}</a>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
+
     <p class="materials__note">
-      Your piece does not have to match any of these — colour, size and fabric are
-      yours to choose. These are simply the builds already on the floor.
+      Tap any colour or fabric to see the pieces already built in it. Your piece
+      does not have to match any of these — colour, size and fabric are yours to
+      choose. These are simply the builds already on the floor.
     </p>
   </div>
 </section>

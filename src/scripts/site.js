@@ -240,6 +240,10 @@ function wireFilters(toolbar) {
 
   if (search) {
     search.addEventListener('input', () => { query = search.value.trim().toLowerCase(); apply(); });
+    /* Deep link from the homepage swatch chips: products.html?q=chocolate
+       pre-fills the search box so the tap lands on matching builds. */
+    const q0 = new URLSearchParams(window.location.search).get('q');
+    if (q0) { search.value = q0; query = q0.trim().toLowerCase(); }
   }
 
   if (range) {
