@@ -2,8 +2,11 @@
 /* Hero — copy + stats on the left, the product panel on the right.
    Matches the reference store's hero layout. */
 import { CONFIG } from '../../data/products.js';
-import { soc } from '../../lib/site.js';
+import { heroProducts } from '../../data/products.js';
+import { waLink, orderMessage, priceInfo, categoryLabel, soc } from '../../lib/site.js';
 
+const first = heroProducts[0];
+const firstPrice = priceInfo(first);
 const social = [
   ['TikTok followers', CONFIG.social.tiktokFollowers],
   ['Likes across our builds', CONFIG.social.tiktokLikes],
@@ -27,7 +30,15 @@ const social = [
   </div>
 
   <div class="container relative">
-   <div class="hero__grid">
+    <!-- workshop footage (owner-supplied, cleaned: no baked text, no audio);
+         decorative, sits under a cream wash, pauses itself for reduced motion -->
+    <div class="hero__film" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="metadata" tabindex="-1"
+             poster="assets/img/opt/tfg-workshop-hero.jpg">
+        <source src="assets/vid/tfg-workshop-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__grid">
 
       <div class="hero__copy flex flex-col items-center text-center lg:items-start lg:text-left">
         <span class="hero__eyebrow"><i class="dot" aria-hidden="true"></i>New collection 2026</span>
@@ -50,18 +61,45 @@ const social = [
         </a>
       </div>
 
-      <div class="hero__panel hero__panel--film reveal" data-delay="1">
-        <video class="hero__video" autoplay muted loop playsinline preload="metadata" tabindex="-1"
-               poster="assets/img/opt/tfg-workshop-hero.jpg"
-               aria-label="Workshop footage: upholstery going on a That Furniture Girl sofa in Ibadan">
-          <source src="assets/vid/tfg-workshop-hero.mp4" type="video/mp4">
-        </video>
+      <div class="hero__panel reveal" data-delay="1" id="heroPanel" aria-roledescription="carousel" aria-label="Pieces from the workshop">
+        <div class="hero__slides" id="heroSlides">
+          {heroProducts.map((p, i) => {
+            const price = priceInfo(p);
+            const shown = price.ask ? 'Price on request' : price.value;
+            return (
+              <a class={`hero__slide${i === 0 ? ' is-on' : ''}`}
+                 href={`${p.id}.html`}
+                 data-name={p.name}
+                 data-price={shown}
+                 data-badge={p.badge || categoryLabel(p.cat)}
+                 aria-label={`${p.name} — view piece`}>
+                <picture>
+                  <source srcset={`assets/img/opt/${p.img.replace(/\.jpg$/, '.webp')}`} type="image/webp">
+                  <img src={`assets/img/opt/${p.img}`} alt={`${p.name} — ${p.colours} by ${CONFIG.brand}`}
+                       loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined}
+                       width="900" height="1125">
+                </picture>
+                {!p.stamped && <span class="wm wm--hero" aria-hidden="true"></span>}
+              </a>
+            );
+          })}
+        </div>
 
         <div class="hero__card">
-          <span class="hero__badge">Filmed in Ibadan</span>
-          <strong>Watch a real build come together</strong>
-          <a class="hero__price" href="#collection">See the pieces &rarr;</a>
+          <span class="hero__badge" id="heroBadge">{first.badge || categoryLabel(first.cat)}</span>
+          <strong id="heroName">{first.name}</strong>
+          <span class="hero__price" id="heroPrice">{firstPrice.ask ? 'Price on request' : firstPrice.value}</span>
         </div>
+
+        <button class="hero__arrow" type="button" data-hero="-1" aria-label="Previous piece">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="hero__arrow" type="button" data-hero="1" aria-label="Next piece">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+
+        <div class="hero__dots" id="heroDots"></div>
+        <span class="hero__progress" aria-hidden="true"><i></i></span>
       </div>
 
     </div>
