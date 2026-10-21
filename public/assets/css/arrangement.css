@@ -473,7 +473,7 @@
 }
 .hero > .hero__band, .hero > .container, .hero > .hero__marquee, .hero > .hero__glow { position: relative; z-index: 1; }
 .hero--film .hero__marquee { background-color: rgba(247,245,239,.92); }
-.hero--film .hero .btn--outline { background: rgba(255,255,255,.92); backdrop-filter: blur(2px); }
+.hero--film .btn--outline { background: rgba(255,255,255,.92); backdrop-filter: blur(2px); }
 
 /* hero copy center on mobile, left on desktop */
 .hero__copy { width: 100%; }
