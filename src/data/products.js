@@ -589,6 +589,50 @@ export const PRODUCTS = [
     catalogOnly: true
   },
   {
+    id: 'dining-set-marble-charcoal',
+    name: 'Marble-Top Dining Set',
+    cat: 'dining',
+    price: null,
+    colours: 'Charcoal chairs + grey marble top',
+    material: 'Marble-print top, fabric high-back chairs',
+    desc: 'A six-seat set with a grey-and-white marble print table paired by high-back charcoal chairs finished with slim white piping.',
+    img: 'dining-set-marble-charcoal.jpg',
+    catalogOnly: true
+  },
+  {
+    id: 'dining-set-blue-quilted',
+    name: 'Quilted Velvet Dining Set',
+    cat: 'dining',
+    price: null,
+    colours: 'Royal blue + white velvet',
+    material: 'Diamond-quilted velvet, marble-print top',
+    desc: 'Diamond-quilted royal blue and white velvet tub chairs around a marble-print table on black legs with gold caps.',
+    img: 'dining-set-blue-quilted.jpg',
+    catalogOnly: true
+  },
+  {
+    id: 'dining-set-gold-classic',
+    name: 'Classic Carved Dining Set',
+    cat: 'dining',
+    price: null,
+    colours: 'Gold + caramel',
+    material: 'Carved gold-finish wood, tufted upholstery',
+    desc: 'Six carved gold-finish chairs with button-tufted caramel backs wrap a polished golden-wood table on cabriole legs.',
+    img: 'dining-set-gold-classic.jpg',
+    catalogOnly: true
+  },
+  {
+    id: 'dining-set-natural-wood',
+    name: 'Natural Wood Dining Set',
+    cat: 'dining',
+    price: null,
+    colours: 'Natural wood + tan',
+    material: 'Solid natural wood, leather-look chairs',
+    desc: 'A compact four-seater in solid natural wood with a honey-toned top and smooth tan leather-look chairs.',
+    img: 'dining-set-natural-wood.jpg',
+    catalogOnly: true
+  },
+  {
     id: 'marble-boxy-set-grey',
     name: 'Marble Boxy Set',
     cat: 'sets',
