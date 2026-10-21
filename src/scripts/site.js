@@ -839,3 +839,44 @@ document.addEventListener('DOMContentLoaded', () => {
     touchX = null;
   }, { passive: true });
 })();
+
+// --- hero-rotate: background film playlist ---------------------------------
+// Two stacked <video> layers inside .hero__bg. Only the visible one is in the
+// DOM src at any moment; each swap preloads the NEXT clip on the hidden layer,
+// so a visitor ever buffers one ~1 MB file per 10s window (no 12 MB upfront).
+// Reduced-motion visitors never start the rotation (CSS hides the layers and
+// the guard above pauses them; the poster fallback shows instead).
+(function () {
+  function init() {
+    var bg = document.querySelector('.hero__bg[data-pool]');
+    if (!bg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var vids = [].slice.call(bg.querySelectorAll('video'));
+    if (vids.length < 2) return;
+    var pool = (bg.getAttribute('data-pool') || '').split(',')
+      .map(function (u) { return u.trim(); }).filter(Boolean);
+    if (!pool.length) return;
+    var on = 0, idx = 0;
+    function prep(el) {
+      el.src = new URL(pool[idx % pool.length], document.baseURI).href;
+      if (el.load) el.load();
+      idx += 1;
+    }
+    prep(vids[1]);
+    window.setInterval(function () {
+      if (document.hidden) return;
+      var hidden = vids[1 - on], visible = vids[on];
+      var p = hidden.play();
+      if (p && p.catch) p.catch(function () {});
+      hidden.classList.remove('is-hidden');
+      visible.classList.add('is-hidden');
+      on = 1 - on;
+      window.setTimeout(function () {
+        var off = vids[1 - on];
+        off.pause();
+        prep(off);
+      }, 2200);
+    }, 10000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
