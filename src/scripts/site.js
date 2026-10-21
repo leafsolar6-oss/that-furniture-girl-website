@@ -709,10 +709,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Hero workshop film: honour reduced motion (CSS hides the element; this
      also stops decoding so it costs nothing on battery). */
   {
-    const v = document.querySelector('.hero__video');
-    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      v.removeAttribute('autoplay'); v.pause();
-    }
+    document.querySelectorAll('.hero__video').forEach((v) => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay'); v.pause();
+      }
+    });
   }
 
 /* Hero stats: gentle count-up when the band scrolls into view.
