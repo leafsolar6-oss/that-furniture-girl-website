@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- hero-rotate: background film playlist ---------------------------------
 // Two stacked <video> layers inside .hero__bg. Only the visible one is in the
 // DOM src at any moment; each swap preloads the NEXT clip on the hidden layer,
-// so a visitor ever buffers one ~0.3 MB file per 5s window (no batch upfront).
+// so a visitor ever buffers one ~0.2 MB file per 3s window (no batch upfront).
 // Reduced-motion visitors never start the rotation (CSS hides the layers and
 // the guard above pauses them; the poster fallback shows instead).
 (function () {
@@ -881,8 +881,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var off = vids[1 - on];
         off.pause();
         prep(off);
-      }, 2200);
-    }, 5000);
+      }, 1200);
+    }, 3000);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
