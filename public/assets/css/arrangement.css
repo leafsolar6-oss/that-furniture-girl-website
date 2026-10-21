@@ -467,6 +467,7 @@
 .hero--film .hero__copy { text-shadow: 0 1px 0 rgba(247,245,239,.75), 0 3px 22px rgba(247,245,239,.6); }
 .hero--film .hero__copy .btn, .hero--film .tl--outline .tl__in, .hero--film .hero__title em { text-shadow: none; }
 .hero--film .hero__sub, .hero--film .hero__cue { color: #23272a; }
+.hero--film .hero__sub { font-weight: 700; }
 .hero--film .hero__sub { text-shadow: 0 0 7px rgba(251,249,245,.95), 0 1px 2px rgba(251,249,245,.85); }
 @media (max-width: 999px) {
   /* Small screens put the copy right over the middle of the footage: soften
