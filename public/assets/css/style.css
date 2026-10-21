@@ -1698,11 +1698,12 @@ p  { margin: 0; text-wrap: pretty; }
   .hero__title .tl:not(.tl--outline) .tl__in { -webkit-text-stroke: 1.1px currentColor; }
 }
 
-/* "Transforms" — shimmers in and settles to rich gold. */
+/* "Transforms" — shimmers in and settles to brand green, very bold. */
 .hero__title .tl__in em {
   font-style: italic !important;
+  font-weight: 900 !important;
   background-image: linear-gradient(100deg,
-    #c08a00 0%, #c08a00 32%, var(--amber) 42%, #ffe9b0 50%, var(--amber) 58%, #c08a00 68%, #c08a00 100%) !important;
+    var(--green) 0%, var(--green) 32%, #0e8a44 42%, #b9f0c8 50%, #0e8a44 58%, var(--green) 68%, var(--green) 100%) !important;
   background-size: 280% 100% !important;
   background-position: 100% 0 !important;
   -webkit-background-clip: text !important; background-clip: text !important;
@@ -1759,7 +1760,7 @@ p  { margin: 0; text-wrap: pretty; }
     animation: none !important;
     opacity: 1 !important; transform: none !important;
   }
-  .hero__title .tl__in em { background: none !important; color: #c08a00 !important; }
+  .hero__title .tl__in em { background: none !important; color: var(--green) !important; font-weight: 900 !important; }
 }
 
 /* ==========================================================================
