@@ -466,6 +466,7 @@
    outline headline line and the solid buttons opt out. */
 .hero--film .hero__copy { text-shadow: 0 1px 0 rgba(247,245,239,.75), 0 3px 22px rgba(247,245,239,.6); }
 .hero--film .hero__copy .btn, .hero--film .tl--outline .tl__in { text-shadow: none; }
+.hero--film .hero__sub, .hero--film .hero__cue { color: var(--ink-soft, #2c3134); }
 @media (prefers-reduced-motion: reduce) {
   .hero__bg video { display: none; }
   .hero__bg::before { content: ""; position: absolute; inset: 0;
