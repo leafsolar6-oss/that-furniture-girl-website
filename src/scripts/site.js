@@ -856,15 +856,22 @@ document.addEventListener('DOMContentLoaded', () => {
       .map(function (u) { return u.trim(); }).filter(Boolean);
     if (!pool.length) return;
     var on = 0, idx = 0;
+    // Owner: "Increase the videos speed" — every background film plays at this
+    // multiplier. Change RATE (e.g. 1.25 / 1.75) to taste.
+    var RATE = 1.5;
+    function setRate(el) { try { el.playbackRate = RATE; } catch (e) {} }
+    vids.forEach(setRate);
     function prep(el) {
       el.src = new URL(pool[idx % pool.length], document.baseURI).href;
       if (el.load) el.load();
+      setRate(el);
       idx += 1;
     }
     prep(vids[1]);
     window.setInterval(function () {
       if (document.hidden) return;
       var hidden = vids[1 - on], visible = vids[on];
+      setRate(hidden); setRate(visible);
       var p = hidden.play();
       if (p && p.catch) p.catch(function () {});
       hidden.classList.remove('is-hidden');
