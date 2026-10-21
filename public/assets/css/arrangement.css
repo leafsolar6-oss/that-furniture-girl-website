@@ -458,8 +458,8 @@
     rgba(247,245,239,.84) 38%, rgba(247,245,239,.78) 68%, rgba(247,245,239,.94)); }
 @media (min-width: 1000px) {
   .hero__bg::after { background: linear-gradient(96deg,
-    rgba(247,245,239,.97) 38%, rgba(247,245,239,.92) 54%,
-    rgba(247,245,239,.44) 78%, rgba(247,245,239,.28)); }
+    rgba(247,245,239,.9) 30%, rgba(247,245,239,.7) 50%,
+    rgba(247,245,239,.3) 74%, rgba(247,245,239,.16)); }
 }
 /* Copy legibility over the film (owner 2026-10-21): a soft light halo under
    the dark text sharpens it against moving footage without hiding it; the
@@ -473,8 +473,8 @@
      the film slightly (backdrop blur) and lift the wash — text wins, video
      still reads as motion. */
   .hero__bg::after { backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
-    background: linear-gradient(180deg, rgba(247,245,239,.97),
-      rgba(247,245,239,.9) 36%, rgba(247,245,239,.87) 70%, rgba(247,245,239,.95)); }
+    background: linear-gradient(180deg, rgba(247,245,239,.94),
+      rgba(247,245,239,.8) 38%, rgba(247,245,239,.74) 72%, rgba(247,245,239,.9)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__bg video { display: none; }
@@ -628,12 +628,7 @@ body::after {
   padding-bottom: .14em;
 }
 .hero > .container { position: relative; }
-.hero > .container::after {
-  content: "MADE TO ORDER \00b7 IBADAN";
-  position: absolute; right: -6px; top: 8px;
-  writing-mode: vertical-rl; font-size: 10.5px; font-weight: 800;
-  letter-spacing: .34em; color: var(--muted-2);
-}
+
 .stats { border-top: 0; margin-top: 2.6rem; padding-top: 0; }
 .stat { border-left: 2px solid var(--gold); padding-left: 16px; }
 .stat b { font-family: var(--font-display); font-weight: 400; color: var(--ink); letter-spacing: 0; }
@@ -1217,16 +1212,7 @@ body::after {
 @supports not (-webkit-text-stroke: 1px black) {
   .tl--outline .tl__in { color: var(--ink); }
 }
-.hero__copy::after {
-  content: 'IBADAN';
-  position: absolute; z-index: -1; pointer-events: none;
-  right: -4%; top: 30%;
-  font-family: var(--font-display);
-  font-size: clamp(110px, 20vw, 280px);
-  line-height: 1; letter-spacing: .02em;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(20, 19, 18, .08);
-}
+
 .hero__eyebrow {
   background: var(--ink); color: #f6f4ef;
   padding: 9px 16px 9px 14px; border-radius: 999px;
