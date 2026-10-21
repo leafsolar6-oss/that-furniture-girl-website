@@ -1,6 +1,6 @@
 ---
-/* Hero — copy + stats on the left, the product panel on the right.
-   Matches the reference store's hero layout. */
+/* Hero — copy + stats over the full-bleed workshop film (owner brief
+   2026-10-21: no panel, no carousel; the video is the background). */
 import { CONFIG } from '../../data/products.js';
 import { soc } from '../../lib/site.js';
 
@@ -12,7 +12,13 @@ const social = [
 ].map(([label, n]) => ({ label, ...soc(n) }));
 ---
 
-<section class="hero relative overflow-hidden">
+<section class="hero hero--film relative overflow-hidden">
+  <div class="hero__bg" aria-hidden="true">
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata" tabindex="-1"
+           poster="assets/img/opt/tfg-workshop-hero.jpg">
+      <source src="assets/vid/tfg-workshop-hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__band">
     <div class="container">
@@ -48,20 +54,6 @@ const social = [
         <a class="hero__cue" href="#collection">
           <span>Scroll to explore</span><i aria-hidden="true"></i>
         </a>
-      </div>
-
-      <div class="hero__panel hero__panel--film reveal" data-delay="1">
-        <video class="hero__video" autoplay muted loop playsinline preload="metadata" tabindex="-1"
-               poster="assets/img/opt/tfg-workshop-hero.jpg"
-               aria-label="Workshop footage: upholstery going on a That Furniture Girl sofa in Ibadan">
-          <source src="assets/vid/tfg-workshop-hero.mp4" type="video/mp4">
-        </video>
-
-        <div class="hero__card">
-          <span class="hero__badge">Filmed in Ibadan</span>
-          <strong>Watch a real build come together</strong>
-          <a class="hero__price" href="#collection">See the pieces &rarr;</a>
-        </div>
       </div>
 
     </div>
