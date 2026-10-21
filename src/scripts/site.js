@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Hero workshop film: honour reduced motion (CSS hides the element; this
      also stops decoding so it costs nothing on battery). */
   {
-    const v = document.querySelector('.hero__film video');
+    const v = document.querySelector('.hero__video');
     if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       v.removeAttribute('autoplay'); v.pause();
     }
