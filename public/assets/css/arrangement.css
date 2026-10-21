@@ -77,7 +77,7 @@
   letter-spacing: -.03em;
   margin-block: 18px 20px;
 }
-.hero__title em { font-style: normal; color: var(--gold); }
+.hero__title em { font-style: normal; color: var(--green); font-weight: 900; letter-spacing: -.02em; }
 .hero__sub { max-width: 30rem; color: var(--muted); font-size: clamp(16px, 1.6vw, 17.5px); }
 
 .stats {
