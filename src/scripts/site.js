@@ -497,78 +497,6 @@ function wireSwatchModal() {
 
 /* ---------- hero slider ------------------------------------------------- */
 
-function wireHero() {
-  const panel = document.getElementById('heroPanel');
-  const slides = document.getElementById('heroSlides');
-  if (!panel || !slides) return;
-
-  const nodes = $$('.hero__slide', slides);
-  if (!nodes.length) return;
-
-  const badge = document.getElementById('heroBadge');
-  const name = document.getElementById('heroName');
-  const price = document.getElementById('heroPrice');
-  const dots = document.getElementById('heroDots');
-  let at = 0;
-
-  if (dots) {
-    dots.innerHTML = nodes.map((n, i) =>
-      '<button type="button" class="' + (i === 0 ? 'is-on' : '') + '" data-slide="' + i +
-      '" aria-label="Show ' + n.dataset.name + '"></button>').join('');
-  }
-
-  function show(i) {
-    at = (i + nodes.length) % nodes.length;
-    nodes.forEach((n, idx) => n.classList.toggle('is-on', idx === at));
-    if (dots) $$('button', dots).forEach((d, idx) => d.classList.toggle('is-on', idx === at));
-    const slide = nodes[at];
-    if (name) name.textContent = slide.dataset.name;
-    if (price) price.textContent = slide.dataset.price;
-    if (badge) badge.textContent = slide.dataset.badge;
-    restartBar();
-  }
-
-  $$('[data-hero]').forEach((b) => {
-    b.addEventListener('click', () => { show(at + Number(b.getAttribute('data-hero'))); restart(); });
-  });
-  if (dots) {
-    dots.addEventListener('click', (e) => {
-      const b = e.target.closest('[data-slide]');
-      if (!b) return;
-      show(Number(b.getAttribute('data-slide')));
-      restart();
-    });
-  }
-
-  let timer = null;
-  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* Autoplay cadence: was 6000ms, now 1.5x faster (6000 / 1.5 = 4000ms). */
-  const AUTOPLAY_MS = 4000;
-  /* Progress hairline: restarts its CSS animation in lockstep with every slide
-     change so the fill always matches the 4s rotation. */
-  const bar = panel.querySelector('.hero__progress i');
-  function restartBar() {
-    if (!bar) return;
-    if (reduced || nodes.length < 2) { bar.style.animation = 'none'; return; }
-    bar.style.animation = 'none';
-    void bar.offsetWidth;
-    bar.style.animation = '';
-    bar.style.animationPlayState = 'running';
-  }
-  function restart() {
-    if (timer) clearInterval(timer);
-    if (reduced || nodes.length < 2) return;
-    timer = setInterval(() => show(at + 1), AUTOPLAY_MS);
-    restartBar();
-  }
-  panel.addEventListener('mouseenter', () => {
-    if (timer) clearInterval(timer);
-    if (bar) bar.style.animationPlayState = 'paused';
-  });
-  panel.addEventListener('mouseleave', restart);
-  show(0);
-  restart();
-}
 
 /* ---------- search overlay --------------------------------------------- */
 
@@ -712,7 +640,6 @@ document.addEventListener('DOMContentLoaded', () => {
   wireAnnounce();
   wakeFab();
   wireCart();
-  wireHero();
   wireSearch();
 
   /* Modal close still delegated (the shell stays mounted for future use) */
@@ -782,7 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Hero workshop film: honour reduced motion (CSS hides the element; this
      also stops decoding so it costs nothing on battery). */
   {
-    const v = document.querySelector('.hero__film video');
+    const v = document.querySelector('.hero__video');
     if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       v.removeAttribute('autoplay'); v.pause();
     }

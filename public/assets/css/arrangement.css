@@ -133,18 +133,6 @@
   }
 }
 
-.hero__slides { position: absolute; inset: 0; }
-.hero__slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: scale(1.03);
-  transition: opacity .4s var(--ease), transform .73s var(--ease);
-  pointer-events: none;
-}
-.hero__slide.is-on { opacity: 1; transform: none; pointer-events: auto; }
-.hero__slide img { width: 100%; height: 100%; object-fit: cover; }
-
 .hero__chip {
   position: absolute;
   top: 18px;
@@ -196,41 +184,6 @@
 }
 .hero__card strong { font-size: 15px; font-weight: 700; }
 .hero__price { margin-left: auto; font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
-
-.hero__arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background: rgba(253,251,249,.92);
-  color: var(--ink);
-  display: grid; place-items: center;
-  box-shadow: var(--shadow-sm);
-  transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
-  z-index: 3;
-}
-.hero__arrow:hover { background: var(--ink); color: #fff; }
-.hero__arrow[data-hero="-1"] { left: 14px; }
-.hero__arrow[data-hero="1"] { right: 14px; }
-.hero__arrow svg { width: 18px; height: 18px; }
-
-.hero__dots {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 84px;
-  display: flex;
-  gap: 7px;
-  z-index: 3;
-}
-.hero__dots button {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: rgba(11,12,14,.28);
-  transition: background .2s var(--ease), width .2s var(--ease);
-}
-.hero__dots button.is-on { background: var(--ink); width: 20px; border-radius: var(--pill); }
 
 /* --- filter bar: tabs + search + price + view toggle ------------------- */
 .collection-top {
@@ -566,21 +519,15 @@
 }
 .hero__glow::before { top: 5rem; left: 2.5rem; width: 16rem; height: 16rem; }
 .hero__glow::after { bottom: 2.5rem; right: 5rem; width: 24rem; height: 24rem; opacity: .5; }
-
-/* workshop film behind the hero copy — media under a wash, the house
-   pattern (.page-hero--media). Reduced motion: poster only, no motion at all.
-   Film sits at .72 opacity so the fabric reads clearly without touching text
-   contrast (the cream wash on the left carries the copy). */
-.hero__film { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-.hero__film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.82) contrast(.96); }
-.hero__film::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(100deg, var(--cream) 0%, rgba(246,244,239,.9) 30%, rgba(246,244,239,.66) 64%, rgba(246,244,239,.46) 100%);
-}
 .hero__grid { position: relative; z-index: 1; }
+
+/* hero panel: the workshop film IS the panel (photo carousel removed entirely
+   2026-10-21 per owner). Full visibility — no wash; the info card rides on its
+   own opaque plate so information always reads. Reduced motion: poster. */
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 @media (prefers-reduced-motion: reduce) {
-  .hero__film video { display: none; }
-  .hero__film::before { content: ""; position: absolute; inset: 0; opacity: .72;
+  .hero__panel--film video { display: none; }
+  .hero__panel--film::before { content: ""; position: absolute; inset: 0;
     background: url("../img/opt/tfg-workshop-hero.jpg") center / cover no-repeat; }
 }
 
@@ -634,41 +581,6 @@
   padding: .25rem .625rem; border-radius: 999px;
 }
 .hero__price { margin-left: auto; font-size: 1.125rem; font-weight: 700; color: var(--gold-dark); }
-
-/* arrows */
-.hero__arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 2.5rem; height: 2.5rem; border-radius: 50%;
-  background: rgba(253,251,249,.9); color: var(--ink);
-  display: grid; place-items: center; border: none; cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  transition: background .2s, color .2s;
-  z-index: 3;
-}
-.hero__arrow:hover { background: var(--ink); color: #fff; }
-.hero__arrow[data-hero="-1"] { left: .75rem; }
-.hero__arrow[data-hero="1"] { right: .75rem; }
-.hero__arrow svg { width: 1.125rem; height: 1.125rem; }
-
-.hero__dots {
-  position: absolute; bottom: 5.25rem; left: 50%; transform: translateX(-50%);
-  display: flex; gap: .4375rem; z-index: 3;
-}
-.hero__dots button {
-  width: .4375rem; height: .4375rem; border-radius: 50%;
-  background: rgba(255,255,255,.55); border: none; cursor: pointer; padding: 0;
-}
-.hero__dots button.is-on { background: #fff; width: 1.25rem; border-radius: 999px; }
-
-.hero__slides { position: absolute; inset: 0; }
-.hero__slide {
-  position: absolute; inset: 0;
-  opacity: 0; transform: scale(1.03);
-  transition: opacity .4s ease, transform .73s ease;
-  pointer-events: none;
-}
-.hero__slide.is-on { opacity: 1; transform: none; pointer-events: auto; }
-.hero__slide img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ==========================================================================
    PRODUCTS PAGE — head band, category pills and the closing CTA
@@ -798,10 +710,6 @@ body::after {
 }
 .hero__card { background: #fff; color: var(--ink); border-radius: 14px; box-shadow: var(--shadow-md); }
 .hero__card strong { color: var(--ink); }
-.hero__arrow { background: rgba(255,255,255,.92); color: var(--ink); }
-.hero__arrow:hover { background: var(--ink); color: #fff; }
-.hero__dots button { background: rgba(20,19,18,.25); }
-.hero__dots button.is-on { background: #141312; }
 
 /* free delivery as a perforated ticket band ------------------------------- */
 .freedelivery {
@@ -1084,21 +992,7 @@ body::after {
    ========================================================================== */
 .product-card__chat,
 .product-card__details { padding-block: 6px; margin-block: -6px; }
-.hero__dots button { position: relative; }
-.hero__dots button::after { content: ""; position: absolute; inset: -9px; }
 
-.hero__progress {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-  z-index: 4; pointer-events: none; overflow: hidden;
-}
-.hero__progress i {
-  display: block; height: 100%; width: 100%;
-  transform: scaleX(0); transform-origin: 0 50%;
-  background: linear-gradient(90deg, rgba(206,154,67,.45), var(--gold));
-  animation: heroProgress 4000ms linear infinite; /* keep in sync with AUTOPLAY_MS */
-}
-@keyframes heroProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@media (prefers-reduced-motion: reduce) { .hero__progress { display: none; } }
 
 /* ==========================================================================
    MOBILE FIX 2026-10-15 — the offset ring's left edge ran the full card
@@ -1253,7 +1147,6 @@ body::after {
 .product-card__media picture,
 .piece__media picture,
 .split__media picture { display: block; }
-.hero__slide picture { display: block; height: 100%; }
 .split__media-second img { border: 0; box-shadow: none; }
 
 /* ==========================================================================
