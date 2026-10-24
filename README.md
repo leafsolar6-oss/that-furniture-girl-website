@@ -176,6 +176,10 @@ nothing more than a push.
 - The repo root **is** the deployable build (minified output committed alongside `src/`).
 - cPanel → **Git Version Control** → repo `https://github.com/leafsolar6-oss/that-furniture-girl-website.git`,
   branch `main`, **Repository Path: `public_html`**, *Auto Deploy* checked.
+  If cPanel refuses with “...already contains files”: in File Manager rename `public_html`
+  to `public_html_bak` (Git then recreates it as the checkout), Deploy, delete the _bak once
+  the site verifies. The checkout keeps `.git/` inside the docroot — the `.htaccess` above
+  blocks it and the other repo scaffolding.
 - Flow from now on: ship a change → push `main` → cPanel auto-pulls → the live domain
   updates in seconds. `leafsolar6-oss.github.io/that-furniture-girl-website` stays up
   as the free preview/rollback copy.
