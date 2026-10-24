@@ -171,7 +171,20 @@ git push
 From then on `dist/` is the only thing published, and a content change needs
 nothing more than a push.
 
-## Production: thatfurnituregirl.com (Truehost cPanel)
+## Production: thatfurnituregirl.com — GitHub Pages, custom domain (since 2026-10-24)
+
+- `base: '/'` build served at the domain root; root + `public/CNAME` pin `thatfurnituregirl.com`;
+  Pages "Enforce HTTPS" on, Let's Encrypt cert managed by GitHub.
+- DNS (Truehost zone, nameservers ns1-3.cloudoon.com):
+  `A @` → 185.199.108.153 · 185.199.109.153 · 185.199.110.153 · 185.199.111.153 and
+  `CNAME www` → `leafsolar6-oss.github.io`. **Do not touch MX/TXT** — mail stays on Truehost.
+- Push `main` → Actions builds → the domain updates minutes later. `github.io/that-furniture-girl-website`
+  now 301s to the domain (shared links keep working).
+- Truehost cPanel keeps: DNS, mail, and the (now unused) `public_html` — leave it alone as a fallback.
+
+<!-- legacy notes below -->
+
+## (Archived) Production: thatfurnituregirl.com (Truehost cPanel)
 
 - The repo root **is** the deployable build (minified output committed alongside `src/`).
 - cPanel → **Git Version Control** → repo `https://github.com/leafsolar6-oss/that-furniture-girl-website.git`,
