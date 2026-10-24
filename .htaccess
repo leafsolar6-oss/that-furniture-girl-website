@@ -1,0 +1,20 @@
+# ==========================================================================
+# That Furniture Girl — Apache rules (applied on the cPanel host; GitHub
+# Pages ignores this file, so the preview URL is unaffected).
+# ==========================================================================
+
+# 1) Always serve over HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://thatfurnituregirl.com/$1 [R=301,L]
+
+# 2) www and bare domain both work; keep whatever the visitor typed.
+#    (Both names already point at the host and both carry the TLS cert.)
+
+# 3) Hide repo scaffolding that rides along in the deployment checkout
+RedirectMatch 404 ^/(src|scripts|node_modules|\.git|\.github)(/.*)?$
+RewriteRule ^(package(-lock)?\.json|astro\.config\.mjs|README\.md|\.gitignore) - [F,L]
+
+# 4) Human-friendly: /index.html requests land on / (no duplicate-content hits)
+RewriteCond %{THE_REQUEST} ^[A-Z]+ /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]

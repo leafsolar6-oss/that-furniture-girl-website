@@ -170,3 +170,15 @@ git push
 
 From then on `dist/` is the only thing published, and a content change needs
 nothing more than a push.
+
+## Production: thatfurnituregirl.com (Truehost cPanel)
+
+- The repo root **is** the deployable build (minified output committed alongside `src/`).
+- cPanel → **Git Version Control** → repo `https://github.com/leafsolar6-oss/that-furniture-girl-website.git`,
+  branch `main`, **Repository Path: `public_html`**, *Auto Deploy* checked.
+- Flow from now on: ship a change → push `main` → cPanel auto-pulls → the live domain
+  updates in seconds. `leafsolar6-oss.github.io/that-furniture-girl-website` stays up
+  as the free preview/rollback copy.
+- `.htaccess` (repo root, also deployed) forces HTTPS and hides `src/` & friends.
+- DNS is managed by Truehost nameservers (cloudoon.com); TLS issues via AutoSSL.
+- If Git UI is ever unavailable: upload the site zip via File Manager into `public_html`.
